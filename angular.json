@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "painelMed"
+    }
+  },
+  "defaultProject": "painelMed",
+  "cli": {
+    "analytics": "d0804f11-2db7-46e7-a268-4770144110cb"
+  }
 }
