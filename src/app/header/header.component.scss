@@ -43,6 +43,7 @@ background-image: url("/assets/icons/dcgs.svg");
 /*-- estilizando tab-nav --*/
  
 .nav-tabs .nav-link.active {
+    position: relative;
     border: 2px solid white;
     border-right: 2px solid white;
     border-left: 2px solid white;
@@ -61,12 +62,47 @@ background-image: url("/assets/icons/dcgs.svg");
  }
 
  .tab-content{
+    
     background-color: #0d542a;
  }
-/*
- .nav-tabs {
-    border-bottom: 2px solid white;
+ 
+/* -- tentando auemntar bordar de baixo 
+.nav-tabs {
+    border-bottom:2px solid white;
     
 }
 */
 
+
+/*-- arredondando bordas -- */
+.nav-link.active::before,
+    .nav-link.active::after{
+		content: "";
+		position: absolute;
+		height: 10px;
+		width: 20px;
+
+		bottom: 0;
+	}
+
+.nav-link.active::after{
+		right: -20px;
+        border-left: 2px solid white;
+		border-radius: 0 0 0 10px;
+		-moz-border-radius: 0 0 0 10px;
+		-webkit-border-radius: 0 0 0 10px;
+
+		-webkit-box-shadow: -10px 0 0 0  #0d542a;
+		box-shadow: -10px 0 0 0 #0d542a;
+	}
+
+.nav-link.active::before{
+		left: -20px;
+        border-right: 2px solid white;
+		border-radius: 0 0 10px 0;
+		-moz-border-radius: 0 0 10px 0;
+		-webkit-border-radius: 0 0 10px 0;
+
+		-webkit-box-shadow: 10px 0 0 0 #0d542a;
+		box-shadow: 10px 0 0 0 #0d542a;
+	}
