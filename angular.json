@@ -28,7 +28,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js", 
+              "node_modules/jquery/dist/jquery.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
@@ -128,5 +128,10 @@
   "defaultProject": "painelMed",
   "cli": {
     "analytics": "d0804f11-2db7-46e7-a268-4770144110cb"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }

@@ -1,3 +1,4 @@
+
 .icon {
     width: 4em;
     height: 4em;
@@ -6,6 +7,7 @@
     background-size: 80%;
     background-position: center;
 }
+
 
 .icon:hover {
     animation: icon-animation 1s;
@@ -23,19 +25,19 @@
 }
 
 .icon-painel {
-    background-image: url("src/assets/icons/painel.svg");
+    background-image: url("/assets/icons/painel.svg");
 }
 
 .icon-med-numeros {
-    background-image: url("src/assets/icons/med_numeros.svg");
+background-image: url("/assets/icons/med_numeros.svg");
 }
 
 .icon-buscador {
-    background-image: url("src/assets/icons/buscador.svg");
+background-image: url("/assets/icons/buscador.svg");
 }
 
 .icon-dcgs {
-    background-image: url("src/assets/icons/dcgs.svg");
+background-image: url("/assets/icons/dcgs.svg");
 }
 
 .nav-tabs .nav-link.active {
