@@ -1,3 +1,4 @@
+/*-- estilizando icones --*/
 
 .icon {
     width: 4em;
@@ -7,7 +8,6 @@
     background-size: 80%;
     background-position: center;
 }
-
 
 .icon:hover {
     animation: icon-animation 1s;
@@ -40,19 +40,33 @@ background-image: url("/assets/icons/buscador.svg");
 background-image: url("/assets/icons/dcgs.svg");
 }
 
+/*-- estilizando tab-nav --*/
+ 
 .nav-tabs .nav-link.active {
-    /* border-top: 2px solid white;*/
+    border: 2px solid white;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 0px;
     background-color: #0d542a;
     border-radius: 15px 15px 0px 0px;
+    
 }
 
+ .nav-tabs a{
+    outline:none;
+    outline: 0;
+    border: transparent;
+    cursor: default;
 
-/* 
-.tab-pane-fade{
-    background-color: #0d542a;
-}
+ }
 
-.tab-pane-fade-show-active{
+ .tab-content{
     background-color: #0d542a;
+ }
+/*
+ .nav-tabs {
+    border-bottom: 2px solid white;
+    
 }
 */
+
