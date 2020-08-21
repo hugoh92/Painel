@@ -1,3 +1,5 @@
+/*-- estilizando icones --*/
+
 .icon {
     width: 4em;
     height: 4em;
@@ -23,34 +25,84 @@
 }
 
 .icon-painel {
-    background-image: url("src/assets/icons/painel.svg");
+    background-image: url("/assets/icons/painel.svg");
 }
 
 .icon-med-numeros {
-    background-image: url("src/assets/icons/med_numeros.svg");
+background-image: url("/assets/icons/med_numeros.svg");
 }
 
 .icon-buscador {
-    background-image: url("src/assets/icons/buscador.svg");
+background-image: url("/assets/icons/buscador.svg");
 }
 
 .icon-dcgs {
-    background-image: url("src/assets/icons/dcgs.svg");
+background-image: url("/assets/icons/dcgs.svg");
 }
 
+/*-- estilizando tab-nav --*/
+ 
 .nav-tabs .nav-link.active {
-    /* border-top: 2px solid white;*/
+    position: relative;
+    border: 2px solid white;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 0px;
     background-color: #0d542a;
     border-radius: 15px 15px 0px 0px;
+    
 }
 
+ .nav-tabs a{
+    outline:none;
+    outline: 0;
+    border: transparent;
+    cursor: default;
 
-/* 
-.tab-pane-fade{
-    background-color: #0d542a;
-}
+ }
 
-.tab-pane-fade-show-active{
+ .tab-content{
+    
     background-color: #0d542a;
+ }
+ 
+/* -- tentando auemntar bordar de baixo 
+.nav-tabs {
+    border-bottom:2px solid white;
+    
 }
 */
+
+
+/*-- arredondando bordas -- */
+.nav-link.active::before,
+    .nav-link.active::after{
+		content: "";
+		position: absolute;
+		height: 10px;
+		width: 20px;
+
+		bottom: 0;
+	}
+
+.nav-link.active::after{
+		right: -20px;
+        border-left: 2px solid white;
+		border-radius: 0 0 0 10px;
+		-moz-border-radius: 0 0 0 10px;
+		-webkit-border-radius: 0 0 0 10px;
+
+		-webkit-box-shadow: -10px 0 0 0  #0d542a;
+		box-shadow: -10px 0 0 0 #0d542a;
+	}
+
+.nav-link.active::before{
+		left: -20px;
+        border-right: 2px solid white;
+		border-radius: 0 0 10px 0;
+		-moz-border-radius: 0 0 10px 0;
+		-webkit-border-radius: 0 0 10px 0;
+
+		-webkit-box-shadow: 10px 0 0 0 #0d542a;
+		box-shadow: 10px 0 0 0 #0d542a;
+	}
