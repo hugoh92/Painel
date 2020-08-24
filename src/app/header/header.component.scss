@@ -7,6 +7,7 @@
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center;
+    position: relative;    
 }
 
 .icon:hover {
@@ -40,6 +41,71 @@ background-image: url("/assets/icons/buscador.svg");
 background-image: url("/assets/icons/dcgs.svg");
 }
 
+// .nav-tabs .logo-direm{
+//     width: 250px;
+   
+//     background-image: url("/assets/logos/direm.png");
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     background-position: center;
+//     position: relative;
+//     right: 350px;
+
+// //     }
+// .navbar-brand {
+//     transform: translateX(-50%);
+//     left: 50%;
+//     position: relative;
+// }
+
+// /* DEMO example styles for logo image */
+// .navbar-brand {
+//   padding: 0px;
+//   display: flex;
+// //   align-items: left;
+// //   background: url url("/assets/logos/direm.png") center / contain no-repeat;
+// //    width: 250px;
+// //    transform: translateX(-50%);
+// //   left: 20%;
+// //    position: absolute;
+// // -o-object-fit: contain;
+// //    object-fit: contain; 
+ 
+  
+// }
+// .navbar-brand > img {
+//     // max-width:300px;
+//     // max-height:150px;
+//     // width: auto;
+//     // height: auto;
+//     // margin: 0;
+//      //position: absolute;               /* 2 */
+//     // top: 50%;                         /* 3 */
+//     // transform: translate(0, -50%) ;
+//     // display: flex;
+//     // flex-wrap: nowrap;
+//     // background-size: 100%;
+//      max-height: 50%;
+//      height: -50%;
+//      width: 100%;
+//      margin: auto;
+//      padding: 7px 5px;
+// //    /* probably not needed anymore, but doesn't hurt */
+//     -o-object-fit: contain;
+//     object-fit: contain; 
+//  }
+//  .navbar-brand {
+//     padding: 0px;
+//     position: absolute; 
+//     display: block;
+   
+//   }
+//   .navbar-brand>img {
+//     height: 70%;
+//     width: 60%;
+//     position: relative;
+//   }
+
 /*-- estilizando tab-nav --*/
  
 .nav-tabs .nav-link.active {
@@ -51,20 +117,19 @@ background-image: url("/assets/icons/dcgs.svg");
     background-color: #0d542a;
     border-radius: 15px 15px 0px 0px;
     
+    
 }
 
- .nav-tabs a{
+.nav-tabs a {
     outline:none;
     outline: 0;
     border: transparent;
     cursor: default;
+}
 
- }
-
- .tab-content{
-    
+.tab-content {
     background-color: #0d542a;
- }
+}
  
 /* -- tentando auemntar bordar de baixo 
 .nav-tabs {
@@ -73,6 +138,9 @@ background-image: url("/assets/icons/dcgs.svg");
 }
 */
 
+.nav-tabs .nav-item{
+    padding: 0px;
+}
 
 /*-- arredondando bordas -- */
 .nav-link.active::before,
@@ -102,7 +170,40 @@ background-image: url("/assets/icons/dcgs.svg");
 		border-radius: 0 0 10px 0;
 		-moz-border-radius: 0 0 10px 0;
 		-webkit-border-radius: 0 0 10px 0;
-
 		-webkit-box-shadow: 10px 0 0 0 #0d542a;
 		box-shadow: 10px 0 0 0 #0d542a;
-	}
+    }
+    
+
+//   fontes
+    .nav-item span {
+        display: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      /* Show the one that's active */
+    .nav-link.active > span {
+        display: table-row;
+        position: absolute;
+        color:white;
+        font-size: 0.5em;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-style: bold;
+        display: inline-block;
+        text-align: center;
+        
+        
+    }
+    .nav-item > li > span{
+        text-align: center;
+    }
+
+    //   .tab-pane span {
+    //     display: none;
+    //   }
+      /* Show the one that's active */
+    //   .tab-pane span {
+    //     display: inline-table;
+    //     color: red;
+    //     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+    //   }
