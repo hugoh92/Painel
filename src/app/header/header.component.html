@@ -1,19 +1,33 @@
 <body>
     <!-- header menu -->
-    <div style=" height: 100px;">
+    <div class="container-fluid" style=" height: 100px;">
         <header class="header wrap-reverse">
+
+            <!-- header moblie visivel apenas para telas < 900-->
+            <div class="container-fluid header-mobile" style="background-color: #0d542a;">
+                <!-- <header class="header"> -->
+                <!-- <div class="col marcador align-content-center"> -->
+                <section class="flex">
+                    <div class="col direm-mobile">
+                        <img src="/assets/logos/direm.png" href="#" class="align-self-center">
+                    </div>
+
+                    <div class="col inteqs-mobile">
+                        <img src="/assets/logos/inteqs.png" href="#" class=" align-self-center">
+                    </div>
+                </section>
+                <!-- </div> -->
+                <!-- </header> -->
+            </div>
+
             <!-- <div class="container-fluid">    -->
-            <ul class="nav nav-tabs justify-content-center pt-3 " data-activates="menu-mobile" id="myTab" role="tablist"
+            <ul class="nav nav-tabs justify-content-center pt-3 " id="myTab" role="tablist"
                 style="background-color: #0d542a;">
 
-                <!-- <div class="row marcador align-items-start">
-                    <div class="col">
-                    <img src="/assets/logos/direm.png" href="#" class="img-fluid" alt="...">
-                    </div>
-               </div> -->
                 <div class="row marcador align-content-center">
                     <div class="col direm">
-                        <img src="/assets/logos/direm.png" href="#" class=" d-flex align-self-center flex-wrap p-2">
+                        <img src="/assets/logos/direm.png" href="#"
+                            class="align-self-center flex-wrap p-2 d-block img-fluid">
                     </div>
                 </div>
                 <!-- <li class="nav-item" role="presentation">
@@ -25,7 +39,7 @@
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active" id="profile-tab" data-toggle="tab" data-activates="menu-mobile"
                         href="#profile" role="tab" aria-controls="profile" aria-selected="true">
-                        <div class="icon icon-painel"></div>
+                        <svg class="icon icon-painel"></svg>
                         <span>PAINEL DE INDICADORES</span>
                     </a>
 
@@ -33,23 +47,21 @@
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="profile-tab" data-toggle="tab" data-activates="menu-mobile" href="#profile"
                         role="tab" aria-controls="profile" aria-selected="false">
-                        <div class="icon icon-med-numeros"></div>
+                        <svg class="icon icon-med-numeros"></svg>
                         <span>PESQUISA E ESTATÍSTICAS</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="contact-tab" data-toggle="tab" data-activates="menu-mobile" href="#contact"
                         role="tab" aria-controls="contact" aria-selected="false">
-                        <div class="icon icon-buscador"></div>
+                        <svg class="icon icon-buscador"></svg>
                         <span>BUSCADOR DE CURSOS</span>
                     </a>
                 </li>
-                <!-- <a class="navbar-brand " href="#" >
-                    <img src="/assets/logos/inteqs.png" href="#" class="rounded float-center" alt="...">
-                </a>  -->
+               
                 <div class="marcador align-content-center">
                     <div class="col inteqs">
-                        <img src="/assets/logos/inteqs.png" href="#" class=" d-flex align-self-left flex-wrap p-3">
+                        <img src="/assets/logos/inteqs.png" href="#" class=" d-flex align-self-left flex-wrap p-3 ">
                     </div>
                 </div>
 
