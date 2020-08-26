@@ -2,42 +2,54 @@
     <!-- header menu -->
     <div style="height: 100px;">
         <header class="header">
-            <ul class="nav nav-tabs justify-content-center pt-3" id="myTab" role="tablist" style="background-color: #0d542a;">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+            <div class="container-fluid">   
+            <ul class="nav nav-tabs justify-content-center pt-3 " data-activates="menu-mobile" id="myTab" role="tablist" style="background-color: #0d542a;">
+               
+                <a class="navbar-brand " href="#" data-activates="menu-mobile">
+                    <img src="/assets/logos/direm.png" href="#" width="280" height="60" class="rounded float-left" alt="...">
+                </a> 
+                    
+                <!-- <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" data-activates="menu-mobile" href="#home" role="tab" aria-controls="home" aria-selected="true">
                         <div class="icon icon-dcgs"></div>
+                        <span>BUSCADOR DE CURSOS</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                    <a class="nav-link active" id="profile-tab" data-toggle="tab"data-activates="menu-mobile" href="#profile" role="tab" aria-controls="profile" aria-selected="true">
                         <div class="icon icon-painel"></div>
+                        <span>PAINEL DE INDICADORES</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" data-activates="menu-mobile"href="#profile" role="tab" aria-controls="profile" aria-selected="false">
                         <div class="icon icon-med-numeros"></div>
+                        <span>PESQUISA E ESTATÍSTICAS</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab"data-activates="menu-mobile" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
                         <div class="icon icon-buscador"></div>
-                    </a>
+                        <span>BUSCADOR DE CURSOS</span>
+                    </a>           
                 </li>
+                <a class="navbar-brand " href="#" >
+                    <img src="/assets/logos/inteqs.png" href="#" width="180" height="60" class="rounded float-right  block-level" alt="...">
+                </a> 
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    df
-                </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     a
                 </div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <span>Tab2</span>
                     .
                 </div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                     .
                 </div>
             </div>
+        </div>
         </header>
     </div>
 
