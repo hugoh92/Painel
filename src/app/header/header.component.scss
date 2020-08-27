@@ -64,39 +64,82 @@
 
 //icone direm estilizando
 .direm > img {
-    height: 70px;
+    height: 80px;
     position:fixed;
     width: auto;
     align-content: flex-start;
     align-items: center;   
     display: flex;
-    flex-wrap: wrap; // Quebra a linha
-    flex-direction: row; //Direção que você deseja
-    justify-content: space-between;
+    top: 10px;
 }
-
+//display das marcas
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 100px;
+    grid-row-gap: 1em;
+    position:absolute;
+    right: 140px;
+ }
+ 
 //icone inteqs estilizando
 .inteqs > img {
-    display: flex;
-    height: 70px;
-    position:fixed;
-    width: auto;
-    flex-wrap: wrap-reverse;
+    display: grid;
+    height: 75px;
+    width: auto; 
+    position: absolute;
+    
 }
-
-//header apenas mobile version
+//marca opas estilizando
+.opas > img {
+    display: grid;
+    height: 70px;
+    width: auto; 
+    position: absolute;
+    
+}
+//marca abem estilizando
+.abem > img {
+    display: grid;
+    height: 80px;
+    width: auto; 
+    position: fixed;
+    top: 10px;
+}
+    
+// }
+//header para a versao menor que 1100px
 .header-mobile{
     display: none;
 }
-
-//versao para mobile
-@media screen and (max-width:925px){
+@media screen and (max-width:1100px){
+    .abem{
+        display: none;  
+    }
+    .wrapper{
+        right: 60px;
+    }
+}
+//header para a versao menor que 950px
+@media screen and (max-width:950px){
+    .opas{
+        display: none;  
+    }
+    .wrapper{
+        right: 20px;
+    }
+}
+//header para versão menor que 900px
+@media screen and (max-width:900px){
     .direm{
         height: 80px;
         width: auto; 
         left:35%;
         margin-left:-50px;      
         display: none;      
+    }
+    .wrapper {
+        display: none;
     }
 
     .inteqs{
@@ -108,28 +151,89 @@
     }
 
     .flex{
-        display:flex;       
+        display:flex;  
+        margin-left: auto;
+        margin-right: auto;        
+        grid-template-columns: repeat(4, 6fr);
+        grid-column-gap: 2px;  
+        right: 1px;
+        position:absolute;
     }
 
     .header-mobile{
         display: flex;
     }
+    .direm-mobile{
+        max-width: 100px;
+        padding: 0px;
+        display: flex;
+    }
 
     .direm-mobile > img{
-        max-width: 100%; 
+        height: 70px;
+        left: 30px;     
         display: block;
-        padding-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+                     
     }
 
     .inteqs-mobile > img{
-        max-width: 30%;
+        //max-width: 70%; 
+        height: 60px;
         display: block;
         padding-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
     }
-    
+     
+    .opas-mobile > img{
+        //max-width: 55%;
+        height: 55px;
+        display: block;
+        padding-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .abem-mobile > img{
+        //max-width: 30%;
+        height: 60px;
+        display: block;
+        padding-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
   }
-
-//Estilizando tab-nav
+  //header para versao ceular menor que
+  @media screen and (max-width:680px){
+    .abem-mobile{
+        display: none;  
+    }
+    .flex{
+        right: 1px;
+    }
+}
+//header para a versao menor que 950px
+@media screen and (max-width:600px){
+    .opas-mobile{
+        display: none;  
+    }
+    .flex{
+        right: 1px;
+    }
+}
+//header para a versao menor que 950px
+@media screen and (max-width:460px){
+    .inteqs-mobile{
+        display: none;  
+    }
+    .flex{
+        right: 1px;
+    }
+}
+//Estilizando tab-nav-------------------------------------------------------------------
 .nav-tabs .nav-link.active {
     position: relative;
     border: 2px solid white;
