@@ -18,7 +18,19 @@ export class PainelComponent implements OnInit {
       $(this).toggleClass("click");
       $('.sidebar').toggleClass("show");
     });
-    
+
+  //   $('oes-btn').on('click', function(){
+  //     if(!$(this).parents().hasClass('show2')){
+  //         $('li').removeClass('show2');    
+  //     }
+  //     $(this).parent().addClass('show2');
+  // });
+
+    $('.oes-btn').click(function(){
+      $('nav ul .oes-show').toggleClass("show2");
+      $('nav ul .coeste').toggleClass("rotate");
+    });
+
     $('.feat-btn').click(function(){
       $('nav ul .feat-show').toggleClass("show");
       $('nav ul .first').toggleClass("rotate");
@@ -27,6 +39,16 @@ export class PainelComponent implements OnInit {
     $('.serv-btn').click(function(){
       $('nav ul .serv-show').toggleClass("show1");
       $('nav ul .second').toggleClass("rotate");
+    });
+
+    $('.sud-btn').click(function(){
+      $('nav ul .sud-show').toggleClass("show3");
+      $('nav ul .sud').toggleClass("rotate");
+    });
+
+    $('.sul-btn').click(function(){
+      $('nav ul .sul-show').toggleClass("show4");
+      $('nav ul .sul').toggleClass("rotate");
     });
 
     $('nav ul li').click(function(){
