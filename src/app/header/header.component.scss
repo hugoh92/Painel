@@ -50,27 +50,27 @@
 
 //icone envelope contatos
 .bi-envelope-fill{
-    width: auto;
+    width: 1em;
     height: 2em;
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center; 
-    position:fixed;  
+    position: absolute;
     flex-direction: row-reverse;
     align-items: center;
-    top: 70px;
-    left: 96%;
+    top: 25px;
+    
+
 }
 
 //icone direm estilizando
 .direm > img {
     height: 80px;
-    position:fixed;
+    position: absolute;
     width: auto;
     align-content: flex-start;
     align-items: center;   
-    display: flex;
-    top: 10px;
+    display: flex;  
 }
 //display das marcas
 .wrapper {
@@ -103,8 +103,8 @@
     display: grid;
     height: 80px;
     width: auto; 
-    position: fixed;
-    top: 10px;
+    position: absolute;
+    
 }
     
 // }
@@ -206,6 +206,12 @@
         margin-right: auto;
     }
   }
+  @media screen and (max-width:760px){
+  .nav-link.active .nomepi {    
+    display: none;   
+    }
+}
+
   //header para versao ceular menor que
   @media screen and (max-width:680px){
     .abem-mobile{
@@ -214,8 +220,11 @@
     .flex{
         right: 1px;
     }
+    .nav-link.active .nomepi {    
+        display: none;   
+        }
 }
-//header para a versao menor que 950px
+//header para a versao menor que 600px
 @media screen and (max-width:600px){
     .opas-mobile{
         display: none;  
@@ -223,8 +232,11 @@
     .flex{
         right: 1px;
     }
+    .nav-link.active .nomepi {    
+        display: none;   
+        }
 }
-//header para a versao menor que 950px
+//header para a versao menor que 4600px
 @media screen and (max-width:460px){
     .inteqs-mobile{
         display: none;  
@@ -232,6 +244,9 @@
     .flex{
         right: 1px;
     }
+    .nav-link.active .nomepi {    
+        display: none;   
+        }
 }
 //Estilizando tab-nav-------------------------------------------------------------------
 .nav-tabs .nav-link.active {

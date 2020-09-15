@@ -155,7 +155,7 @@ $fa-font-path: "~font-awesome/fonts";
 
 
 
-// CSS do side nav dois icones 
+//CSS do side nav dois icones 
 
 .btn{
   position: absolute;
@@ -170,6 +170,7 @@ $fa-font-path: "~font-awesome/fonts";
   transition: left 0.4s ease;
 }
 .btn.click{
+  //rol no rol
   position: absolute;
   left: 400px;
 }
@@ -191,6 +192,7 @@ $fa-font-path: "~font-awesome/fonts";
 }
 .sidebar.show{
   left: 0px;
+  position: absolute;
 }
 .sidebar .text{
   font-size: 25px;
@@ -205,10 +207,12 @@ nav ul{
   background: #023a1d;
   height: 100%;
   width: 95%;
+  text-align: center;
+  
   list-style: none;
 }
 
-nav ul .active{
+nav ul .active1{
   line-height: 140px;
   border-top: 1px solid rgb(223, 228, 33);
 }
@@ -225,6 +229,25 @@ nav ul .linha3{
 // nav ul li:last-child{
 //    border-bottom: 1px solid rgba(255,255,255,0.05);
 // }
+
+// estilizando o grid para cada icone
+.wrapper {
+  display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-column-gap: 1px;
+  //  grid-row-gap: 1em;
+   position:absolute;
+   right: 1px;
+}
+// estilizando o grid para indicadores linha final
+.marcador4 {
+  display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-column-gap: 1px;
+   position:absolute;
+   right: 1px;
+}
+
 //estilziando nome do icone
 nav ul li span{
   position: relative;
@@ -243,25 +266,54 @@ nav ul li span{
   top: 1px; 
   text-align: center;
   
+  
 //estilizando numero valor 
 }
-nav ul li div a{
+nav ul li div .numero{
   position: absolute;
   color:#e1e31d;
-  // text-decoration: none;
   font-size: 17px;
-  // padding-left: 40px;
   font-weight: 50;
-  // display: block;
   display: grid;
   top: 20px;
-  // width: auto;
-  // height: auto;
   width: 110px;
   text-align: center;
   font-weight: bold;
-  
 }
+nav ul li div .numero2{
+  position: absolute;
+  color:#e1e31d;
+  font-size: 17px;
+  font-weight: 50;
+  display: grid;
+  top: 20px;
+  width: 110px;
+  text-align: center;
+  font-weight: bold;
+}
+nav ul li div .numero3{
+  position: absolute;
+  color:#e1e31d;
+  font-size: 17px;
+  font-weight: 50;
+  display: grid;
+  top: -16px;
+  width: 110px;
+  text-align: center;
+  font-weight: bold;
+}
+nav ul li div .numero4{
+  position: absolute;
+  color:#e1e31d;
+  font-size: 17px;
+  font-weight: 50;
+  display: grid;
+  
+  width: 110px;
+  text-align: center;
+  font-weight: bold;
+}
+
 //div geral
 nav ul li div{
   height: 140px; 
@@ -285,11 +337,6 @@ nav ul li .marcador2{
 nav ul li .nome3{
   top: -33px;
   text-align: center;
-
-}
-nav ul li div .numero3{
-  top: -20px;
-
 }
 // estilizando icones primeira fila
 .icone1{
@@ -317,21 +364,21 @@ nav ul li div .numero3{
 .icone4{
   position: absolute;
   height: 55px;
-  top:5px;
+  top:10px;
   right: 25px;
   color: white;
 }
 .icone5{
   position: absolute;
   height: 55px;
-  top:5px;
+  top:10px;
   right: 32px;
   color: white;
 }
 .icone6{
   position: absolute;
-  height: 55px;
-  top:5px;
+  height: 50px;
+  top:10px;
   right: 26px;
   color: white;
 }
@@ -366,8 +413,39 @@ nav ul li div .numero3{
 //   color: white;
 //   // transform: translateY(-50%) rotate(-45deg);
 // }
+//Estilizando ano indicadores e icone info
+nav ul li .ano1{
+  position:absolute;
+  top: -15px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
 
+nav ul li .ano2{
+  position:absolute;
+  top: 125px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
 
+}
+
+nav ul li .ano3{
+  position:absolute;
+  top: 366px;
+  text-align: center;
+  font-size: 13px;
+  left:15px;
+  font-weight: bold;
+}
+nav ul li i{
+  position: absolute;
+  top: 64%;
+  right: 20px;
+  color: #d71a20;
+  font-size: 15px;
+}
 // .wrapper > img {
 //   position: absolute;
 //   top:40px;
@@ -377,15 +455,7 @@ nav ul li div .numero3{
 //   font-size: 50px;
 //   transition: transform 0.4s;
 // }
-// estilizando o grid para cada icone
-.wrapper {
-  display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-column-gap: 1px;
-  //  grid-row-gap: 1em;
-   position:absolute;
-   right: 1px;
-}
+
 
 // nav ul li i{
 //   position: relative;
