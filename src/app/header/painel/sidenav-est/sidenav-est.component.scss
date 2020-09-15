@@ -39,10 +39,18 @@ $fa-font-path: "~font-awesome/fonts";
   transition: left 0.4s ease;
 }
 
+
 .text{
+  color: grey;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 45px;
+  text-align: center;
+  background: #023a1d;
+  letter-spacing: 1px;
+  width: 150px;
+  height: 40px;
   display: none;
-  transition: left 0.4s ease;
-  
 }
 
 .btn.click{
@@ -77,16 +85,7 @@ $fa-font-path: "~font-awesome/fonts";
   left: 0px;
   position: absolute; //rolagem
 }
- .text{
-  color: white;
-  font-size: 25px;
-  font-weight: 600;
-  line-height: 45px;
-  text-align: center;
-  background: #023a1d;
-  letter-spacing: 1px;
-  
-}
+
 nav ul{
   background: #023a1d;
   height: 100%;
@@ -170,8 +169,11 @@ nav ul li a i{
   transform: translateY(-50%);
   font-size: 15px;
   transition: transform 0.4s;
-  
 }
+.cbrasil{
+  transform: translateY(-50%)  rotate(-90deg) !important;
+}
+
 nav ul li a i.rotate{
   transform: translateY(-50%) rotate(-180deg);
 }
