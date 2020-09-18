@@ -15,6 +15,7 @@ export class SidenavEstComponent implements OnInit {
       $('.sidebar').toggleClass("show");
     });
 
+
   //   $('oes-btn').on('click', function(){
   //     if(!$(this).parents().hasClass('show2')){
   //         $('li').removeClass('show2');    

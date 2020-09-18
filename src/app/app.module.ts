@@ -8,6 +8,14 @@ import { HeaderComponent } from './header/header.component';
 import { PainelComponent } from './header/painel/painel.component';
 import { SidenavIconsComponent } from './header/painel/sidenav-icons/sidenav-icons.component';
 import { SidenavEstComponent } from './header/painel/sidenav-est/sidenav-est.component';
+import { DashboardComponent } from './header/painel/dashboard/dashboard.component';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -15,11 +23,17 @@ import { SidenavEstComponent } from './header/painel/sidenav-est/sidenav-est.com
     HeaderComponent,
     PainelComponent,
     SidenavIconsComponent,
-    SidenavEstComponent
+    SidenavEstComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSliderModule,
+    MatIconModule,
+    MatButtonModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,7 +28,8 @@ $fa-font-path: "~font-awesome/fonts";
   transition: left 0.4s ease;
   
 }
-.btn.click .wrapper {
+
+.btn .wrapper { //.click desktop side
   display: grid;
   position: absolute;
   grid-template-columns: repeat(3, 1fr);
@@ -53,7 +54,8 @@ $fa-font-path: "~font-awesome/fonts";
   display: none;
 }
 
-.btn.click{
+// .btn.click{ dektop side nav ativo
+  .btn{
   transition: left 0.4s ease;
   position: sticky;
   background: #023a1d;
@@ -74,23 +76,27 @@ $fa-font-path: "~font-awesome/fonts";
 //   content: '\f00d';
 // }
 .sidebar{
-  position: fixed;
+  //position: fixed;
+  position: absolute;
   width: 250px;
   height: 100%;
-  left: -250px;
+  //left: -250px; desktop bar ativo
   background: #023a1d;
   transition: left 0.4s ease;
 }
 .sidebar.show{
   left: 0px;
   position: absolute; //rolagem
+  
 }
 
 nav ul{
-  background: #023a1d;
+  
   height: 100%;
   width: 100%;
+  
   list-style: none;
+  
 }
 nav ul li{
   line-height: 40px;
