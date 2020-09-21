@@ -1,0 +1,135 @@
+.row-nowrap {
+	flex-flow: row nowrap;
+}
+.column-nowrap {
+	flex-flow: column nowrap;
+}
+.row-wrap {
+	flex-flow: row wrap;
+}
+
+/* Flex Container */
+.container {
+    width: 100%;
+    height: 100%;
+    //max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+    border: 1px solid #ccc;
+    grid-column-start: 5;
+    position: relative;
+    
+    
+}
+/* Flex Item */
+.item1 {
+    /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+    //width: 1100px;
+    width: 100%;
+	flex: 1;
+    margin: 5px;
+    // margin-bottom: 10px;
+	background: tomato;
+	text-align: center;
+    font-size: 1.5em;
+    height: 70px;
+    
+   
+}
+
+
+.item2 {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+	flex: 1;
+    margin: 5px;
+	background: tomato;
+	text-align: center;
+    font-size: 1.5em;
+    min-width: 300px;
+    max-width: auto;
+    height: 70px;
+}
+
+.item3 {
+	
+     //flex: 1; qnd quebra volta 
+    // grid-area: 1 / col4-start / last-line / 6;
+     min-width: 300px;
+     max-width: auto;
+    margin: 5px;
+    // width: 500px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.item4 {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+    width: 30%;
+    // flex: 1;
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+    font-size: 1.5em;
+    height: 70px;
+}
+
+.item5 {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+	flex: 1;
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+.item6 {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+    width: 35%;
+    flex: 1;
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+.item7 {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+    width: 35%;
+    // flex: 1;
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+.item8 {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+    width: 30%;
+    height: 70px;
+    // flex: 1;
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.item9 {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+    // width: 30%;
+    height: 210px;
+    flex: 1;
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px 0 0 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+}

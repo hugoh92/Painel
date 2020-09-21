@@ -12,6 +12,11 @@ import { DashboardComponent } from './header/painel/dashboard/dashboard.componen
 import { MatSliderModule } from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { PesquisaAvancadaComponent } from './header/buscador/pesquisa-avancada/pesquisa-avancada.component';
+import { BuscaComponent } from './header/buscador/busca/busca.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 
@@ -24,14 +29,20 @@ import {MatButtonModule} from '@angular/material/button';
     PainelComponent,
     SidenavIconsComponent,
     SidenavEstComponent,
-    DashboardComponent
+    DashboardComponent,
+    PesquisaAvancadaComponent,
+    BuscaComponent
+   
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatSliderModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule,
+    MatInputModule
     
     
   ],
