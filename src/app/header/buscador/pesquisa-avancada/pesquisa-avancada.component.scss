@@ -1,3 +1,9 @@
+*{
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+
 .row-nowrap {
 	flex-flow: row nowrap;
 }
@@ -51,12 +57,14 @@
     align-self: center ;
     width: 95%;
     border-radius: 15px;
+    
 
   }
   input {
     background: #002708;
     border: none; 
     border-radius: 10px;
+    height: 30px;
     
     
   }
@@ -74,7 +82,7 @@
     }
     .botaoEnviar{
         background: #002708;
-        height: 35px;
+        height: 30px;
         width: 100px;
         position: relative; 
         border: none; 
@@ -91,6 +99,7 @@
         border: 1px solid #e1e31d; 
         box-shadow:none;
     }
+
 .item2 {
 	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
 	flex: 1;
@@ -111,23 +120,17 @@
     left: 10px;
 }
 
-.item3 {
-	
-     //flex: 1; qnd quebra volta 
-    // grid-area: 1 / col4-start / last-line / 6;
-     min-width: 300px;
-     max-width: auto;
+.item3 {	
+    min-width: 300px;
+    max-width: auto;
     margin: 5px;
-    // width: 500px;
-    background: tomato;
 	text-align: start;
     font-size: 1.5em; 
 }
 
-
-
 .custom-control-label{
-    
+    // line-height:21px;
+    height: 30px;
     font-size: 16px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
@@ -135,8 +138,31 @@
 
 .custom-control{
     background: #002708;
-    line-height:31px;
     border-radius: 10px;
+    height: 30px;
+}
+
+input + label{
+    top:3px;
+    left: 5px;
+    height: 30px;
+}
+
+input:checked + .custom-control-label::after{
+    background: yellow;
+    color: yellowgreen;
+    border: none; 
+    box-shadow: none;
+   
+}
+
+.cursos-ativos{
+    font-size: 16px;
+    align-items: flex-start;
+    color: white;
+    position: relative;
+    left: 10px;
+    top: -5px;
 }
 
 .item4 {
@@ -144,19 +170,16 @@
     width: 30%;
     // flex: 1;
 	margin: 5px;
-	background: tomato;
-	text-align: center;
+	text-align: start;
     font-size: 1.5em;
     height: 70px;
 }
-
 
 
 .item5 {
 	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
 	flex: 1;
 	margin: 5px;
-	background: tomato;
 	text-align: center;
 	font-size: 1.5em;
 }
