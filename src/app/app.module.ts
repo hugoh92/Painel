@@ -16,6 +16,9 @@ import { PesquisaAvancadaComponent } from './header/buscador/pesquisa-avancada/p
 import { BuscaComponent } from './header/buscador/busca/busca.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 
 
@@ -42,7 +45,9 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatButtonModule,
     MatDatepickerModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
+   
     
     
   ],

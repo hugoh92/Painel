@@ -60,13 +60,11 @@
     
 
   }
-  input {
+ .form-control{
     background: #002708;
     border: none; 
     border-radius: 10px;
     height: 30px;
-    
-    
   }
   
 
@@ -144,18 +142,15 @@
 
 input + label{
     top:3px;
-    left: 5px;
+    left: 6px;
     height: 30px;
 }
 
 input:checked + .custom-control-label::after{
     background: yellow;
-    color: yellowgreen;
     border: none; 
     box-shadow: none;
-   
 }
-
 .cursos-ativos{
     font-size: 16px;
     align-items: flex-start;
@@ -167,29 +162,86 @@ input:checked + .custom-control-label::after{
 
 .item4 {
 	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-    width: 30%;
+    width: 300px;
     // flex: 1;
-	margin: 5px;
+    margin: 5px;
 	text-align: start;
     font-size: 1.5em;
     height: 70px;
+    float: left;
+}
+input:checked + .lbl::after{
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    font-size: 12px;
+    content: "\f00c";
+    color:  #002708;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
 }
 
+.checkbox{
+    align-items: center;
+    justify-content: center;
+    display: flex;  
+    position: relative;
+}
+.geral{
+    background: #002708;
+    border: none; 
+    border-radius: 10px;
+    height: 30px;
+    position: relative;
+}
 
+.form-check{
+    left: 5px;
+    top: -5px;
+    
+}
+
+.check2{
+left: 30px;
+}
+
+.natureza{
+    top:1px;
+    align-items: flex-start;
+    color: white;
+    position: relative;
+   
+}
 .item5 {
 	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-	flex: 1;
-	margin: 5px;
-	text-align: center;
-	font-size: 1.5em;
+    min-width: 640px;
+    max-width: auto;
+    margin: 5px;
+	text-align: start;
+    font-size: 1.5em; 
+    flex: 1;
+    
+    
+    
 }
+.check4{
+     left: 60px;
+
+    }
+
+.check5{
+    left: 120px;
+    
+
+    }   
+
 .item6 {
 	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
     width: 35%;
     flex: 1;
 	margin: 5px;
-	background: tomato;
-	text-align: center;
+	text-align: start;
     font-size: 1.5em;
     
 }
@@ -198,8 +250,7 @@ input:checked + .custom-control-label::after{
     width: 35%;
     // flex: 1;
 	margin: 5px;
-	background: tomato;
-	text-align: center;
+	text-align:start;
 	font-size: 1.5em;
 }
 .item8 {
@@ -208,8 +259,7 @@ input:checked + .custom-control-label::after{
     height: 70px;
     // flex: 1;
 	margin: 5px;
-	background: tomato;
-	text-align: center;
+	text-align: start;
 	font-size: 1.5em;
 }
 
@@ -219,8 +269,7 @@ input:checked + .custom-control-label::after{
     height: 210px;
     flex: 1;
 	margin: 5px;
-	background: tomato;
-	text-align: center;
+	text-align: start;
 	font-size: 1.5em;
 }
 
