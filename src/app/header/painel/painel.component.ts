@@ -12,10 +12,10 @@ export class PainelComponent implements AfterViewInit {
   @ViewChild('options') public sidenavOptions: MatSidenav;
   @ViewChild('icons') public sidenavInfo: MatSidenav;
 
-  constructor(public router:Router, private _sidebarService: SidebarService) { }  //create instance
+  constructor(public router: Router, private _sidebarService: SidebarService) { }  //create instance
 
   ngAfterViewInit(): void {
-  this.setSideNav();
+    this.setSideNav();
   }
   
   setSideNav(){

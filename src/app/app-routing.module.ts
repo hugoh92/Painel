@@ -10,7 +10,7 @@ const routes: Routes = [
     component: PainelComponent,
     children:[
                {
-                 path:':type', //:type is dynamic here
+                 path:':uf', //:uf is dynamic here
                  component: PainelComponent
                }
              ]
