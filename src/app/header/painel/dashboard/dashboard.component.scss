@@ -8,6 +8,9 @@
 // .wrap {
 // 	flex-wrap: wrap;
 // }
+body{
+    overflow-x: hidden;
+}
 .flex {
 	display: flex;
 }
