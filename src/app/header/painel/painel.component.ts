@@ -1,62 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router'; //import router
+import { SidebarService } from 'src/app/services/sidebar.service';
 
 @Component({
   selector: 'app-painel',
   templateUrl: './painel.component.html',
   styleUrls: ['./painel.component.scss']
 })
-export class PainelComponent implements OnInit {
+export class PainelComponent implements AfterViewInit {
+  @ViewChild('options') public sidenavOptions: MatSidenav;
+  @ViewChild('icons') public sidenavInfo: MatSidenav;
 
-  constructor() {
-    
-    
-  }
+  constructor(public router:Router, private _sidebarService: SidebarService) { }  //create instance
 
-  ngOnInit(): void {
-    $('.btn').click(function(){
-      $(this).toggleClass("click");
-      $('.sidebar').toggleClass("show");
-    });
-
-  //   $('oes-btn').on('click', function(){
-  //     if(!$(this).parents().hasClass('show2')){
-  //         $('li').removeClass('show2');    
-  //     }
-  //     $(this).parent().addClass('show2');
-  // });
-
-    $('.oes-btn').click(function(){
-      $('nav ul .oes-show').toggleClass("show2");
-      $('nav ul .coeste').toggleClass("rotate");
-    });
-
-    $('.feat-btn').click(function(){
-      $('nav ul .feat-show').toggleClass("show");
-      $('nav ul .first').toggleClass("rotate");
-    });
-
-    $('.serv-btn').click(function(){
-      $('nav ul .serv-show').toggleClass("show1");
-      $('nav ul .second').toggleClass("rotate");
-    });
-
-    $('.sud-btn').click(function(){
-      $('nav ul .sud-show').toggleClass("show3");
-      $('nav ul .sud').toggleClass("rotate");
-    });
-
-    $('.sul-btn').click(function(){
-      $('nav ul .sul-show').toggleClass("show4");
-      $('nav ul .sul').toggleClass("rotate");
-    });
-
-    $('nav ul li').click(function(){
-        $(this).addClass("active").siblings().removeClass("active");
-      });
+  ngAfterViewInit(): void {
+  this.setSideNav();
   }
   
-  
+  setSideNav(){
+    this._sidebarService.sidenavInfo = this.sidenavInfo;
+    this._sidebarService.sidenavOptions = this.sidenavOptions;
+  }
 
 
 }

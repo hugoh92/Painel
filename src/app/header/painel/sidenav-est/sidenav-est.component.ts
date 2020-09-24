@@ -1,56 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SidebarService } from 'src/app/services/sidebar.service';
+import { DataService } from '../../../services/data.service';
+
 
 @Component({
   selector: 'app-sidenav-est',
   templateUrl: './sidenav-est.component.html',
   styleUrls: ['./sidenav-est.component.scss']
 })
-export class SidenavEstComponent implements OnInit {
+export class SidenavEstComponent implements OnInit, OnDestroy {
+  stateOptions;
+  subscription;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    $('.btn').click(function(){
-      $(this).toggleClass("click");
-      $('.sidebar').toggleClass("show");
-    });
-
-
-  //   $('oes-btn').on('click', function(){
-  //     if(!$(this).parents().hasClass('show2')){
-  //         $('li').removeClass('show2');    
-  //     }
-  //     $(this).parent().addClass('show2');
-  // });
-
-    $('.oes-btn').click(function(){
-      $('nav ul .oes-show').toggleClass("show2");
-      $('nav ul .coeste').toggleClass("rotate");
-    });
-
-    $('.feat-btn').click(function(){
-      $('nav ul .feat-show').toggleClass("show");
-      $('nav ul .first').toggleClass("rotate");
-    });
-
-    $('.serv-btn').click(function(){
-      $('nav ul .serv-show').toggleClass("show1");
-      $('nav ul .second').toggleClass("rotate");
-    });
-
-    $('.sud-btn').click(function(){
-      $('nav ul .sud-show').toggleClass("show3");
-      $('nav ul .sud').toggleClass("rotate");
-    });
-
-    $('.sul-btn').click(function(){
-      $('nav ul .sul-show').toggleClass("show4");
-      $('nav ul .sul').toggleClass("rotate");
-    });
-
-    $('nav ul li').click(function(){
-        $(this).addClass("active").siblings().removeClass("active");
-      });
+  constructor(private _dataService: DataService, public router: Router, public _sidebarService: SidebarService) { 
+    this.subscription = this._dataService.getData("./assets/data/state_list.json").subscribe(json => {
+      this.stateOptions = json;
+    })
   }
 
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
+  }
+
+  ngOnInit(): void {
+
+  }
+  
+
+  /**
+   * Return flag to maintain opened modal of active route
+   * @param {string} regiao a json containaing data from region
+   * @returns returns true if the active route is from the current region
+   * 
+  */
+  openedModal(regiao){
+    // Lista as siglas dos estados da regiao
+    var siglas = regiao.estados.map(d => d.sigla);
+    // Retorna true se a url ativa é um estado da região
+    return siglas.includes(this.router.url.substr(1, 2))
+  }
+
+  /**
+   * Sort Json by Key
+   * @param {string} json a json
+   * @param {string} keyToSort a string with the name of a key to sort
+   * @returns a json sorted
+   * 
+  */
+  sortData(json: any, keyToSort: string){
+    return json.sort((a, b) => {a[keyToSort] - b[keyToSort]});
+ }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { timers } from 'jquery';
+import { SidebarService } from '../../../services/sidebar.service';
 
 @Component({
   selector: 'app-sidenav-icons',
@@ -7,24 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavIconsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _sidebarService: SidebarService) { }
 
   ngOnInit(): void {
-    $('.btn').click(function(){
-      $(this).toggleClass("click");
-      $('.sidebar').toggleClass("show");
-    });
-
-  //   $('oes-btn').on('click', function(){
-  //     if(!$(this).parents().hasClass('show2')){
-  //         $('li').removeClass('show2');    
-  //     }
-  //     $(this).parent().addClass('show2');
-  // });
-   
-    $('nav ul li').click(function(){
-        $(this).addClass("active").siblings().removeClass("active");
-      });
   }
 
 }

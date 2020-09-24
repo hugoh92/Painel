@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en" dir="ltr">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-<body>
-    <!-- <div class="btn">
+<!-- <div class="btn">
         <span class="fas fa-bars"></span>
     </div>
 
@@ -15,20 +6,41 @@
         <div class="text">BRASIL
 
         </div> -->
-     
 
-    <div class="btn">
+
+<!--<div class="btn">
         <div class="wrapper marcador4 align-items-start">
             <span class="fas fa-bars" for="check"></span>
             <div class="text">SELECIONE O ESTADO
             </div>
         </div>
+    </div> -->
+<div class="sidebar p-2">
+    <div class="mb-4">
+        <button mat-button class="btn">
+            <span class="fas fa-bars" (click)="_sidebarService.toggle()"></span>
+           
+        </button>
+        <span class="text-white ml-2">SELECIONE O ESTADO</span>
     </div>
-    <nav class="sidebar">
+
+    <button class="btnFilter panelTitle  px-4" mat-button [routerLink]="'/'" [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="'active'"> Brasil</button>
+    <mat-accordion [multi]="false">
+        <mat-expansion-panel *ngFor="let regiao of stateOptions" [expanded]="openedModal(regiao)">
+            <mat-expansion-panel-header class="headerModal">
+                <mat-panel-title class="panelTitle">
+                    {{regiao.nome}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="" *ngIf="regiao.estados">
+                <button class="btnFilter btn mb-1" mat-button [routerLink]="['/', estado.sigla]" [routerLinkActive]="'active'" *ngFor="let estado of sortData(regiao.estados, 'nome')">{{estado.nome}}</button>
+            </div>
+
+        </mat-expansion-panel>
+    </mat-accordion>
 
 
-
-        <ul>
+    <!--<ul>
             <li class="active">
                 <a href="#" class="bra-btn">BRASIL
                     <i class="fas fa-caret-down cbrasil"></i>
@@ -106,10 +118,5 @@
             </li>
 
 
-        </ul>
-    </nav>
-
-
-</body>
-
-</html>
+        </ul>-->
+</div>

@@ -1,228 +1,26 @@
-<!DOCTYPE html>
-<!-- Created By CodingNepal -->
-<html lang="en" dir="ltr">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-  integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!--<app-sidenav-icons></app-sidenav-icons>
+<app-sidenav-est class="h-100"></app-sidenav-est>
+<app-dashboard></app-dashboard>-->
 
-<body>
-  <div class="btn">
-    <span class="fas fa-bars"></span>
-  </div>
-  
-  <nav class="sidebar">
-    <div class="text">BRASIL
-      <!-- <div class="btn">
-          <span class="fas fa-bars"></span>
-        </div> -->
+<mat-sidenav-container class="row-fill" [hasBackdrop]="false">
+    <mat-sidenav #icons opened class="col-3 p-0 h-100">
+        <app-sidenav-icons></app-sidenav-icons>
+    </mat-sidenav>
 
-    </div>
-    <!-- <ul>
-      <li class="active">
-        <a href="#" class="oes-btn">Região Centro-Oeste
-          <i class="fas fa-caret-down coeste"></i>
-        </a>
-        <ul class="oes-show">
-          <li><a href="#">Distrito Federal</a></li>
-          <li><a href="#">Goiás</a></li>
-          <li><a href="#">Mato Grosso</a></li>
-          <li><a href="#">Mato Grosso do Sul</a></li>
-          <li><a href="#">Paraíba</a></li>
-          <li><a href="#">Pernambuco</a></li>
-          <li><a href="#">Píaui</a></li>
-          <li><a href="#">Rio Grande do Norte</a></li>
-          <li><a href="#">Sergipe</a></li>
-        </ul>
-      </li>
-      
-      <li>
-        <a href="#" class="feat-btn">Região Nordeste
-          <i class="fas fa-caret-down first"></i>
-        </a>
-        <ul class="feat-show">
-          <li><a href="#">Alagoas</a></li>
-          <li><a href="#">Bahia</a></li>
-          <li><a href="#">Ceará</a></li>
-          <li><a href="#">Maranhão</a></li>
-          <li><a href="#">Paraíba</a></li>
-          <li><a href="#">Pernambuco</a></li>
-          <li><a href="#">Píaui</a></li>
-          <li><a href="#">Rio Grande do Norte</a></li>
-          <li><a href="#">Sergipe</a></li>
-        </ul>
-      </li>
-      
-      <li>
-        <a href="#" class="serv-btn">Região Norte
-          <i class="fas fa-caret-down second"></i>
-        </a>
-        <ul class="serv-show">
-          <li><a href="#">Acre</a></li>
-          <li><a href="#">Amapá</a></li>
-          <li><a href="#">Amazonas</a></li>
-          <li><a href="#">Pará</a></li>
-          <li><a href="#">Rondônia</a></li>
-          <li><a href="#">Roraima</a></li>
-          <li><a href="#">Tocantins</a></li>
-        </ul>
-      </li>
+    <mat-sidenav-content>
+        <mat-sidenav-container class="row-fill" [hasBackdrop]="false">
+            <mat-sidenav #options closed class="col-2 p-0 h-100">
+                <app-sidenav-est></app-sidenav-est>
+            </mat-sidenav>
+            <mat-sidenav-content>
+                <app-dashboard></app-dashboard>
+            </mat-sidenav-content>
 
-      <li>
-        <a href="#" class="sud-btn">Região Sudeste
-          <i class="fas fa-caret-down sud"></i>
-        </a>
-        <ul class="sud-show">
-          <li><a href="#">Espírito Santo</a></li>
-          <li><a href="#">Minas Gerais</a></li>
-          <li><a href="#">Rio de Janeiro</a></li>
-          <li><a href="#">São Paulo</a></li>
-        </ul>
-      </li>
-      
-      <li>
-        <a href="#"  class="sul-btn">Região Sul
-          <i class="fas fa-caret-down sul"></i>
-      </a>
-      <ul class="sul-show">
-          <li><a href="#">Paraná</a></li>
-          <li><a href="#">Santa Catarina</a></li>
-          <li><a href="#">Rio grande do Sul</a></li>
-      </ul>
-    </li>
-  
-  
-  </ul> -->
+        </mat-sidenav-container>
 
-    <!-- Side nav dois iconess  -->
-
-    <ul>
-
-      <li class="active1">
-        <span class="ano1">2020</span>
-        <div class="wrapper marcadorl align-items-start">
-          <div class="col">
-            <span class="nome1">População</span>
-            <img src="/assets/icons/populacao.png" class="icone1">
-            <span href="#" class="numero" name="">00000</span>
-          </div>
-
-          <div class="col">
-            <span class="nome1">Cursos</span>
-            <img src="/assets/icons/cursos.png" class="icone2">
-            <span href="#" class="numero" name="">00000</span>
-          </div>
-
-          <div class="col">
-            <span class="nome1">Cursos/Milhão Hab.</span>
-            <img src="/assets/icons/cursosmilhao.png" class="icone3">
-            <span href="#" class="numero" name="">00000</span>
-          </div>
-        </div>
-      </li>
+    </mat-sidenav-content>
 
 
-      <li class="linha2">
-        <span class="ano2">2018</span>
-        <div class="wrapper marcadorl align-items-start">
-          <div class="col">
-            <span class="nome1">Vagas</span>
-            <img src="/assets/icons/vagas.png" class="icone4">
-            <span href="#" class="numero2" name="">00000</span>
-          </div>
-
-          <div class="col">
-            <span class="nome1">Cursos</span>
-            <img src="/assets/icons/inscritos.png" class="icone5">
-            <span href="#" class="numero2" name="">00000</span>
-          </div>
-
-          <div class="col">
-            <span class="nome1">Cursos/Milhão Hab.</span>
-            <img src="/assets/icons/ingressos.png" class="icone6">
-            <span href="#" class="numero2" name="">00000</span>
-          </div>
-        </div>
-      </li>
-
-      <li class="linha3">
-        <span class="ano3">Indicadores</span>
-        <i class="fas fa-info-circle"></i>
-        <div class="wrapper marcador2 align-items-start">
-          <div class="col">
-            <span class="nome3">Matriculados</span>
-            <img src="/assets/icons/matriculados.png" class="icone7">
-            <span href="#" class="numero3" name="">00000</span>
-          </div>
-
-          <div class="col">
-            <span class="nome3">Cursos</span>
-            <img src="/assets/icons/concluintes.png" class="icone8">
-            <span href="#" class="numero3" name="">00000</span>
-          </div>
-
-          <div class="col">
-            <span class="nome3">Cursos/Milhão Hab.</span>
-            <img src="/assets/icons/docentes.png" class="icone9">
-            <span href="#" class="numero3" name="">00000</span>
-          </div>
-        </div>
-      </li>
-
-      <li class="linha4">
-        <div class="wrapper marcador4 align-items-start">
-          <div class="col">
-            <span class="nome4">Taxa de concorrência Candidato/Vaga</span>
-            <span href="#" class="numero4" name="">00000</span>
-
-            <div class="row">
-              <span class="nome4">Matriculados</span>
-              <span href="#" class="numero4" name="">00000</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <span class="nome4">Matriculados</span>
-            <span href="#" class="numero4" name="">00000</span>
-
-            <div class="row">
-              <span class="nome4">Matriculados</span>
-              <span href="#" class="numero4" name="">00000</span>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- tes-->
-      <!-- <li>
-      <a href="#" class="feat-btn">Região Nordeste
-        <i class="fas fa-caret-down first"></i>
-      </a>
-    </li>
-    
-    <li>
-      <a href="#" class="serv-btn">Região Norte
-        <i class="fas fa-caret-down second"></i>
-      </a>
-    </li>
-
-    <li>
-      <a href="#" class="sud-btn">Região Sudeste
-        <i class="fas fa-caret-down sud"></i>
-      </a>
-    </li>
-    
-    <li>
-      <a href="#"  class="sul-btn">Região Sul
-        <i class="fas fa-caret-down sul"></i>
-    </a>
-  </li> -->
 
 
-    </ul>
-  </nav>
-
-
-</body>
-
-</html>
+</mat-sidenav-container>

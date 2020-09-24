@@ -1,9 +1,8 @@
-
 <body>
     <!-- header menu -->
     <div class="">
         <header class="header">
-            
+
 
             <!-- header moblie visivel apenas para telas < 900-->
             <!-- <div class="container-fluid header-mobile" style="background-color: #0d542a;"> -->
@@ -14,7 +13,7 @@
                     <img src="/assets/logos/direm.png" href="#" class="align-self-center">
                 </div>
                 <section class="flex">
-                    
+
                     <div class="col inteqs-mobile">
                         <img src="/assets/logos/inteqs.png" href="#" class="align-self-center">
                     </div>
@@ -31,16 +30,14 @@
                 <!-- </div> -->
                 <!-- </header> -->
             </div>
-            
+
             <!-- <div class="container-fluid">    -->
             <!-- Tabs e icones -->
-            <ul class="nav nav-tabs justify-content-center pt-3 " id="myTab" role="tablist"
-                style="background-color: #0d542a;">
+            <ul class="nav nav-tabs justify-content-center pt-3 " id="myTab" role="tablist" style="background-color: #0d542a;">
 
                 <div class="row marcador align-content-center">
                     <div class="col direm">
-                        <img src="/assets/logos/direm.png" href="#"
-                            class="align-self-center flex-wrap p-2 d-block img-fluid">
+                        <img src="/assets/logos/direm.png" href="#" class="align-self-center flex-wrap p-2 d-block img-fluid">
                     </div>
                 </div>
                 <!-- <li class="nav-item" role="presentation">
@@ -50,28 +47,25 @@
                     </a>
                 </li> -->
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="profile-tab" data-toggle="tab" data-activates="menu-mobile"
-                        href="#profile" role="tab" aria-controls="profile" aria-selected="true">
+                    <a class="nav-link active" id="profile-tab" data-toggle="tab" data-activates="menu-mobile" href="#profile" role="tab" aria-controls="profile" aria-selected="true">
                         <svg class="icon icon-painel"></svg>
                         <span class="nomepi">PAINEL DE INDICADORES</span>
                     </a>
 
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="profile-tab2" data-toggle="tab" data-activates="menu-mobile" href="#profile2"
-                        role="tab" aria-controls="profile2" aria-selected="false">
+                    <a class="nav-link" id="profile-tab2" data-toggle="tab" data-activates="menu-mobile" href="#profile2" role="tab" aria-controls="profile2" aria-selected="false">
                         <svg class="icon icon-med-numeros"></svg>
                         <span>PESQUISA E ESTATÍSTICAS</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" data-activates="menu-mobile" href="#contact"
-                        role="tab" aria-controls="contact" aria-selected="false">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" data-activates="menu-mobile" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
                         <svg class="icon icon-buscador"></svg>
                         <span>BUSCADOR DE CURSOS</span>
                     </a>
                 </li>
-               
+
                 <div class="wrapper marcadorl align-items-start">
                     <div class="col inteqs">
                         <img src="/assets/logos/inteqs.png" href="#" class="  p-3 ">
@@ -86,35 +80,35 @@
 
 
                 <div class="linha-vertical">
-                  
+
                     <div class="col email">
                         <svg class="bi bi-envelope-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
                         </svg>
                     </div>
-                    
+
                 </div>
 
 
             </ul>
             <!-- Conteudo das tabs    -->
             <div class="tab-content" id="myTabContent">
+
+
                 <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <!-- <app-sidenav-icons></app-sidenav-icons> -->
-                    <app-sidenav-est class="h-100"></app-sidenav-est>
-                    <app-dashboard></app-dashboard>
+                    <router-outlet></router-outlet>
                 </div>
                 <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab2">
                     <!-- <span>Tab2</span> -->
                     .
                 </div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                   <app-pesquisa-avancada></app-pesquisa-avancada>
-                    
+                    <app-pesquisa-avancada></app-pesquisa-avancada>
+
                 </div>
             </div>
-            
+
         </header>
     </div>
 
