@@ -41,10 +41,7 @@ import {MatTableDataSource} from '@angular/material/table';
     AppRoutingModule,
     DemoMaterialModule,
     BrowserAnimationsModule,
-    HttpClientModule
-    MatSliderModule,
-    MatIconModule,
-    MatButtonModule,
+    HttpClientModule,
     MatDatepickerModule,
     MatInputModule,
     MatTableModule
