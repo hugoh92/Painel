@@ -16,6 +16,11 @@ import { DashboardComponent } from './header/painel/dashboard/dashboard.componen
 import { PesquisaAvancadaComponent } from './header/buscador/pesquisa-avancada/pesquisa-avancada.component';
 import { BuscaComponent } from './header/buscador/busca/busca.component';
 import { SidebarService } from './services/sidebar.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 
 @NgModule({
@@ -37,6 +42,15 @@ import { SidebarService } from './services/sidebar.service';
     DemoMaterialModule,
     BrowserAnimationsModule,
     HttpClientModule
+    MatSliderModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatTableModule
+   
+    
+    
   ],
   providers: [SidebarService],
   bootstrap: [AppComponent]
