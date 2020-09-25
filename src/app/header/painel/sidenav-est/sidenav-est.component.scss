@@ -27,12 +27,12 @@
 .material-icons {
     display: inline-flex;
     vertical-align: top;
+    background: #e1e31d;
 }
 
 .headerModal,
 .panelTitle {
-    min-height: 35px;
-
+     min-height: 35px;
      // align-self: center;
     // align-content: center;
     // align-items: center;
@@ -55,34 +55,45 @@
     border-radius: 50px 50px 50px 50px;
     border: none;
     border-radius: 25px !important;
+    
 }
 
 .panelTitle {
     color: white;
     font-size: 20px;
+    
 }
 
 ::ng-deep .mat-expansion-indicator:after {
     color: white !important;
+    
 }
 
 // .btn.click span:before{
 //   content: '\f00d';
 // }
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 .sidebar {
     position: fixed;
-    //position: absolute;
-    width: 300px !important;
+  
+    width: 250px;
     height: 100%;
     //left: -250px; desktop bar ativo
     background: #023a1d;
     transition: left 0.4s ease;
+    overflow-x: hidden;
+    overflow-y: hidden;
     
 }
 
 .sidebar.show {
     left: 0px;
     position: absolute; //rolagem
+    width: 250px;
+    height: 100%;
 }
 
 .text{
@@ -118,11 +129,9 @@
 
 }
 
-span .mat-button-wrapper{
-    background: hotpink;
-}
-
 .mb-4{
 width: 300px;
-
 }
+
+// Breakpoints--------------------------------------
+

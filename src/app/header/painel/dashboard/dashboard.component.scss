@@ -8,8 +8,9 @@
 // .wrap {
 // 	flex-wrap: wrap;
 // }
-body{
+.dash{
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .flex {
 	display: flex;
@@ -310,14 +311,89 @@ body{
     // background: blueviolet;
     text-align: start;  
 }
-// .down2{
-//     right: -240px;
-//     position: relative;
-//     font-size: 20px;
-//     color: #d71a20;
-//     align-items: center;
- 
-// }
+
+// Responsividade ----------------------------------------------------
+@media screen and (max-width:995px){
+    
+
+    .item1{
+        /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+        height: 700px;
+        width: 400px;
+        display: grid;
+        overflow-x: hidden;
+        overflow-y: hidden;
+       
+    }
+    .item2{
+        min-width: 400px;
+    }
+    
+    .item3{
+        min-width: 400px;  
+    }
+    
+    .grid-box1{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        display: grid;
+       
+    }
+    .mapa{
+        top: 30px;
+        background: greenyellow;  
+     }
+     //area geral
+     .area{
+         max-width: 450px;
+         width: 320px;
+        
+     }
+
+     .wrapper{ //grid dos icones
+        width: 350px;
+        height: auto;
+        display: flex;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(1,1fr);
+        grid-row-gap:3px; 
+        top: 50px;
+        position: relative;
+        }
+
+    .filtro{
+       display: none;
+        }
+        
+    .icones{
+        
+        position: relative;
+        height: 23px;
+        color: white;
+       
+        filter: opacity(0.3);
+    }
+          //primeiro icone é maior estilizaçao individual
+          .iconesc{
+            position: relative;
+            height: 15px;
+            color: white;
+            left: -3px;
+            top: -15px;
+            
+            filter: opacity(0.3);
+          }
+        //segundo icone é maior estilizaçao individual
+          .iconescm{
+            position: relative;
+            height: 20px;
+            color: white;
+            left: -4px;
+            top: -15px;
+            filter: opacity(0.3);
+          }
+    
+}
 
 
 
