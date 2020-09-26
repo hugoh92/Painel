@@ -1,5 +1,6 @@
-<body> 
-<div class=" ">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="dash ">
     <br>
     <section class="container  wrap">
         <div class="item1">
@@ -54,6 +55,57 @@
                     MAPA
                 </div>
                 <div class="col-2 area">
+                    <div class="menu-filter">
+                        <!-- <div class="btn-icons"> -->
+                       <button add_circle [matMenuTriggerFor]="afterMenu" class="  btn btn-icone01" id="bt-grid-filter">
+                      
+                       <!-- <label class="custom-control-label lbl" for="bt-grid-filter"></label>  -->
+                       <span class="material-icons" id="mt-plus">
+                            add_circle
+                            </span>
+                      
+                            <span class="material-icons" id="mt-menos">
+                                accessibility
+                                </span>
+                          
+                    <!-- </div> -->
+                    </button>
+                            <!-- <mat-icon>more_vert</mat-icon> -->
+                        <mat-menu #afterMenu="matMenu" yPosition="below" xPosition="after">
+                            <button class="btn btn-icone0 show active" id="cursos" >
+                                <img src="/assets/icons/cursos.png" class="iconesc">
+                            </button>
+
+                            <button class=" btn btn-icone0" id="cursosmilhao">
+                                <img src="/assets/icons/cursosmilhao.png" class="iconescm">
+                            </button>
+                            <br>
+                            <br>
+
+                            <button class=" btn btn-icone0" id="vagas">
+                                <img src="/assets/icons/vagas.png" class="icones">
+                            </button>
+                            
+                            <button class="btn btn-icone0" id=inscritos>
+                                <img src="/assets/icons/inscritos.png" class="icones">
+                            </button>
+                            <br>
+                            <br>
+                            <button class="btn btn-icone0" id="ingressos">
+                                <img src="/assets/icons/ingressos.png" class="icones">
+                            </button>
+
+                            <button class="btn btn-icone0" id="matriculados">
+                                <img src="/assets/icons/matriculados.png" class="icones">
+                            </button>
+                            <br>
+                            <br>
+                            <button class="btn btn-icone0" id="concluintes">
+                                <img src="/assets/icons/concluintes.png" class="icones">
+                            </button>
+
+                        </mat-menu>
+                    </div>
                     <div class="wrapper icons  pull-right">
                         <div class="bts btn-icone0">
                             <div class=" btn btn-icone0">
@@ -66,25 +118,32 @@
                         <div class="filtro">
                             <span>FILTRO</span>
                         </div>
-                        <button class="btn btn-icone0 show active" id="cursos">
+                        <button class="btn btn-icone0 show active" id="cursos" matTooltip="Cursos" matTooltipClass="example-tooltip-red"
+                        aria-label="Button that displays a tooltip when focused or hovered over"  matTooltipPosition="left">
                             <img src="/assets/icons/cursos.png" class="iconesc">
                         </button>
-                        <div class=" btn btn-icone0">
+                        <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red"
+                        aria-label="Button that displays a tooltip when focused or hovered over"  matTooltipPosition="left">
                             <img src="/assets/icons/cursosmilhao.png" class="iconescm">
                         </div>
-                        <div class=" btn btn-icone0">
+                        <div class=" btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red"
+                        aria-label="Button that displays a tooltip when focused or hovered over"  matTooltipPosition="left">
                             <img src="/assets/icons/vagas.png" class="icones">
                         </div>
-                        <div class="btn btn-icone0">
+                        <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red"
+                        aria-label="Button that displays a tooltip when focused or hovered over"  matTooltipPosition="left">
                             <img src="/assets/icons/inscritos.png" class="icones">
                         </div>
-                        <div class="btn btn-icone0">
+                        <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red"
+                        aria-label="Button that displays a tooltip when focused or hovered over"  matTooltipPosition="left">
                             <img src="/assets/icons/ingressos.png" class="icones">
                         </div>
-                        <div class="btn btn-icone0">
+                        <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red"
+                        aria-label="Button that displays a tooltip when focused or hovered over"  matTooltipPosition="left">
                             <img src="/assets/icons/matriculados.png" class="icones">
                         </div>
-                        <div class="btn btn-icone0">
+                        <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red"
+                        aria-label="Button that displays a tooltip when focused or hovered over"  matTooltipPosition="left">
                             <img src="/assets/icons/concluintes.png" class="icones">
                         </div>
                     </div>
@@ -128,4 +187,3 @@
 
     </section>
 </div>
-</body>

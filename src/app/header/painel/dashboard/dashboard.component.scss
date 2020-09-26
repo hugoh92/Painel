@@ -8,8 +8,9 @@
 // .wrap {
 // 	flex-wrap: wrap;
 // }
-body{
+.dash{
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .flex {
 	display: flex;
@@ -86,7 +87,13 @@ body{
     border-radius: 15px 15px 15px 15px;
     border: 1px solid #003c18;
 }
+.menu-filter{
+    display: none;
+}
 
+mat-menu{
+    display: none;
+}
 //estilizando grid interna da box1 --------------
 .grid-box1{
     grid-template-columns: repeat(3, 1fr);
@@ -263,8 +270,12 @@ body{
     background: red;
 }
 .btn.click > .icones {
-    filter: opacity(1);  
+    filter: opacity(1); 
+    background: red; 
 
+}
+.icones:active{
+    filter: opacity(1); 
 }
 
 //animaçao qnd passar mouse 
@@ -310,14 +321,213 @@ body{
     // background: blueviolet;
     text-align: start;  
 }
-// .down2{
-//     right: -240px;
-//     position: relative;
-//     font-size: 20px;
-//     color: #d71a20;
-//     align-items: center;
- 
-// }
+
+// Responsividade ----------------------------------------------------
+@media screen and (max-width:995px){
+    
+
+    .item1{
+        /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+        height: 650px;
+        width: 400px;
+        display: grid;
+        overflow-x: hidden;
+        overflow-y: hidden;
+       
+    }
+
+           .example-tooltip-red{
+                display: none !important;
+            }
+
+    .matTooltip {
+        display:none;
+    }
+    .example-tooltip-red{
+        display: none;
+    }
+    .item2{
+        min-width: 400px;
+    }
+    
+    .item3{
+        min-width: 400px;  
+    }
+    
+    .grid-box1{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        display: grid;
+       
+    }
+    .mapa{
+        top: 30px;
+        background: greenyellow;  
+     }
+     //area geral
+     .area{
+         max-width: 450px;
+         width: 320px;
+        
+     }
+
+    .wrapper{ //grid dos icones
+        width: 350px;
+        height: auto;
+        display: flex;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(1,1fr);
+        grid-row-gap:0px; 
+        grid-column-gap: 0px ;
+        top: 40px;
+        position: relative;
+        // display: none;
+        right:25px;
+    }
+    .down{
+        display: none;
+    }
+    .plus{
+        display: none;
+    }
+    .filtro{
+       display: none;
+    }
+    
+    .example-tooltip-red {
+        background: pink!important;
+        position: relative;
+        top: 50px;
+    }   
+      
+    .icones{ 
+        position: relative;
+        height: 25px;
+        color: white;
+        filter: opacity(0.5);
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+          //primeiro icone é maior estilizaçao individual
+    .iconesc{
+         position: relative;
+         height: 15px;
+         color: white;
+         left: -3px;
+         top: -15px;
+         font-size: 40px;
+         filter: opacity(0.5);
+    }
+        //segundo icone é maior estilizaçao individual
+    .iconescm{
+         position: relative;
+        height: 20px;
+        color: white;
+        left: -4px;
+        top: -15px;
+        filter: opacity(0.5);
+    }
+          .menu-filter{
+            display: block;
+            top: -270px;
+            right: 170px;
+            position: relative;
+            //esconder rolagem
+            
+        }
+        // mat-menu-content{
+        //     background: yellow !important;
+        //     border: yellow;
+        //     fill: yellow;
+        //     filter: opacity(0.5);
+        // }
+        #mt-menos{
+            display: none;
+        }
+        #mt-plus{
+            // right: 40px;
+            position: relative;
+            top: -15px;
+            color:#d71a20;
+            right: 17px;
+            font-size: 35px;
+        }
+        .btn-icone01{
+            cursor: pointer;
+           background:white;
+           width: 6px;
+           height: 20px;
+           border-radius: 30px;
+        }
+     
+
+
+    //     // input:checked + .lbl::after{
+    //     //     font-family: "Font Awesome 5 free";
+    //     //     font-weight: 900;
+    //     //     font-size: 12px;
+    //     //     content: "\f00c";
+    //     //     color:  #002708;
+    //     //     align-items: center;
+    //     //     justify-content: center;
+    //     //     display: flex;
+    //     //     border-radius: 10px;
+    //     //     background: salmon;
+    //     // }
+   
+    //     .checkbox{
+    //         align-items: center;
+    //         justify-content: center;
+    //         display: flex;  
+    //         position: relative;
+    //     }
+    //     #bt-grid-filter{
+    //         cursor: pointer;
+    //         margin:3px 3px 0 0;  
+    //         // width: 50px;   
+    //         // height: 25px;
+    //         border-radius: 330px 350px 350px 530px;
+    //         display: none;
+    //     }
+    //     .lbl{
+    //         margin:0px 0px 3px 3px;  
+    //         size: 40px;
+    //     }
+    //     input:checked + .lbl::after{
+    //         font-family: "Font Awesome 5 free";
+    
+    //         content: "\f067";
+
+          
+    // font-weight: 900;
+    // font-size: 12px;
+    
+    // color:  #002708;
+    // align-items: center;
+    // justify-content: center;
+    // display: flex;
+
+    //     }
+    //     #bt-grid-filter:checked{
+    //         font-family: "Font Awesome 5 free";
+    
+    // content: "\f067";
+    
+    //     }
+
+}
+
+@media screen and (min-width:995px){
+
+    .menu-filter{
+        display: none;
+    }
+    
+    mat-menu{
+        display: none;
+    }
+
+}
 
 
 

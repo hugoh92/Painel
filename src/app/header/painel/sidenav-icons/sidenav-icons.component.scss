@@ -73,7 +73,7 @@ $fa-font-path: "~font-awesome/fonts";
     background: #023a1d;
     transition: left 0.4s ease;
     left: 0px;
-    position: absolute; //roll dir
+    position:fixed; //roll dir
 }
 
 .text {

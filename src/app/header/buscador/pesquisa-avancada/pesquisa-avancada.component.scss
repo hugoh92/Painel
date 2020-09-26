@@ -92,7 +92,14 @@
         border-radius: 10px;
     }
 
-    .botaoEnviar.click{
+    // .botaoEnviar.click{
+    //     filter: opacity(0.5);
+    //     border: 1px solid #e1e31d; 
+    //     box-shadow:none;
+    //     border: none;
+    // }
+
+    .btnEnviar input[type=submit]:focus:not([readonly]) {
         filter: opacity(0.5);
         border: 1px solid #e1e31d; 
         box-shadow:none;
@@ -179,7 +186,6 @@ input:checked + .lbl::after{
     align-items: center;
     justify-content: center;
     display: flex;
-
 }
 
 .checkbox{

@@ -1,5 +1,10 @@
 import {NgModule} from '@angular/core';
 
+import {
+  MatMenuModule
+} from '@angular/material/menu';
+
+
 
 import {
   MatSidenavModule
@@ -89,7 +94,9 @@ import {
     MatButtonModule,
     MatListModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
+    
   ]
 })
 export class DemoMaterialModule {}
