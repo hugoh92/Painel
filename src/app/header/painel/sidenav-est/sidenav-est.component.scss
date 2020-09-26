@@ -74,11 +74,11 @@
 // }
 body{
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: hidden; 
 }
 .sidebar {
-    position: fixed;
-  
+    //position: sticky;
+    position: absolute;
     width: 250px;
     height: 100%;
     //left: -250px; desktop bar ativo
