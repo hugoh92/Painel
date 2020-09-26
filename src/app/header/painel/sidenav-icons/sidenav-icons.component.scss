@@ -14,7 +14,7 @@ $fa-font-path: "~font-awesome/fonts";
 }
 
 .btn {
-    position: relative;
+    //position: relative;
     top: 15px;
     left: 10px;
     height: 45px;
@@ -36,6 +36,8 @@ $fa-font-path: "~font-awesome/fonts";
     height: 55px;
     //grid-row-gap: 1em;
     transition: left 0.4s ease;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .text {
@@ -46,7 +48,7 @@ $fa-font-path: "~font-awesome/fonts";
 .btn {
     transition: left 0.4s ease;
     position: sticky;
-    background: #023a1d;
+    background: #023a1d; 
     border-radius: 0px;
     left: 0px;
     .text {
@@ -63,6 +65,8 @@ $fa-font-path: "~font-awesome/fonts";
     color: white;
     font-size: 28px;
     line-height: 45px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 // .btn.click span:before{
@@ -73,7 +77,10 @@ $fa-font-path: "~font-awesome/fonts";
     background: #023a1d;
     transition: left 0.4s ease;
     left: 0px;
-    position:fixed; //roll dir
+    //position:fixed; //roll dir
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .text {
@@ -84,6 +91,9 @@ $fa-font-path: "~font-awesome/fonts";
     background: #023a1d;
     letter-spacing: 1px;
     color: #e1e31d;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
 }
 
 nav ul {
