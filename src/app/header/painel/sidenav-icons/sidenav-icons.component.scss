@@ -48,7 +48,7 @@ $fa-font-path: "~font-awesome/fonts";
 .btn {
     transition: left 0.4s ease;
     position: sticky;
-    background: #023a1d; 
+    background: #023a1d;
     border-radius: 0px;
     left: 0px;
     .text {
@@ -73,7 +73,8 @@ $fa-font-path: "~font-awesome/fonts";
 //   content: '\f00d';
 // }
 .sidebar {
-    width: 100%;
+    width: 400px;
+    height: 100%;
     background: #023a1d;
     transition: left 0.4s ease;
     left: 0px;
@@ -93,7 +94,6 @@ $fa-font-path: "~font-awesome/fonts";
     color: #e1e31d;
     overflow-x: hidden;
     overflow-y: hidden;
-
 }
 
 nav ul {

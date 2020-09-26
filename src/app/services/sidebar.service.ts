@@ -18,8 +18,12 @@ export class SidebarService {
     return sidenav.close();
   }
 
-  public toggle(): void {
-    this.sidenavInfo.toggle();
-    this.sidenavOptions.toggle();
+  public toggle(sidenav: string): void {
+    if(window.innerWidth > 768){
+      this.sidenavInfo.toggle();
+      this.sidenavOptions.toggle();
+    } else {
+      this[sidenav].toggle()
+    }
   }
 }
