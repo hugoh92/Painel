@@ -1,6 +1,7 @@
 /*-- estilizando icones --*/
 body{
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .icon {
     width: 4em;
@@ -122,6 +123,9 @@ body{
     .wrapper{
         right: 60px;
     }
+    .nav-link.active .nomepi {    
+        display: none;   
+        }
 }
 //header para a versao menor que 950px
 @media screen and (max-width:950px){
@@ -129,16 +133,19 @@ body{
         display: none;  
     }
     .wrapper{
-        right: -80px;
+        // right: -80px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        // position: relative;
     }
 }
-//header para versão menor que 900px
-@media screen and (max-width:900px){
+//header para versão menor que 920px
+@media screen and (max-width:920px){
     .direm{
-        height: 80px;
-        width: auto; 
-        left:35%;
-        margin-left:-50px;      
+        // height: 80px;
+        // width: auto; 
+        // left:35%;
+        // margin-left:-50px;      
         display: none;      
     }
     .wrapper {

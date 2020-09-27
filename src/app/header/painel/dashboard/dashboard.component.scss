@@ -28,13 +28,13 @@
 
 //estilizando container geral
 .container {
-    // max-width: 1000px;
-    width: 100%;
+    //max-width: 1000px;
+    width: 90%;
     height: 100%;
     position: relative;
 	margin: 0 auto;
     display: flex;
-    left: 130px;
+    left: 200px;
     justify-content: center;
     // border: 1px solid #ccc;
     // padding: 200px;
@@ -322,47 +322,49 @@ mat-menu{
 }
 
 // Responsividade ----------------------------------------------------
-@media screen and (max-width:995px){
+@media screen and (max-width:1066px){
     
 
     .item1{
         /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
         height: 650px;
-        width: 400px;
+        width: 455px;
         display: grid;
         overflow-x: hidden;
         overflow-y: hidden;
        
     }
 
-           .example-tooltip-red{
-                display: none !important;
+    .example-tooltip-red{
+        display: none !important;
             }
 
-    .matTooltip {
-        display:none;
-    }
-    .example-tooltip-red{
-        display: none;
-    }
-    .item2{
-        min-width: 400px;
-    }
+        .matTooltip {
+            display:none;
+        }
+        .example-tooltip-red{
+            display: none;
+         }
+        .item2{
+            // min-width: 455px;
+            width: 455px;
+         }
     
-    .item3{
-        min-width: 400px;  
-    }
+        .item3{
+            // min-width: 455px; 
+            width: 455px; 
+        }
     
-    .grid-box1{
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        display: grid;
+        .grid-box1{
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            display: grid;
        
-    }
-    .mapa{
-        top: 30px;
-        background:  #023a1d;
-     }
+        }
+        .mapa{
+            top: 30px;
+            background:  #023a1d;
+        }
      //area geral
      .area{
          max-width: 450px;
@@ -426,106 +428,58 @@ mat-menu{
         top: -15px;
         filter: opacity(0.5);
     }
-          .menu-filter{
-            display: block;
-            top: -270px;
-            right: 170px;
-            position: relative;
-            //esconder rolagem
-            
-        }
-        // mat-menu-content{
-        //     background: yellow !important;
-        //     border: yellow;
-        //     fill: yellow;
-        //     filter: opacity(0.5);
-        // }
-        #mt-menos{
-            display: none;
-        }
-        #mt-plus{
-            // right: 40px;
-            position: relative;
-            top: -15px;
-            color:#d71a20;
-            right: 17px;
-            font-size: 35px;
-        }
-        .btn-icone01{
-            cursor: pointer;
-           background:white;
-           width: 6px;
-           height: 20px;
-           border-radius: 30px;
-        }
-     
+       
         
 
-    //     // input:checked + .lbl::after{
-    //     //     font-family: "Font Awesome 5 free";
-    //     //     font-weight: 900;
-    //     //     font-size: 12px;
-    //     //     content: "\f00c";
-    //     //     color:  #002708;
-    //     //     align-items: center;
-    //     //     justify-content: center;
-    //     //     display: flex;
-    //     //     border-radius: 10px;
-    //     //     background: salmon;
-    //     // }
-   
-    //     .checkbox{
-    //         align-items: center;
-    //         justify-content: center;
-    //         display: flex;  
-    //         position: relative;
-    //     }
-    //     #bt-grid-filter{
-    //         cursor: pointer;
-    //         margin:3px 3px 0 0;  
-    //         // width: 50px;   
-    //         // height: 25px;
-    //         border-radius: 330px 350px 350px 530px;
-    //         display: none;
-    //     }
-    //     .lbl{
-    //         margin:0px 0px 3px 3px;  
-    //         size: 40px;
-    //     }
-    //     input:checked + .lbl::after{
-    //         font-family: "Font Awesome 5 free";
-    
-    //         content: "\f067";
-
-          
-    // font-weight: 900;
-    // font-size: 12px;
-    
-    // color:  #002708;
-    // align-items: center;
-    // justify-content: center;
-    // display: flex;
-
-    //     }
-    //     #bt-grid-filter:checked{
-    //         font-family: "Font Awesome 5 free";
-    
-    // content: "\f067";
-    
-    //     }
-
+}
+@media screen and (max-width:768px){
+    .container {
+        left: 0px;   
+        top: -20px;
+    }
 }
 
-@media screen and (min-width:995px){
-
-    .menu-filter{
-        display: none;
-    }
-    
-    mat-menu{
-        display: none;
+@media screen and (max-width:460px){
+    .container {
+        left: 0px;   
     }
 
+    .item1{
+        min-width: 300px;
+        width: 300px;
+    }
+    .bl-cima{
+        right:20px;
+    }
+    .bl-meio{
+        right: 20px;
+    }
+    .bl-fim{
+        right: 20px;
+    }
+    .item2{
+        width: 300px;
+        min-width: 300px; 
+    }
+    .item3{
+        width: 300px;
+        min-width: 300px;
+    }
+    .area{
+        max-width: 280px;
+        width: 280px;
+       
+    }
+    .wrapper{ //grid dos icones
+        width: 300px;
+        position:absolute;
+        // display: none;
+        right:35px;
+        
+    }
+    .btn-icone0{
+        width: 38px;
+    }
 }
 
 

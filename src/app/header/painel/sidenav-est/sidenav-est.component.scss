@@ -24,11 +24,11 @@
     }
 }
 
-.material-icons {
-    display: inline-flex;
-    vertical-align: top;
-    background: #e1e31d;
-}
+// .material-icons {
+//     display: inline-flex;
+//     vertical-align: top;
+//     background: #e1e31d;
+// }
 
 .headerModal,
 .panelTitle {
@@ -54,6 +54,12 @@
     border-radius: 50px 50px 50px 50px;
     border: none;
     border-radius: 25px !important;
+}
+mat-icon{
+    background: #023a1d;
+    font-size: 30px;
+    color: white;
+    justify-content: center;
 }
 
 .panelTitle {
