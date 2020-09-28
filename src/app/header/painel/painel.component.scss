@@ -158,7 +158,14 @@
 .btn.click span:before {
     content: '\f00d';
 }
+.grid-button{
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1px;
+    width: 150px;
 
+}
 .sidebar {
     position: fixed;
     width: 400px;

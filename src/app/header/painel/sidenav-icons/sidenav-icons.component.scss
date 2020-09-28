@@ -392,6 +392,26 @@ nav ul li i {
     font-size: 15px;
 }
 
+@media screen and (max-width:460px){
+
+    .sidebar {
+        width: 250px; 
+    }
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+  
+    .linha2{
+        display: none;
+    }
+    .linha3{
+        display: none;
+    }
+    .linha4{
+        display: none;
+    }
+}
 // .wrapper > img {
 //   position: absolute;
 //   top:40px;
