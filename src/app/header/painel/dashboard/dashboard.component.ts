@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-
+import {HighchartsService} from 'src/app/services/highcharts.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _highchartsService: HighchartsService 
+    ) { }
 
   ngOnInit(): void {
-    
+    this._highchartsService.drawStackedPlot("stackedPlot")
     $('.btn').click(function(){
       
     });

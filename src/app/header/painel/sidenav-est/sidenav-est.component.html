@@ -27,7 +27,7 @@
         <span class="text ml-2">SELECIONE O ESTADO</span>
     </div>
 
-    <button class="btnFilter panelTitle  px-4" mat-button [routerLink]="'/'" [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="'active'"> Brasil</button>
+    <button class="btnFilter panelTitle  px-4" mat-button [routerLink]="'/painel'" [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="'active'"> Brasil</button>
 
     <mat-accordion [multi]="false">
         <mat-expansion-panel *ngFor="let regiao of stateOptions" [expanded]="openedModal(regiao)">
@@ -37,7 +37,7 @@
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <div class="" *ngIf="regiao.estados">
-                <button class="btnFilter btn mb-1" mat-button [routerLink]="['/', estado.sigla]" [routerLinkActive]="'active'" *ngFor="let estado of sortData(regiao.estados, 'nome')">{{estado.nome}}</button>
+                <button class="btnFilter btn mb-1" mat-button [routerLink]="['/painel/', estado.sigla]" [routerLinkActive]="'active'" *ngFor="let estado of sortData(regiao.estados, 'nome')">{{estado.nome}}</button>
             </div>
 
         </mat-expansion-panel>

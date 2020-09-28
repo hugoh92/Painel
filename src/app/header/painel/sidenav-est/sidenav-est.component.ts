@@ -38,7 +38,8 @@ export class SidenavEstComponent implements OnInit, OnDestroy {
     // Lista as siglas dos estados da regiao
     var siglas = regiao.estados.map(d => d.sigla);
     // Retorna true se a url ativa é um estado da região
-    return siglas.includes(this.router.url.substr(1, 2))
+
+    return siglas.includes(this.router.url.slice(-2))
   }
 
   /**
