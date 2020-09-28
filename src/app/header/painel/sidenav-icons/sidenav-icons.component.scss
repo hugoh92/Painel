@@ -13,64 +13,70 @@ $fa-font-path: "~font-awesome/fonts";
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.btn {
-    //position: relative;
-    left: 10px;
-    height: 45px;
-    width: 45px;
-    text-align: center;
-    background: #023a1d;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: left 0.4s ease;
-}
-
-.btn .marcador5 {
-    display: grid;
-    position: absolute;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 100px;
-    background: #023a1d;
-    width: 399px;
-    height: 55px;
-    //grid-row-gap: 1em;
-    transition: left 0.4s ease;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-.text {
-    display: none;
-    transition: left 0.4s ease;
-}
-
-.btn {
-    transition: left 0.4s ease;
-    position: sticky;
-    background: #023a1d;
-    border-radius: 0px;
-    left: 0px;
-    .text {
-        display: grid;
-    }
-}
-
-// .btn.click{
-//   //rol no rol
-//   position: absolute;
-//   left: 400px;
+// .btn {
+//     //position: relative;
+//     left: 10px;
+//     height: 45px;
+//     width: 45px;
+//     text-align: center;
+//     background: #023a1d;
+//     border-radius: 3px;
+//     cursor: pointer;
+//     transition: left 0.4s ease;
 // }
-.btn span {
-    color: white;
-    font-size: 28px;
-    line-height: 45px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
+
+// .btn .marcador5 {
+//     display: grid;
+//     position: absolute;
+//     grid-template-columns: repeat(3, 1fr);
+//     grid-column-gap: 100px;
+//     background: #023a1d;
+//     width: 399px;
+//     height: 55px;
+//     //grid-row-gap: 1em;
+//     transition: left 0.4s ease;
+//     overflow-x: hidden;
+//     overflow-y: hidden;
+// }
+
+// .text {
+//     display: none;
+//     transition: left 0.4s ease;
+// }
+
+// .btn {
+//     transition: left 0.4s ease;
+//     position: sticky;
+//     background: #023a1d;
+//     border-radius: 0px;
+//     left: 0px;
+//     .text {
+//         display: grid;
+//     }
+// }
+
+// // .btn.click{
+// //   //rol no rol
+// //   position: absolute;
+// //   left: 400px;
+// // }
+// .btn span {
+//     color: white;
+//     font-size: 28px;
+//     line-height: 45px;
+//     overflow-x: hidden;
+//     overflow-y: hidden;
+// }
 
 // .btn.click span:before{
 //   content: '\f00d';
 // }
+
+mat-icon{
+    background: #023a1d;
+    color: white;
+    font-size: 30px;  
+}
 .sidebar {
     width: 400px;
     height: 100%;
