@@ -21,4 +21,11 @@ body {
     top: 5px;
     left: 4px;
     width: 80px;
+    border-bottom-color:none;
+    border: none;
+}
+
+.bt-mobile:active{
+    opacity: (0.5);
+    border: blue;
 }

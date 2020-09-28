@@ -4,7 +4,9 @@ import {
   MatMenuModule
 } from '@angular/material/menu';
 
-
+import {
+  MatButtonToggleModule
+} from '@angular/material/button-toggle';
 
 import {
   MatSidenavModule
@@ -95,7 +97,8 @@ import {
     MatListModule,
     MatIconModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatButtonToggleModule
     
   ]
 })

@@ -71,7 +71,9 @@ $fa-font-path: "~font-awesome/fonts";
 // .btn.click span:before{
 //   content: '\f00d';
 // }
-
+.btn-group{
+    display: none;
+}
 mat-icon{
     background: #023a1d;
     color: white;
@@ -368,19 +370,19 @@ nav ul li .nome3 {
 
 nav ul li .ano2 {
     position: absolute;
-    top: 85px;
+    top: 130px;
     text-align: center;
     font-size: 15px;
     font-weight: bold;
-    left: 50px;
+    left: 55px;
 }
 
 nav ul li .ano3 {
     position: absolute;
-    top: 325px;
+    top: 372px;
     text-align: center;
     font-size: 13px;
-    left: 50px;
+    left: 55px;
     font-weight: bold;
 }
 
@@ -410,6 +412,45 @@ nav ul li i {
     }
     .linha4{
         display: none;
+    }
+    .btn-group{
+        display: block;
+        position: fixed;
+        top: 95%;
+        width: 250px;
+        left: 1.2px;
+    }
+    .btn-secondary{
+        width: 83px;
+        height: 35px;
+        color: white;
+        background-color: #023a1d;
+        border: 1px solid rgb(223, 228, 33);
+        opacity: 0.5;
+        font-size: 13px;
+    }
+    
+    .btn-secondary:hover{
+        opacity: 1;
+        border: 2px solid rgb(223, 228, 33);
+    }
+    .active{
+        opacity: 1;
+        background-color: yellow;
+        border: none;
+    }
+ 
+    button.btn.btn-secondary.click{
+        opacity: 1;
+        background-color: yellow;
+        border: none;
+    }
+
+    button.btn.btn-secondary.target{
+        opacity: 1;
+        background-color: yellow;
+        border: none;
+    
     }
 }
 // .wrapper > img {
