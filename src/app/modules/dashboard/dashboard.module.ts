@@ -7,13 +7,15 @@ import { SidenavIconsComponent } from 'src/app/header/painel/sidenav-icons/siden
 import { SidenavEstComponent } from 'src/app/header/painel/sidenav-est/sidenav-est.component';
 import { DashboardComponent } from 'src/app/header/painel/dashboard/dashboard.component';
 import { DemoMaterialModule } from 'src/app/material-module';
+import { SidebarService } from 'src/app//services/sidebar.service';
+
 
 @NgModule({
   declarations: [
     PainelComponent,
     DashboardComponent,
     SidenavIconsComponent,
-    SidenavEstComponent
+    SidenavEstComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { DemoMaterialModule } from 'src/app/material-module';
     DashboardComponent,
     SidenavIconsComponent,
     SidenavEstComponent
-  ]
+  ],
+  providers: [SidebarService]
 })
 export class DashboardModule { }

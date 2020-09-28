@@ -1,13 +1,47 @@
-<!--<app-sidenav-icons></app-sidenav-icons>
-<app-sidenav-est class="h-100"></app-sidenav-est>
-<app-dashboard></app-dashboard>-->
+<div class="row-fill">
+    <mat-sidenav-container class="row-fill" [hasBackdrop]="false">
+        <mat-sidenav #icons opened class="sidebarClass p-0 h-100" [mode]="typeMode">
+            <app-sidenav-icons></app-sidenav-icons>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <mat-sidenav-container class="row-fill" [hasBackdrop]="false" (window:resize)="onResize($event)">
+                <mat-sidenav #options closed class="sidebarClass p-0 h-100" [mode]="typeMode">
+                    <app-sidenav-est></app-sidenav-est>
+                </mat-sidenav>
+                <mat-sidenav-content>
+                    <mat-sidenav-content class="mx-0">
+                        <div class="row-fill w-100 h-100">
+                            <div class="container-fluid  h-100">
+                                <button mat-button class="d-block d-md-none" (click)="_sidebarService.toggle('sidenavInfo')">
+                                    <mat-icon>menu</mat-icon>
+                                      
+                                   </button>
+                                <button mat-button class="d-block d-md-none" (click)="_sidebarService.toggle('sidenavOptions')">
+                                       <mat-icon>search</mat-icon>
+                                         
+                                      </button>
+                                <app-dashboard></app-dashboard>
+                            </div>
+                        </div>
+                    </mat-sidenav-content>
 
-<mat-sidenav-container class="row-fill" [hasBackdrop]="false">
+                </mat-sidenav-content>
+
+            </mat-sidenav-container>
+        </mat-sidenav-content>
+
+
+
+
+    </mat-sidenav-container>
+</div>
+<!--<mat-sidenav-container class="row-fill" [hasBackdrop]="false">
     <mat-sidenav #icons opened class="sidebarClass p-0 h-100">
         <app-sidenav-icons></app-sidenav-icons>
     </mat-sidenav>
 
     <mat-sidenav-content>
+        
         <mat-sidenav-container class="row-fill" [hasBackdrop]="false" (window:resize)="onResize($event)">
             <mat-sidenav #options closed class="sidebarClass p-0 h-100">
                 <app-sidenav-est></app-sidenav-est>
@@ -21,10 +55,10 @@
                     <mat-icon>search</mat-icon>
                       
                    </button>
-                <!--<app-dashboard></app-dashboard>-->
+                <app-dashboard></app-dashboard>
             </mat-sidenav-content>
 
         </mat-sidenav-container>
 
     </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container>-->

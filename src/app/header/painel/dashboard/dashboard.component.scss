@@ -1,29 +1,40 @@
-
-*{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.cardPlot {
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 15px 15px 15px 15px;
+    border: 1px solid #003c18;
+}
+
 // .nowrap{
 // 	flex-wrap: nowrap;
 // }
 // .wrap {
 // 	flex-wrap: wrap;
 // }
-.dash{
+.dash {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
 .flex {
-	display: flex;
+    display: flex;
 }
+
 .nowrap {
-	flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
+
 .wrap {
     flex-wrap: wrap;
     flex-flow: row wrap;
 }
+
 .wrap-reverse {
-	flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
 }
 
 //estilizando container geral
@@ -32,89 +43,93 @@
     width: 90%;
     height: 100%;
     position: relative;
-	margin: 0 auto;
+    margin: 0 auto;
     display: flex;
     left: 200px;
     justify-content: center;
     // border: 1px solid #ccc;
     // padding: 200px;
 }
+
 //estilizando container geral primeiro box cima----------
-.item1{
-	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+.item1 {
+    /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
     height: 280px;
-    width:80%;
+    width: 80%;
     //  flex: 1;
-	margin: 5px;
-	// background: tomato;
-	text-align: center;
+    margin: 5px;
+    // background: tomato;
+    text-align: center;
     font-size: 1.5em;
     border-radius: 15px 15px 15px 15px;
     border: 1px solid #003c18;
-   
-  
 }
+
 //estilizando container geral item 2 embaixo
-.item2{
-	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-    width:39.5%;
+.item2 {
+    /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+    width: 39.5%;
     height: 220px;
     min-width: 300px;
     max-width: auto;
-   // min-width: 300px;
+    // min-width: 300px;
     // flex: 1;
-	margin: 5px;
-	// background: lightblue;
-	text-align: center;
+    margin: 5px;
+    // background: lightblue;
+    text-align: center;
     font-size: 1.5em;
     border-radius: 15px 15px 15px 15px;
     border: 1px solid #003c18;
 }
+
 //estilizando container geral item 3 embaixo
-.item3{
-	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+.item3 {
+    /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
     width: 39.5%;
     height: 220px;
     min-width: 300px;
     max-width: auto;
     //min-width: 300px;
     //flex: 1;
-	margin: 5px;
-	// background: tomato;
-	text-align: center;
+    margin: 5px;
+    // background: tomato;
+    text-align: center;
     font-size: 1.5em;
     border-radius: 15px 15px 15px 15px;
     border: 1px solid #003c18;
 }
-.menu-filter{
+
+.menu-filter {
     display: none;
 }
 
-mat-menu{
+mat-menu {
     display: none;
 }
+
 //estilizando grid interna da box1 --------------
-.grid-box1{
+.grid-box1 {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 3px;
     display: flex;
     padding: 10px;
     margin: 0 auto;
-  
 }
+
 //grid dos cursos pro regiao e localizaçao grid inicial
-.dados-curso{
+.dados-curso {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 3px;
-    grid-row-gap:3px; 
+    grid-row-gap: 3px;
     display: grid;
     padding: 10px;
     margin: 0 auto;
     //background: blue;
 }
+
 //div das regioes
-.regiao{
+.regiao {
     font-size: 13px;
     font-style: italic;
     align-items: flex-end;
@@ -123,123 +138,136 @@ mat-menu{
     position: relative;
     //background: blue;
 }
-.numero{   
-    color:#e1e31d ;
+
+.numero {
+    color: #e1e31d;
     font-size: 14px;
     font-weight: 50;
     font-weight: bold;
 }
+
 //area dos cursos
-.area-curso{
+.area-curso {
     // background: hotpink;
     height: 60px;
     top: -10px;
     position: relative;
 }
+
 //parete de cima box-layot
-.bl-cima{
-    top:-20px;
+.bl-cima {
+    top: -20px;
     border-bottom: 2px solid white;
-    text-align: start;  
-}
-.bl-meio{
     text-align: start;
 }
-.bl-fim{
+
+.bl-meio {
+    text-align: start;
+}
+
+.bl-fim {
     border-top: 2px solid white;
     text-align: start;
-    }
+}
+
 //nomes e titulos
-.titulos{  
+.titulos {
     font-size: 18px;
     font-style: italic;
     font-weight: bold;
     align-items: flex-end;
     color: white;
-    
     position: relative;
 }
-#cregiao{
-    top:20px;
+
+#cregiao {
+    top: 20px;
 }
 
-#lcursos{
-    top:-10px;
+#lcursos {
+    top: -10px;
 }
-.cap-interior{
+
+.cap-interior {
     font-size: 13px;
     font-style: italic;
     align-items: flex-end;
     color: white;
     position: relative;
+}
 
-}
 //div para o mapa
-.mapa{
-   background: greenyellow;
-   
+.mapa {
+    background: greenyellow;
 }
+
 //area geral
-.area{
+.area {
     max-height: 260px;
 }
 
 // estilizando icones do filtro, grid dos icones a direita lado 3
-.wrapper{ //grid dos icones
+.wrapper {
+    //grid dos icones
     width: 50px;
     height: auto;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(9,1fr);
+    grid-template-rows: repeat(9, 1fr);
     grid-column-gap: 3px;
-    grid-row-gap:3px; 
+    grid-row-gap: 3px;
 }
+
 //nome filtro
-.filtro{
+.filtro {
     font-size: 12px;
     color: white;
     top: 0px;
     position: relative;
 }
+
 //icones geral
-.icones{
+.icones {
     position: relative;
     height: 23px;
     color: white;
     top: -15px;
     filter: opacity(0.3);
+}
 
-  }
-  //primeiro icone é maior estilizaçao individual
-  .iconesc{
+//primeiro icone é maior estilizaçao individual
+.iconesc {
     position: relative;
     height: 15px;
     color: white;
     left: -3px;
     top: -15px;
-    
     filter: opacity(0.3);
-  }
+}
+
 //segundo icone é maior estilizaçao individual
-  .iconescm{
+.iconescm {
     position: relative;
     height: 20px;
     color: white;
     left: -4px;
     top: -15px;
     filter: opacity(0.3);
-  }
-  //estilizando botao plus e download
-.bts{
+}
+
+//estilizando botao plus e download
+.bts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: initial;
     left: -10px;
     position: relative;
-    top:-10px;
+    top: -10px;
 }
- //estilizando botao plus e download
-.down{ //botão
+
+//estilizando botao plus e download
+.down {
+    //botão
     width: 14px;
     height: 14px;
     font-size: 20px;
@@ -249,32 +277,34 @@ mat-menu{
     color: #d71a20;
     border-radius: 20px 20px 20px 20px;
     align-items: center;
-   
 }
-.plus{ //botão
+
+.plus {
+    //botão
     font-size: 20px;
     color: #d71a20;
-   
 }
 
 //estilizando botoes geral
-.btn-icone0{
+.btn-icone0 {
     cursor: pointer;
-    margin:3px 3px 0 0;  
-    width: 50px;   
+    margin: 3px 3px 0 0;
+    width: 50px;
     height: 25px;
 }
-.btn:click{
-    filter: opacity(1);  
+
+.btn:click {
+    filter: opacity(1);
     background: red;
 }
-.btn.click > .icones {
-    filter: opacity(1); 
-    background: red; 
 
+.btn.click>.icones {
+    filter: opacity(1);
+    background: red;
 }
-.icones:active{
-    filter: opacity(1); 
+
+.icones:active {
+    filter: opacity(1);
 }
 
 //animaçao qnd passar mouse 
@@ -301,107 +331,94 @@ mat-menu{
     }
 }
 
-
-
 //-----------------------------------------------
 //estilizando box2
-
-.grid-bl2{
+.grid-bl2 {
     // background: blue;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 3px;
-    grid-row-gap:3px; 
+    grid-row-gap: 3px;
     display: grid;
     padding: 10px;
     margin: 0 auto;
 }
-.grafico1{
+
+.grafico1 {
     // background: blueviolet;
-    text-align: start;  
+    text-align: start;
 }
 
 // Responsividade ----------------------------------------------------
-@media screen and (max-width:1066px){
-    
-
-    .item1{
+@media screen and (max-width:1066px) {
+    .item1 {
         /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
         height: 650px;
         width: 455px;
         display: grid;
         overflow-x: hidden;
         overflow-y: hidden;
-       
     }
-
-    .example-tooltip-red{
+    .example-tooltip-red {
         display: none !important;
-            }
-
-        .matTooltip {
-            display:none;
-        }
-        .example-tooltip-red{
-            display: none;
-         }
-        .item2{
-            // min-width: 455px;
-            width: 455px;
-         }
-    
-        .item3{
-            // min-width: 455px; 
-            width: 455px; 
-        }
-    
-        .grid-box1{
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            display: grid;
-       
-        }
-        .mapa{
-            top: 30px;
-            background:  #023a1d;
-        }
-     //area geral
-     .area{
-         max-width: 450px;
-         width: 320px;
-        
-     }
-
-    .wrapper{ //grid dos icones
+    }
+    .matTooltip {
+        display: none;
+    }
+    .example-tooltip-red {
+        display: none;
+    }
+    .item2 {
+        // min-width: 455px;
+        width: 455px;
+    }
+    .item3 {
+        // min-width: 455px; 
+        width: 455px;
+    }
+    .grid-box1 {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        display: grid;
+    }
+    .mapa {
+        top: 30px;
+        background: #023a1d;
+    }
+    //area geral
+    .area {
+        max-width: 450px;
+        width: 320px;
+    }
+    .wrapper {
+        //grid dos icones
         width: 350px;
         height: auto;
         display: flex;
         grid-template-columns: repeat(9, 1fr);
-        grid-template-rows: repeat(1,1fr);
-        grid-row-gap:0px; 
-        grid-column-gap: 0px ;
+        grid-template-rows: repeat(1, 1fr);
+        grid-row-gap: 0px;
+        grid-column-gap: 0px;
         top: 40px;
         position: relative;
         // display: none;
-        right:25px;
+        right: 25px;
     }
-    .down{
+    .down {
         display: none;
     }
-    .plus{
+    .plus {
         display: none;
     }
-    .filtro{
-       display: none;
+    .filtro {
+        display: none;
     }
-    
     .example-tooltip-red {
         background: pink!important;
         position: relative;
         top: 50px;
-    }   
-      
-    .icones{ 
+    }
+    .icones {
         position: relative;
         height: 25px;
         color: white;
@@ -409,79 +426,71 @@ mat-menu{
         overflow-x: hidden;
         overflow-y: hidden;
     }
-          //primeiro icone é maior estilizaçao individual
-    .iconesc{
-         position: relative;
-         height: 15px;
-         color: white;
-         left: -3px;
-         top: -15px;
-         font-size: 40px;
-         filter: opacity(0.5);
+    //primeiro icone é maior estilizaçao individual
+    .iconesc {
+        position: relative;
+        height: 15px;
+        color: white;
+        left: -3px;
+        top: -15px;
+        font-size: 40px;
+        filter: opacity(0.5);
     }
-        //segundo icone é maior estilizaçao individual
-    .iconescm{
-         position: relative;
+    //segundo icone é maior estilizaçao individual
+    .iconescm {
+        position: relative;
         height: 20px;
         color: white;
         left: -4px;
         top: -15px;
         filter: opacity(0.5);
     }
-       
-        
-
 }
-@media screen and (max-width:768px){
+
+@media screen and (max-width:768px) {
     .container {
-        left: 0px;   
+        left: 0px;
         top: -20px;
     }
 }
 
-@media screen and (max-width:460px){
+@media screen and (max-width:460px) {
     .container {
-        left: 0px;   
+        left: 0px;
     }
-
-    .item1{
+    .item1 {
         min-width: 300px;
         width: 300px;
     }
-    .bl-cima{
-        right:20px;
-    }
-    .bl-meio{
+    .bl-cima {
         right: 20px;
     }
-    .bl-fim{
+    .bl-meio {
         right: 20px;
     }
-    .item2{
-        width: 300px;
-        min-width: 300px; 
+    .bl-fim {
+        right: 20px;
     }
-    .item3{
+    .item2 {
         width: 300px;
         min-width: 300px;
     }
-    .area{
+    .item3 {
+        width: 300px;
+        min-width: 300px;
+    }
+    .area {
         max-width: 280px;
         width: 280px;
-       
     }
-    .wrapper{ //grid dos icones
+    .wrapper {
+        //grid dos icones
         width: 300px;
-        position:absolute;
+        position: absolute;
         // display: none;
-        right:35px;
-        
+        right: 35px;
     }
-    .btn-icone0{
+    .btn-icone0 {
         width: 38px;
     }
 }
-
-
-
-

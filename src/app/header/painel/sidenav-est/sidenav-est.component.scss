@@ -29,7 +29,6 @@
 //     vertical-align: top;
 //     background: #e1e31d;
 // }
-
 .headerModal,
 .panelTitle {
     min-height: 35px;
@@ -55,7 +54,8 @@
     border: none;
     border-radius: 25px !important;
 }
-mat-icon{
+
+mat-icon {
     background: #023a1d;
     font-size: 30px;
     color: white;
@@ -81,7 +81,6 @@ body {
 
 .sidebar {
     //position: sticky;
-    position: absolute;
     width: 250px;
     height: 100%;
     //left: -250px; desktop bar ativo

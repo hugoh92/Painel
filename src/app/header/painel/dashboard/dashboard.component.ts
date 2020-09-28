@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {HighchartsService} from 'src/app/services/highcharts.service'
 
 @Component({
@@ -7,16 +7,15 @@ import {HighchartsService} from 'src/app/services/highcharts.service'
   styleUrls: ['./dashboard.component.scss']
   
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements AfterViewInit {
 
   constructor(private _highchartsService: HighchartsService 
     ) { }
 
-  ngOnInit(): void {
-    this._highchartsService.drawStackedPlot("stackedPlot")
-    $('.btn').click(function(){
-      
-    });
+  ngAfterViewInit(): void {
+    this._highchartsService.draMap("stackedPlot")
+    this._highchartsService.drawPiePlot("pieplot")
+    this._highchartsService.drawPiePlot("pieplot2")
 
     
     

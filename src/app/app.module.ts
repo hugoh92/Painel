@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 
-import { SidebarService } from './services/sidebar.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
@@ -34,7 +33,7 @@ import {MatTableModule} from '@angular/material/table';
     MatTableModule,
     BuscadorModule
   ],
-  providers: [SidebarService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,7 +24,6 @@ $fa-font-path: "~font-awesome/fonts";
 //     cursor: pointer;
 //     transition: left 0.4s ease;
 // }
-
 // .btn .marcador5 {
 //     display: grid;
 //     position: absolute;
@@ -38,12 +37,10 @@ $fa-font-path: "~font-awesome/fonts";
 //     overflow-x: hidden;
 //     overflow-y: hidden;
 // }
-
 // .text {
 //     display: none;
 //     transition: left 0.4s ease;
 // }
-
 // .btn {
 //     transition: left 0.4s ease;
 //     position: sticky;
@@ -54,7 +51,6 @@ $fa-font-path: "~font-awesome/fonts";
 //         display: grid;
 //     }
 // }
-
 // // .btn.click{
 // //   //rol no rol
 // //   position: absolute;
@@ -67,26 +63,22 @@ $fa-font-path: "~font-awesome/fonts";
 //     overflow-x: hidden;
 //     overflow-y: hidden;
 // }
-
 // .btn.click span:before{
 //   content: '\f00d';
 // }
-
-mat-icon{
+mat-icon {
     background: #023a1d;
     color: white;
-    font-size: 30px;  
+    font-size: 30px;
 }
+
 .sidebar {
-    width: 400px;
+    min-width: 400px;
     height: 100%;
     background: #023a1d;
-    transition: left 0.4s ease;
-    left: 0px;
-    //position:fixed; //roll dir
-    position: absolute;
     overflow-x: hidden;
     overflow-y: hidden;
+    //position:fixed; //roll dir
 }
 
 .text {
@@ -97,8 +89,6 @@ mat-icon{
     background: #023a1d;
     letter-spacing: 1px;
     color: #e1e31d;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 nav ul {
@@ -391,118 +381,3 @@ nav ul li i {
     color: #d71a20;
     font-size: 15px;
 }
-
-// .wrapper > img {
-//   position: absolute;
-//   top:40px;
-//   right: 20px;
-//   color: white;
-//   // transform: translateY(-50%) rotate(-45deg);
-//   font-size: 50px;
-//   transition: transform 0.4s;
-// }
-// nav ul li i{
-//   position: relative;
-//   color: white;
-//   text-decoration: none;
-//   font-size: 17px;
-//   padding-left: 40px;
-//   font-weight: 50;
-//   display: block;
-//   width: 100%;
-//   border-left: 3px solid transparent;
-// }
-// nav ul li a.active{
-//   color: #e1e31d;
-//   background: #002708;
-//   border-radius: 15px 15px 0px 0px;
-//   // border-left-color: #e1e31d;
-// }
-// nav ul li a:hover{
-//   color:#e1e31d;
-//   background: #002708;
-//   border-radius: 50px 50px 50px 50px;
-//   // border-left-color: #e1e31d;
-// }
-// nav ul ul{
-//   position: static;
-//   display: none;
-// }
-// nav ul .oes-show.show2{
-//   display: block;
-// }
-// nav ul .feat-show.show{
-//   display: block;
-// }
-// nav ul .serv-show.show1{
-//   display: block;
-// }
-// nav ul .sud-show.show3{
-//   display: block;
-// }
-// nav ul .sul-show.show4{
-//   display: block;
-// }
-// nav ul ul li{
-//   line-height: 20px;
-//   border-top: none;
-// }
-// nav ul ul li a{
-//   font-size: 14px;
-//   color: #e6e6e6;
-//   padding-left: 60px;
-//   background: #023a1d;
-// }
-// nav ul li.active ul li a{
-//   color: #e6e6e6;
-//   background: #023a1d;
-//   border-left-color: transparent;
-// }
-// nav ul ul li a:hover{
-//   color: #e1e31d!important;
-//   background: #002708!important;
-// }
-// nav ul li a i{
-//   position: relative;
-//   top:30%;
-//   right: 20px;
-//   transform: translateY(-50%);
-//   font-size: 55px;
-//   transition: transform 0.4s;
-//   margin-top: 30px;
-//  }
-// nav ul li a i{
-//   position: absolute;
-//   top:30%;
-//   right: 20px;
-//   transform: translateY(-50%);
-//   font-size: 5px;
-//   transition: transform 0.4s;
-//   margin-top: 30px;
-//   justify-content: space-around;
-//   padding-top: 80px;
-//   color: white;
-//  }
-// nav ul li a i.rotate{
-//   transform: translateY(-50%) rotate(-180deg);
-// }
-// nav ul li a:hover i{
-//   transform: translateY(-50%) rotate(-180deg);
-// }
-// .content{
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%,-50%);
-//   color: #202020;
-//   z-index: -1;
-//   text-align: center;
-// }
-// .content .header{
-//   font-size: 45px;
-//   font-weight: 600;
-// }
-// .content p{
-//   font-size: 30px;
-//   font-weight: 500;
-// }

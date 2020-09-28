@@ -1,133 +1,129 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<div class="dash">
-    <br>
-    <section class="container  wrap">
-        <div class="item1">
+<div class="p-3">
+    <div class=" h-100 w-100 ">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-12">
+                    <div class="cardPlot">
+                        <div class=grid-box1>
+                            <div class="col area">
+                                <div class="dados-curso">
+                                    <div class="row-2 area-curso bl-cima">
+                                        <span class="titulos" id="cregiao">Cursos por Região</span>
+                                        <!-- Nome altera regiao mun -->
+                                    </div>
+                                    <div class="row-2 area-curso bl-meio">
+                                        <div class="row-2 regiao">
+                                            <span class="" id="">Centro-Oeste = </span>
+                                            <span href="#" class="numero" name="">00000</span>
+                                        </div>
+                                        <div class="row-2 regiao">
+                                            <span class="" id="">Nordeste = </span>
+                                            <span href="#" class="numero" name="">00000</span>
+                                        </div>
+                                        <div class="row-2 regiao">
+                                            <span class="" id="">Norte = </span>
+                                            <span href="#" class="numero" name="">00000</span>
+                                        </div>
+                                        <div class="row-2 regiao">
+                                            <span class="" id="">Sudoeste = </span>
+                                            <span href="#" class="numero" name="">00000</span>
+                                        </div>
+                                        <div class="row-2 regiao">
+                                            <span class="" id="">Sul = </span>
+                                            <span href="#" class="numero" name="">00000</span>
+                                        </div>
+                                    </div>
+                                    <div class="row-2 area-curso bl-meio">
+                                        <div class="row-2">
+                                            <br>
+                                            <span class="titulos" id="lcursos">Localização dos Cursos</span>
+                                        </div>
+                                    </div>
+                                    <div class="row-2 area-curso bl-fim">
+                                        <div class="row-2 cap-interior">
+                                            <span class="" id="">Capitais = </span>
+                                            <span href="#" class="numero" name="">00000</span>
+                                            <span class="" id=""> Interior = </span>
+                                            <span href="#" class="numero" name="">00000</span>
+                                        </div>
 
-            <div class=grid-box1>
-                <div class="col area">
-                    <div class="dados-curso">
-                        <div class="row-2 area-curso bl-cima">
-                            <span class="titulos" id="cregiao">Cursos por Região</span>
-                            <!-- Nome altera regiao mun -->
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-6" id="stackedPlot">
+
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <div class="wrapper icons  pull-right">
+                                    <div class="bts btn-icone0">
+                                        <div class=" btn btn-icone0">
+                                            <i class="fas fa-plus-circle plus"></i>
+                                        </div>
+                                        <div class=" btn btn-icone0">
+                                            <i class="fas fa-arrow-circle-down down"></i>
+                                        </div>
+                                    </div>
+                                    <div class="filtro">
+                                        <span>FILTRO</span>
+                                    </div>
+                                    <button class="btn btn-icone0 show active" id="cursos" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
+                                        <img src="/assets/icons/cursos.png" class="iconesc">
+                                    </button>
+                                    <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
+                                        <img src="/assets/icons/cursosmilhao.png" class="iconescm">
+                                    </div>
+                                    <div class=" btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
+                                        <img src="/assets/icons/vagas.png" class="icones">
+                                    </div>
+                                    <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
+                                        <img src="/assets/icons/inscritos.png" class="icones">
+                                    </div>
+                                    <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
+                                        <img src="/assets/icons/ingressos.png" class="icones">
+                                    </div>
+                                    <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
+                                        <img src="/assets/icons/matriculados.png" class="icones">
+                                    </div>
+                                    <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
+                                        <img src="/assets/icons/concluintes.png" class="icones">
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
-                        <div class="row-2 area-curso bl-meio">
-                            <div class="row-2 regiao">
-                                <span class="" id="">Centro-Oeste = </span>
-                                <span href="#" class="numero" name="">00000</span>
-                            </div>
-                            <div class="row-2 regiao">
-                                <span class="" id="">Nordeste = </span>
-                                <span href="#" class="numero" name="">00000</span>
-                            </div>
-                            <div class="row-2 regiao">
-                                <span class="" id="">Norte = </span>
-                                <span href="#" class="numero" name="">00000</span>
-                            </div>
-                            <div class="row-2 regiao">
-                                <span class="" id="">Sudoeste = </span>
-                                <span href="#" class="numero" name="">00000</span>
-                            </div>
-                            <div class="row-2 regiao">
-                                <span class="" id="">Sul = </span>
-                                <span href="#" class="numero" name="">00000</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="grid-bl2 cardPlot">
+                        <div class="row-2 grafico1">
+                            <span class="titulos" id="">Organização Acadêmia
+                                <!-- <i class="fas fa-arrow-circle-down down2"></i>  -->
+                            </span>
+                            <div id="pieplot">
+
                             </div>
                         </div>
-                        <div class="row-2 area-curso bl-meio">
-                            <div class="row-2">
-                                <br>
-                                <span class="titulos" id="lcursos">Localização dos Cursos</span>
-                            </div>
-                        </div>
-                        <div class="row-2 area-curso bl-fim">
-                            <div class="row-2 cap-interior">
-                                <span class="" id="">Capitais = </span>
-                                <span href="#" class="numero" name="">00000</span>
-                                <span class="" id=""> Interior = </span>
-                                <span href="#" class="numero" name="">00000</span>
-                            </div>
-                            <div id="stackedPlot">
+
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="grid-bl2 cardPlot">
+                        <div class="row-2 grafico1">
+                            <span class="titulos" id="">Natureza Jurídica
+                                <!-- <i class="fas fa-arrow-circle-down down2"></i>  -->
+                            </span>
+                            <div id="pieplot2">
 
                             </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="col-6 area mapa">
-                    MAPA
-                </div>
-                <div class="col-2 area">
-                    <div class="wrapper icons  pull-right">
-                        <div class="bts btn-icone0">
-                            <div class=" btn btn-icone0">
-                                <i class="fas fa-plus-circle plus"></i>
-                            </div>
-                            <div class=" btn btn-icone0">
-                                <i class="fas fa-arrow-circle-down down"></i>
-                            </div>
-                        </div>
-                        <div class="filtro">
-                            <span>FILTRO</span>
-                        </div>
-                        <button class="btn btn-icone0 show active" id="cursos" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <img src="/assets/icons/cursos.png" class="iconesc">
-                        </button>
-                        <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <img src="/assets/icons/cursosmilhao.png" class="iconescm">
-                        </div>
-                        <div class=" btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <img src="/assets/icons/vagas.png" class="icones">
-                        </div>
-                        <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <img src="/assets/icons/inscritos.png" class="icones">
-                        </div>
-                        <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <img src="/assets/icons/ingressos.png" class="icones">
-                        </div>
-                        <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <img src="/assets/icons/matriculados.png" class="icones">
-                        </div>
-                        <div class="btn btn-icone0" matTooltip="Cursos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <img src="/assets/icons/concluintes.png" class="icones">
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-        <div class="item2">
-            <div class="grid-bl2">
-                <div class="row-2 grafico1">
-                    <span class="titulos" id="">Organização Acadêmia
-                        <!-- <i class="fas fa-arrow-circle-down down2"></i>  -->
-                    </span>
-                    <!-- Nome altera regiao mun -->
-                </div>
-
-                <div class="row-2  grafico1">
-
-                    <!-- Nome altera regiao mun -->
                 </div>
             </div>
         </div>
-
-        <div class="item3">
-            <div class="grid-bl2">
-                <div class="row-2 grafico1">
-                    <span class="titulos" id="">Natureza Jurídica
-                        <!-- <i class="fas fa-arrow-circle-down down2"></i>  -->
-                    </span>
-                    <!-- Nome altera regiao mun -->
-                </div>
-
-                <div class="row-2  grafico1">
-
-                    <!-- Nome altera regiao mun -->
-                </div>
-            </div>
-        </div>
-
-    </section>
+    </div>
 </div>
