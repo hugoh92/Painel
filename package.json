@@ -28,6 +28,7 @@
     "highcharts-angular": "^2.8.0",
     "jquery": "^3.5.1",
     "material-design-icons": "^3.0.1",
+    "material-icons": "^0.3.1",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.5",

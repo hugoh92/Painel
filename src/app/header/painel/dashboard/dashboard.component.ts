@@ -13,9 +13,9 @@ export class DashboardComponent implements AfterViewInit {
     ) { }
 
   ngAfterViewInit(): void {
-    this._highchartsService.draMap("stackedPlot")
+    this._highchartsService.draMap("mapPlot")
     this._highchartsService.drawPiePlot("pieplot")
-    this._highchartsService.drawPiePlot("pieplot2")
+    this._highchartsService.drawSuburnPlot("pieplot2")
 
     
     
