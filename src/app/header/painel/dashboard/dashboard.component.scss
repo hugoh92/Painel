@@ -63,7 +63,7 @@
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
     width: 48%;
     height: 220px;
-    min-width: 300px;
+    min-width: 200px;
     max-width: auto;
     // min-width: 300px;
     // flex: 1;
@@ -80,7 +80,7 @@
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
     width: 48%;
     height: 220px;
-    min-width: 300px;
+    min-width: 200px;
     max-width: auto;
     //min-width: 300px;
     //flex: 1;
@@ -165,12 +165,13 @@ mat-menu {
 
 //nomes e titulos
 .titulos {
-    font-size: 18px;
+    font-size: 15px;
     font-style: italic;
     font-weight: bold;
     align-items: flex-end;
     color: white;
     position: relative;
+    white-space: nowrap;
 }
 
 #cregiao {
@@ -338,7 +339,7 @@ mat-menu {
 }
 
 // Responsividade ----------------------------------------------------
-@media screen and (max-width:1066px) {
+@media screen and (max-width:1070px) {
     .item1 {
         /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
         height: 650px;
@@ -379,7 +380,7 @@ mat-menu {
     }
     .wrapper {
         //grid dos icones
-        width: 350px;
+        width: 300px;
         height: auto;
         display: flex;
         grid-template-columns: repeat(9, 1fr);
@@ -389,7 +390,7 @@ mat-menu {
         top: 40px;
         position: relative;
         // display: none;
-        right: 25px;
+        right: 75px;
     }
     .down {
         display: none;
@@ -433,12 +434,33 @@ mat-menu {
         filter: opacity(0.5);
     }
 }
+@media screen and (max-width:860px) {
+    .wrapper {
+        //grid dos icones
+        width: 200px;
+        position: absolute;
+        // display: none;
+        right: 150px;
+    }
+    .btn-icone0 {
+        width: 35px;
+    }
+}
 
 @media screen and (max-width:768px) {
     .container {
         left: 0px;
         top: -20px;
     }
+    .btn-icone0 {
+        width: 50px;
+    }
+    .wrapper {
+        width: 300px;
+        position: relative;
+        right: 75px;
+    }
+
 }
 
 @media screen and (max-width:460px) {
@@ -471,10 +493,8 @@ mat-menu {
         width: 280px;
     }
     .wrapper {
-        //grid dos icones
         width: 300px;
         position: absolute;
-        // display: none;
         right: 35px;
     }
     .btn-icone0 {

@@ -393,7 +393,11 @@ nav ul li i {
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
+        position: relative;
+        width: 210px !important;
+        right: 40px !important;
     }
+  
     .linha2 {
         display: none;
     }
@@ -414,8 +418,8 @@ nav ul li i {
         width: 83px;
         height: 35px;
         color: white;
-        background-color: #023a1d;
-        border: 1px solid rgb(223, 228, 33);
+        background-color: red;
+        border: 1px solid rgb(223, 228, 33) !important;
         opacity: 0.5;
         font-size: 13px;
     }

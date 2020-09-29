@@ -115,21 +115,38 @@
             </div>
             
         </li>
-        <div class="btn-group" role="group" aria-label="">
+        <!-- <div class="btn-group" role="group" aria-label="">
             <button type="button" class="btn btn-secondary">2020</button>
             <button type="button" class="btn btn-secondary">2018</button>
             <button type="button" class="btn btn-secondary">Indicadores</button>
+          </div> -->
+        <!-- angular bar -->
+          <!-- <div class="btn-group">
+          
+          <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="First" class="btn-secondary">Content 1</mat-tab>
+            <mat-tab label="Second">Content 2</mat-tab>
+            <mat-tab label="Third">Content 3</mat-tab>
+          </mat-tab-group>
+          
+        </div> -->
+    <div class="btn-group">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item btn-group-mobile">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item btn-group-mobile">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+            </li>
+            <li class="nav-item btn-group-mobile">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
           </div>
-        
-        <!-- <div class="col">
-                <span class="taxao">Taxa de Sucesso</span>
-                <span href="#" class="numero4" name="">00000</span>
-    
-                <div class="row">
-                    <span class="reldc">Relação Docente/Aluno</span>
-                    <span href="#" class="numero4" name="">00000</span>
-                </div>
-                </div> -->
-
+        </div>
     </ul>
 </nav>
