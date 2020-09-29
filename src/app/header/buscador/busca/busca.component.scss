@@ -1,0 +1,60 @@
+.example-full-width {
+    width: 80%;
+}
+
+.inputDiv {
+    color: white;
+    background-color: #023a1d;
+    border-radius: 5px;
+    border: 2px solid #e1e31d;
+    padding: 5px;
+}
+
+.btn {
+    color: white;
+    background-color: #023a1d;
+}
+
+.img {
+    position: absolute;
+    background: url('/assets/icons/dcgs.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 450px;
+    left: 0px;
+    right: 0px;
+    top: 80px;
+    bottom: 0px;
+    filter: opacity(0.2);
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1;
+    /* Firefox */
+}
+
+ :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+}
+
+ ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .img {
+        background-size: 350px;
+        top: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .img {
+        background-size: 250px;
+        top: 100px;
+    }
+}

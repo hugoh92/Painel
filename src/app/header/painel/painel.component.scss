@@ -6,16 +6,6 @@
     width: 150px;
 }
 
-.row-fill {
-    min-height: calc(100vh - 100px) !important;
-}
-
-@media only screen and (max-width: 918px) {
-    .row-fill {
-        min-height: calc(100vh - 168px) !important;
-    }
-}
-
 @media screen and (max-width:460px) {
     .sideicons {
         width: 250px;
