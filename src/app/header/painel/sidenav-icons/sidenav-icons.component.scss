@@ -24,7 +24,6 @@ $fa-font-path: "~font-awesome/fonts";
 //     cursor: pointer;
 //     transition: left 0.4s ease;
 // }
-
 // .btn .marcador5 {
 //     display: grid;
 //     position: absolute;
@@ -38,12 +37,10 @@ $fa-font-path: "~font-awesome/fonts";
 //     overflow-x: hidden;
 //     overflow-y: hidden;
 // }
-
 // .text {
 //     display: none;
 //     transition: left 0.4s ease;
 // }
-
 // .btn {
 //     transition: left 0.4s ease;
 //     position: sticky;
@@ -54,7 +51,6 @@ $fa-font-path: "~font-awesome/fonts";
 //         display: grid;
 //     }
 // }
-
 // // .btn.click{
 // //   //rol no rol
 // //   position: absolute;
@@ -67,28 +63,26 @@ $fa-font-path: "~font-awesome/fonts";
 //     overflow-x: hidden;
 //     overflow-y: hidden;
 // }
-
 // .btn.click span:before{
 //   content: '\f00d';
 // }
-.btn-group{
+.btn-group {
     display: none;
 }
-mat-icon{
+
+mat-icon {
     background: #023a1d;
     color: white;
-    font-size: 30px;  
+    font-size: 30px;
 }
+
 .sidebar {
-    width: 400px;
+    min-width: 400px;
     height: 100%;
     background: #023a1d;
-    transition: left 0.4s ease;
-    left: 0px;
-    //position:fixed; //roll dir
-    position: absolute;
     overflow-x: hidden;
     overflow-y: hidden;
+    //position:fixed; //roll dir
 }
 
 .text {
@@ -99,8 +93,6 @@ mat-icon{
     background: #023a1d;
     letter-spacing: 1px;
     color: #e1e31d;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 nav ul {
@@ -394,33 +386,31 @@ nav ul li i {
     font-size: 15px;
 }
 
-@media screen and (max-width:460px){
-
+@media screen and (max-width:460px) {
     .sidebar {
-        width: 250px; 
+        width: 250px;
     }
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2,1fr);
+        grid-template-rows: repeat(2, 1fr);
     }
-  
-    .linha2{
+    .linha2 {
         display: none;
     }
-    .linha3{
+    .linha3 {
         display: none;
     }
-    .linha4{
+    .linha4 {
         display: none;
     }
-    .btn-group{
+    .btn-group {
         display: block;
         position: fixed;
         top: 95%;
         width: 250px;
         left: 1.2px;
     }
-    .btn-secondary{
+    .btn-secondary {
         width: 83px;
         height: 35px;
         color: white;
@@ -429,30 +419,27 @@ nav ul li i {
         opacity: 0.5;
         font-size: 13px;
     }
-    
-    .btn-secondary:hover{
+    .btn-secondary:hover {
         opacity: 1;
         border: 2px solid rgb(223, 228, 33);
     }
-    .active{
+    .active {
         opacity: 1;
         background-color: yellow;
         border: none;
     }
- 
-    button.btn.btn-secondary.click{
+    button.btn.btn-secondary.click {
         opacity: 1;
         background-color: yellow;
         border: none;
     }
-
-    button.btn.btn-secondary.target{
+    button.btn.btn-secondary.target {
         opacity: 1;
         background-color: yellow;
         border: none;
-    
     }
 }
+
 // .wrapper > img {
 //   position: absolute;
 //   top:40px;

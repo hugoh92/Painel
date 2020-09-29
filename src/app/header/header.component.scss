@@ -1,8 +1,10 @@
 /*-- estilizando icones --*/
-body{
+
+header {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
 .icon {
     width: 4em;
     height: 4em;
@@ -10,10 +12,10 @@ body{
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center;
-    position: relative;    
-    fill:grey;
-    
+    position: relative;
+    fill: grey;
 }
+
 // Animaçao dos icones
 .icon:hover {
     animation: icon-animation 1s;
@@ -34,7 +36,6 @@ body{
 .icon-painel {
     background-image: url("/assets/icons/painel.svg");
     filter: opacity(0.2);
-    
 }
 
 .icon-med-numeros {
@@ -53,142 +54,136 @@ body{
 }
 
 //icone envelope contatos
-.bi-envelope-fill{
+.bi-envelope-fill {
     width: 1em;
     height: 2em;
     background-repeat: no-repeat;
     background-size: 80%;
-    background-position: center; 
+    background-position: center;
     position: absolute;
     flex-direction: row-reverse;
     align-items: center;
     top: 25px;
-    
-
 }
 
 //icone direm estilizando
-.direm > img {
+.direm>img {
     height: 80px;
     position: absolute;
     width: auto;
     align-content: flex-start;
-    align-items: center;   
-    display: flex;  
+    align-items: center;
+    display: flex;
 }
+
 //display das marcas
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 100px;
     grid-row-gap: 1em;
-    position:absolute;
+    position: absolute;
     right: 140px;
- }
- 
+}
+
 //icone inteqs estilizando
-.inteqs > img {
+.inteqs>img {
     display: grid;
     height: 75px;
-    width: auto; 
+    width: auto;
     position: absolute;
-    
 }
+
 //marca opas estilizando
-.opas > img {
+.opas>img {
     display: grid;
     height: 70px;
-    width: auto; 
+    width: auto;
     position: absolute;
-    
 }
+
 //marca abem estilizando
-.abem > img {
+.abem>img {
     display: grid;
     height: 80px;
-    width: auto; 
+    width: auto;
     position: absolute;
-    
 }
-    
+
 // }
 //header para a versao menor que 1100px
-.header-mobile{
+.header-mobile {
     display: none;
 }
-@media screen and (max-width:1100px){
-    .abem{
-        display: none;  
+
+@media screen and (max-width:1100px) {
+    .abem {
+        display: none;
     }
-    .wrapper{
+    .wrapper {
         right: 60px;
     }
-    .nav-link.active .nomepi {    
-        display: none;   
-        }
-}
-//header para a versao menor que 950px
-@media screen and (max-width:950px){
-    .opas{
-        display: none;  
+    .nav-link.active .nomepi {
+        display: none;
     }
-    .wrapper{
+}
+
+//header para a versao menor que 950px
+@media screen and (max-width:950px) {
+    .opas {
+        display: none;
+    }
+    .wrapper {
         // right: -80px;
         overflow-x: hidden;
         overflow-y: hidden;
         // position: relative;
     }
 }
+
 //header para versão menor que 920px
-@media screen and (max-width:920px){
-    .direm{
+@media screen and (max-width:920px) {
+    .direm {
         // height: 80px;
         // width: auto; 
         // left:35%;
         // margin-left:-50px;      
-        display: none;      
+        display: none;
     }
     .wrapper {
         display: none;
     }
-
-    .inteqs{
+    .inteqs {
         display: none;
     }
-
-    .linha-vertical{
+    .linha-vertical {
         display: none;
     }
-
-    .flex{
-        display:flex;  
+    .flex {
+        display: flex;
         margin-left: auto;
-        margin-right: auto;        
+        margin-right: auto;
         grid-template-columns: repeat(4, 6fr);
-        grid-column-gap: 2px;  
+        grid-column-gap: 2px;
         right: 1px;
-        position:absolute;
+        position: absolute;
     }
-
-    .header-mobile{
+    .header-mobile {
         display: flex;
     }
-    .direm-mobile{
+    .direm-mobile {
         max-width: 100px;
         padding: 0px;
         display: flex;
     }
-
-    .direm-mobile > img{
+    .direm-mobile>img {
         height: 70px;
-        left: 30px;     
+        left: 30px;
         display: block;
         margin-left: auto;
         margin-right: auto;
-                     
     }
-
-    .inteqs-mobile > img{
+    .inteqs-mobile>img {
         //max-width: 70%; 
         height: 60px;
         display: block;
@@ -198,8 +193,7 @@ body{
         margin-top: auto;
         margin-bottom: auto;
     }
-     
-    .opas-mobile > img{
+    .opas-mobile>img {
         //max-width: 55%;
         height: 55px;
         display: block;
@@ -207,7 +201,7 @@ body{
         margin-left: auto;
         margin-right: auto;
     }
-    .abem-mobile > img{
+    .abem-mobile>img {
         //max-width: 30%;
         height: 60px;
         display: block;
@@ -215,49 +209,53 @@ body{
         margin-left: auto;
         margin-right: auto;
     }
-  }
-  @media screen and (max-width:760px){
-  .nav-link.active .nomepi {    
-    display: none;   
+}
+
+@media screen and (max-width:760px) {
+    .nav-link.active .nomepi {
+        display: none;
     }
 }
 
-  //header para versao ceular menor que
-  @media screen and (max-width:680px){
-    .abem-mobile{
-        display: none;  
+//header para versao ceular menor que
+@media screen and (max-width:680px) {
+    .abem-mobile {
+        display: none;
     }
-    .flex{
+    .flex {
         right: 1px;
     }
-    .nav-link.active .nomepi {    
-        display: none;   
-        }
+    .nav-link.active .nomepi {
+        display: none;
+    }
 }
+
 //header para a versao menor que 600px
-@media screen and (max-width:600px){
-    .opas-mobile{
-        display: none;  
+@media screen and (max-width:600px) {
+    .opas-mobile {
+        display: none;
     }
-    .flex{
+    .flex {
         right: 1px;
     }
-    .nav-link.active .nomepi {    
-        display: none;   
-        }
+    .nav-link.active .nomepi {
+        display: none;
+    }
 }
+
 //header para a versao menor que 4600px
-@media screen and (max-width:460px){
-    .inteqs-mobile{
-        display: none;  
+@media screen and (max-width:460px) {
+    .inteqs-mobile {
+        display: none;
     }
-    .flex{
+    .flex {
         right: 1px;
     }
-    .nav-link.active .nomepi {    
-        display: none;   
-        }
+    .nav-link.active .nomepi {
+        display: none;
+    }
 }
+
 //Estilizando tab-nav-------------------------------------------------------------------
 .nav-tabs .nav-link.active {
     position: relative;
@@ -267,27 +265,28 @@ body{
     border-bottom: 0px;
     background-color: #0d542a;
     border-radius: 15px 15px 0px 0px;
-    filter: opacity(1);     
+    filter: opacity(1);
 }
 
 //Icone ativo branco
-.nav-link.active > svg {
-    filter: opacity(1); 
+.nav-link.active>svg {
+    filter: opacity(1);
 }
 
 //Tirando borda de tab não selecionada
 .nav-tabs a {
-    outline:none;
+    outline: none;
     outline: 0;
     border: transparent;
     cursor: default;
-    
 }
+
 //background para teste
 .tab-content {
     background-color: #0d542a;
 }
- 
+
+
 /* -- tentando auemntar bordar de baixo 
 .nav-tabs {
     border-bottom:2px solid white;
@@ -295,42 +294,42 @@ body{
 }
 */
 
-.nav-tabs .nav-item{
-    padding: 0px; 
+.nav-tabs .nav-item {
+    padding: 0px;
 }
 
 //Arredondando bordas
 .nav-link.active::before,
-    .nav-link.active::after{
-		content: "";
-		position: absolute;
-		height: 10px;
-		width: 20px;
-		bottom: 0;
-    }
-    
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 20px;
+    bottom: 0;
+}
+
 //Arredondando bordas
-.nav-link.active::after{
-	right: -20px;
+.nav-link.active::after {
+    right: -21px;
     border-left: 2px solid white;
-	border-radius: 0 0 0 10px;
-	-moz-border-radius: 0 0 0 10px;
-	-webkit-border-radius: 0 0 0 10px;
-	-webkit-box-shadow: -10px 0 0 0  #0d542a;
-	box-shadow: -10px 0 0 0 #0d542a;
+    border-radius: 0 0 0 10px;
+    -moz-border-radius: 0 0 0 10px;
+    -webkit-border-radius: 0 0 0 10px;
+    -webkit-box-shadow: -10px 0 0 0 #0d542a;
+    box-shadow: -10px 0 0 0 #0d542a;
 }
-    
+
 //Arredondando bordas
-.nav-link.active::before{
-	left: -20px;
+.nav-link.active::before {
+    left: -20px;
     border-right: 2px solid white;
-	border-radius: 0 0 10px 0;
-	-moz-border-radius: 0 0 10px 0;
-	-webkit-border-radius: 0 0 10px 0;
-	-webkit-box-shadow: 10px 0 0 0 #0d542a;
-	box-shadow: 10px 0 0 0 #0d542a;
+    border-radius: 0 0 10px 0;
+    -moz-border-radius: 0 0 10px 0;
+    -webkit-border-radius: 0 0 10px 0;
+    -webkit-box-shadow: 10px 0 0 0 #0d542a;
+    box-shadow: 10px 0 0 0 #0d542a;
 }
-    
+
 //fontes
 .nav-item span {
     display: none;
@@ -338,28 +337,29 @@ body{
 }
 
 //Mostrar texto pra aba ativa
-.nav-link.active > span {    
-    color:white;
+.nav-link.active>span {
+    color: white;
     font-size: 0.5em;
     width: 64px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: block;
     text-align: center;
-    position:absolute;       
+    position: absolute;
 }
 
-.nav-item > li > span{
+.nav-item>li>span {
     text-align: center;
 }
-    
+
 // linha do nav
 .linha-vertical {
-    height: 50px;/*Altura da linha*/
+    height: 50px;
+    /*Altura da linha*/
     width: auto;
-    border-left: 1px solid white;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+    border-left: 1px solid white;
+    /* Adiciona borda esquerda na div como ser fosse uma linha.*/
     position: absolute;
     left: 95%;
     margin-left: -3px;
     top: 48px;
 }
-    

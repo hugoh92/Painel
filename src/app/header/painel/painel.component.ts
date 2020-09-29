@@ -9,15 +9,20 @@ import { SidebarService } from 'src/app/services/sidebar.service';
   styleUrls: ['./painel.component.scss']
 })
 export class PainelComponent implements AfterViewInit {
+  typeMode = "side";
+
   @ViewChild('options') public sidenavOptions: MatSidenav;
   @ViewChild('icons') public sidenavInfo: MatSidenav;
+  
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     if(event.target.innerWidth < 768){
       this.sidenavInfo.close();
       this.sidenavOptions.close();
+      this.typeMode = "over";
     } else {
       this.sidenavInfo.open();
+      this.typeMode = "side";
     };
   }
 
@@ -29,7 +34,7 @@ export class PainelComponent implements AfterViewInit {
       setTimeout(() => {
         this.sidenavInfo.close();  
       }, 500);
-
+      this.typeMode = "over";
     }
   }
 
