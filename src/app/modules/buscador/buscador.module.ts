@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { CommonModule } from '@angular/common';
 import { RouterModule } from "@angular/router";
 import { BuscadorRoutes } from './buscador-routing.module';
@@ -11,6 +12,7 @@ import { DemoMaterialModule } from 'src/app/material-module';
   imports: [
     CommonModule,
     DemoMaterialModule,
+    FormsModule, ReactiveFormsModule,
     RouterModule.forChild(BuscadorRoutes),
   ],
   exports: [

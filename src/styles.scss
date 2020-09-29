@@ -1,28 +1,40 @@
 @import './assets/theme.scss';
-
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /* You can add global styles to this file, and also import other style files */
 
 body {
     background-color: #0d542a;
+    font-family: 'Roboto, monospace';
 }
 
 .btn-hbg {
     color: white;
     font-size: 30px;
 }
-.bt-mobile{
+
+.bt-mobile {
     background: #023a1d;
     color: white;
-    font-size: 30px; 
+    font-size: 30px;
     top: 5px;
     left: 4px;
     width: 80px;
-    border-bottom-color:none;
+    border-bottom-color: none;
     border: none;
 }
 
-.bt-mobile:active{
+.bt-mobile:active {
     opacity: (0.5);
     border: blue;
+}
+
+.row-fill {
+    min-height: calc(100vh - 100px) !important;
+}
+
+@media only screen and (max-width: 918px) {
+    .row-fill {
+        min-height: calc(100vh - 168px) !important;
+    }
 }
