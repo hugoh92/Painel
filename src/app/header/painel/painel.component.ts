@@ -21,7 +21,9 @@ export class PainelComponent implements AfterViewInit {
       this.sidenavOptions.close();
       this.typeMode = "over";
     } else {
-      this.sidenavInfo.open();
+      if(! (this.sidenavOptions.opened || this.sidenavInfo.opened )){
+        this.sidenavInfo.open();
+      }
       this.typeMode = "side";
     };
   }

@@ -50,7 +50,7 @@ export class HighchartsService {
         chart: {
             map: usaMap,
             backgroundColor: undefined,
-            height: '400px'
+            height: '250px'
         },
     
         title: {
@@ -61,6 +61,10 @@ export class HighchartsService {
             text: ''
         },
     
+        legend: {
+            enabled: false
+        },
+
         credits: {
             enabled: false
         },
@@ -85,7 +89,7 @@ export class HighchartsService {
                 }
             },
             dataLabels: {
-                enabled: true,
+                enabled: false,
                 format: '{point.name}'
             }
         }]
@@ -102,7 +106,7 @@ export class HighchartsService {
             plotBorderWidth: null,
             plotShadow: false,
             type: 'pie',
-            height: "300px"
+            height: '200px'
         },
         title: {
             text: ''
@@ -125,6 +129,9 @@ export class HighchartsService {
                 showInLegend: true
             }
         },
+        legend: {
+            enabled: false
+        },
         credits: {
             enabled: false
         },
@@ -132,13 +139,23 @@ export class HighchartsService {
             name: 'Brands',
             innerSize: '50%',
             colorByPoint: true,
-            data: [{
-                name: 'Chrome',
-                y: 61.41,
-            }, {
-                name: 'Internet Explorer',
-                y: 11.84
-            }]
+            data: [
+                {
+                    name: 'Universidades',
+                    y: 62,
+                    color: '#ffc905'
+                },
+                {
+                    name: 'Centros Universitários',
+                    y: 18,
+                    color: '#e30086'
+                },
+                {
+                name: 'Faculdades',
+                y: 21,
+                color: '#f26820'
+                },
+            ]
         }]
     }
 
@@ -150,9 +167,11 @@ export class HighchartsService {
         id: 'level4',
         parent: 'level3',
         name: 'level4',
+        color: '#96bc31'
       }, {
         id: 'level4.1',
         parent: 'level3',
+        color: '#00adef',
         name: 'level4.1',
       }, {
         id: 'level5',
@@ -186,7 +205,10 @@ export class HighchartsService {
 
         chart: {
             backgroundColor: undefined,
-            height: '300px'
+            height: '200px'
+        },
+        credits: {
+            enabled: false
         },
     
         title: {
@@ -210,28 +232,15 @@ export class HighchartsService {
                 },
                 rotationMode: 'circular'
             },
-            levels: [{
-                level: 1,
-                levelIsConstant: false,
-                dataLabels: {
-                    filter: {
-                        property: 'outerArcLength',
-                        operator: '>',
-                        value: 64
-                    }
-                }
-            }, {
-                level: 2,
-                colorByPoint: true
-            },
+            levels: [
             {
-                level: 3,
+                level: 4,
                 colorVariation: {
                     key: 'brightness',
                     to: -0.5
                 }
             }, {
-                level: 4,
+                level: 5,
                 colorVariation: {
                     key: 'brightness',
                     to: 0.5

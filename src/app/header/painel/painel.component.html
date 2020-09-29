@@ -1,6 +1,6 @@
 <div class="row-fill">
     <mat-sidenav-container class="row-fill" [hasBackdrop]="false">
-        <mat-sidenav #icons opened class="sidebarClass p-0 h-100" [mode]="typeMode">
+        <mat-sidenav #icons opened class="sidebarClass p-0 h-100 sideicons" [mode]="typeMode">
             <app-sidenav-icons></app-sidenav-icons>
         </mat-sidenav>
         <mat-sidenav-content>
@@ -12,14 +12,18 @@
                     <mat-sidenav-content class="mx-0">
                         <div class="row-fill w-100 h-100">
                             <div class="container-fluid row-fill">
-                                <button mat-button class="d-block d-md-none" (click)="_sidebarService.toggle('sidenavInfo')">
-                                    <mat-icon>menu</mat-icon>
-                                      
-                                   </button>
-                                <button mat-button class="d-block d-md-none" (click)="_sidebarService.toggle('sidenavOptions')">
-                                       <mat-icon>search</mat-icon>
-                                         
-                                      </button>
+                                <div class="grid-button">
+                                    <button mat-button class="d-block d-md-none bt-mobile m-2"
+                                        (click)="_sidebarService.toggle('sidenavInfo')">
+                                        <mat-icon>menu</mat-icon>
+
+                                    </button>
+                                    <button mat-button class="d-block d-md-none bt-mobile m-2"
+                                        (click)="_sidebarService.toggle('sidenavOptions')">
+                                        <mat-icon>search</mat-icon>
+
+                                    </button>
+                                </div>
                                 <app-dashboard class="h-100"></app-dashboard>
                             </div>
                         </div>
