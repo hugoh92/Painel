@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import * as HighchartsMap from "highcharts/highmaps";
 import * as Highcharts from "highcharts/highcharts";
-import Sunburst from 'highcharts/modules/sunburst'
+import Sunburst from 'highcharts/modules/sunburst';
+import Export from 'highcharts/modules/exporting';
 
 Sunburst(Highcharts)
+Export(Highcharts)
 declare var require: any;
 const usaMap = require("../../assets/data/br.json");
 
@@ -16,33 +18,33 @@ export class HighchartsService {
 
     draMap(idHtml) {
         var data = [
-            ['br-sp', 0],
-            ['br-ma', 1],
-            ['br-pa', 2],
-            ['br-sc', 3],
-            ['br-ba', 4],
-            ['br-ap', 5],
-            ['br-ms', 6],
-            ['br-mg', 7],
-            ['br-go', 8],
-            ['br-rs', 9],
-            ['br-to', 10],
-            ['br-pi', 11],
-            ['br-al', 12],
-            ['br-pb', 13],
-            ['br-ce', 14],
-            ['br-se', 15],
-            ['br-rr', 16],
-            ['br-pe', 17],
-            ['br-pr', 18],
-            ['br-es', 19],
-            ['br-rj', 20],
-            ['br-rn', 21],
-            ['br-am', 22],
-            ['br-mt', 23],
-            ['br-df', 24],
-            ['br-ac', 25],
-            ['br-ro', 26]
+            ['br-sp', 69],
+            ['br-ma', 6],
+            ['br-pa', 7],
+            ['br-sc', 17],
+            ['br-ba', 24],
+            ['br-ap', 1],
+            ['br-ms', 5],
+            ['br-mg', 46],
+            ['br-go', 14],
+            ['br-rs', 20],
+            ['br-to', 6],
+            ['br-pi', 7],
+            ['br-al', 5],
+            ['br-pb', 9],
+            ['br-ce', 8],
+            ['br-se', 3],
+            ['br-rr', 2],
+            ['br-pe', 11],
+            ['br-pr', 20],
+            ['br-es', 6],
+            ['br-rj', 22],
+            ['br-rn', 6],
+            ['br-am', 5],
+            ['br-mt', 6],
+            ['br-df', 6],
+            ['br-ac', 2],
+            ['br-ro', 5]
         ];
 
 
@@ -50,7 +52,7 @@ export class HighchartsService {
             chart: {
                 map: usaMap,
                 backgroundColor: undefined,
-                height: '250px'
+                height: (3 / 4 * 100) + '%' // 16:9 ratio
             },
 
             title: {
@@ -76,13 +78,23 @@ export class HighchartsService {
                 }
             },
 
+
             colorAxis: {
-                min: 0
+                min: 0,
+                max: 25,
+                tickInterval: 5,
+                stops: [[0, '#fdffeb'], [0.65, '#faeca5'], [1, '#b26a42']],
+                labels: {
+                    format: '{value}%'
+                }
             },
+
 
             series: [{
                 data: data,
                 name: 'Random data',
+                borderColor: 'black',
+                borderWidth: 0.1,
                 states: {
                     hover: {
                         color: '#BADA55'
@@ -106,11 +118,11 @@ export class HighchartsService {
                 plotBorderWidth: null,
                 plotShadow: false,
                 type: 'pie',
-                height: '200px'
+                height: (9 / 16 * 100) + '%' // 16:9 ratio
             },
             title: {
                 useHTML: true,
-                text: `<small style="color: white; font-size: 10px">Cursos</small> <br> <b style="color: #e1e31d">317</b>`,
+                text: `<small style="color: white; font-size: 10px">Cursos</small> <br> <b style="color: #e1e31d">338</b>`,
                 align: 'center',
                 verticalAlign: 'middle',
                 style: {
@@ -118,6 +130,27 @@ export class HighchartsService {
                     "z-index": -5
                 },
                 y: 20
+            },
+
+            navigation: {
+                buttonOptions: {
+                    theme: {
+                        // Good old text links
+                        fill: '#c3081c',
+                        color: 'white',
+                        r: 15,
+ 
+                    }
+                }
+            },
+        
+            exporting: {
+                buttons: {
+                    contextButton: {
+
+                        enabled: true
+                    },
+                }
             },
 
             subtitle: {
@@ -202,33 +235,33 @@ export class HighchartsService {
             id: 'level1',
             parent: 'level0',
             name: 'Sem fins lucrativos',
-            value: 50
+            value: 111
         },
         {
             id: 'level1.2',
             parent: 'level0',
             name: 'Com fins lucrativos',
-            value: 20
+            value: 93
         },
         {
             id: 'level1.1',
             parent: 'level0.1',
             name: 'Federal',
-            value: 80
+            value: 79
 
         },
         {
             id: 'level1.2',
             parent: 'level0.1',
             name: 'Estadual',
-            value: 30
+            value: 37
 
         },
         {
             id: 'level1.3',
             parent: 'level0.1',
             name: 'Municipal',
-            value: 30
+            value: 18
 
         }
         ]
@@ -237,7 +270,7 @@ export class HighchartsService {
 
             chart: {
                 backgroundColor: undefined,
-                height: '200px'
+                height: (9 / 16 * 100) + '%' // 16:9 ratio
             },
             credits: {
                 enabled: false

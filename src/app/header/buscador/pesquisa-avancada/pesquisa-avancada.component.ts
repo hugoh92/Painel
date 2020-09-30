@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Options } from 'ng5-slider';
 
 @Component({
   selector: 'app-pesquisa-avancada',
@@ -6,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pesquisa-avancada.component.scss']
 })
 export class PesquisaAvancadaComponent implements OnInit {
-
+  minValue: number = 3;
+  maxValue: number = 5;
+  options: Options = {
+    floor: 1,
+    ceil: 5,
+    step: 1,
+    showTicks: true,
+    getLegend: (value: number): string => {
+      return  value.toString();
+    }
+  };
     
   constructor() { }
 

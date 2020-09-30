@@ -8,6 +8,7 @@
 
         <div class="busca-text">
             <span class="titulos">Pesquisa Avançada</span>
+
             <input class="form-control form-control-sm p-3" type="text" placeholder="Digite o nome sigla ou IES" aria-label="Buscar">
         </div>
 
@@ -15,6 +16,7 @@
     <div class="item3">
         <span class="titulos">Situação</span>
         <div class="custom-control custom-switch">
+
             <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
             <label class="custom-control-label" for="customSwitch1"></label>
             <span class="cursos-ativos">Selecionar apenas cursos ativos</span>
@@ -75,14 +77,21 @@
     <div class="row"></div>
     <div class="item6">
         <span class="titulos">Conceito do curso</span>
-        <label for="customRange2"></label>
-        <input type="range" class="custom-range" min="0" max="5" id="customRange2">
+        <div class="backgroundInput pb-3 px-4">
+            <div class="custom-slider">
+                <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+            </div>
+        </div>
 
     </div>
     <div class="item7">
         <span class="titulos">Conceito Enade</span>
-        <label for="customRange2"></label>
-        <input type="range" class="custom-range" min="0" max="5" id="customRange2">
+        <div class="backgroundInput pb-3 px-4">
+            <div class="custom-slider">
+                <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+            </div>
+        </div>
+
     </div>
     <div class="item8">
         <span class="titulos">Ano Funcionamento</span>
