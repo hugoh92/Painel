@@ -1,14 +1,25 @@
 @import './assets/theme.scss';
+@import './assets/font/font-gilson.css';
 
 /* You can add global styles to this file, and also import other style files */
 
-* {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+*,
+body {
+    font-family: 'Gill35a';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+label {
+    font-family: 'Gill67a';
 }
 
 body {
     background-color: #0d542a !important;
-    font-family: 'Roboto, monospace';
 }
 
 .btn-hbg {

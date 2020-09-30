@@ -180,8 +180,10 @@ export class HighchartsService {
             },
 
             subtitle: {
-                text: "Organização Acadêmica",
-                y: -1,
+                text: "<span>Organização Acadêmica</span>",
+                useHTML: true,
+                y:2,
+                align: "left",
                 style: {
                     "text-align": "left",
                     color: "white",
@@ -200,7 +202,7 @@ export class HighchartsService {
             plotOptions: {
                 pie: {
                     borderWidth: 0,
-                    borderColor: "#0d542a",
+                    borderColor: "Gill35a",
                     allowPointSelect: false,
                     dataLabels: {
                         enabled: true,
@@ -345,7 +347,7 @@ export class HighchartsService {
                 backgroundColor: undefined,
                 height: (9 / 16 * 100) + '%', // 16:9 ratio,
                 style: {
-                    fontFamily:  './assets/FONTES/gilr35a.TFT'
+                    fontFamily:  'Gill35a'
                 }
             },
             credits: {
@@ -355,8 +357,10 @@ export class HighchartsService {
                 text: ''
             },
             subtitle: {
-                text: "Natureza Jurídica",
-                y: -1,
+                align: "left",
+                useHTML: true,
+                text: "<span>Natureza Jurídica</span>",
+                y: 2,
                 style: {
                     "text-align": "left",
                     color: "white",
