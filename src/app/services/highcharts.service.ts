@@ -112,6 +112,25 @@ export class HighchartsService {
     }
 
     drawPiePlot(idHtml) {
+        Highcharts.SVGRenderer.prototype.symbols.download = function (x, y, w, h) {
+            var path = [
+                // Arrow stem
+                'M', x + w * 0.5, y,
+                'L', x + w * 0.5, y + h * 0.7,
+                // Arrow head
+                'M', x + w * 0.3, y + h * 0.5,
+                'L', x + w * 0.5, y + h * 0.7,
+                'L', x + w * 0.7, y + h * 0.5,
+                // Box
+                'M', x, y + h * 0.9,
+                'L', x, y + h,
+                'L', x + w, y + h,
+                'L', x + w, y + h * 0.9
+            ];
+            return path;
+        };
+
+        
         var options: any = {
             chart: {
                 backgroundColor: undefined,
@@ -139,7 +158,7 @@ export class HighchartsService {
                         fill: '#c3081c',
                         color: 'white',
                         r: 15,
- 
+
                     }
                 }
             },
@@ -147,7 +166,11 @@ export class HighchartsService {
             exporting: {
                 buttons: {
                     contextButton: {
-
+                        symbol: 'download',
+                        symbolStroke: '#fff',
+                        symbolSize: 10,
+                        height: 25,
+                        width: 25,
                         enabled: true
                     },
                 }
@@ -223,6 +246,24 @@ export class HighchartsService {
     }
 
     drawSuburnPlot(idHtml) {
+        Highcharts.SVGRenderer.prototype.symbols.download = function (x, y, w, h) {
+            var path = [
+                // Arrow stem
+                'M', x + w * 0.5, y,
+                'L', x + w * 0.5, y + h * 0.7,
+                // Arrow head
+                'M', x + w * 0.3, y + h * 0.5,
+                'L', x + w * 0.5, y + h * 0.7,
+                'L', x + w * 0.7, y + h * 0.5,
+                // Box
+                'M', x, y + h * 0.9,
+                'L', x, y + h,
+                'L', x + w, y + h,
+                'L', x + w, y + h * 0.9
+            ];
+            return path;
+        };
+
         var data = [{
             id: 'level0',
             name: 'Privada',
@@ -293,6 +334,31 @@ export class HighchartsService {
                     borderWidth: 0,
                     borderColor: "#0d542a",
                     allowPointSelect: false,
+                }
+            },
+
+            navigation: {
+                buttonOptions: {
+                    theme: {
+                        // Good old text links
+                        fill: '#c3081c',
+                        color: 'white',
+                        r: 15,
+
+                    }
+                }
+            },
+        
+            exporting: {
+                buttons: {
+                    contextButton: {
+                        symbol: 'download',
+                        symbolStroke: '#fff',
+                        symbolSize: 10,
+                        height: 25,
+                        width: 25,
+                        enabled: true
+                    },
                 }
             },
             series: [{
