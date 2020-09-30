@@ -16,6 +16,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { ResultadoComponent } from './header/buscador/resultado/resultado.component';
 
+import { Ng5SliderModule } from 'ng5-slider';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { ResultadoComponent } from './header/buscador/resultado/resultado.compon
     MatDatepickerModule,
     MatInputModule,
     MatTableModule,
-    BuscadorModule
+    BuscadorModule,
+    Ng5SliderModule 
   ],
 
   bootstrap: [AppComponent]
