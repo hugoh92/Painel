@@ -277,6 +277,27 @@ input:checked+.lbl::after {
     font-size: 1.5em;
 }
 
+.tb-geral{
+    height: 200px;
+}
+.tabela-dados{
+
+    //height: 100%;
+    width: 100%;
+}
+table {
+    width: 100%;
+    color: white;
+    
+  }
+
+  mat-paginator{
+    color: white;
+  }
+  element.weight{
+      color: yellow;
+  }
+
 h1 {
     text-align: center;
     margin: 20px 0 0 0;

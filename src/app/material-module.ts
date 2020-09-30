@@ -78,6 +78,11 @@ import {
   MatProgressBarModule
 } from '@angular/material/progress-bar'
 
+import {
+  MatPaginatorModule
+} from '@angular/material/paginator';
+
+
 @NgModule({
   exports: [
     MatProgressBarModule, 
@@ -98,7 +103,8 @@ import {
     MatIconModule,
     MatDialogModule,
     MatMenuModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatPaginatorModule
     
   ]
 })
