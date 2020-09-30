@@ -83,7 +83,7 @@ export class HighchartsService {
                 min: 0,
                 max: 25,
                 tickInterval: 5,
-                stops: [[0, '#fdffeb'], [0.65, '#faeca5'], [1, '#b26a42']],
+                stops: [[0, '#f5ee6c'], [0.65, '#ffca34'], [1, '#f9a71f']],
                 labels: {
                     format: '{value}%'
                 }
@@ -93,8 +93,8 @@ export class HighchartsService {
             series: [{
                 data: data,
                 name: 'Random data',
-                borderColor: 'black',
-                borderWidth: 0.1,
+                borderColor: '#f9a71f',
+                borderWidth: 0.3,
                 states: {
                     hover: {
                         color: '#BADA55'
@@ -137,7 +137,10 @@ export class HighchartsService {
                 plotBorderWidth: null,
                 plotShadow: false,
                 type: 'pie',
-                height: (9 / 16 * 100) + '%' // 16:9 ratio
+                height: (9 / 16 * 100) + '%', // 16:9 ratio
+                style: {
+                    fontFamily:  './assets/FONTES/gilr35a.TFT'
+                }
             },
             title: {
                 useHTML: true,
@@ -264,59 +267,90 @@ export class HighchartsService {
             return path;
         };
 
-        var data = [{
-            id: 'level0',
-            name: 'Privada',
-            color: '#96bc31'
-        }, {
-            id: 'level0.1',
-            color: '#00adef',
-            name: 'Pública',
-        }, {
-            id: 'level1',
-            parent: 'level0',
-            name: 'Sem fins lucrativos',
-            value: 111
-        },
-        {
-            id: 'level1.2',
-            parent: 'level0',
-            name: 'Com fins lucrativos',
-            value: 93
-        },
-        {
-            id: 'level1.1',
-            parent: 'level0.1',
-            name: 'Federal',
-            value: 79
+        var colors = ['#96bc31', '#00adef'],
+            categories = [
+                'Privada',
+                'Pública',
+            ],
+            data = [
+                {
+                    y: 60.35,
+                    color: colors[0],
+                    drilldown: {
+                        name: 'Privada',
+                        categories: [
+                            'Com fins lucrativos',
+                            'Sem fins lucrativos',
+                        ],
+                        data: [
+                            32.84,
+                            27.51,
+                        ]
+                    }
+                },
+                {
+                    y: 39.64,
+                    color: colors[1],
+                    drilldown: {
+                        name: 'Pública',
+                        categories: [
+                            'Municipal',
+                            'Federal',
+                            'Estadual',
+                        ],
+                        data: [
+                            5.3,
+                            23.27,
+                            10.94,
+                        ]
+                    }
+                },
 
-        },
-        {
-            id: 'level1.2',
-            parent: 'level0.1',
-            name: 'Estadual',
-            value: 37
+            ],
+            browserData = [],
+            versionsData = [],
+            i,
+            j,
+            dataLen = data.length,
+            drillDataLen,
+            brightness;
 
-        },
-        {
-            id: 'level1.3',
-            parent: 'level0.1',
-            name: 'Municipal',
-            value: 18
 
+    // Build the data arrays
+    for (i = 0; i < dataLen; i += 1) {
+
+        // add browser data
+        browserData.push({
+            name: categories[i],
+            y: data[i].y,
+            color: data[i].color
+        });
+
+        // add version data
+        drillDataLen = data[i].drilldown.data.length;
+        for (j = 0; j < drillDataLen; j += 1) {
+            brightness = 0.2 - (j / drillDataLen) / 5;
+            versionsData.push({
+                name: data[i].drilldown.categories[j],
+                y: data[i].drilldown.data[j],
+                color: Highcharts.color(data[i].color).brighten(brightness).get()
+            });
         }
-        ]
+    }
 
-        var options: any = {
-
+// Create the chart
+    var options: any =  {
             chart: {
+                type: 'pie',
                 backgroundColor: undefined,
-                height: (9 / 16 * 100) + '%' // 16:9 ratio
+                height: (9 / 16 * 100) + '%', // 16:9 ratio,
+                style: {
+                    fontFamily:  './assets/FONTES/gilr35a.TFT'
+                }
             },
             credits: {
                 enabled: false
             },
-
             title: {
                 text: ''
             },
@@ -330,13 +364,13 @@ export class HighchartsService {
                 },
             },
             plotOptions: {
-                sunburst: {
+                pie: {
+                    shadow: false,
+                    center: ['50%', '50%'],
                     borderWidth: 0,
                     borderColor: "#0d542a",
-                    allowPointSelect: false,
                 }
             },
-
             navigation: {
                 buttonOptions: {
                     theme: {
@@ -348,6 +382,7 @@ export class HighchartsService {
                     }
                 }
             },
+            
         
             exporting: {
                 buttons: {
@@ -361,37 +396,47 @@ export class HighchartsService {
                     },
                 }
             },
-            series: [{
-                type: "sunburst",
-                data: data,
-                allowDrillToNode: true,
-                innerSize: '50%',
-                cursor: 'pointer',
-  
-                levels: [
-                    {
-                        level: 1,
-                        levelIsConstant: false,
-                        dataLabels: {
-                            enabled: false
-                        },
-                        colorByPoint: true,
-
-                    }, {
-                        level: 2,
-
-                        borderWidth: 2,
-                        colorVariation: {
-                            key: 'brightness',
-                            to: 0.5
-                        }
-                    }]
-            }],
             tooltip: {
-                headerFormat: "",
-                pointFormat: 'The population of <b>{point.name}</b> is <b>{point.value}</b>'
-            }
-        }
+                valueSuffix: '%'
+            },
+            legend: {
+                align: 'left',
+                verticalAlign: 'top',
+                y: -20,
+                useHTML: true,
+                labelFormat: '{name} | {y:.0f}%',
+                itemStyle: {
+                    color: 'white',
+                },
+              },
+            series: [{
+                name: 'Browsers',
+                data: browserData,
+                size: '60%',
+                innerSize: '40%',
+                dataLabels: {
+                    enabled:false
+                },
+                showInLegend: true
+            }, {
+                name: 'Versions',
+                data: versionsData,
+                size: '80%',
+                innerSize: '60%',
+                dataLabels: {
+                    enabled:true,
+                    useHTML: true,
+                    align: 'center',
+                    format: '<span style = "font-size:10px">{point.name}</span><br><b style = "color: {point.color};font-size:12px">{point.y:.0f}%<b>',
+                    style: {
+                        fontAlign: 'center',
+                        color: 'white',
+                        textOutline: '0px'
+                    },
+                },
+                id: 'versions'
+            }],
+        };
 
         Highcharts.chart(idHtml, options)
 
