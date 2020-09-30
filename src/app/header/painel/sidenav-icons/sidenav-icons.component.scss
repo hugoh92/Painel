@@ -1,18 +1,3 @@
-$fa-font-path: "../webfonts";
-// @import "./node_modules/font-awesome/scss/fontawesome.scss";
-// @import "./node_modules/font-awesome/scss/solid.scss";
-// @import "./node_modules/font-awesome/scss/brands.scss";
-$fa-font-path: "~font-awesome/fonts";
-@import "~font-awesome/scss/font-awesome.scss";
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
 // .btn {
 //     //position: relative;
 //     left: 10px;
@@ -385,7 +370,7 @@ nav ul li i {
     display: none;
 }
 
-.icon-info{
+.icon-info {
     //background: crimson;
     left: 300px;
     bottom: 90px;
@@ -398,6 +383,7 @@ nav ul li i {
     font-size: 25px;
     //border-radius: 15px 15px 15px 15px;
 }
+
 @media screen and (max-width:460px) {
     .sidebar {
         width: 250px;
@@ -412,42 +398,37 @@ nav ul li i {
         bottom: 250px;
         justify-content: center !important;
     }
-    .hamburguer{
+    .hamburguer {
         border-bottom: 1px solid rgb(223, 228, 33);
     }
-    .rolagem{
+    .rolagem {
         overflow-x: hidden;
         overflow-y: hidden;
     }
     //tirando icones-grid do desktop
-    .mobile-2020{
+    .mobile-2020 {
         display: block;
     }
     nav ul .mobile-2020 {
         line-height: 140px;
         //border-bottom: 1px solid rgb(223, 228, 33);
-        
     }
-    
-
-//Estilizando nav tab-mobile-2018
-    .mobile-2018{
+    //Estilizando nav tab-mobile-2018
+    .mobile-2018 {
         display: block;
     }
-    .mc2{
+    .mc2 {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
         position: relative !important;
         bottom: 300px;
         justify-content: center !important;
     }
-
-//Estilizando nav tab-mobile-indicadores
-    .mobile-indicadores{
+    //Estilizando nav tab-mobile-indicadores
+    .mobile-indicadores {
         display: block;
-         position: relative!important;
+        position: relative!important;
     }
-
     .indicadores {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -461,22 +442,19 @@ nav ul li i {
         bottom: 150px;
         height: 100%!important;
     }
-
-    .numero-mb{
+    .numero-mb {
         color: #e1e31d !important;
         font-size: 17px !important;
         font-weight: 50 !important;
         font-weight: bold!important;
-       
     }
- #menu2{
-     position: relative !important;
- }
-    .ano1{
+    #menu2 {
+        position: relative !important;
+    }
+    .ano1 {
         display: none;
     }
-
-    .active1{
+    .active1 {
         display: none;
     }
     .linha2 {
@@ -488,25 +466,21 @@ nav ul li i {
     .linha4 {
         display: none;
     }
-  
     .btn-group {
         display: block;
         width: 250px;
         bottom: 0;
         position: fixed;
         text-align: center;
-
         // display: block;
         // position: fixed;
         // top: 95%;
         // width: 250px;
         // left: 1.2px;
     }
-
-    .btn-mb-geral{
+    .btn-mb-geral {
         color: white!important;
     }
-
     .btn-group-mobile {
         width: 79px;
         // height: 10%;
@@ -515,7 +489,6 @@ nav ul li i {
         opacity: 0.5;
         font-size: 13px;
         border-radius: 15px 15px 0px 0px;
-       
     }
     .btn-secondary:hover {
         opacity: 1;
