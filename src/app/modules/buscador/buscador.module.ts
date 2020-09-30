@@ -9,6 +9,7 @@ import { DemoMaterialModule } from 'src/app/material-module';
 import { Ng5SliderModule } from 'ng5-slider';
 
 
+
 @NgModule({
   declarations: [BuscaComponent, PesquisaAvancadaComponent],
   imports: [
