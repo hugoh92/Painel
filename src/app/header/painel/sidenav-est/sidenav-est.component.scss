@@ -1,7 +1,3 @@
-* {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
 .btnFilter {
     display: flex;
     flex-direction: column;
@@ -70,6 +66,7 @@ mat-icon {
 ::ng-deep .mat-expansion-indicator:after {
     color: white !important;
 }
+
 // mat-panel-title{
 //     background: #023a1d;
 // }
