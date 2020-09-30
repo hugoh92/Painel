@@ -20,7 +20,7 @@ export class SidebarService {
 
   public toggle(sidenav: string): void {
 
-    if(window.innerWidth > 768){
+    if(window.innerWidth >806){
       this.sidenavInfo.toggle();
       this.sidenavOptions.toggle();
     } else {

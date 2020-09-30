@@ -125,7 +125,6 @@ nav ul .linha3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 1px;
-    //  grid-row-gap: 1em;
     position: absolute;
     right: 1px;
 }
@@ -380,19 +379,105 @@ nav ul li .ano3 {
 
 nav ul li i {
     position: absolute;
-    top: 390px;
+    // top: 390px;
     right: 20px;
-    color: #d71a20;
     font-size: 15px;
+    display: none;
 }
 
+.icon-info{
+    //background: crimson;
+    left: 300px;
+    bottom: 90px;
+    position: relative;
+    // height: 20px;
+    // width: 20px;
+    // align-content: center;
+    // justify-content: center;
+    // text-align: center;
+    font-size: 25px;
+    //border-radius: 15px 15px 15px 15px;
+}
 @media screen and (max-width:460px) {
     .sidebar {
         width: 250px;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
+    //Estilizando nav tab-mobile-2020
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
+        position: relative !important;
+        bottom: 250px;
+        justify-content: center !important;
+    }
+    .hamburguer{
+        border-bottom: 1px solid rgb(223, 228, 33);
+    }
+    .rolagem{
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    //tirando icones-grid do desktop
+    .mobile-2020{
+        display: block;
+    }
+    nav ul .mobile-2020 {
+        line-height: 140px;
+        //border-bottom: 1px solid rgb(223, 228, 33);
+        
+    }
+    
+
+//Estilizando nav tab-mobile-2018
+    .mobile-2018{
+        display: block;
+    }
+    .mc2{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        position: relative !important;
+        bottom: 300px;
+        justify-content: center !important;
+    }
+
+//Estilizando nav tab-mobile-indicadores
+    .mobile-indicadores{
+        display: block;
+         position: relative!important;
+    }
+
+    .indicadores {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 4px;
+        position: relative!important;
+        width: auto;
+        right: 1px;
+        display: block;
+        bottom: 150px;
+        height: 100%!important;
+    }
+
+    .numero-mb{
+        color: #e1e31d !important;
+        font-size: 17px !important;
+        font-weight: 50 !important;
+        font-weight: bold!important;
+       
+    }
+ #menu2{
+     position: relative !important;
+ }
+    .ano1{
+        display: none;
+    }
+
+    .active1{
+        display: none;
     }
     .linha2 {
         display: none;
@@ -403,21 +488,34 @@ nav ul li i {
     .linha4 {
         display: none;
     }
+  
     .btn-group {
         display: block;
-        position: fixed;
-        top: 95%;
         width: 250px;
-        left: 1.2px;
+        bottom: 0;
+        position: fixed;
+        text-align: center;
+
+        // display: block;
+        // position: fixed;
+        // top: 95%;
+        // width: 250px;
+        // left: 1.2px;
     }
-    .btn-secondary {
-        width: 83px;
-        height: 35px;
-        color: white;
-        background-color: #023a1d;
-        border: 1px solid rgb(223, 228, 33);
+
+    .btn-mb-geral{
+        color: white!important;
+    }
+
+    .btn-group-mobile {
+        width: 79px;
+        // height: 10%;
+        color: white!important;
+        border: 1px solid rgb(223, 228, 33) !important;
         opacity: 0.5;
         font-size: 13px;
+        border-radius: 15px 15px 0px 0px;
+       
     }
     .btn-secondary:hover {
         opacity: 1;
@@ -425,7 +523,6 @@ nav ul li i {
     }
     .active {
         opacity: 1;
-        background-color: yellow;
         border: none;
     }
     button.btn.btn-secondary.click {

@@ -3,13 +3,13 @@
         <!-- <span class="fas fa-bars" (click)="_sidebarService.toggle('sidenavInfo')"></span> -->
         <button mat-button class="btn btn-hbg" (click)="_sidebarService.toggle('sidenavInfo')">
             <mat-icon>menu</mat-icon>
-           </button>
+        </button>
         <span class="text">BRASIL</span>
     </div>
 
 
 
-    <ul>
+    <ul class="rolagem">
         <span class="ano1">2020</span>
         <li class="active1">
             <!-- Primeiro bloco de itens -->
@@ -60,7 +60,10 @@
         </li>
 
         <li class="linha3">
-            <span class="ano3">Indicadores</span>
+            <span class="ano3">Indicadores
+                <mat-icon class="icon-info">info</mat-icon>
+            </span>
+           
             <!-- Terceiro bloco de itens -->
             <i class="fas fa-info-circle"></i>
             <div class="wrapper marcador2 align-items-start">
@@ -81,6 +84,7 @@
                     <img src="/assets/icons/docentes.png" class="icone9">
                     <span href="#" class="numero3" name="">00000</span>
                 </div>
+                
             </div>
         </li>
 
@@ -113,23 +117,136 @@
                 </div>
 
             </div>
-            
+
         </li>
-        <div class="btn-group" role="group" aria-label="">
+        <!-- <div class="btn-group" role="group" aria-label="">
             <button type="button" class="btn btn-secondary">2020</button>
             <button type="button" class="btn btn-secondary">2018</button>
             <button type="button" class="btn btn-secondary">Indicadores</button>
-          </div>
-        
-        <!-- <div class="col">
-                <span class="taxao">Taxa de Sucesso</span>
-                <span href="#" class="numero4" name="">00000</span>
-    
-                <div class="row">
-                    <span class="reldc">Relação Docente/Aluno</span>
-                    <span href="#" class="numero4" name="">00000</span>
+          </div> -->
+        <!-- angular bar -->
+        <!-- <div class="btn-group">
+          
+          <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="First" class="btn-secondary">Content 1</mat-tab>
+            <mat-tab label="Second">Content 2</mat-tab>
+            <mat-tab label="Third">Content 3</mat-tab>
+          </mat-tab-group>
+          
+        </div> -->
+        <div class="btn-group">
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <span class="ano1">2020</span>
+                    <li class="mobile-2020">
+                        <!-- Primeiro bloco de itens -->
+                        <div class="wrapper marcadorl align-items-start">
+                            <div class="col">
+                                <span class="nome1">População</span>
+                                <img src="/assets/icons/populacao.png" class="icone1">
+                                <span href="#" class="numero" name="" id="">00000</span>
+                            </div>
+
+                            <div class="col">
+                                <span class="nome1">Cursos</span>
+                                <img src="/assets/icons/cursos.png" class="icone2">
+                                <span href="#" class="numero" name="" id="">00000</span>
+                            </div>
+
+                            <div class="col">
+                                <span class="nome1">Cursos/Milhão Hab.</span>
+                                <img src="/assets/icons/cursosmilhao.png" class="icone3">
+                                <span href="#" class="numero" name="">00000</span>
+                            </div>
+                        </div>
+                    </li>
                 </div>
-                </div> -->
+
+
+
+                <div id="menu1" class="tab-pane fade">
+                    <li class="mobile-2018">
+                        <span class="ano2">2018</span>
+                        <!-- Segundo bloco de itens -->
+                        <div class=" marcador1 mc2 align-items-start">
+                            <div class="col">
+                                <span class="nome1">Vagas</span>
+                                <img src="/assets/icons/vagas.png" class="icone4">
+                                <span href="#" class="numero2" name="">00000</span>
+                            </div>
+
+                            <div class="col">
+                                <span class="nome1">Cursos</span>
+                                <img src="/assets/icons/inscritos.png" class="icone5">
+                                <span href="#" class="numero2" name="">00000</span>
+                            </div>
+
+                            <div class="col">
+                                <span class="nome1">Cursos/Milhão Hab.</span>
+                                <img src="/assets/icons/ingressos.png" class="icone6">
+                                <span href="#" class="numero2" name="">00000</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mobile-2018">
+                        <!-- <span class="ano3">Indicadores</span> -->
+                        <!-- Terceiro bloco de itens -->
+                        <i class="fas fa-info-circle"></i>
+                        <div class="marcador2 mc2 align-items-start">
+                            <div class="col">
+                                <span class="nome3">Matriculados</span>
+                                <img src="/assets/icons/matriculados.png" class="icone7">
+                                <span href="#" class="numero3" name="">00000</span>
+                            </div>
+
+                            <div class="col">
+                                <span class="nome3">Cursos</span>
+                                <img src="/assets/icons/concluintes.png" class="icone8">
+                                <span href="#" class="numero3" name="">00000</span>
+                            </div>
+
+                            <div class="col">
+                                <span class="nome3">Cursos/Milhão Hab.</span>
+                                <img src="/assets/icons/docentes.png" class="icone9">
+                                <span href="#" class="numero3" name="">00000</span>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <li class="mobile-indicadores">
+                        <!-- Quarto bloco de itens -->
+                        <div class="indicadores align-items-start">
+
+                            <span class="taxac">Taxa de concorrência Candidato/Vaga</span>
+                            <span href="#" class="numero-mb" name="">00000</span>
+                            <br>
+                            
+                            <span class="taxao">Taxa de Ocupação</span>
+                            <span href="#" class="numero-mb" name="">00000</span>
+                            <br>
+                            
+                            <span class="taxas">Taxa de Sucesso</span>
+                            <span href="#" class="numero-mb" name="">00000</span>
+                            <br>
+                            
+                            <span class="relda">Relação Docente/Aluno</span>
+                            <span href="#" class="numero-mb" name="">00000</span>
+
+                        </div>
+                    </li>
+                </div>
+            </div>
+
+            <ul class="nav nav-tabs nav-divbt">
+                <li class="active btn-group-mobile"><a class="btn-mb-geral" data-toggle="tab" href="#home">2020</a></li>
+                <li class="btn-group-mobile"><a class="btn-mb-geral"data-toggle="tab" href="#menu1">2018</a></li>
+                <li class="btn-group-mobile"><a class="btn-mb-geral" data-toggle="tab" href="#menu2">Indicadores</a></li>
+            </ul>
+        </div>
+
+
 
     </ul>
 </nav>
