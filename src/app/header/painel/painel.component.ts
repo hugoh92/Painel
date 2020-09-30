@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, HostListener, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Router } from '@angular/router'; //import router
+import { Router,  RouteConfigLoadStart, RouteConfigLoadEnd  } from '@angular/router'; //import router
 import { SidebarService } from 'src/app/services/sidebar.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 })
 export class PainelComponent implements AfterViewInit {
   typeMode = "side";
+  loadingRouteConfig: boolean;
 
   @ViewChild('options') public sidenavOptions: MatSidenav;
   @ViewChild('icons') public sidenavInfo: MatSidenav;
@@ -39,6 +40,8 @@ export class PainelComponent implements AfterViewInit {
       this.typeMode = "over";
     }
   }
+
+  
 
   setSideNav() {
     this._sidebarService.sidenavInfo = this.sidenavInfo;

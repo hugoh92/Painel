@@ -14,12 +14,14 @@ import { HeaderComponent } from './header/header.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import { ResultadoComponent } from './header/buscador/resultado/resultado.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    ResultadoComponent,
   ],
   imports: [
     BrowserModule,

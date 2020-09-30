@@ -4,15 +4,15 @@
 
 .inputDiv {
     color: white;
-    background-color: #023a1d;
+    background: #002708;
     border-radius: 5px;
-    border: 2px solid #e1e31d;
+    border: none;
     padding: 5px;
 }
 
 .btn {
     color: white;
-    background-color: #023a1d;
+    background: #002708;
 }
 
 .img {
@@ -57,4 +57,26 @@
         background-size: 250px;
         top: 100px;
     }
+}
+
+input:focus,
+input:hover {
+    border: 1px solid #e1e31d;
+    box-shadow: none;
+    background: #002708;
+    // font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+.background {
+    background-image: url("/assets/icons/buscador.svg");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center center;
+}
+
+.btn:hover,
+.btn:focus {
+    border: 1px solid #e1e31d;
 }
