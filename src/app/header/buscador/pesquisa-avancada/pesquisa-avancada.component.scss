@@ -45,7 +45,7 @@
 .busca-text input[type=text]:focus:not([readonly]) {
     border: 1px solid #e1e31d;
     box-shadow: none;
-    background: #002708;
+    background: #023a1d;
     padding: 10px;
     // font-size: 18px;
     color: white;
@@ -58,7 +58,7 @@
 }
 
 .form-control {
-    background: #002708;
+    background: #023a1d;
     border: none;
     border-radius: 10px;
     height: 30px;
@@ -74,7 +74,7 @@
 }
 
 .botaoEnviar {
-    background: #002708;
+    background: #023a1d;
     height: 30px;
     width: 100px;
     position: relative;
@@ -135,7 +135,7 @@
 }
 
 .custom-control {
-    background: #002708;
+    background: #023a1d;
     border-radius: 10px;
     height: 30px;
 }
@@ -184,7 +184,7 @@ input:checked+.lbl::after {
     font-weight: 900;
     font-size: 12px;
     content: "\f00c";
-    color: #002708;
+    color: #023a1d;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -198,7 +198,7 @@ input:checked+.lbl::after {
 }
 
 .geral {
-    background: #002708;
+    background: #023a1d;
     border: none;
     border-radius: 10px;
     height: 30px;
@@ -276,13 +276,14 @@ input:checked+.lbl::after {
     text-align: start;
     font-size: 1.5em;
 }
-
+ .pos{
+    background:#023a1d;
+}
 .tb-geral{
     height: 200px;
 }
 .tabela-dados{
 
-    //height: 100%;
     width: 100%;
 }
 table {
@@ -290,7 +291,9 @@ table {
     color: white;
     
   }
-
+td {
+   font: yellow;
+}
   mat-paginator{
     color: white;
   }
@@ -360,7 +363,7 @@ body {
 }
 
 .backgroundInput {
-    background-color: #002708;
+    background-color:#023a1d;
     border: none;
     border-radius: 10px;
 }
