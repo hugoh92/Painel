@@ -51,6 +51,14 @@
 // .btn.click span:before{
 //   content: '\f00d';
 // }
+
+* {
+    margin: 0;	   
+    padding: 0;	   
+    user-select: none;	   
+    box-sizing: border-box;	  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;	
+}
 .btn-group {
     display: none;
 }
@@ -381,7 +389,7 @@ nav ul li i {
     // justify-content: center;
     // text-align: center;
     font-size: 25px;
-    //border-radius: 15px 15px 15px 15px;
+    color: rgb(195, 8, 28);
 }
 
 @media screen and (max-width:460px) {

@@ -43,7 +43,8 @@
 //estilizando container geral primeiro box cima----------
 .item1 {
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-    height: 50%;
+    // height: 300px;
+    height: 60%;
     width: 100%;
     //  flex: 1;
     margin: 5px;
@@ -52,13 +53,14 @@
     font-size: 1.5em;
     border-radius: 15px 15px 15px 15px;
     border: 1px solid #003c18;
+    
 }
 
 //estilizando container geral item 2 embaixo
 .item2 {
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
     width: 48%;
-    height: 220px;
+    height: 240px;
     min-width: 200px;
     max-width: auto;
     // min-width: 300px;
@@ -74,8 +76,8 @@
 //estilizando container geral item 3 embaixo
 .item3 {
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-    width: 48%;
-    height: 220px;
+    width:  48%;
+    height: 240px;
     min-width: 200px;
     max-width: auto;
     //min-width: 300px;
@@ -220,6 +222,16 @@ mat-menu {
     filter: opacity(0.3);
 }
 
+.icones-grid:hover{
+    filter: opacity(1);
+}
+.icones-grid:focus{
+    filter: opacity(1);
+}
+.icones-grid:active{
+    filter: opacity(1);
+}
+
 //primeiro icone é maior estilizaçao individual
 .iconesc {
     position: relative;
@@ -335,7 +347,7 @@ mat-menu {
 }
 
 // Responsividade ----------------------------------------------------
-@media screen and (max-width:1070px) {
+@media screen and (max-width:1100px) {
     .item1 {
         /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
         height: 650px;
@@ -356,10 +368,12 @@ mat-menu {
     .item2 {
         // min-width: 455px;
         width: 455px;
+        height: 300px;
     }
     .item3 {
         // min-width: 455px; 
         width: 455px;
+        height: 300px;
     }
     .grid-box1 {
         grid-template-columns: repeat(1, 1fr);
@@ -386,7 +400,7 @@ mat-menu {
         top: 40px;
         position: relative;
         // display: none;
-        right: 75px;
+        right: 25px;
     }
     .down {
         display: none;
@@ -433,14 +447,16 @@ mat-menu {
 
 @media screen and (max-width:860px) {
     .wrapper {
-        //grid dos icones
         width: 200px;
-        position: absolute;
-        // display: none;
-        right: 150px;
+        position: relative;
+        // position: absolute;
+        right: 95px;
     }
     .btn-icone0 {
-        width: 35px;
+        width: 32px;
+        cursor: pointer;
+        margin: 3px 3px 0 0;
+        height: 25px;
     }
 }
 
@@ -455,7 +471,7 @@ mat-menu {
     .wrapper {
         width: 300px;
         position: relative;
-        right: 75px;
+        right: 25px;
     }
 }
 
@@ -491,7 +507,7 @@ mat-menu {
     .wrapper {
         width: 300px;
         position: absolute;
-        right: 35px;
+        right: -8px;
     }
     .btn-icone0 {
         width: 38px;

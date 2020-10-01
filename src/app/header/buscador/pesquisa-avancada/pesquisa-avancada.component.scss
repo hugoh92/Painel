@@ -1,3 +1,6 @@
+// *{
+//     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
+// }
 .row-nowrap {
     flex-flow: row nowrap;
 }
@@ -39,9 +42,72 @@
     margin: 5px;
     text-align: center;
     font-size: 1.5em;
-    height: 30px;
+    height: 32px;
+}
+.help-bt{
+    background: #c3081c;
+    border-radius: 15px;
+    position: relative;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    
+}
+.fa-question{
+    position: relative;
+    color: white;
+    // left: 260px;
+    // top: 10px;
+    }
+.geral-info-sit{
+    left: 275px;
+    top: 10px;
+    width: 0px;
+    position: relative;
 }
 
+.geral-info-pesq{
+    left: -80px;
+    top: 10px;
+    width: 0px;
+    position: relative;
+
+}
+.geral-info-nat{
+    left: 275px;
+    top: 90px;
+    width: 0px;
+    position: relative;
+}
+
+.geral-info-org{
+    left: -585px;
+    top: 90px;
+    width: 00px;
+    position: relative;
+
+}
+.geral-info-cc{
+    left: -470px;
+    top: 170px;
+    width: 00px;
+    position: relative;
+
+}
+.geral-info-ce{
+    left: -20px;
+    top: 170px;
+    width: 00px;
+    position: relative;
+
+}
+.geral-info-ano{
+    left: 275px;
+    top: 170px;
+    width: 00px;
+    position: relative;
+
+}
 .busca-text input[type=text]:focus:not([readonly]) {
     border: 1px solid #e1e31d;
     box-shadow: none;
@@ -61,7 +127,7 @@
     background: #023a1d;
     border: none;
     border-radius: 10px;
-    height: 30px;
+    height: 32px;
 }
 
  ::-webkit-input-placeholder {
@@ -75,7 +141,7 @@
 
 .botaoEnviar {
     background: #023a1d;
-    height: 30px;
+    height: 32px;
     width: 100px;
     position: relative;
     border: none;
@@ -129,7 +195,7 @@
 
 .custom-control-label {
     // line-height:21px;
-    height: 30px;
+    height: 32px;
     font-size: 16px;
     color: white;
 }
@@ -137,13 +203,13 @@
 .custom-control {
     background: #023a1d;
     border-radius: 10px;
-    height: 30px;
+    height: 32px;
 }
 
 input+label {
     top: 3px;
     left: 6px;
-    height: 30px;
+    height: 32px;
 }
 
 input:checked+.custom-control-label::after {
@@ -201,7 +267,7 @@ input:checked+.lbl::after {
     background: #023a1d;
     border: none;
     border-radius: 10px;
-    height: 30px;
+    height: 32px;
     position: relative;
 }
 
@@ -241,7 +307,7 @@ input:checked+.lbl::after {
 
 .item6 {
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-    width: 35%;
+    width: 38%;
     flex: 1;
     margin: 5px;
     text-align: start;
@@ -250,21 +316,63 @@ input:checked+.lbl::after {
 
 .item7 {
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-    width: 35%;
+    width: 38%;
     // flex: 1;
     margin: 5px;
     text-align: start;
     font-size: 1.5em;
+    
 }
 
 .item8 {
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-    width: 30%;
-    height: 70px;
+    width: 24%;
     // flex: 1;
     margin: 5px;
     text-align: start;
     font-size: 1.5em;
+    
+    
+    }
+.ano-funci input[type=text]:focus:not([readonly]) {
+        border: 1px solid #e1e31d;
+        box-shadow: none;
+        background: #023a1d;
+        padding: 10px;
+        font-size: 20px;
+        color: #e1e31d;
+        font-weight: bold;
+}
+.ano-funci input[type=text]:enabled{
+    border: 1px solid #e1e31d;
+    box-shadow: none;
+    background: #023a1d;
+    padding: 10px;
+    font-size: 20px;
+    color: #e1e31d;
+    text-align: center;
+    font-weight: bold;
+}
+.ano-funci input[type=text]::placeholder{
+    text-align: start;
+    
+}
+.form-ano{
+    line-height: 36px;
+    height: 52px;
+    width:120px;
+    position: relative;
+    
+    
+    }
+
+.cont-ano{
+    // text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    
+    position: relative;
 }
 
 .item9 {
@@ -275,12 +383,31 @@ input:checked+.lbl::after {
     margin: 5px;
     text-align: start;
     font-size: 1.5em;
+    // justify-self: center;
+    // align-content: center;
+    // text-align: center;
+    // align-items: center;
+}
+th {
+    font-size: 14px;
+    font-weight: bold;
+    justify-self: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
 }
  .pos{
     background:#023a1d;
+    color: #e1e31d;
+    width: 200px;
+   
 }
 .tb-geral{
     height: 200px;
+    justify-self: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
 }
 .tabela-dados{
 
@@ -291,14 +418,14 @@ table {
     color: white;
     
   }
-td {
-   font: yellow;
-}
+//   .mat-cell {
+//     color: yellow;
+// }
   mat-paginator{
     color: white;
   }
   element.weight{
-      color: yellow;
+      color: #e1e31d;
   }
 
 h1 {
