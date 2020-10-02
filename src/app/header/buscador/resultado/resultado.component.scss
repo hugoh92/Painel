@@ -49,9 +49,7 @@
     font-size: 24px;
     margin-left: 10px;
 }
-.fa-globe{
-   
-}
+
 .dados-geral{
     font-size: 13px;
     margin-left: 21px;
@@ -127,6 +125,9 @@
    
     
 }
+//parte da linha funcionamento
+
+//part da linha indicadores
 .row-indicadores{
    height: 160px!important;
    border-top: 2px solid white;
@@ -148,11 +149,40 @@
     height: 150px;
     text-align: center;
 }
+.icones-ind{
+    position: relative;
+    height: 80px;
+}
+.nome-ind{
+    position: relative;
+    color: white;
+    font-size: 13px;
+    font-weight: 10;
+    text-align: center;
+    bottom: 10px;
+    
+    
+}
+.numero-ind{
+    color: #e1e31d;
+    font-size: 17px;
+    font-weight: 50;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    bottom: 14px;
+    font-style: italic;
+}
 .div-info{
     background: deeppink;
     width: 20%;
     height: 150px;
     text-align: center;
+    line-height: 1.2;
+}
+.info-style{
+   position: relative;
+   bottom: 10px;
 }
 .col-itens{
    //background: orchid;
