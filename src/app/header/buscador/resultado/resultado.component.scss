@@ -20,17 +20,33 @@
     position: relative;
    
 }
-.bt-voltar {
+.doc-icon{
+    opacity: 0.2;
+}
+.bt-voltar{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.btn-voltar {
     color: white;
     background: #023a1d;
     width: 80px;
     height: 36px;
-}
-.bt-voltar:hover,
-.bt-voltar:focus {
-    border: 1px solid #e1e31d;
+    border-radius: 15px;
 }
 
+.btn-voltar:hover,
+.btn-voltar:focus {
+    border: 1px solid #e1e31d;
+    border-radius: 15px;
+    
+}
+.btn-voltar:active{
+    opacity: 0.5;
+    border: 1px solid #e1e31d;
+    border-radius: 15px;
+}
 .border-button{
     left: 97%;  
     position: relative;
@@ -51,6 +67,7 @@
     display: flex;
     font-weight: bold;
     color: white;
+    
 }
 
 .bt-plus:hover,
