@@ -20,7 +20,49 @@
     position: relative;
    
 }
+.bt-voltar {
+    color: white;
+    background: #023a1d;
+    width: 80px;
+    height: 36px;
+}
+.bt-voltar:hover,
+.bt-voltar:focus {
+    border: 1px solid #e1e31d;
+}
 
+.border-button{
+    left: 97%;  
+    position: relative;
+    background: #d71a20;
+    width: 23px;
+    height: 23px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    bottom: 27px;
+}
+.bt-plus{
+    position: relative;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+    color: white;
+}
+
+.bt-plus:hover,
+.bt-plus:focus {
+    border: 1px solid white;
+    // opacity: 0.5;
+    border-radius: 20px;
+    
+}
+.bt-plus:active{
+    opacity: 0.5;
+}
 .logo-uni{// div dos logos das universidades
     height: 20%;
     align-content: center;
@@ -29,6 +71,7 @@
     align-self: center;
     align-items: center;
     position: relative;
+    
     
 }
 .logos{ //estilo tam dos logos
@@ -96,10 +139,10 @@
     position: relative;
     font-weight: bold;
     font-size: 22px;
-    background: deeppink;
+    
 }
 .start-xs{
-    background: lawngreen;
+    
     margin: 10px 10px 10px 10px;
     width: auto;
    
@@ -126,6 +169,21 @@
     
 }
 //parte da linha funcionamento
+.funcionamento-div{
+   
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 3px;
+    display:flex;
+    // margin: 1px auto; //prolblema busca
+    bottom: 30px;
+    position: relative;
+}
+.func-dados{
+    
+    width: 20%;
+    height: 100px;
+    text-align: center;
+}
 
 //part da linha indicadores
 .row-indicadores{
@@ -137,13 +195,13 @@
     grid-column-gap: 3px;
     display:flex;
     // margin: 1px auto; //prolblema busca
-    background: darksalmon;
+    
     bottom: 30px;
     position: relative;
 }
 
 .div-icons{
-    background: deeppink;
+    
     //width: 105px;
     width: 10%;
     height: 150px;
@@ -174,7 +232,7 @@
     font-style: italic;
 }
 .div-info{
-    background: deeppink;
+    
     width: 20%;
     height: 150px;
     text-align: center;
