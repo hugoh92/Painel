@@ -1,10 +1,5 @@
 /*-- estilizando icones --*/
 
-header {
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
 .nav-link>span {
     z-index: 999999!important;
 }
@@ -335,20 +330,18 @@ header {
 }
 
 //Mostrar texto pra aba ativa
-.nav-link.active > span {
+.nav-link.active>span {
     color: white;
     font-size: 0.5em;
     width: 64px;
     display: block;
     text-align: center;
     position: absolute !important;
-    
     z-index: 9999 !important;
 }
 
 .nav-item>li>span {
     text-align: center;
-    
 }
 
 // linha do nav
@@ -362,4 +355,8 @@ header {
     left: 95%;
     margin-left: -3px;
     top: 48px;
+}
+
+.nomepi {
+    z-index: 999999;
 }

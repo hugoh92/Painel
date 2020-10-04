@@ -9,6 +9,12 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+body {
+    background-color: #0d542a;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 // h1,
 // h2,
 // h3,
@@ -18,11 +24,6 @@ body {
 // label {
 //     font-family: 'Gill67a';
 // }
-
-body {
-    background-color: #0d542a !important;
-}
-
 .btn-hbg {
     color: white;
     font-size: 30px;
@@ -46,7 +47,7 @@ body {
 
 .row-fill {
     min-height: calc(100vh - 100px) !important;
-    background-color: #0d542a !important;
+    background-color: rgba($color: #000000, $alpha: 0) !important;
 }
 
 @media only screen and (max-width: 918px) {
@@ -67,18 +68,18 @@ body {
     height: 200px;
     width: 200px;
 }
-.nav-link.active > span {
+
+.nav-link.active>span {
     color: white;
     font-size: 0.5em;
     width: 64px;
     display: block;
     text-align: center;
     position: absolute !important;
-    
     z-index: 9999!important;
 }
 
-.titulos{
+.titulos {
     font-size: 20px;
     align-items: flex-start;
     color: white;
