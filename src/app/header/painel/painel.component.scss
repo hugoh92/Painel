@@ -6,6 +6,11 @@
     width: 150px;
 }
 
+.btn-mobile:hover,
+.btn-mobile:focus {
+    border: 1px solid #e1e31d;
+}
+
 @media screen and (max-width:460px) {
     .sideicons {
         width: 250px;

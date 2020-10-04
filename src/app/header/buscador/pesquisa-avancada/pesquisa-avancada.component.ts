@@ -41,8 +41,8 @@ export class PesquisaAvancadaComponent implements OnInit {
 
 export interface PeriodicElement {
   name: string;
-  position: number;
-  weight: number;
+  position: string;
+  weight: string;
   symbol: string;
   c_curso: number;
   c_enade:number;
@@ -50,13 +50,12 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', c_curso:2, c_enade:2, funcionamento: 1808},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', c_curso:2, c_enade:2, funcionamento: 1808},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', c_curso:2, c_enade:2, funcionamento: 1808},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', c_curso:2, c_enade:2, funcionamento: 1808},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', c_curso:2, c_enade:2, funcionamento: 1808},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', c_curso:2, c_enade:2, funcionamento: 1808},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', c_curso:2, c_enade:2, funcionamento: 1808},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', c_curso:2, c_enade:2, funcionamento: 1808}
+  {position: 'Escola Bahiana de Medcina e Saúde Pública / EBMSP', name: 'Salvador/BA', weight: 'Privado', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1808},
+  {position: 'Universidade Federal da Bahia UFBA', name: 'Salvador/BA', weight: 'Pública', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1952},
+  {position: 'Universidade Federal da Bahia UFBA', name: 'Salvador/BA', weight: 'Pública', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1952},
+  {position: 'Universidade Federal da Bahia UFBA', name: 'Salvador/BA', weight: 'Pública', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1952},
+  {position: 'Escola Bahiana de Medcina e Saúde Pública / EBMSP', name: 'Salvador/BA', weight: 'Privado', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1808},
+  {position: 'Escola Bahiana de Medcina e Saúde Pública / EBMSP', name: 'Salvador/BA', weight: 'Privado', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1808},
+  {position: 'Escola Bahiana de Medcina e Saúde Pública / EBMSP', name: 'Salvador/BA', weight: 'Privado', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1808}
   
 ];

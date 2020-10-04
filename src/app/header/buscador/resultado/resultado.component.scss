@@ -1,0 +1,276 @@
+
+.wrapper-left{ //wrapper do painel esquerdo
+    grid-template-rows: repeat(2, 1fr);
+}
+.painel-uni{ //div do painel fundo branco
+    background: white;
+    border-radius: 10px;
+    width: 240px;
+    margin: 2px auto;
+    height: 510px;
+    top: 8px !important;
+    position: relative;
+
+}
+
+.wrapper-painel-uni{ //wrapper interno do painel branco
+    grid-template-rows: repeat(5, 1fr);
+    grid-row-gap: 2px;
+    margin-bottom: 2px!important;
+    position: relative;
+   
+}
+.doc-icon{
+    opacity: 0.2;
+}
+.bt-voltar{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.btn-voltar {
+    color: white;
+    background: #023a1d;
+    width: 80px;
+    height: 36px;
+    border-radius: 15px;
+}
+
+.btn-voltar:hover,
+.btn-voltar:focus {
+    border: 1px solid #e1e31d;
+    border-radius: 15px;
+    
+}
+.btn-voltar:active{
+    opacity: 0.5;
+    border: 1px solid #e1e31d;
+    border-radius: 15px;
+}
+.border-button{
+    left: 97%;  
+    position: relative;
+    background: #d71a20;
+    width: 23px;
+    height: 23px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    bottom: 27px;
+}
+.bt-plus{
+    position: relative;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+    color: white;
+    
+}
+
+.bt-plus:hover,
+.bt-plus:focus {
+    border: 1px solid white;
+    // opacity: 0.5;
+    border-radius: 20px;
+    
+}
+.bt-plus:active{
+    opacity: 0.5;
+}
+.logo-uni{// div dos logos das universidades
+    height: 20%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+    position: relative;
+    
+    
+}
+.logos{ //estilo tam dos logos
+    height: 80px;
+    width: auto;
+    position: relative;
+    margin-top: 5px !important;
+    
+}
+.indetf{ //div de identificação painel esquerdo
+    height: 30%;
+    line-height: 1.2;
+}
+.titulo-pn{
+    color: #d71a20;
+    font-weight: 30 !important;
+    top:5px;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.dados-geral{
+    font-size: 13px;
+    margin-left: 21px;
+    position: relative;
+    color: #808a84;
+    top:10px;
+
+}
+
+.icons-dados{
+   
+    height: 30%;
+}
+
+.icones-style{
+    color: #d71a20;   
+    font-size: 25px;
+}
+.icones-div-style{
+    margin-top: 25px;
+    margin-left: 20px;  
+}
+.info-uni{
+    font-size: 14px;
+    position: relative;
+    color: #808a84;
+    bottom: 5px;
+}
+.place-icon{
+    margin-left: -3px!important;
+    font-size: 26px;
+}
+
+#uni-site{
+    left: 3px;
+
+}
+.bts-mat{
+   
+    height: 15%;
+}
+.titulos-rsultados{
+    bottom:35px;
+    position: relative;
+    font-weight: bold;
+    font-size: 22px;
+    
+}
+.start-xs{
+    
+    margin: 10px 10px 10px 10px;
+    width: auto;
+   
+}
+
+.box{
+    width: 250px;
+    height: 540px;
+}
+
+.wrapper-geral{
+    //background: orange;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    // display: grid;
+    padding: 5px;
+    margin-top: 40px !important;
+    margin-left:5px !important;
+    margin: 1px auto; //prolblema busca
+    width: 77%;
+    min-width: 200px;
+   
+    
+}
+//parte da linha funcionamento
+.funcionamento-div{
+   
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 3px;
+    display:flex;
+    // margin: 1px auto; //prolblema busca
+    bottom: 30px;
+    position: relative;
+}
+.func-dados{
+    
+    width: 20%;
+    height: 100px;
+    text-align: center;
+}
+
+//part da linha indicadores
+.row-indicadores{
+   height: 160px!important;
+   border-top: 2px solid white;
+}
+.indicadores-div{
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 3px;
+    display:flex;
+    // margin: 1px auto; //prolblema busca
+    
+    bottom: 30px;
+    position: relative;
+}
+
+.div-icons{
+    
+    //width: 105px;
+    width: 10%;
+    height: 150px;
+    text-align: center;
+}
+.icones-ind{
+    position: relative;
+    height: 80px;
+}
+.nome-ind{
+    position: relative;
+    color: white;
+    font-size: 13px;
+    font-weight: 10;
+    text-align: center;
+    bottom: 10px;
+    
+    
+}
+.numero-ind{
+    color: #e1e31d;
+    font-size: 17px;
+    font-weight: 50;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    bottom: 14px;
+    font-style: italic;
+}
+.div-info{
+    
+    width: 20%;
+    height: 150px;
+    text-align: center;
+    line-height: 1.2;
+}
+.info-style{
+   position: relative;
+   bottom: 10px;
+}
+.col-itens{
+   //background: orchid;
+   margin: 0px;
+   height: 110px;
+   border-top: 2px solid white;
+}
+.row-docentes{
+    height: 60px!important;
+    border-top: 2px solid white;
+}
+
+.row-alunos{
+    height: 60px!important;
+    border-top: 2px solid white;
+}

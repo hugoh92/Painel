@@ -4,7 +4,7 @@
 
 .inputDiv {
     color: white;
-    background: #002708;
+    background: #023a1d;
     border-radius: 5px;
     border: none;
     padding: 5px;
@@ -12,12 +12,12 @@
 
 .btn {
     color: white;
-    background: #002708;
+    background: #023a1d;
 }
 
 .img {
     position: absolute;
-    background: url('/assets/icons/dcgs.svg');
+    background: url('/assets/icons/buscador.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 450px;
@@ -63,7 +63,7 @@ input:focus,
 input:hover {
     border: 1px solid #e1e31d;
     box-shadow: none;
-    background: #002708;
+    background: #023a1d;
     // font-size: 18px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
