@@ -119,8 +119,7 @@
 
 }
 
-.icons-dados{
-   
+.icons-dados{  
     height: 30%;
 }
 
@@ -148,9 +147,27 @@
 
 }
 .bts-mat{
-   
     height: 15%;
 }
+
+.wrapper-matricula{
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 5px ;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    bottom: 20px !important;
+    position: relative;
+    color: white;
+}
+
+.btn-mat{
+    color: white;
+    background: #d71a20;
+    border-radius: 15px;
+    opacity: 0.3;
+}
+
 .titulos-rsultados{
     bottom:35px;
     position: relative;
@@ -181,13 +198,10 @@
     margin-left:5px !important;
     margin: 1px auto; //prolblema busca
     width: 77%;
-    min-width: 200px;
-   
-    
+    min-width: 200px;  
 }
 //parte da linha funcionamento
 .funcionamento-div{
-   
     grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 3px;
     display:flex;
@@ -196,7 +210,6 @@
     position: relative;
 }
 .func-dados{
-    
     width: 20%;
     height: 100px;
     text-align: center;
@@ -218,7 +231,6 @@
 }
 
 .div-icons{
-    
     //width: 105px;
     width: 10%;
     height: 150px;
