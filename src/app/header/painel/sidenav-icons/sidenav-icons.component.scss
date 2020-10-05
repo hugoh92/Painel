@@ -63,11 +63,14 @@
     display: none;
 }
 
-mat-icon {
+.ham-icon {
     background: #023a1d;
     color: white;
+  
     font-size: 30px;
+
 }
+
 
 .sidebar {
     min-width: 400px;
@@ -363,7 +366,7 @@ nav ul li .ano2 {
 
 nav ul li .ano3 {
     position: absolute;
-    top: 372px;
+    top: 385px;
     text-align: center;
     font-size: 13px;
     left: 55px;
@@ -378,18 +381,20 @@ nav ul li i {
     display: none;
 }
 
-.icon-info {
-    //background: crimson;
-    left: 300px;
-    bottom: 90px;
+.btn-info {
+    left: 360px;
+    top: 93px;
     position: relative;
-    // height: 20px;
-    // width: 20px;
-    // align-content: center;
-    // justify-content: center;
-    // text-align: center;
+    background: white;
+    color: #d71a20;
     font-size: 25px;
-    color: rgb(195, 8, 28);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 17px;
+    height: 17px;
 }
 
 @media screen and (max-width:460px) {

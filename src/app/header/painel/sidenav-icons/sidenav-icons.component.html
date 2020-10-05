@@ -2,7 +2,7 @@
     <div class="hamburguer">
         <!-- <span class="fas fa-bars" (click)="_sidebarService.toggle('sidenavInfo')"></span> -->
         <button mat-button class="btn btn-hbg" (click)="_sidebarService.toggle('sidenavInfo')">
-            <mat-icon>menu</mat-icon>
+            <mat-icon class="ham-icon">menu</mat-icon>
         </button>
         <span class="text">BRASIL</span>
     </div>
@@ -58,13 +58,15 @@
                 </div>
             </div>
         </li>
-
-        <li class="linha3">
-            <span class="ano3">Indicadores (2018)
-                <mat-icon class="icon-info">info</mat-icon>
+        
+        <li class="linha3">  
+            
+            <span class="ano3">Indicadores (2018)   
             </span>
-
+            
+            <mat-icon class="btn btn-info icon-info">help</mat-icon>
             <!-- Terceiro bloco de itens -->
+     
             <i class="fas fa-info-circle"></i>
             <div class="wrapper marcador2 align-items-start">
                 <div class="col">
@@ -80,7 +82,7 @@
                 </div>
 
                 <div class="col">
-                    <span class="nome3">Docentes</span>
+                    <span class="nome3">Docentes Eq</span>
                     <img src="/assets/icons/docentes.png" class="icone9">
                     <span href="#" class="numero3" name="">00000</span>
                 </div>
