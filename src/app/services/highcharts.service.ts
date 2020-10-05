@@ -112,6 +112,24 @@ export class HighchartsService {
     }
 
     drawPiePlot(idHtml) {
+        var data = [
+            {
+                name: 'Universidades',
+                y: 208,
+                color: '#ffc905'
+            },
+            {
+                name: 'Centros Universitários',
+                y: 60,
+                color: '#e30086'
+            },
+            {
+                name: 'Faculdades',
+                y: 70,
+                color: '#f26820'
+            },
+        ]
+
         Highcharts.SVGRenderer.prototype.symbols.download = function (x, y, w, h) {
             var path = [
                 // Arrow stem
@@ -204,17 +222,6 @@ export class HighchartsService {
                     borderWidth: 0,
                     borderColor: "Gill35a",
                     allowPointSelect: false,
-                    dataLabels: {
-                        enabled: true,
-                        distance: -20,
-                        format: '{point.percentage:.0f}%',
-                        style: {
-                            fontSize: '10px',
-                            color: 'white',
-                            fontWeight: 'bold',
-                            textOutline: '0px'
-                        }
-                    },
                 }
             },
             legend: {
@@ -227,23 +234,35 @@ export class HighchartsService {
                 name: '',
                 innerSize: '50%',
                 colorByPoint: true,
-                data: [
-                    {
-                        name: 'Universidades',
-                        y: 208,
-                        color: '#ffc905'
+                data: data,
+                dataLabels: {
+                    enabled: true,
+                    distance: -20,
+                    format: '{point.y:.0f}',
+                    style: {
+                        fontSize: '10px',
+                        color: 'white',
+                        fontWeight: 'bold',
+                        textOutline: '0px'
+                    }
+                }
+            },
+            {
+                name: '',
+                innerSize: '100%',
+                dataLabels: {
+                    enabled:true,
+                    useHTML: true,
+                    align: 'center',
+                    format: '<span style = "font-size:10px">{point.name}</span><br><b style = "color: {point.color};font-size:12px;font-weight:bold">{point.percentage:.0f}%<b>',
+                    style: {
+                        fontAlign: 'center',
+                        color: 'white',
+                        textOutline: '0px'
                     },
-                    {
-                        name: 'Centros Universitários',
-                        y: 60,
-                        color: '#e30086'
-                    },
-                    {
-                        name: 'Faculdades',
-                        y: 70,
-                        color: '#f26820'
-                    },
-                ]
+                },
+                colorByPoint: true,
+                data: data
             }]
         }
 
@@ -414,18 +433,13 @@ export class HighchartsService {
                 },
               },
             series: [{
-                name: 'Browsers',
-                data: browserData,
-                size: '60%',
-                innerSize: '40%',
-                dataLabels: {
-                    enabled:false
-                },
-                showInLegend: true
-            }, {
-                name: 'Versions',
+                borderWidth: 3,
+                borderColor: '#0d542a',
+                slicedOffset: 0,
+                name: 'Cursos',
                 data: versionsData,
                 size: '80%',
+                opacity: 0.7,
                 innerSize: '60%',
                 dataLabels: {
                     enabled:true,
@@ -439,6 +453,16 @@ export class HighchartsService {
                     },
                 },
                 id: 'versions'
+            },
+            {
+                name: 'Cursos',
+                data: browserData,
+                size: '55%',
+                innerSize: '40%',
+                dataLabels: {
+                    enabled:false
+                },
+                showInLegend: true
             }],
         };
 

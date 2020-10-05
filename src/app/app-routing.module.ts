@@ -4,6 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/painel',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     loadChildren: 'src/app/modules/buscador/buscador.module#BuscadorModule',
   },
   {

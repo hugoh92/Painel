@@ -44,7 +44,8 @@
 .item1 {
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
     // height: 300px;
-    height: 60%;
+    min-height: 300px;
+    height: 40vh;
     width: 100%;
     //  flex: 1;
     margin: 5px;
@@ -53,14 +54,13 @@
     font-size: 1.5em;
     border-radius: 15px 15px 15px 15px;
     border: 1px solid #003c18;
-    
 }
 
 //estilizando container geral item 2 embaixo
 .item2 {
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
     width: 48%;
-    height: 240px;
+    height: 35vh;
     min-width: 200px;
     max-width: auto;
     // min-width: 300px;
@@ -76,8 +76,8 @@
 //estilizando container geral item 3 embaixo
 .item3 {
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-    width:  48%;
-    height: 240px;
+    width: 48%;
+    height: 35vh;
     min-width: 200px;
     max-width: auto;
     //min-width: 300px;
@@ -222,13 +222,15 @@ mat-menu {
     filter: opacity(0.3);
 }
 
-.icones-grid:hover{
+.icones-grid:hover {
     filter: opacity(1);
 }
-.icones-grid:focus{
+
+.icones-grid:focus {
     filter: opacity(1);
 }
-.icones-grid:active{
+
+.icones-grid:active {
     filter: opacity(1);
 }
 
@@ -368,7 +370,7 @@ mat-menu {
     .item2 {
         // min-width: 455px;
         width: 455px;
-        height: 300px;
+        min-height: 300px;
     }
     .item3 {
         // min-width: 455px; 
