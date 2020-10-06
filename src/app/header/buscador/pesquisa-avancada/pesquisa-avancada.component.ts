@@ -51,11 +51,6 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 'Escola Bahiana de Medcina e Saúde Pública / EBMSP', name: 'Salvador/BA', weight: 'Privado', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1808},
-  {position: 'Universidade Federal da Bahia UFBA', name: 'Salvador/BA', weight: 'Pública', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1952},
-  {position: 'Universidade Federal da Bahia UFBA', name: 'Salvador/BA', weight: 'Pública', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1952},
-  {position: 'Universidade Federal da Bahia UFBA', name: 'Salvador/BA', weight: 'Pública', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1952},
-  {position: 'Escola Bahiana de Medcina e Saúde Pública / EBMSP', name: 'Salvador/BA', weight: 'Privado', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1808},
-  {position: 'Escola Bahiana de Medcina e Saúde Pública / EBMSP', name: 'Salvador/BA', weight: 'Privado', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1808},
-  {position: 'Escola Bahiana de Medcina e Saúde Pública / EBMSP', name: 'Salvador/BA', weight: 'Privado', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1808}
+  {position: 'Universidade Federal da Bahia UFBA', name: 'Salvador/BA', weight: 'Pública', symbol: 'Ativo', c_curso:4, c_enade:4, funcionamento: 1952}
   
 ];
