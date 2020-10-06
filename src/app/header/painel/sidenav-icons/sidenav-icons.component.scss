@@ -409,7 +409,7 @@ nav ul li i {
         justify-content: center !important;
     }
     .hamburguer {
-        border-bottom: 1px solid rgb(223, 228, 33);
+       // border-bottom: 1px solid rgb(223, 228, 33);
     }
     .rolagem {
         overflow-x: hidden;
@@ -424,21 +424,61 @@ nav ul li i {
         //border-bottom: 1px solid rgb(223, 228, 33);
     }
     //Estilizando nav tab-mobile-2018
+    nav ul li div { 
+       left: 0px;
+       width: 100%;
+    }
+    .ano-mobile{
+        position: relative;
+        
+        bottom: 250px;
+        right:  85px;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+    }
     .mobile-2018 {
         display: block;
+        text-align: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+        display: flex;
     }
     .mc2 {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         position: relative !important;
-        bottom: 300px;
+        bottom: 250px;
         justify-content: center !important;
+        display: grid;
+        grid-row-gap:3px ;
+        text-align: center !important;
+        align-items: center !important;
+        position: relative;
+        width: 210px !important;
+        border-top: 2px solid  rgb(223, 228, 33);
+    }
+    .div-icon-mobile{
+        width: 105px;
+        height: 110px!important;
+        justify-content: center!important;
+        align-items: center!important;
+        text-align: center;
+        position: relative;
+        margin-top: 4px;
+        
+    }
+    .icone-mobile{
+        height: 50px;
+        color: white;
     }
     //Estilizando nav tab-mobile-indicadores
     .mobile-indicadores {
         display: block;
         position: relative!important;
+        background: yellow;
     }
+   
     .indicadores {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -452,7 +492,7 @@ nav ul li i {
         bottom: 150px;
         height: 100%!important;
     }
-    .numero-mb {
+    .numero-mobile {
         color: #e1e31d !important;
         font-size: 17px !important;
         font-weight: 50 !important;

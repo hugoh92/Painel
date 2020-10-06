@@ -316,7 +316,7 @@
 
 //Arredondando bordas
 .nav-link.active::after {
-    right: -21px;
+    right: -20px;
     border-left: 2px solid white;
     border-radius: 0 0 0 10px;
     -moz-border-radius: 0 0 0 10px;
