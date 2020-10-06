@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,6 +18,7 @@ import {MatTableModule} from '@angular/material/table';
 import { ResultadoComponent } from './header/buscador/resultado/resultado.component';
 
 import { Ng5SliderModule } from 'ng5-slider';
+import { AlertComponent } from './shared/alert/alert.component';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { Ng5SliderModule } from 'ng5-slider';
     AppComponent,
     HeaderComponent,
     ResultadoComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

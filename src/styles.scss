@@ -87,3 +87,24 @@ body {
     position: relative;
     left: 10px;
 }
+
+.mat-form-field-infix {
+    border-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.mat-form-field-outline,
+.mat-form-field-empty.mat-form-field-label,
+.mat-form-field-label,
+.mat-form-field-underline,
+.mat-input-element,
+::placeholder {
+    color: white !important;
+    padding-left: 10px;
+    margin-top: 2px;
+}
+
+.mat-autocomplete-panel {
+    background-color: #023a1da4;
+    color: white;
+}

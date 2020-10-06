@@ -28,9 +28,8 @@ import {
   MatDialogModule
 } from '@angular/material/dialog';
 
-import {
-  MatTreeModule
-} from '@angular/material/tree';
+import {MatAutocompleteModule
+} from '@angular/material/autocomplete';
 
 import {
   MatCheckboxModule
@@ -96,7 +95,7 @@ import {
     MatInputModule, 
     MatFormFieldModule,
     MatCheckboxModule,
-    MatTreeModule,
+    MatAutocompleteModule,
     MatSidenavModule,
     MatButtonModule,
     MatListModule,
