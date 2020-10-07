@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {debounceTime, distinctUntilChanged, map, startWith, switchMap} from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
+
 
 @Component({
   selector: 'app-busca',
@@ -11,35 +10,28 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class BuscaComponent implements OnInit {
   emailFormControl = new FormControl('');
-  myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<any>;
+  selectedId:any = 2;
+  searchText:string;
+  selectedObject: any;
+  options: any = []; 
 
   constructor(private _dataService: DataService) {
-    this.filteredOptions = this.myControl.valueChanges
-    .pipe(
-      startWith(''),
-      debounceTime(400),
-      distinctUntilChanged(),
-      switchMap(val => {
-        return this._filter(val || '')
-      })       
-    );
+    this._dataService.getAutocompleteOptions().subscribe(
+      json => {
+        this.options = json;
+      }
+    )
   } 
 
-  ngOnInit() {
-
+  ngOnInit(): void {
   }
 
-  // filter and return the values
-  _filter(val: string): Observable<any[]> {
-    // call the service which makes the http-request
-    return this._dataService.getAutocompleteOptions()
-     .pipe(
-       map((response: any) => response.filter(option => { 
-         return option.nome_da_ies.toLowerCase().indexOf(val.toLowerCase()) === 0
-       }))
-     )
-   } 
+  textEntered(e){
+    this.searchText = e;
+  }
+
+  valueSelected(e){
+    this.selectedObject = JSON.stringify(e);
+  }
 
 }

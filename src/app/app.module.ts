@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { BuscadorModule } from './modules/buscador/buscador.module'
@@ -19,6 +19,8 @@ import { ResultadoComponent } from './header/buscador/resultado/resultado.compon
 
 import { Ng5SliderModule } from 'ng5-slider';
 import { AlertComponent } from './shared/alert/alert.component';
+import { LoaderService } from './services/loader.service';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 
 @NgModule({
@@ -41,7 +43,10 @@ import { AlertComponent } from './shared/alert/alert.component';
     BuscadorModule,
     Ng5SliderModule 
   ],
-
+  providers: [
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

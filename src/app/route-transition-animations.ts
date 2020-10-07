@@ -4,7 +4,7 @@ export const routeTransitionAnimations = trigger('triggerName', [
         query(':enter, :leave',
             style({ position: 'fixed', width: '100%' }),
             { optional: true }),
-        group([
+        /*group([
             query(':enter', [
                 style({ transform: 'translateY(100%)' }),
                 animate('0.5s ease-in-out',
@@ -15,6 +15,6 @@ export const routeTransitionAnimations = trigger('triggerName', [
                 animate('0.5s ease-in-out',
                     style({ transform: 'translateY(-100%)' }))
             ], { optional: true }),
-        ])
+        ])*/
     ])
 ]);

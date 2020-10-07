@@ -70,6 +70,9 @@ import {
 } from '@angular/material/tabs';
 
 import {
+  MatChipsModule} from '@angular/material/chips';
+
+import {
   MatTableModule
 } from '@angular/material/table';
 
@@ -101,6 +104,7 @@ import {
     MatListModule,
     MatIconModule,
     MatDialogModule,
+    MatChipsModule,
     MatMenuModule,
     MatButtonToggleModule,
     MatPaginatorModule

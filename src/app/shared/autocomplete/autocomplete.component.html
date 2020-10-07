@@ -1,0 +1,51 @@
+<div class="zs-container" #zsContainer>
+    <div class="zs-header">
+        <form class="example-form">
+            <mat-form-field class="obs-mat-container example-full-width" [floatLabel]="floatLabel" [ngClass]="disabled?'disable-form-field':''">
+                <input type="text" class="form-control inputDiv p-3" placeholder="Digite o nome, sigla, estado ou município da IES" #searchInput type="text" [id]="placeholder+'Id'" [placeholder]="required ? placeholder + ' *' : placeholder" (keyup)="filter($event.target.value)"
+                    (blur)="onBlur()" (keydown.enter)="$event.preventDefault();
+                           getData($event.target.value);" (keydown.backspace)="erase()" [attr.aria-label]="placeholder" spellcheck="false" matInput (focus)="searchInput.select();" [matAutocomplete]="zsAuto">
+
+                <mat-autocomplete autoActiveFirstOption #zsAuto class="bigger-mat-ac" (optionSelected)="onSelect($event.option.value, null)">
+
+                    <mat-table #table [dataSource]="rows">
+                        <!-- Checkbox Column -->
+                        <ng-container matColumnDef="select">
+                            <mat-header-cell *matHeaderCellDef>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row">
+                            </mat-cell>
+                        </ng-container>
+
+                        <ng-container [matColumnDef]="column" *ngFor="let column of columns">
+                            <mat-header-cell *matHeaderCellDef [ngClass]="isHiddenColumn(column)?'zs-hidden':null"> {{column}} </mat-header-cell>
+
+                            <mat-cell *matCellDef="let element" [ngClass]="isHiddenColumn(column)?'zs-hidden':null" matRipple>
+
+                                <!-- <mat-icon *ngIf="column=='add'"
+                          [matTooltip]="'add'"
+                          class="s-24 mat-icon material-icons"
+                          role="img"
+                          aria-hidden="true"
+                          (click)="$event.stopPropagation();addAction($event,element);"
+                          style="cursor:pointer;" matRipple>add</mat-icon> -->
+                                <span *ngIf="column!='add'">
+                  {{element[column]}}
+                </span>
+
+                            </mat-cell>
+
+                        </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-option *matRowDef="let row; columns: displayedColumns" [ngClass]="{'blue-50':row[valueField] == selectedId}" matRipple [value]="row">
+                            <mat-row [routerLink]="['/buscador/', row.codigo_curso]"></mat-row>
+                        </mat-option>
+                    </mat-table>
+
+                </mat-autocomplete>
+            </mat-form-field>
+
+        </form>
+    </div>
+</div>

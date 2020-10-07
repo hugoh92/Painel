@@ -3,24 +3,26 @@
     </div>
 
     <div class="row justify-content-center align-self-center">
-        <div class="col-8 col-lg-4  mb-3">
+        <div class="col-8 col-lg-6  mb-3">
             <div class="input-group">
-                <form class="example-form">
+                <!--<form class="example-form">
                     <mat-form-field class="example-full-width">
                         <input type="text" class="form-control inputDiv p-3" placeholder="Digite o nome ou sigla da IES" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
                         <mat-autocomplete autoActiveFirstOption #auto>
                             <mat-option *ngFor="let option of filteredOptions | async" [value]="option.nome_da_ies" [routerLink]="['/buscador/', option.codigo_curso]">
                                 <div style="display:flex;flex-wrap: nowrap;align-items:center;justify-content:center;margin: auto;">
-                                    <span style="flex-grow: 1;flex: 1 1 33%;">  {{option.nome_da_ies}}</span>
+                                    <span style="flex-grow: 1;flex: 1 1 33%;">  {{option.sigla_da_ies}}</span>
                                 </div>
                             </mat-option>
                         </mat-autocomplete>
                     </mat-form-field>
-                </form>
-
+                </form>-->
+                <app-autocomplete class="w-100" name="my-select" placeholder="Digite o nome, sigla, estado ou município da IES" nameField="name" valueField="id" [columns]="['sigla_da_ies','municipio','uf']" [options]="options" [(ngModel)]="selectedId" (selectEvent)="valueSelected($event)"
+                    (onTextEnter)="searchText=$event">
+                </app-autocomplete>
             </div>
         </div>
-        <div class="col-lg-3 ">
+        <div class="col-lg-2 ">
             <div class="input-group-append justify-content-center align-self-center">
                 <!--<button mat-button class="btn py-1 py-md-0" type="button" routerLink='/buscador/resultado'>
                     <span class = "d-none d-md-block">Buscar</span>

@@ -108,3 +108,10 @@ body {
     background-color: #023a1da4;
     color: white;
 }
+
+.cursor-loader {
+    cursor: wait;
+    * {
+        cursor: wait !important;
+    }
+}

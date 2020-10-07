@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { AfterViewInit, Component, Renderer2 } from '@angular/core';
+import { LoaderService } from './services/loader.service';
 import { routeTransitionAnimations } from './route-transition-animations';
 import { RouterOutlet } from '@angular/router';
 
@@ -13,9 +13,15 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'painelMed';
 
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && 
-      outlet.activatedRouteData && 
-      outlet.activatedRouteData['animationState'];
-   }
+  constructor(private loaderService: LoaderService, private renderer: Renderer2) { }
+
+  ngAfterViewInit() {
+    this.loaderService.httpProgress().subscribe((status: boolean) => {
+      if (status) {
+        this.renderer.addClass(document.body, 'cursor-loader');
+      } else {
+        this.renderer.removeClass(document.body, 'cursor-loader');
+      }
+    });
+  }
 }
