@@ -395,6 +395,7 @@ nav ul li i {
 }
 
 @media screen and (max-width:460px) {
+   //menu mobile
     #menu2 {
         position: relative !important;
     }
@@ -422,27 +423,20 @@ nav ul li i {
     .hamburguer{
         width: 250px!important;
     }
-    //Estilizando nav tab-mobile-2020
-    .wrapper {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        position: relative !important;
-        bottom: 250px;
-        justify-content: center !important;
-    }
     .btn-group {
         display: block;
         width: 250px;
-        bottom: 0px;
+        bottom: 5px;
         justify-content: center;
         text-align: center;
         align-items: center;
         left: 6px;
-        border-bottom: none;
         // position: fixed;
 
     }
+    
     .tab-lugar{
+        display: block;
         position: fixed;
         bottom:0;
         width: 250px;
@@ -452,6 +446,15 @@ nav ul li i {
         text-align: center;
     }
 
+    //Estilizando nav tab-mobile-2020
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        position: relative !important;
+        bottom: 250px;
+        justify-content: center !important;
+    }
+   
     //tirando icones-grid do desktop
     .mobile-2020 {
         display: block;
@@ -477,6 +480,8 @@ nav ul li i {
         font-size: 15px;
         font-weight: bold;
     }
+    
+    //menu mobile 2018
     .mobile-2018 {
         display: block;
         text-align: center !important;
