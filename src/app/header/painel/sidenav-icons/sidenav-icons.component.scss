@@ -496,7 +496,7 @@ nav ul li i {
         bottom: 0px;
         justify-content: center !important;
         display: grid;
-        grid-row-gap:3px ;
+        grid-row-gap:0px;
         text-align: center !important;
         align-items: center !important;
         width: 210px !important;
@@ -520,21 +520,30 @@ nav ul li i {
     .mobile-indicadores {
         display: block;
         position: relative!important;
-        //background: yellow;
+        justify-content: center !important;
+        display: grid;
+        text-align: center !important;
+        align-items: center !important;
     }
-   
+   //indicadores 
+    .ind-mobile{
+        right:  45px;
+    }
     .indicadores {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
         grid-column-gap: 0px;
-        grid-row-gap: 4px;
+        grid-row-gap: 0px;
         position: relative!important;
-        width: auto;
-        right: 1px;
+        width: 210px !important;
         display: block;
-        bottom: 150px;
-        height: 100%!important;
+        border-top: 2px solid  rgb(223, 228, 33);
+        justify-content: center !important;
+        display: grid;
+        text-align: center !important;
+        align-items: center !important;
+        
     }
     .numero-mobile {
         color: #e1e31d !important;
@@ -542,7 +551,6 @@ nav ul li i {
         font-weight: 50 !important;
         font-weight: bold!important;
     }
-   
    
     .btn-mb-geral {
         color: white!important;
