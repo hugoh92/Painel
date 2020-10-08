@@ -395,11 +395,57 @@ nav ul li i {
 }
 
 @media screen and (max-width:460px) {
+   //menu mobile
+    #menu2 {
+        position: relative !important;
+    }
+    .ano1 {
+        display: none;
+    }
+    .active1 {
+        display: none;
+    }
+    .linha2 {
+        display: none;
+    }
+    .linha3 {
+        display: none;
+    }
+    .linha4 {
+        display: none;
+    }
     .sidebar {
-        width: 250px;
+        width: 250px !important;
+        min-width: 250px;
         overflow-x: hidden;
         overflow-y: hidden;
     }
+    .hamburguer{
+        width: 250px!important;
+    }
+    .btn-group {
+        display: block;
+        width: 250px;
+        bottom: 5px;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        left: 6px;
+        // position: fixed;
+
+    }
+    
+    .tab-lugar{
+        display: block;
+        position: fixed;
+        bottom:0;
+        width: 250px;
+        height: 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
     //Estilizando nav tab-mobile-2020
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
@@ -408,13 +454,7 @@ nav ul li i {
         bottom: 250px;
         justify-content: center !important;
     }
-    .hamburguer {
-       // border-bottom: 1px solid rgb(223, 228, 33);
-    }
-    .rolagem {
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
+   
     //tirando icones-grid do desktop
     .mobile-2020 {
         display: block;
@@ -428,15 +468,20 @@ nav ul li i {
        left: 0px;
        width: 100%;
     }
+    // .menu-mobile{
+    //     position: relative !important;
+
+    // }
     .ano-mobile{
         position: relative;
-        
-        bottom: 250px;
+        bottom: 0px;
         right:  85px;
         color: white;
         font-size: 15px;
         font-weight: bold;
     }
+    
+    //menu mobile 2018
     .mobile-2018 {
         display: block;
         text-align: center !important;
@@ -448,13 +493,12 @@ nav ul li i {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
         position: relative !important;
-        bottom: 250px;
+        bottom: 0px;
         justify-content: center !important;
         display: grid;
-        grid-row-gap:3px ;
+        grid-row-gap:0px;
         text-align: center !important;
         align-items: center !important;
-        position: relative;
         width: 210px !important;
         border-top: 2px solid  rgb(223, 228, 33);
     }
@@ -476,21 +520,30 @@ nav ul li i {
     .mobile-indicadores {
         display: block;
         position: relative!important;
-        background: yellow;
+        justify-content: center !important;
+        display: grid;
+        text-align: center !important;
+        align-items: center !important;
     }
-   
+   //indicadores 
+    .ind-mobile{
+        right:  45px;
+    }
     .indicadores {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
         grid-column-gap: 0px;
-        grid-row-gap: 4px;
+        grid-row-gap: 0px;
         position: relative!important;
-        width: auto;
-        right: 1px;
+        width: 210px !important;
         display: block;
-        bottom: 150px;
-        height: 100%!important;
+        border-top: 2px solid  rgb(223, 228, 33);
+        justify-content: center !important;
+        display: grid;
+        text-align: center !important;
+        align-items: center !important;
+        
     }
     .numero-mobile {
         color: #e1e31d !important;
@@ -498,36 +551,7 @@ nav ul li i {
         font-weight: 50 !important;
         font-weight: bold!important;
     }
-    #menu2 {
-        position: relative !important;
-    }
-    .ano1 {
-        display: none;
-    }
-    .active1 {
-        display: none;
-    }
-    .linha2 {
-        display: none;
-    }
-    .linha3 {
-        display: none;
-    }
-    .linha4 {
-        display: none;
-    }
-    .btn-group {
-        display: block;
-        width: 250px;
-        bottom: 0;
-        position: fixed;
-        text-align: center;
-        // display: block;
-        // position: fixed;
-        // top: 95%;
-        // width: 250px;
-        // left: 1.2px;
-    }
+   
     .btn-mb-geral {
         color: white!important;
     }
