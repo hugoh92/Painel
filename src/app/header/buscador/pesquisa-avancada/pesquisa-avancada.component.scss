@@ -48,19 +48,28 @@
     background: #d71a20;
     border-radius: 15px;
     position: relative;
-    width: 23px;
-    height: 23px;
+    width: 25px !important;
+    height: 25px;
     text-align: center;
     font-size: 15px;
     font-weight: 10!important;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .fa-question{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
     position: relative;
+    font-size: 12px;
+    display: flex;
+    font-weight: bold;
     color: white;
-    // left: 260px;
-    // top: 10px;
-    }
+}
+
+
 .geral-info-sit{
     left: 275px;
     top: 10px;
@@ -69,9 +78,8 @@
 }
 
 .geral-info-pesq{
-    left: -80px;
+    left: -40px;
     top: 10px;
-    width: 0px;
     position: relative;
 
 }
@@ -83,10 +91,10 @@
 }
 
 .geral-info-org{
-    left: -585px;
+    left: 300px;
     top: 90px;
     width: 00px;
-    position: relative;
+    position: absolute;
 
 }
 .geral-info-cc{
@@ -121,7 +129,7 @@
 
 .busca-text {
     align-self: center;
-    width: 95%;
+    width: 100%;
     border-radius: 15px;
 }
 
@@ -238,13 +246,18 @@ input:checked+.custom-control-label::before {
 
 .item4 {
     /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-    width: 300px;
-    // flex: 1;
+    width: 25%;
     margin: 5px;
     text-align: start;
     font-size: 1.5em;
     height: 70px;
     float: left;
+    flex: 1;
+    align-content: center;
+    font-size: 1.5em;
+    min-width: 300px;
+    max-width: 310px;
+    text-align: start;
 }
 
 input:checked+.lbl::after {
@@ -263,6 +276,7 @@ input:checked+.lbl::after {
     justify-content: center;
     display: flex;
     position: relative;
+    
 }
 
 .geral {
@@ -271,11 +285,14 @@ input:checked+.lbl::after {
     border-radius: 10px;
     height: 32px;
     position: relative;
+    // margin-right: 40px;
 }
 
 .form-check {
     left: 5px;
     top: -5px;
+    margin-right: 40px;
+    margin-left: 10px;
 }
 
 .check2 {
@@ -337,13 +354,13 @@ input:checked+.lbl::after {
     
     }
 .ano-funci input[type=text]:focus:not([readonly]) {
-        border: 1px solid #e1e31d;
-        box-shadow: none;
-        background: #023a1d;
-        padding: 10px;
-        font-size: 20px;
-        color: #e1e31d;
-        font-weight: bold;
+    border: 1px solid #e1e31d;
+    box-shadow: none;
+    background: #023a1d;
+    padding: 10px;
+    font-size: 20px;
+    color: #e1e31d;
+    font-weight: bold;
 }
 .ano-funci input[type=text]:enabled{
     border: 1px solid #e1e31d;
@@ -362,9 +379,8 @@ input:checked+.lbl::after {
 .form-ano{
     line-height: 36px;
     height: 52px;
-    width:120px;
+    width:100%;
     position: relative;
-    
     
     }
 
@@ -373,8 +389,8 @@ input:checked+.lbl::after {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 40px;
-    
     position: relative;
+    width:100%;
 }
 
 .item9 {
