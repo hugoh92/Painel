@@ -4,6 +4,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { SelectionModel } from "@angular/cdk/collections";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR,
   NG_VALIDATORS, FormControl, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-autocomplete',
@@ -81,7 +82,7 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit, OnDe
 
   private allowPropagate: boolean = false;
 
-  constructor(
+  constructor(private router: Router
   ) {
     this.hiddenColumns = ["selected"];
     this.selection = new SelectionModel<any>(false, []);
@@ -219,20 +220,7 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit, OnDe
   }
 
   onSelect(row, $event?) {
-    this.allowPropagate = true;
-    //if (this.inputText != this.lastSearchText)
-    //  return;
-    if ($event && !$event.hasOwnProperty("checked") && (this.multiple || !this.closeOnSelect)) {
-      $event.stopPropagation();
-    }
-    if (this.multiple)
-      this.selection.toggle(row); //important do not delete.
-    else
-      this.selection.select(row);
-    // this.selection.select($event.option.value); //this is used for optionSelected of MatAutoComplete. Update: Event not used now.. so commented.
-
-    this.searchInput.nativeElement.value = "";
-
+    this.router.navigate(['/buscador/', row.codigo_curso])
   }
 
   selectedValuesToArray() {

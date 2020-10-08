@@ -13,15 +13,9 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'painelMed';
 
-  constructor(private loaderService: LoaderService, private renderer: Renderer2) { }
+  constructor() { }
 
   ngAfterViewInit() {
-    this.loaderService.httpProgress().subscribe((status: boolean) => {
-      if (status) {
-        this.renderer.addClass(document.body, 'cursor-loader');
-      } else {
-        this.renderer.removeClass(document.body, 'cursor-loader');
-      }
-    });
+
   }
 }

@@ -44,7 +44,8 @@
     font-size: 1.5em;
     height: 32px;
 }
-.help-bt{
+
+.help-bt {
     background: #d71a20;
     border-radius: 15px;
     position: relative;
@@ -53,63 +54,64 @@
     text-align: center;
     font-size: 15px;
     font-weight: 10!important;
-    
 }
-.fa-question{
+
+.fa-question {
     position: relative;
     color: white;
     // left: 260px;
     // top: 10px;
-    }
-.geral-info-sit{
+}
+
+.geral-info-sit {
     left: 275px;
     top: 10px;
     width: 0px;
     position: relative;
 }
 
-.geral-info-pesq{
+.geral-info-pesq {
     left: -80px;
     top: 10px;
     width: 0px;
     position: relative;
-
 }
-.geral-info-nat{
+
+.geral-info-nat {
     left: 275px;
     top: 90px;
     width: 0px;
     position: relative;
 }
 
-.geral-info-org{
+.geral-info-org {
     left: -585px;
     top: 90px;
     width: 00px;
     position: relative;
-
 }
-.geral-info-cc{
+
+.geral-info-cc {
     left: -470px;
     top: 170px;
     width: 00px;
     position: relative;
-
 }
-.geral-info-ce{
+
+.geral-info-ce {
     left: -20px;
     top: 170px;
     width: 00px;
     position: relative;
-
 }
-.geral-info-ano{
+
+.geral-info-ano {
     left: 275px;
     top: 170px;
     width: 00px;
     position: relative;
-
 }
+
 .busca-text input[type=text]:focus:not([readonly]) {
     border: 1px solid #e1e31d;
     box-shadow: none;
@@ -274,8 +276,8 @@ input:checked+.lbl::after {
 }
 
 .form-check {
-    left: 5px;
-    top: -5px;
+    left: 10px;
+    top: 2px;
 }
 
 .check2 {
@@ -283,7 +285,7 @@ input:checked+.lbl::after {
 }
 
 .natureza {
-    top: 1px;
+    top: -2px;
     align-items: flex-start;
     color: white;
     position: relative;
@@ -323,7 +325,6 @@ input:checked+.lbl::after {
     margin: 5px;
     text-align: start;
     font-size: 1.5em;
-    
 }
 
 .item8 {
@@ -333,19 +334,19 @@ input:checked+.lbl::after {
     margin: 5px;
     text-align: start;
     font-size: 1.5em;
-    
-    
-    }
-.ano-funci input[type=text]:focus:not([readonly]) {
-        border: 1px solid #e1e31d;
-        box-shadow: none;
-        background: #023a1d;
-        padding: 10px;
-        font-size: 20px;
-        color: #e1e31d;
-        font-weight: bold;
 }
-.ano-funci input[type=text]:enabled{
+
+.ano-funci input[type=text]:focus:not([readonly]) {
+    border: 1px solid #e1e31d;
+    box-shadow: none;
+    background: #023a1d;
+    padding: 10px;
+    font-size: 20px;
+    color: #e1e31d;
+    font-weight: bold;
+}
+
+.ano-funci input[type=text]:enabled {
     border: 1px solid #e1e31d;
     box-shadow: none;
     background: #023a1d;
@@ -355,25 +356,23 @@ input:checked+.lbl::after {
     text-align: center;
     font-weight: bold;
 }
-.ano-funci input[type=text]::placeholder{
+
+.ano-funci input[type=text]::placeholder {
     text-align: start;
-    
 }
-.form-ano{
+
+.form-ano {
     line-height: 36px;
     height: 52px;
-    width:120px;
+    width: 120px;
     position: relative;
-    
-    
-    }
+}
 
-.cont-ano{
+.cont-ano {
     // text-align: center;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 40px;
-    
     position: relative;
 }
 
@@ -390,6 +389,7 @@ input:checked+.lbl::after {
     // text-align: center;
     // align-items: center;
 }
+
 th {
     font-size: 14px;
     font-weight: bold;
@@ -398,37 +398,48 @@ th {
     text-align: center;
     align-items: center;
 }
- .pos{
-    background:#023a1d;
+
+.pos {
+    background: #023a1d;
     color: #e1e31d;
     width: 200px;
-   
 }
-.tb-geral{
+
+.tb-geral {
     height: 200px;
     justify-self: center;
     align-content: center;
     text-align: center;
     align-items: center;
 }
-.tabela-dados{
 
+.tabela-dados {
     width: 100%;
 }
+
 table {
     width: 100%;
     color: white;
-    
-  }
-//   .mat-cell {
-//     color: yellow;
-// }
-  mat-paginator{
+}
+
+.mat-row:hover .mat-cell,
+.mat-row:focus .mat-cell,
+.mat-row:active .mat-cell,
+.mat-row.mat-active .mat-cell {
+    color: #e1e31d !important;
+    font-weight: bold;
+    background-color: #023a1d;
+    opacity: 0.9 !important;
+    cursor: pointer;
+}
+
+mat-paginator {
     color: white;
-  }
-  element.weight{
-      color: #e1e31d;
-  }
+}
+
+element.weight {
+    color: #e1e31d;
+}
 
 h1 {
     text-align: center;
@@ -492,7 +503,26 @@ body {
 }
 
 .backgroundInput {
-    background-color:#023a1d;
+    background-color: #023a1d;
     border: none;
     border-radius: 10px;
+}
+
+input {
+    color: white;
+    background: #023a1d;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+input:focus,
+input:active,
+input:hover {
+    border: 1px solid #e1e31d;
+    box-shadow: none;
+    background: #023a1d;
+    // font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
 }

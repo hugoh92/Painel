@@ -32,8 +32,8 @@ import {MatAutocompleteModule
 } from '@angular/material/autocomplete';
 
 import {
-  MatCheckboxModule
-} from '@angular/material/checkbox';
+  MatSlideToggleModule
+} from '@angular/material/slide-toggle';
 
 import {
   MatFormFieldModule  
@@ -70,7 +70,7 @@ import {
 } from '@angular/material/tabs';
 
 import {
-  MatChipsModule} from '@angular/material/chips';
+  MatCheckboxModule} from '@angular/material/checkbox';
 
 import {
   MatTableModule
@@ -97,14 +97,14 @@ import {
     MatCardModule,
     MatInputModule, 
     MatFormFieldModule,
-    MatCheckboxModule,
+    MatSlideToggleModule,
     MatAutocompleteModule,
     MatSidenavModule,
     MatButtonModule,
     MatListModule,
     MatIconModule,
     MatDialogModule,
-    MatChipsModule,
+    MatCheckboxModule,
     MatMenuModule,
     MatButtonToggleModule,
     MatPaginatorModule

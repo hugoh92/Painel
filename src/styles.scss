@@ -1,5 +1,6 @@
 @import './assets/theme.scss';
 @import './assets/font/font-gilson.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -114,4 +115,56 @@ body {
     * {
         cursor: wait !important;
     }
+}
+
+.rowTable:hover,
+.rowTable:focus,
+.rowTable:active,
+.rowTable.mat-active {
+    color: #e1e31d;
+    background: #023a1d;
+}
+
+.mat-expansion-panel {
+    background: #023a1d !important;
+    box-shadow: none !important;
+}
+
+.mat-drawer {
+    background: #023a1d !important;
+    box-shadow: none !important;
+}
+
+.mat-table,
+.mat-paginator {
+    background: #0d542a !important;
+    box-shadow: none !important;
+}
+
+.matTableAutocomplete.mat-table {
+    background: #023a1d !important;
+    opacity: 0.5 !important;
+}
+
+.matTableAutocomplete .mat-cell {
+    color: white !important;
+}
+
+.rowTable:hover .mat-cell,
+.rowTable:focus .mat-cell,
+.rowTable:active .mat-cell,
+.rowTable.mat-active .mat-cell {
+    color: #e1e31d !important;
+    font-weight: bold;
+    opacity: 0.9 !important;
+}
+
+.tabela-dados .mat-cell,
+.tabela-dados .mat-header-cell {
+    color: white;
+    border-color: white !important;
+}
+
+.mat-form-field-underline {
+    display: none;
 }

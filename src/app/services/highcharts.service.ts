@@ -155,7 +155,7 @@ export class HighchartsService {
                 plotBorderWidth: null,
                 plotShadow: false,
                 type: 'pie',
-                height: (9 / 16 * 100) + '%', // 16:9 ratio
+                height: (7 / 12 * 100) + '%', // 16:9 ratio
                 style: {
                     fontFamily:  './assets/FONTES/gilr35a.TFT'
                 }
@@ -364,7 +364,7 @@ export class HighchartsService {
             chart: {
                 type: 'pie',
                 backgroundColor: undefined,
-                height: (9 / 16 * 100) + '%', // 16:9 ratio,
+                height: (7 / 12 * 100) + '%', // 16:9 ratio,
                 style: {
                     fontFamily:  'Gill35a'
                 }

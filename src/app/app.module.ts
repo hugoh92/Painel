@@ -21,6 +21,7 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { AlertComponent } from './shared/alert/alert.component';
 import { LoaderService } from './services/loader.service';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     HeaderComponent,
     ResultadoComponent,
     AlertComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
