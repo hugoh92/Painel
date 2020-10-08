@@ -1,6 +1,8 @@
+
 .wrapper-left {
     //wrapper do painel esquerdo
     grid-template-rows: repeat(2, 1fr);
+    
 }
 
 .painel-uni {
@@ -188,7 +190,7 @@
 
 .start-xs {
     margin: 10px 10px 10px 10px;
-    width: auto;
+    //width: auto;
 }
 
 .box {
@@ -196,18 +198,26 @@
     height: 540px;
 }
 
-.wrapper-geral {
-    //background: orange;
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 3px;
+.wrapper-geral {   
+    grid-column-gap: 1px;
     grid-row-gap: 3px;
-    // display: grid;
     padding: 5px;
     margin-top: 40px !important;
     margin-left: 5px !important;
     margin: 1px auto; //prolblema busca
-    width: 77%;
-    min-width: 200px;
+    width: 100%;
+    min-width: 20%;
+    float: left;
+    display: block;
+    flex: 1;
+    grid-template-columns: repeat(5, 1fr);
+    //min-width: 200px;
+}
+.col-itens {
+    //background: orchid;
+    margin: 0px;
+    height: 110px;
+    border-top: 2px solid white;
 }
 
 //parte da linha funcionamento
@@ -240,17 +250,17 @@
     bottom: 30px;
     position: relative;
 }
-
 .div-icons {
     //width: 105px;
     width: 10%;
+    //width: 77%;
     height: 150px;
     text-align: center;
 }
-
 .icones-ind {
     position: relative;
     height: 80px;
+    width:80px;
 }
 
 .nome-ind {
@@ -285,12 +295,6 @@
     bottom: 10px;
 }
 
-.col-itens {
-    //background: orchid;
-    margin: 0px;
-    height: 110px;
-    border-top: 2px solid white;
-}
 
 .row-docentes {
     height: 60px!important;
@@ -300,4 +304,45 @@
 .row-alunos {
     height: 60px!important;
     border-top: 2px solid white;
+}
+
+//breack points
+
+@media screen and (max-width:1000px) {
+    .funcionamento-div {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 1px;
+        display: grid;
+    }
+    .col-itens{
+        height: 200px;
+    }
+    .func-dados {
+        width: 100%;   
+    }
+    .indicadores-div {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        display: grid;
+    }
+    .row-indicadores {
+        height: 330px!important;
+        border-top: 2px solid white;
+    }
+    .div-info {
+        width:100% !important;
+    }
+    .div-icons{
+        width: 100%;  
+    }  
+}
+
+@media screen and (max-width:769px) {
+
+    .wrapper-geral {   
+    
+        flex: none;
+      
+    }
 }
