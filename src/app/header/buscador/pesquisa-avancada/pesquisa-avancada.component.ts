@@ -73,12 +73,23 @@ export class PesquisaAvancadaComponent implements OnInit {
   }
 
   apiUrl(val){
-    console.log(val)
     var cursos_ativos = val.ativos ? 'situacao_do_curso=Em%20atividade' :  undefined;
     var natureza_juridica;
     var org_academica;
     var conceito_enade = JSON.stringify(val.conceito_enade) === JSON.stringify([0,5]) ? undefined: `valor_enade=${this.range(val.conceito_enade[0], val.conceito_enade[1]).map(d => `${d}`).join(",")}`;
     var conceito_curso = JSON.stringify(val.conceito_curso) === JSON.stringify([0,5]) ? undefined: `valor_cc=${this.range(val.conceito_curso[0], val.conceito_curso[1]).map(d => `${d}`).join("&")}`;
+
+
+    if(!(val.nat_privada || val.nat_publico )){
+      this.registerForm.patchValue({
+        nat_privado: true,
+        nat_publico: true
+      })
+      
+      this.registerForm.controls.nat_privado.setValue(true, {emitEvent:false});
+      this.registerForm.controls.nat_publico.setValue(true, {emitEvent:false});
+
+    }
 
     if(val.nat_privada === true && val.nat_publico === true){
       natureza_juridica = undefined;
@@ -86,6 +97,18 @@ export class PesquisaAvancadaComponent implements OnInit {
       natureza_juridica = 'natureza_juridica=Privada'
     } else if(val.nat_privado == false && val.nat_publico == true){
       natureza_juridica = 'natureza_juridica=Pública';
+    }
+
+    if(!(val.org_universidade || val.org_centrouniversitario || val.org_faculdade  )){
+      this.registerForm.patchValue({
+        org_universidade: true,
+        org_centrouniversitario: true,
+        org_faculdade: true
+      })
+      
+      this.registerForm.controls.org_universidade.setValue(true, {emitEvent:false});
+      this.registerForm.controls.org_centrouniversitario.setValue(true, {emitEvent:false});
+      this.registerForm.controls.org_faculdade.setValue(true, {emitEvent:false});
     }
 
     if(val.org_universidade === true && val.org_centrouniversitario === true && val.org_faculdade === true){
@@ -105,7 +128,6 @@ export class PesquisaAvancadaComponent implements OnInit {
     }
 
     var filter = [cursos_ativos, natureza_juridica, org_academica, conceito_enade, conceito_curso].filter(d => d).join("&")
-    console.log(`http://api.direm.org/api/curso/?query={codigo_curso,nome_da_ies,sigla_da_ies,natureza_juridica,org_academica,municipio,uf,valor_cc,valor_enade,periodo}&format=json&${filter}`)
    
     this._dataService.getData(`http://api.direm.org/api/curso/?query={codigo_curso,nome_da_ies,sigla_da_ies,natureza_juridica,org_academica,municipio,uf,valor_cc,valor_enade,periodo}&format=json&${filter}`).subscribe(
       (json: PeriodicElement[]) => {
