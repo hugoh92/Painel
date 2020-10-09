@@ -17,7 +17,7 @@
                         </mat-autocomplete>
                     </mat-form-field>
                 </form>-->
-                <app-autocomplete class="w-100" name="my-select" placeholder="Digite o nome, sigla, estado ou município da IES" nameField="name" valueField="id" [columns]="['sigla_da_ies','municipio','uf']" [options]="options" [(ngModel)]="selectedId" (selectEvent)="valueSelected($event)"
+                <app-autocomplete class="w-100" name="my-select" placeholder="Digite o nome, sigla, estado ou município da IES" nameField="name" valueField="id" [columns]="['sigla_da_ies']" [options]="options" [(ngModel)]="selectedId" (selectEvent)="valueSelected($event)"
                     (onTextEnter)="searchText=$event">
                 </app-autocomplete>
             </div>

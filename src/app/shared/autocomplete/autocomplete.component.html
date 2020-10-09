@@ -10,28 +10,18 @@
                 <mat-autocomplete autoActiveFirstOption #zsAuto position="below" class="bigger-mat-ac" (optionSelected)="onSelect($event.option.value, null)">
 
                     <mat-table #table [dataSource]="rows" class="matTableAutocomplete">
-
-
-                        <ng-container [matColumnDef]="column" *ngFor="let column of columns">
-                            <mat-header-cell *matHeaderCellDef [ngClass]="isHiddenColumn(column) ? 'zs-hidden' : null">
-                                {{ column }}
-                            </mat-header-cell>
-
-                            <mat-cell *matCellDef="let element" [ngClass]="isHiddenColumn(column) ? 'zs-hidden' : null" matRipple>
-                                <!-- <mat-icon *ngIf="column=='add'"
-                          [matTooltip]="'add'"
-                          class="s-24 mat-icon material-icons"
-                          role="img"
-                          aria-hidden="true"
-                          (click)="$event.stopPropagation();addAction($event,element);"
-                          style="cursor:pointer;" matRipple>add</mat-icon> -->
-                                <span *ngIf="column != 'add'">
-                  {{ element[column] }}
-                </span>
-                            </mat-cell>
+                        <ng-container matColumnDef="sigla_da_ies">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome e Sigla da IES </th>
+                            <td class="pos " mat-cell *matCellDef="let element " class="w-100">
+                                {{element.sigla_da_ies}} - {{toTitleCase(element.nome_da_ies)}}
+                                <small class="float-right">{{element.municipio}}/{{element.uf}}</small>
+                            </td>
                         </ng-container>
+
+
+
                         <!--[routerLink]="['/buscador/', row.codigo_curso]"-->
-                        <mat-option class="rowTable" *matRowDef="let row; columns: displayedColumns" [routerLink]="['/buscador/', row.codigo_curso]" [value]="row">
+                        <mat-option class="rowTable" *matRowDef="let row; columns: columns" [routerLink]="['/buscador/', row.codigo_curso]" [value]="row">
                             <mat-row></mat-row>
                         </mat-option>
                     </mat-table>

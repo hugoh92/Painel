@@ -76,16 +76,11 @@ export class PesquisaAvancadaComponent implements OnInit {
     var cursos_ativos = val.ativos ? 'situacao_do_curso=Em%20atividade' :  undefined;
     var natureza_juridica;
     var org_academica;
-    var conceito_enade = JSON.stringify(val.conceito_enade) === JSON.stringify([0,5]) ? undefined: `valor_enade=${this.range(val.conceito_enade[0], val.conceito_enade[1]).map(d => `${d}`).join(",")}`;
-    var conceito_curso = JSON.stringify(val.conceito_curso) === JSON.stringify([0,5]) ? undefined: `valor_cc=${this.range(val.conceito_curso[0], val.conceito_curso[1]).map(d => `${d}`).join("&")}`;
+    var conceito_enade = JSON.stringify(val.conceito_enade) === JSON.stringify([0,5]) ? undefined: `valor_enade_in=${this.range(val.conceito_enade[0], val.conceito_enade[1]).map(d => `${d}`).join(",")}`;
+    var conceito_curso = JSON.stringify(val.conceito_curso) === JSON.stringify([0,5]) ? undefined: `valor_cc_in=${this.range(val.conceito_curso[0], val.conceito_curso[1]).map(d => `${d}`).join(",")}`;
 
 
-    if(!(val.nat_privada || val.nat_publico )){
-      this.registerForm.patchValue({
-        nat_privado: true,
-        nat_publico: true
-      })
-      
+    if(!(val.nat_privado || val.nat_publico )){
       this.registerForm.controls.nat_privado.setValue(true, {emitEvent:false});
       this.registerForm.controls.nat_publico.setValue(true, {emitEvent:false});
 
@@ -94,9 +89,9 @@ export class PesquisaAvancadaComponent implements OnInit {
     if(val.nat_privada === true && val.nat_publico === true){
       natureza_juridica = undefined;
     } else if(val.nat_privado == true && val.nat_publico == false){
-      natureza_juridica = 'natureza_juridica=Privada'
+      natureza_juridica = 'natureza_juridica_in=Privada'
     } else if(val.nat_privado == false && val.nat_publico == true){
-      natureza_juridica = 'natureza_juridica=Pública';
+      natureza_juridica = 'natureza_juridica_in=Pública';
     }
 
     if(!(val.org_universidade || val.org_centrouniversitario || val.org_faculdade  )){
@@ -114,24 +109,23 @@ export class PesquisaAvancadaComponent implements OnInit {
     if(val.org_universidade === true && val.org_centrouniversitario === true && val.org_faculdade === true){
       org_academica = undefined;
     } else if(val.org_universidade == true && val.org_centrouniversitario == false && val.org_faculdade === false){
-      org_academica = 'org_academica=Universidade';
+      org_academica = 'org_academica_in=Universidade';
     } else if(val.org_universidade == false && val.org_centrouniversitario == false && val.org_faculdade === true){
-      org_academica = 'org_academica=Faculdade';
+      org_academica = 'org_academica_in=Faculdade';
     } else if(val.org_universidade == false && val.org_centrouniversitario == true && val.org_faculdade === false){
-      org_academica = 'org_academica=Centro%20Universitário';
+      org_academica = 'org_academica_in=Centro%20Universitário';
     } else if(val.org_universidade == true && val.org_centrouniversitario == true && val.org_faculdade === false){
-      org_academica = 'org_academica=Universidade,Centro%20Universitário';
+      org_academica = 'org_academica_in=Universidade,Centro%20Universitário';
     } else if(val.org_universidade == false && val.org_centrouniversitario == true && val.org_faculdade === true){
-      org_academica = 'org_academica=Faculdade,Centro%20Universitário';
+      org_academica = 'org_academica_in=Faculdade,Centro%20Universitário';
     } else if(val.org_universidade == true && val.org_centrouniversitario == false && val.org_faculdade === true){
-      org_academica = 'org_academica=Universidade,Faculdade';
+      org_academica = 'org_academica_in=Universidade,Faculdade';
     }
 
     var filter = [cursos_ativos, natureza_juridica, org_academica, conceito_enade, conceito_curso].filter(d => d).join("&")
-   
     this._dataService.getData(`http://api.direm.org/api/curso/?query={codigo_curso,nome_da_ies,sigla_da_ies,natureza_juridica,org_academica,municipio,uf,valor_cc,valor_enade,periodo}&format=json&${filter}`).subscribe(
       (json: PeriodicElement[]) => {
-        this.resultsLength = json.length;
+        this.resultsLength = json.length; 
         this.dataSource = new MatTableDataSource<PeriodicElement>(json);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
