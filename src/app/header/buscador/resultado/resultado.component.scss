@@ -1,6 +1,10 @@
+
 .wrapper-left {
     //wrapper do painel esquerdo
     grid-template-rows: repeat(2, 1fr);
+    width: 250px;
+    height: 540px;
+    
 }
 
 .painel-uni {
@@ -52,7 +56,7 @@
 }
 
 .border-button {
-    left: 97%;
+    left: 96%;
     position: relative;
     background: #d71a20;
     width: 23px;
@@ -130,12 +134,16 @@
 .icons-dados {
     height: 30%;
 }
-
+.icon-mobile{
+    display: none;
+}
 .icones-style {
     color: #d71a20;
     font-size: 25px;
 }
-
+.mat-mobile{
+    display: none;
+}
 .icones-div-style {
     margin-top: 25px;
     margin-left: 20px;
@@ -188,26 +196,29 @@
 
 .start-xs {
     margin: 10px 10px 10px 10px;
-    width: auto;
+    //width: auto;
 }
 
-.box {
-    width: 250px;
-    height: 540px;
-}
-
-.wrapper-geral {
-    //background: orange;
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 3px;
+.wrapper-geral {   
+    grid-column-gap: 1px;
     grid-row-gap: 3px;
-    // display: grid;
     padding: 5px;
     margin-top: 40px !important;
     margin-left: 5px !important;
     margin: 1px auto; //prolblema busca
-    width: 77%;
-    min-width: 200px;
+    width: 100%;
+    min-width: 20%;
+    float: left;
+    display: block;
+    flex: 1;
+    grid-template-columns: repeat(5, 1fr);
+    //min-width: 200px;
+}
+.col-itens {
+    //background: orchid;
+    margin: 0px;
+    height: 110px;
+    border-top: 2px solid white;
 }
 
 //parte da linha funcionamento
@@ -240,17 +251,17 @@
     bottom: 30px;
     position: relative;
 }
-
 .div-icons {
     //width: 105px;
     width: 10%;
+    //width: 77%;
     height: 150px;
     text-align: center;
 }
-
 .icones-ind {
     position: relative;
     height: 80px;
+    width:80px;
 }
 
 .nome-ind {
@@ -285,12 +296,6 @@
     bottom: 10px;
 }
 
-.col-itens {
-    //background: orchid;
-    margin: 0px;
-    height: 110px;
-    border-top: 2px solid white;
-}
 
 .row-docentes {
     height: 60px!important;
@@ -300,4 +305,213 @@
 .row-alunos {
     height: 60px!important;
     border-top: 2px solid white;
+}
+
+//breack points
+
+@media screen and (max-width:1000px) {
+    .funcionamento-div {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 1px;
+        display: grid;
+    }
+    .col-itens{
+        height: 200px;
+    }
+    .func-dados {
+        width: 100%;   
+    }
+    .border-button {
+        left: 95%;
+      
+    }
+    .indicadores-div {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        display: grid;
+    }
+    .row-indicadores {
+        height: 330px!important;
+        border-top: 2px solid white;
+    }
+    .div-info {
+        width:100% !important;
+        
+    }
+    .div-icons{
+        width: 100%;  
+    } 
+  
+}
+
+@media screen and (max-width:769px) {
+    .wrapper-geral {   
+        flex: none;
+        top: 60px!important;
+        position: relative;
+    }
+    .border-button {
+        left: 93%;
+      
+    }
+    .wrapper-tela{
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .icon-mobile{
+        display: block;
+    }
+    
+    .div-logo-uni{
+        align-self: start;
+        justify-content: start;
+        align-items: start;
+        align-content: start;
+        text-align: start;
+        margin: 5px;
+        height: 50px;
+       
+     }
+    .icones-div-style {
+        margin-top: 5px;
+        margin-left: 5px;
+        height: 160px;
+    }
+    
+    .wrapper-left{
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        height: 200px;  
+    }
+    .painel-uni {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        //margin: 5px;
+    }
+    .wrapper-painel-uni {
+        //wrapper interno do painel branco
+        grid-template-columns: repeat(5, 1fr);
+        grid-row-gap: 2px;
+        margin-bottom: 2px!important;
+        position: relative;
+        //display: grid;
+    }
+    .logo-uni {
+        // div dos logos das universidades
+        grid-template-rows: repeat(2, 1fr);
+        width: 100%;
+        align-self: start;
+        justify-content: start;
+        align-items: start;
+        align-content: start;
+        text-align: start;
+        position: relative;
+    }
+
+    .indetf {
+        //div de identificação painel esquerdo
+        width: 100%;
+        line-height: 1.2;
+        height: 200px;
+    }
+    .icons-dados {
+        width: 100%;
+        display: none;
+    }
+    .bts-mat {
+        width: 100%;
+        height: 0%;
+        //position: absolute;
+        
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        align-self: center;
+        align-items: center;
+        
+    }
+    .btn-mat {
+        color: white;
+        background: #d71a20;
+        border-radius: 15px;
+        opacity: 0.3;
+        width: 170px;
+    }
+
+    .wrapper-matricula {
+        // grid-template-rows: repeat(2, 1fr);
+        // grid-row-gap: 5px;
+        // align-items: center;
+        // justify-content: center;
+        // display: grid;
+        bottom: 40px !important;
+        // position: relative;
+        // color: white;
+    }
+}
+
+@media screen and (max-width:460px) {
+    
+    .wrapper-geral {   
+        flex: none;
+        top: 110px!important;
+        position: relative;
+    }
+    .indicadores-div {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        display: grid;
+    }
+
+    .row-indicadores {
+        height: 600px!important;
+        border-top: 2px solid white;
+    }
+
+    .funcionamento-div {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 1px;
+        display: grid;
+    }
+    .col-itens{
+        height: 320px;
+       
+    }
+    .div-info {
+        width:100% !important;
+        line-height: 1.2;
+    }
+   .bts-mat{
+       display: none;
+   }
+   .mat-mobile{
+       display: block !important;
+      margin-right: 2px;
+       margin-bottom: 4px;
+      
+   }
+   .wrapper-painel-uni {
+    //wrapper interno do painel branco
+    grid-template-rows: repeat(2, 1fr);
+    //display: grid;
+    }
+
+    .painel-uni {
+        width: 100%;
+        height: 270px;
+        display: flex;
+       
+    //margin: 5px;
+    }
+    .icones-div-style{
+        margin-top:30px;
+    }
+
+    .border-button {
+        left: 90%;
+      
+    }
+   
 }
