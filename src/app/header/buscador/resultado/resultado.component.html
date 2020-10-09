@@ -3,16 +3,33 @@
         <!-- <div class=""> -->
         <div class="box wrapper-left">
             <div class="bt-voltar">
-                <button mat-button class="btn btn-voltar py-1 py-md-0" type="button" (click)="goBack()">
-					<span class = "d-none d-md-block">Voltar</span>
+                <button mat-button class="btn btn-voltar" type="button" (click)="goBack()">
+					<span class = "">Voltar</span>
 				</button>
             </div>
             <div class="painel-uni wrapper-painel-uni">
-                <div class="logo-uni">
+                <div class="logo-uni logo-wrapper">
+                    <div class="div-logo-uni">
                     <!-- <img class="logos" src="/assets/logos/ufba-logo.png">-->
                     {{options.sigla_da_ies}} <br> {{options.nome_da_ies}}
+                    </div>
+                    <div class="icones-div-style icon-mobile">
+                        <mat-icon class="icones-style place-icon">place</mat-icon>
+                        <span class="info-uni"> {{options.municipio}} - {{options.uf}} </span>
+                        <br>
+                        <i class="fa fa-globe icones-style" aria-hidden="true"></i>
+                        <a href="https://www.ufba.br/" id="uni-site" class="info-uni"> - </a>
+                        <br>
+                        <mat-icon class="icones-style">local_phone</mat-icon>
+                        <span class="info-uni"> - </span>
+                        <br>
+                        <mat-icon class="icones-style">alarm_add</mat-icon>
+                        <span class="info-uni"> 7:00 ás 22:00</span>
+                        <br>
+                        
+                    </div>
                 </div>
-
+               
                 <div class="indetf">
                     <span class="titulos titulo-pn">Identificação</span>
                     <div class="row"></div>
@@ -30,6 +47,15 @@
                     <div class="row"></div>
                     <span class="dados-geral">{{options.cat_admin}}</span>
                     <div class="row"></div>
+                    <br>
+                    
+                    <button mat-button class="btn btn-mat mat-mobile" type="button">
+                        <span class = "">Projeto pedagógico (2007)</span>
+                    </button>
+                    
+                    <button mat-button class="btn btn-mat mat-mobile" type="button">
+                        <span class = "">Matriz curricular (2007)</span>
+                    </button>
                 </div>
                 <div class="icons-dados">
                     <div class="icones-div-style">
@@ -49,12 +75,12 @@
                 </div>
                 <div class="bts-mat">
                     <div class="wrapper-matricula">
-                        <button mat-button class="btn btn-mat py-1 py-md-0" type="button">
-							<span class = "d-none d-md-block">Projeto pedagógico (2007)</span>
+                        <button mat-button class="btn btn-mat" type="button">
+							<span class = "">Projeto pedagógico (2007)</span>
 						</button>
 
-                        <button mat-button class="btn btn-mat py-1 py-md-0" type="button">
-							<span class = "d-none d-md-block">Matriz curricular (2007)</span>
+                        <button mat-button class="btn btn-mat" type="button">
+							<span class = "">Matriz curricular (2007)</span>
 						</button>
                     </div>
                 </div>
