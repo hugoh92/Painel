@@ -308,7 +308,13 @@
 }
 
 //breack points
+@media screen and (min-width:1440px) {
+    .border-button {
+        left: 98%;
+      
+    }
 
+}
 @media screen and (max-width:1000px) {
     .funcionamento-div {
         grid-template-columns: repeat(3, 1fr);
