@@ -123,6 +123,7 @@ export class PesquisaAvancadaComponent implements OnInit {
     }
 
     var filter = [cursos_ativos, natureza_juridica, org_academica, conceito_enade, conceito_curso].filter(d => d).join("&")
+    console.log(`http://api.direm.org/api/curso/?query={codigo_curso,nome_da_ies,sigla_da_ies,natureza_juridica,org_academica,municipio,uf,valor_cc,valor_enade,periodo}&format=json&${filter}`)
     this._dataService.getData(`http://api.direm.org/api/curso/?query={codigo_curso,nome_da_ies,sigla_da_ies,natureza_juridica,org_academica,municipio,uf,valor_cc,valor_enade,periodo}&format=json&${filter}`).subscribe(
       (json: PeriodicElement[]) => {
         this.resultsLength = json.length; 
