@@ -372,3 +372,9 @@
 .nomepi {
     z-index: 999999;
 }
+
+@media screen and (min-width:1440px) {
+    .linha-vertical{
+        left: 98%;
+    }
+}

@@ -497,10 +497,14 @@ mat-menu {
     .item2 {
         width: 300px;
         min-width: 300px;
+        height: 200px !important;
+        min-height: 200px;
     }
     .item3 {
         width: 300px;
         min-width: 300px;
+        height: 200px !important;
+        
     }
     .area {
         max-width: 280px;
