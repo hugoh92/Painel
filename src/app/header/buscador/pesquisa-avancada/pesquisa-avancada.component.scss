@@ -850,8 +850,6 @@ input:hover {
         grid-row-gap: 3px ;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(1, 1fr);
-        
-       
        
    }
    .div-pesq{
@@ -898,8 +896,7 @@ input:hover {
         width: 95%;   
     }
     .slider-ce{
-        width: 95%;
-        
+        width: 95%;  
     }
     .ano-intervalo-mb{
         display: block;
@@ -922,6 +919,9 @@ input:hover {
     .nat-juri{
         width: 350px;
     }
+    .bt-nat{
+        left: 310px;
+    }
     .ano-intervalo{
         //margin-left: 5px;
         margin-left: 20px;
@@ -942,6 +942,10 @@ input:hover {
     .nat-juri{
         width: 220px;
     }
+    .bt-nat{
+        left: 75%;
+     
+    }
 
     .div-sit{
         width:55%;
@@ -953,12 +957,69 @@ input:hover {
         left: 42% !important;
         }
 
-        .ano-intervalo{
+    .ano-intervalo{
             //margin-left: 5px;
             margin-left: 20px;
             width: 40%;
         }
-@media screen and (max-width:760px) {
+
+        .div-tabela {
+            overflow-y: scroll !important;
+        }
+        th, td {
+            min-width: 100px !important;; /* width/largura das células à escolha */
+        }
+    @media screen and (max-width:605px) {
+    
+        .div1{
+        // height: 100%;
+        width: 100%;
+        margin: 3px auto;
+        display: grid;
+        grid-row-gap: 3px ;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 160px;
+        }
+        .div-sit{
+        width: 100%;
+        height: 100%;
+        min-width: 300px;
+        margin-left:0px ;
+        top: 0px;
+        left: 0px !important;
+    
+        }
+        .div3{
+        width: 100%;
+        margin: 3px auto;
+        display: grid;
+        grid-row-gap: 3px ;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        height: 330px;
+        }
+        .ano-intervalo{
+            //margin-left: 5px;
+            margin-left: 0px;
+            width: 90%;
+            
+        }
+        .slider-cc{
+            width: 100%;   
+        }
+        .slider-ce{
+            width: 100%;  
+            margin-left: 0px;
+        }
+
+       .div-tabela {
+            overflow-y: scroll !important;
+        }
+        th, td {
+            min-width: 100px !important;; /* width/largura das células à escolha */
+        }
+    
     }
 
 }
