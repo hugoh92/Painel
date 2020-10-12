@@ -427,10 +427,10 @@ input:checked+.lbl::after {
 th {
     font-size: 14px;
     font-weight: bold;
-    justify-self: center;
-    align-content: center;
-    text-align: center;
-    align-items: center;
+    justify-self: center!important;
+    align-content: center!important;
+    text-align: center!important;
+    align-items: center!important;
 }
 
 .pos {
@@ -561,7 +561,9 @@ input:hover {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
 }
-
+.ano-intervalo-mb{
+    display: none;
+}
 //teste de wrapper
 
 
@@ -585,6 +587,10 @@ input:hover {
 } //parte da tabela
 .div-tabela{
     height: 230px;
+    // flex: 1;
+    // margin: 5px;
+    // text-align: start;
+    // font-size: 1.5em;
 }//parte slider
 .div-slider{
     height: 100px;
@@ -804,7 +810,6 @@ input:hover {
 }
 .ano-intervalo{
     //margin-left: 5px;
-   
     margin-left: 20px;
     width: 25%;
 }
@@ -837,25 +842,32 @@ input:hover {
 
 @media screen and (max-width:890px) {
 
-//     .div1{
-//         // height: 100%;
-//         width: 100%;
-//         margin: 3px auto;
-//         display: grid;
-//         grid-row-gap: 3px ;
-//         grid-template-columns: repeat(1, 1fr);
-//         grid-template-rows: repeat(2, 1fr);
-//         height: 160px;
+    .div1{
+        // height: 100%;
+        width: 100%;
+        margin: 3px auto;
+        display:grid;
+        grid-row-gap: 3px ;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        
        
-//    }
-//    .div-pesq{
-//     width: 100%;
-//   }
+       
+   }
+   .div-pesq{
+    width: 100%;
+   
+    //min-width: 1000px;
+    
+  }
   .div-sit{
-    width: 30%;
+    width: 50%;
     height: 100%;
     min-width: 300px;
     margin-left:20px ;
+    top: 13px;
+    left: 47.4%;
+    
     }
 
     .div2{
@@ -872,15 +884,15 @@ input:hover {
         margin-left: 0px;
     }
 
-    .div3{
-        width: 100%;
-        margin: 3px auto;
-        display: grid;
-        grid-row-gap: 3px ;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        height: 200px;
-    }
+    // .div3{
+    //     width: 100%;
+    //     margin: 3px auto;
+    //     display: grid;
+    //     grid-row-gap: 3px ;
+    //     grid-template-columns: repeat(2, 1fr);
+    //     // grid-template-rows: repeat(2, 1fr);
+    //     // height: 200px;
+    // }
 
     .slider-cc{
         width: 95%;   
@@ -888,6 +900,65 @@ input:hover {
     .slider-ce{
         width: 95%;
         
+    }
+    .ano-intervalo-mb{
+        display: block;
+        height: 110px;
+        margin-left: 20px;
+        width: 65%;
+        left: 300px !important;
+        position: relative;
+        
+    }
+
+    .form-ano {
+        line-height: 36px;
+        height: 52px;
+        width: 100%;
+        position: relative;
+        margin-top: 5px;
+    }
+
+    .nat-juri{
+        width: 350px;
+    }
+    .ano-intervalo{
+        //margin-left: 5px;
+        margin-left: 20px;
+        width: 30%;
+    }
+    // .ano-intervalo{
+    //     //margin-left: 5px;
+    //     margin-left: 20px;
+    //     width: 80%;
+    //     bottom:340px;
+    //     left: 115%;
+    //     position: relative;
+    //     height: 110px;
+    // }
+}
+
+@media screen and (max-width:760px) {
+    .nat-juri{
+        width: 220px;
+    }
+
+    .div-sit{
+        width:55%;
+        height: 100%;
+        min-width: 200px;
+        margin-left:20px ;
+        top: 13px;
+        position: relative;
+        left: 42% !important;
+        }
+
+        .ano-intervalo{
+            //margin-left: 5px;
+            margin-left: 20px;
+            width: 40%;
+        }
+@media screen and (max-width:760px) {
     }
 
 }

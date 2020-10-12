@@ -209,6 +209,29 @@
                 </div>
             </div>
 
+            <!-- <div class="ano-intervalo-mb">
+                <div class="titulo-ano">
+                    <span class="titulos">Ano Funcionamento
+                        <div class="bt-ano">
+                            <i class="btn fas fa-question bt-help"></i>
+                        </div>
+                    </span>
+                </div>
+
+                <div class="cont-ano">
+                    <div class="ano-funci">
+                        <input class=" form-control form-control-sm form-ano p-3" type="text" placeholder="De"
+                            aria-label="anof">
+                    </div>
+
+                    <div class="ano-funci">
+                        <input class="form-control form-control-sm form-ano p-3" type="text" placeholder="Até"
+                            aria-label="anof">
+                    </div>
+                </div>
+            </div> -->
+      
+
             <div class="div-sit">
                 <div class="cima">
                     <span class="titulos">Situação
@@ -337,9 +360,6 @@
             <div class="tabela-dados">
 
                 <table mat-table [dataSource]="dataSource" class="tb-geral" matSort>
-
-
-
                     <ng-container matColumnDef="nome_da_ies">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome e Sigla da IES </th>
                         <td class="pos " mat-cell *matCellDef="let element " [routerLink]="['/buscador/', element.codigo_curso]"> {{element.nome_da_ies}} </td>
