@@ -213,12 +213,13 @@ mat-menu {
     color: white;
     top: 0px;
     position: relative;
+    left: 4px;
 }
 
 //icones geral
 .icones {
     position: relative;
-    height: 23px;
+    height: 33px;
     color: white;
     top: -15px;
     filter: opacity(0.3);
@@ -239,19 +240,19 @@ mat-menu {
 //primeiro icone é maior estilizaçao individual
 .iconesc {
     position: relative;
-    height: 15px;
+    height: 33px;
     color: white;
-    left: -3px;
-    top: -15px;
+    // left: -3px;
+    top: -10px;
     filter: opacity(0.3);
 }
 
 //segundo icone é maior estilizaçao individual
 .iconescm {
     position: relative;
-    height: 20px;
+    height: 33px;
     color: white;
-    left: -4px;
+    //left: -4px;
     top: -15px;
     filter: opacity(0.3);
 }
@@ -263,35 +264,35 @@ mat-menu {
     grid-column-gap: initial;
     left: -10px;
     position: relative;
-    top: -10px;
+    //top: -10px;
 }
 
 //estilizando botao plus e download
-.down {
-    //botão
-    width: 14px;
-    height: 14px;
-    font-size: 20px;
-    left: -30px;
-    size: 3px;
-    position: relative;
-    color: #d71a20;
-    border-radius: 20px 20px 20px 20px;
-    align-items: center;
-}
+// .down {
+//     //botão
+//     width: 14px;
+//     height: 14px;
+//     font-size: 20px;
+//     left: -30px;
+//     size: 3px;
+//     position: relative;
+//     color: #d71a20;
+//     border-radius: 20px 20px 20px 20px;
+//     align-items: center;
+// }
 
-.plus {
-    //botão
-    font-size: 20px;
-    color: #d71a20;
-}
+// .plus {
+//     //botão
+//     font-size: 20px;
+//     color: #d71a20;
+// }
 
 //estilizando botoes geral
 .btn-icone0 {
     cursor: pointer;
-    margin: 3px 3px 0 0;
+    margin: 5px 5px 0 0;
     width: 50px;
-    height: 25px;
+    height: 26px;
 }
 
 .btn:click {
@@ -416,7 +417,6 @@ mat-menu {
         display: none;
     }
     .example-tooltip-red {
-        background: pink!important;
         position: relative;
         top: 50px;
     }
