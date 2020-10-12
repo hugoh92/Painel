@@ -75,16 +75,17 @@
     display: flex;
 }
 .nome-beta{
-    color:#d71a20;
+    color:#e1e31d;
     position: absolute;
     display:block;
     font-weight: bold;
     font-size: 18px;
     top: 15px;
     left: 250px;
-    opacity: 0.7;
-   
-
+    font-size: 20px;
+    align-items: flex-start;
+    //position: relative;
+    //font-weight: 600;
 }
 
 //display das marcas
@@ -160,6 +161,9 @@
         // left:35%;
         // margin-left:-50px;      
         display: none;
+    }
+    .nome-beta{
+        top: 10px;
     }
     .wrapper {
         display: none;

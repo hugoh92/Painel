@@ -580,7 +580,6 @@ input:hover {
     
 }//divisão geral da pag
 .div-geral{
-    
     height: 80px;
     margin: 3px auto;
 } //parte da tabela
@@ -705,6 +704,7 @@ input:hover {
     justify-content: start;
     text-align: start;
     align-items: start;
+    
 }
 // .geral{
 //     bottom: 19px;
@@ -799,6 +799,7 @@ input:hover {
     column-gap: 10px;
     position: relative;
     width: 100%;
+    min-width: 200px;
    
 }
 .ano-intervalo{
@@ -822,6 +823,71 @@ input:hover {
 
 //breakponts
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:977px) {
+    .check2 {
+        left: 10%;
+    }
+    .check4 {
+        left: 2%;
+    }
+    .check5 {
+        left: 3%;
+    }
+}
+
+@media screen and (max-width:890px) {
+
+//     .div1{
+//         // height: 100%;
+//         width: 100%;
+//         margin: 3px auto;
+//         display: grid;
+//         grid-row-gap: 3px ;
+//         grid-template-columns: repeat(1, 1fr);
+//         grid-template-rows: repeat(2, 1fr);
+//         height: 160px;
+       
+//    }
+//    .div-pesq{
+//     width: 100%;
+//   }
+  .div-sit{
+    width: 30%;
+    height: 100%;
+    min-width: 300px;
+    margin-left:20px ;
+    }
+
+    .div2{
+        width: 100%;
+        margin: 3px auto;
+        display: grid;
+        grid-row-gap: 3px ;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 160px;
+    }
+    .org-acd{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .div3{
+        width: 100%;
+        margin: 3px auto;
+        display: grid;
+        grid-row-gap: 3px ;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 200px;
+    }
+
+    .slider-cc{
+        width: 95%;   
+    }
+    .slider-ce{
+        width: 95%;
+        
+    }
 
 }

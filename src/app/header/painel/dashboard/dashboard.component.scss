@@ -159,6 +159,7 @@ mat-menu {
 .bl-fim {
     border-top: 2px solid white;
     text-align: start;
+    top: 10px;
 }
 
 //nomes e titulos
@@ -177,7 +178,7 @@ mat-menu {
 }
 
 #lcursos {
-    top: -10px;
+    top: 10px;
 }
 
 .cap-interior {
@@ -186,6 +187,7 @@ mat-menu {
     align-items: flex-end;
     color: white;
     position: relative;
+    white-space: nowrap;
 }
 
 //area geral

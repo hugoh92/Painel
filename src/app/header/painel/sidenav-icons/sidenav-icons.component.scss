@@ -87,6 +87,9 @@
     color: #e1e31d;
 }
 
+.txs{
+    top:10px;
+}
 nav ul {
     background: #023a1d; //fundo cor
     height: 100%;
@@ -139,6 +142,7 @@ nav ul li span {
     font-weight: 50;
     display: grid;
     text-align: center;
+    font-weight: bold;
 }
 
 .nome3 {
@@ -243,7 +247,7 @@ nav ul li .nome3 {
 
 .icone3 {
     position: absolute;
-    height: 50px;
+    height: 47px;
     top: 10px;
     right: 8px;
     color: white;
