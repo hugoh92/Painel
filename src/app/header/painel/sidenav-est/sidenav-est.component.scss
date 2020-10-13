@@ -7,6 +7,7 @@
     background: #023a1d;
     border-radius: 3px;
     color: white;
+    font-weight: bold;
     cursor: pointer;
     &:hover,
     &:focus,
@@ -61,6 +62,7 @@ mat-icon {
 .panelTitle {
     color: white;
     font-size: 20px;
+    font-weight: bold;
 }
 
 ::ng-deep .mat-expansion-indicator:after {
