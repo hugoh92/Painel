@@ -573,6 +573,8 @@ input:hover {
     margin: 3px auto;
     //display: grid;
     // border: none;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
     grid-row-gap: 3px ;
     grid-template-rows: repeat(4, 1fr);
     position: relative;
@@ -587,10 +589,7 @@ input:hover {
 } //parte da tabela
 .div-tabela{
     height: 230px;
-    // flex: 1;
-    // margin: 5px;
-    // text-align: start;
-    // font-size: 1.5em;
+    
 }//parte slider
 .div-slider{
     height: 100px;
@@ -875,7 +874,7 @@ input:hover {
         grid-row-gap: 3px ;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        height: 160px;
+        height: 180px;
     }
     .org-acd{
         width: 100%;
@@ -969,8 +968,8 @@ input:hover {
         th, td {
             min-width: 100px !important;; /* width/largura das células à escolha */
         }
-    @media screen and (max-width:605px) {
-    
+    @media screen and (max-width:588px) {
+        
         .div1{
         // height: 100%;
         width: 100%;
@@ -997,7 +996,7 @@ input:hover {
         grid-row-gap: 3px ;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        height: 330px;
+        height: 300px;
         }
         .ano-intervalo{
             //margin-left: 5px;
@@ -1017,9 +1016,67 @@ input:hover {
             overflow-y: scroll !important;
         }
         th, td {
-            min-width: 100px !important;; /* width/largura das células à escolha */
+            min-width: 100px !important; /* width/largura das células à escolha */
         }
-    
+
+        .org-acd{
+            width: 100%;
+        //    height: 280px!important;
+        //    margin-bottom: 20px;
+        }
+        .check-org{
+            height: 60px;
+        }
+        .check5 {
+            left: 5px;
+            margin-left: 20px;
+        }
+        .bt-ano{
+            left: 94%;
+        }
+
+        .bt-cc, .bt-ce{
+            left: 94%;
+        }
+        .bt-org{
+            left: 94%;
+        }
+        .border-button {
+            left: 94%;
+        }
+        .bt-nat{
+            left: 73%;
+        }
+        .bt-pesquisa {
+            left: 94%;
+          
+        }
+        @media screen and (max-width:500px) {
+            .wrapper-geral{
+                //background: #023a1d;
+                border-radius: 15px;
+            }
+            .bt-ano{
+                left: 92%;
+            }
+
+            .bt-cc, .bt-ce{
+                left: 92%;
+            }
+            .bt-org{
+                left: 92%;
+            }
+            .border-button {
+                left: 92%;
+            }
+            .bt-nat{
+                left: 77%;
+            }
+            .bt-pesquisa {
+                left: 92%;
+              
+            }
+        }
     }
 
 }
