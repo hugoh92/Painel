@@ -1,92 +1,92 @@
 <div class="row start-xs wrapper-tela">
     <!-- <div class="col-xs-6 coluns"> -->
-        <!-- <div class=""> -->
-        <div class="box wrapper-left">
-            <div class="bt-voltar">
-                <button mat-button class="btn btn-voltar" type="button" (click)="goBack()">
+    <!-- <div class=""> -->
+    <div class="box wrapper-left">
+        <div class="bt-voltar">
+            <button mat-button class="btn btn-voltar" type="button" (click)="goBack()">
 					<span class = "">Voltar</span>
 				</button>
-            </div>
-            <div class="painel-uni wrapper-painel-uni">
-                <div class="logo-uni logo-wrapper">
-                    <div class="div-logo-uni">
-                    <!-- <img class="logos" src="/assets/logos/ufba-logo.png">-->
-                    {{options.sigla_da_ies}} <br> {{options.nome_da_ies}}
-                    </div>
-                    <div class="icones-div-style icon-mobile">
-                        <mat-icon class="icones-style place-icon">place</mat-icon>
-                        <span class="info-uni"> {{options.municipio}} - {{options.uf}} </span>
-                        <br>
-                        <i class="fa fa-globe icones-style" aria-hidden="true"></i>
-                        <a href="https://www.ufba.br/" id="uni-site" class="info-uni"> - </a>
-                        <br>
-                        <mat-icon class="icones-style">local_phone</mat-icon>
-                        <span class="info-uni"> - </span>
-                        <br>
-                        <mat-icon class="icones-style">alarm_add</mat-icon>
-                        <span class="info-uni"> 7:00 ás 22:00</span>
-                        <br>
-                        
-                    </div>
+        </div>
+        <div class="painel-uni wrapper-painel-uni">
+            <div class="logo-uni logo-wrapper">
+                <div class="div-logo-uni">
+                    <img class="logos" [src]='options.nome_img'>
+                    <!--{{options.sigla_da_ies}} <br> {{options.nome_da_ies}}-->
                 </div>
-               
-                <div class="indetf">
-                    <span class="titulos titulo-pn">Identificação</span>
-                    <div class="row"></div>
-                    <span class="dados-geral">Código da IES: {{options.codigo_da_ies}}</span>
-                    <div class="row"></div>
-                    <span class="dados-geral">Código do curso: {{options.codigo_curso}}</span>
-                    <div class="row"></div>
-                    <span class="dados-geral">{{toTitleCase(options.nome_do_curso)}}</span>
-                    <div class="row"></div>
-                    <span class="dados-geral">{{options.grau}}</span>
-                    <div class="row"></div>
-                    <span class="dados-geral">{{options.modalidade}}</span>
-                    <div class="row"></div>
-                    <span class="dados-geral">{{options.org_academica}}</span>
-                    <div class="row"></div>
-                    <span class="dados-geral">{{options.cat_admin}}</span>
-                    <div class="row"></div>
+                <div class="icones-div-style icon-mobile">
+                    <mat-icon class="icones-style place-icon">place</mat-icon>
+                    <span class="info-uni"> {{options.municipio}} - {{options.uf}} </span>
                     <br>
-                    
-                    <button mat-button class="btn btn-mat mat-mobile" type="button">
-                        <span class = "">Projeto pedagógico (2007)</span>
-                    </button>
-                    
-                    <button mat-button class="btn btn-mat mat-mobile" type="button">
-                        <span class = "">Matriz curricular (2007)</span>
-                    </button>
-                </div>
-                <div class="icons-dados">
-                    <div class="icones-div-style">
-                        <mat-icon class="icones-style place-icon">place</mat-icon>
-                        <span class="info-uni"> {{options.municipio}} - {{options.uf}} </span>
-                        <br>
-                        <i class="fa fa-globe icones-style" aria-hidden="true"></i>
-                        <a href="https://www.ufba.br/" id="uni-site" class="info-uni"> - </a>
-                        <br>
-                        <mat-icon class="icones-style">local_phone</mat-icon>
-                        <span class="info-uni"> - </span>
-                        <br>
-                        <mat-icon class="icones-style">alarm_add</mat-icon>
-                        <span class="info-uni"> 7:00 ás 22:00</span>
-                    </div>
+                    <i class="fa fa-globe icones-style" aria-hidden="true"></i>
+                    <a id="uni-site" class="info-uni">  {{options.e_mail_institucional_1}} </a>
+                    <br>
+                    <mat-icon class="icones-style">local_phone</mat-icon>
+                    <span class="info-uni"> {{options.telefone}} </span>
+                    <br>
+                    <mat-icon class="icones-style">alarm_add</mat-icon>
+                    <span class="info-uni"> 7:00 ás 22:00</span>
+                    <br>
 
                 </div>
-                <div class="bts-mat">
-                    <div class="wrapper-matricula">
-                        <button mat-button class="btn btn-mat" type="button">
+            </div>
+
+            <div class="indetf">
+                <span class="titulos titulo-pn">Identificação</span>
+                <div class="row"></div>
+                <span class="dados-geral">Código da IES: {{options.codigo_da_ies}}</span>
+                <div class="row"></div>
+                <span class="dados-geral">Código do curso: {{options.codigo_curso}}</span>
+                <div class="row"></div>
+                <span class="dados-geral">{{toTitleCase(options.nome_do_curso)}}</span>
+                <div class="row"></div>
+                <span class="dados-geral">{{options.grau}}</span>
+                <div class="row"></div>
+                <span class="dados-geral">{{options.modalidade}}</span>
+                <div class="row"></div>
+                <span class="dados-geral">{{options.org_academica}}</span>
+                <div class="row"></div>
+                <span class="dados-geral">{{options.cat_admin}}</span>
+                <div class="row"></div>
+                <br>
+
+                <button mat-button class="btn btn-mat mat-mobile" type="button">
+                        <span class = "">Projeto pedagógico (2007)</span>
+                    </button>
+
+                <button mat-button class="btn btn-mat mat-mobile" type="button">
+                        <span class = "">Matriz curricular (2007)</span>
+                    </button>
+            </div>
+            <div class="icons-dados">
+                <div class="icones-div-style">
+                    <mat-icon class="icones-style place-icon">place</mat-icon>
+                    <span class="info-uni"> {{options.municipio}} - {{options.uf}} </span>
+                    <br>
+                    <i class="fa fa-globe icones-style" aria-hidden="true"></i>
+                    <a id="uni-site" class="info-uni"> {{options.e_mail_institucional_1}} </a>
+                    <br>
+                    <mat-icon class="icones-style">local_phone</mat-icon>
+                    <span class="info-uni"> {{options.telefone}} </span>
+                    <br>
+                    <mat-icon class="icones-style">alarm_add</mat-icon>
+                    <span class="info-uni"> 7:00 ás 22:00</span>
+                </div>
+
+            </div>
+            <div class="bts-mat">
+                <div class="wrapper-matricula">
+                    <button mat-button class="btn btn-mat" type="button">
 							<span class = "">Projeto pedagógico (2007)</span>
 						</button>
 
-                        <button mat-button class="btn btn-mat" type="button">
+                    <button mat-button class="btn btn-mat" type="button">
 							<span class = "">Matriz curricular (2007)</span>
 						</button>
-                    </div>
                 </div>
-
             </div>
+
         </div>
+    </div>
     <!-- </div> -->
 
     <div class="wrapper-geral">
@@ -110,7 +110,7 @@
                     <br>
                     <span class="nome-ind">Inicio das atividades</span>
                     <br>
-                    <span href="#" class="numero-ind" name="">{{options.periodo}}</span>
+                    <span href="#" class="numero-ind" name="">{{(options.periodo_funcionamento).split("-").reverse().join("/")}}</span>
                 </div>
                 <div class="func-dados">
                     <br>
@@ -133,7 +133,7 @@
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind"><br>
                     <span class="nome-ind">Vagas</span><br>
-                    <span href="#" class="numero-ind" name="">{{options.qt_vagas_autorizadas}}</span>
+                    <span href="#" class="numero-ind" name="">{{options.qt_vaga_total_2018}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind"><br>
@@ -165,12 +165,12 @@
                         <br>
                         <span class="nome-ind">Taxa de Concorrência Candidato/Vaga</span>
                         <br>
-                        <span href="#" class="numero-ind" name="">{{options.tx_concorrencia}}</span>
+                        <span href="#" class="numero-ind" name="">{{(+options.tx_concorrencia).toFixed(2)}}</span>
                         <br>
 
                         <span class="nome-ind">Taxa de Sucesso</span>
                         <br>
-                        <span href="#" class="numero-ind" id="sucess" name="">{{options.tx_sucesso}}</span>
+                        <span href="#" class="numero-ind" id="sucess" name="">{{(+options.tx_sucesso).toFixed(2)}}%</span>
                     </div>
                 </div>
                 <div class="div-info">
@@ -178,11 +178,11 @@
                         <br>
                         <span class="nome-ind">Taxa de Ocupação</span>
                         <br>
-                        <span href="#" class="numero-ind" name="">{{options.tx_ocupacao}}%</span>
+                        <span href="#" class="numero-ind" name="">{{(+options.tx_ocupacao).toFixed(2)}}%</span>
                         <br>
                         <span class="nome-ind">Relação Docente/Aluno</span>
                         <br>
-                        <span href="#" class="numero-ind" id="sucess" name=""> -</span>
+                        <span href="#" class="numero-ind" id="sucess" name=""> {{options.aluno_docente}}</span>
                     </div>
                 </div>
             </div>

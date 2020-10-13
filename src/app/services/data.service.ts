@@ -23,7 +23,7 @@ export class DataService {
   }
 
   getAutocompleteOptions() {
-    let url = 'http://api.direm.org/api/curso/?format=json&query=%7Bsigla_da_ies%2Cnome_da_ies%2Ccodigo_curso%2Cuf%2Cmunicipio%2Cnome_do_curso%7D'
+    let url = 'http://35.188.71.6/api/curso/?format=json&query=%7Bsigla_da_ies%2Cnome_da_ies%2Ccodigo_curso%2Cuf%2Cmunicipio%2Cnome_do_curso%7D'
     return this.autoCompleteOpts.length ?
       of(this.autoCompleteOpts) :
       this.http.get<any>(url).pipe(tap(data => this.autoCompleteOpts = data))

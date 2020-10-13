@@ -22,10 +22,9 @@ export class ResultadoComponent implements OnInit {
 
   getData() {
     let id_curso = this.router.url.match(/\/([^\/]+)\/?$/)[1]
-    this._dataService.getData(`http://api.direm.org/api/curso/?codigo_curso=${id_curso}`).subscribe(
+    this._dataService.getData(`http://35.188.71.6/api/curso/?codigo_curso=${id_curso}`).subscribe(
       json => {
         this.options = json[0]
-
         if (!this.options) {
           this.router.navigate(["/buscador"])
         }

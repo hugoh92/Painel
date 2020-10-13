@@ -13,7 +13,7 @@
                         <ng-container matColumnDef="sigla_da_ies">
                             <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome e Sigla da IES </th>
                             <td class="pos " mat-cell *matCellDef="let element " class="w-100">
-                                {{element.sigla_da_ies}} - {{toTitleCase(element.nome_da_ies)}}
+                                {{element.sigla_da_ies}} - {{element.nome_da_ies}}
                                 <small class="float-right">{{element.municipio}}/{{element.uf}}</small>
                             </td>
                         </ng-container>

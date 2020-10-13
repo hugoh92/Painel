@@ -1,10 +1,8 @@
-
 .wrapper-left {
     //wrapper do painel esquerdo
     grid-template-rows: repeat(2, 1fr);
     width: 250px;
     height: 540px;
-    
 }
 
 .painel-uni {
@@ -102,7 +100,8 @@
 
 .logos {
     //estilo tam dos logos
-    height: 80px;
+    max-width: 200px;
+    max-height: 80px;
     width: auto;
     position: relative;
     margin-top: 5px !important;
@@ -134,16 +133,20 @@
 .icons-dados {
     height: 30%;
 }
-.icon-mobile{
+
+.icon-mobile {
     display: none;
 }
+
 .icones-style {
     color: #d71a20;
     font-size: 25px;
 }
-.mat-mobile{
+
+.mat-mobile {
     display: none;
 }
+
 .icones-div-style {
     margin-top: 25px;
     margin-left: 20px;
@@ -199,7 +202,7 @@
     //width: auto;
 }
 
-.wrapper-geral {   
+.wrapper-geral {
     grid-column-gap: 1px;
     grid-row-gap: 3px;
     padding: 5px;
@@ -214,6 +217,7 @@
     grid-template-columns: repeat(5, 1fr);
     //min-width: 200px;
 }
+
 .col-itens {
     //background: orchid;
     margin: 0px;
@@ -251,6 +255,7 @@
     bottom: 30px;
     position: relative;
 }
+
 .div-icons {
     //width: 105px;
     width: 10%;
@@ -258,10 +263,11 @@
     height: 150px;
     text-align: center;
 }
+
 .icones-ind {
     position: relative;
     height: 80px;
-    width:80px;
+    width: 80px;
 }
 
 .nome-ind {
@@ -296,7 +302,6 @@
     bottom: 10px;
 }
 
-
 .row-docentes {
     height: 60px!important;
     border-top: 2px solid white;
@@ -311,10 +316,9 @@
 @media screen and (min-width:1440px) {
     .border-button {
         left: 98%;
-      
     }
-
 }
+
 @media screen and (max-width:1000px) {
     .funcionamento-div {
         grid-template-columns: repeat(3, 1fr);
@@ -322,15 +326,14 @@
         grid-column-gap: 1px;
         display: grid;
     }
-    .col-itens{
+    .col-itens {
         height: 200px;
     }
     .func-dados {
-        width: 100%;   
+        width: 100%;
     }
     .border-button {
         left: 95%;
-      
     }
     .indicadores-div {
         grid-template-columns: repeat(4, 1fr);
@@ -342,33 +345,29 @@
         border-top: 2px solid white;
     }
     .div-info {
-        width:100% !important;
-        
+        width: 100% !important;
     }
-    .div-icons{
-        width: 100%;  
-    } 
-  
+    .div-icons {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width:769px) {
-    .wrapper-geral {   
+    .wrapper-geral {
         flex: none;
         top: 60px!important;
         position: relative;
     }
     .border-button {
         left: 93%;
-      
     }
-    .wrapper-tela{
+    .wrapper-tela {
         grid-template-rows: repeat(2, 1fr);
     }
-    .icon-mobile{
+    .icon-mobile {
         display: block;
     }
-    
-    .div-logo-uni{
+    .div-logo-uni {
         align-self: start;
         justify-content: start;
         align-items: start;
@@ -376,18 +375,16 @@
         text-align: start;
         margin: 5px;
         height: 50px;
-       
-     }
+    }
     .icones-div-style {
         margin-top: 5px;
         margin-left: 5px;
         height: 160px;
     }
-    
-    .wrapper-left{
+    .wrapper-left {
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
-        height: 200px;  
+        height: 200px;
     }
     .painel-uni {
         width: 100%;
@@ -414,7 +411,6 @@
         text-align: start;
         position: relative;
     }
-
     .indetf {
         //div de identificação painel esquerdo
         width: 100%;
@@ -429,13 +425,11 @@
         width: 100%;
         height: 0%;
         //position: absolute;
-        
         align-content: center;
         justify-content: center;
         text-align: center;
         align-self: center;
         align-items: center;
-        
     }
     .btn-mat {
         color: white;
@@ -444,7 +438,6 @@
         opacity: 0.3;
         width: 170px;
     }
-
     .wrapper-matricula {
         // grid-template-rows: repeat(2, 1fr);
         // grid-row-gap: 5px;
@@ -458,8 +451,7 @@
 }
 
 @media screen and (max-width:460px) {
-    
-    .wrapper-geral {   
+    .wrapper-geral {
         flex: none;
         top: 110px!important;
         position: relative;
@@ -469,55 +461,46 @@
         grid-template-rows: repeat(4, 1fr);
         display: grid;
     }
-
     .row-indicadores {
         height: 600px!important;
         border-top: 2px solid white;
     }
-
     .funcionamento-div {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
         grid-column-gap: 1px;
         display: grid;
     }
-    .col-itens{
+    .col-itens {
         height: 320px;
-       
     }
     .div-info {
-        width:100% !important;
+        width: 100% !important;
         line-height: 1.2;
     }
-   .bts-mat{
-       display: none;
-   }
-   .mat-mobile{
-       display: block !important;
-      margin-right: 2px;
-       margin-bottom: 4px;
-      
-   }
-   .wrapper-painel-uni {
-    //wrapper interno do painel branco
-    grid-template-rows: repeat(2, 1fr);
-    //display: grid;
+    .bts-mat {
+        display: none;
     }
-
+    .mat-mobile {
+        display: block !important;
+        margin-right: 2px;
+        margin-bottom: 4px;
+    }
+    .wrapper-painel-uni {
+        //wrapper interno do painel branco
+        grid-template-rows: repeat(2, 1fr);
+        //display: grid;
+    }
     .painel-uni {
         width: 100%;
         height: 270px;
         display: flex;
-       
-    //margin: 5px;
+        //margin: 5px;
     }
-    .icones-div-style{
-        margin-top:30px;
+    .icones-div-style {
+        margin-top: 30px;
     }
-
     .border-button {
         left: 90%;
-      
     }
-   
 }

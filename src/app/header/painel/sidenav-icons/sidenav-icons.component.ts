@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { timers } from 'jquery';
-import { DataService } from 'src/app/services/data.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { SidebarService } from '../../../services/sidebar.service';
 
 @Component({
@@ -9,13 +9,15 @@ import { SidebarService } from '../../../services/sidebar.service';
   styleUrls: ['./sidenav-icons.component.scss']
 })
 export class SidenavIconsComponent implements OnInit {
+  @Input() data: any = {}
 
-  constructor(public _sidebarService: SidebarService, private _dataService: DataService) { }
+  constructor(public _sidebarService: SidebarService, public router: Router) { 
+
+  }
 
   ngOnInit(): void {
-    this._dataService.getData(`http://api.direm.org/api/curso/`).subscribe(json =>{
-      console.log(json);  
-    })
   }
+
+ 
 
 }
