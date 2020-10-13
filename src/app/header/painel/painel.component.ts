@@ -69,13 +69,17 @@ export class PainelComponent implements AfterViewInit {
     let sigla_uf = event.url.match(/\/([^\/]+)\/?$/)[1]
     let url_data = sigla_uf == 'painel' ? `http://35.188.71.6/api/curso/` : `http://35.188.71.6/api/curso/?uf=${sigla_uf}`;
 
-    this._dataService.getData(url_data).subscribe((json: any) => {
-      if (!json.length) {
-        this.router.navigate(["/painel"])
-      } else {
-        this.formatData(json);
-      }
-    })
+    if (sigla_uf != 'buscador'){
+      this._dataService.getData(url_data).subscribe((json: any) => {
+        if (!json.length) {
+          this.router.navigate(["/painel"])
+        } else {
+          this.formatData(json);
+        }
+      })
+    }
+    
+   
   }
 
   formatData(json){
