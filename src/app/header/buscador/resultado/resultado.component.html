@@ -37,15 +37,15 @@
                 <div class="row"></div> -->
                 <span class="dados-geral">Código do curso: {{options.codigo_curso}}</span>
                 <div class="row"></div>
-                <span class="dados-geral">{{toTitleCase(options.nome_do_curso)}}</span>
+                <span class="dados-geral">Nome do curso: {{toTitleCase(options.nome_do_curso)}}</span>
                 <div class="row"></div>
-                <span class="dados-geral"> {{options.grau}}</span>
+                <span class="dados-geral">Grau: {{options.grau}}</span>
                 <div class="row"></div>
-                <span class="dados-geral">{{options.modalidade}}</span>
+                <span class="dados-geral">Modalidade: {{options.modalidade}}</span>
                 <div class="row"></div>
-                <span class="dados-geral">{{options.org_academica}}</span>
+                <span class="dados-geral">Oganização acadêmica: {{options.org_academica}}</span>
                 <div class="row"></div>
-                <span class="dados-geral">{{options.cat_admin}}</span>
+                <span class="dados-geral">Categoria administrativa: {{options.cat_admin}}</span>
                 <div class="row"></div>
                 <br>
 
@@ -115,7 +115,7 @@
                 </div>
                 <div class="func-dados">
                     <br>
-                    <span class="nome-ind">Dispõe de</span>
+                    <span class="nome-ind">Vagas Autorizadas</span>
                     <br>
                     <span href="#" class="numero-ind" name="">{{options.qt_vagas_autorizadas}} Vagas/Ano</span>
                 </div>
@@ -193,7 +193,8 @@
         <div class="col-itens row-docentes">
             <span class="titulos titulos-rsultados">Docentes
 				<div class="border-button">
-					<mat-icon class="btn bt-plus">add</mat-icon>
+					<mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
+                    aria-label="" matTooltipPosition="left">add</mat-icon>
 				</div>
 				</span>
 
@@ -201,7 +202,8 @@
         <div class="col-itens row-alunos">
             <span class="titulos titulos-rsultados">Alunos
 				<div class="border-button">
-				<mat-icon class="btn bt-plus">add</mat-icon>
+				<mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
+                aria-label="" matTooltipPosition="left">add</mat-icon>
 			</div>
 			</span>
 
@@ -209,7 +211,8 @@
         <div class="col-itens">
             <span class="titulos titulos-rsultados">Avaliação
 				<div class="border-button">
-					<mat-icon class="btn bt-plus">add</mat-icon>
+					<mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
+                    aria-label="" matTooltipPosition="left">add</mat-icon>
 				</div>
 				</span>
 

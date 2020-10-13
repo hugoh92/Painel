@@ -64,8 +64,15 @@
     justify-content: center;
     display: flex;
     bottom: 27px;
+    opacity: 0.3;
 }
-
+::ng-deep .mat-tooltip {
+    /* your own custom styles here */ 
+    /* e.g. */
+    //background: #d71a20;
+    font-size: 15px;
+    top:10%;
+}
 .bt-plus {
     position: relative;
     font-size: 12px;
