@@ -115,19 +115,20 @@
 
 .titulo-pn {
     color: #d71a20;
-    font-weight: 30 !important;
+    font-weight: bold;
     top: 5px;
-    font-size: 24px;
+    font-size: 22px;
     margin-left: 10px;
 }
 
 .dados-geral {
-    font-size: 13px;
+    font-size: 12px;
     margin-left: 21px;
     position: relative;
     color: #808a84;
     top: 10px;
     text-transform: initial;
+    font-weight: bold;
 }
 
 .icons-dados {
@@ -188,13 +189,15 @@
     background: #d71a20;
     border-radius: 15px;
     opacity: 0.3;
+    // margin-bottom: 10px;
+    // bottom: 5px;
 }
 
 .titulos-rsultados {
     bottom: 35px;
     position: relative;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 23px;
 }
 
 .start-xs {
@@ -222,7 +225,7 @@
     //background: orchid;
     margin: 0px;
     height: 110px;
-    border-top: 2px solid white;
+    border-top: 2px solid #e1e31d;
 }
 
 //parte da linha funcionamento
@@ -243,8 +246,8 @@
 
 //part da linha indicadores
 .row-indicadores {
-    height: 160px!important;
-    border-top: 2px solid white;
+    height: 180px!important;
+    border-top: 2px solid #e1e31d;
 }
 
 .indicadores-div {
@@ -254,6 +257,7 @@
     // margin: 1px auto; //prolblema busca
     bottom: 30px;
     position: relative;
+    margin-top: 10px;
 }
 
 .div-icons {
@@ -277,8 +281,13 @@
     font-weight: 10;
     text-align: center;
     bottom: 10px;
+    font-weight: bold;
+    
 }
 
+.nm-vgs{
+    white-space: nowrap;
+}
 .numero-ind {
     color: #e1e31d;
     font-size: 17px;
@@ -304,12 +313,14 @@
 
 .row-docentes {
     height: 60px!important;
-    border-top: 2px solid white;
+    // border-top: 2px solid white;
+    border-top: 2px solid #e1e31d;
 }
 
 .row-alunos {
     height: 60px!important;
-    border-top: 2px solid white;
+    // border-top: 2px solid white;
+    border-top: 2px solid #e1e31d;
 }
 
 //breack points
@@ -342,7 +353,7 @@
     }
     .row-indicadores {
         height: 330px!important;
-        border-top: 2px solid white;
+        border-top: 2px solid #e1e31d;
     }
     .div-info {
         width: 100% !important;
@@ -436,7 +447,8 @@
         background: #d71a20;
         border-radius: 15px;
         opacity: 0.3;
-        width: 170px;
+        width: 130px;
+       
     }
     .wrapper-matricula {
         // grid-template-rows: repeat(2, 1fr);
@@ -462,8 +474,8 @@
         display: grid;
     }
     .row-indicadores {
-        height: 600px!important;
-        border-top: 2px solid white;
+        height: 630px!important;
+        border-top: 2px solid #e1e31d;
     }
     .funcionamento-div {
         grid-template-columns: repeat(2, 1fr);
@@ -485,6 +497,7 @@
         display: block !important;
         margin-right: 2px;
         margin-bottom: 4px;
+        width: 130px;  
     }
     .wrapper-painel-uni {
         //wrapper interno do painel branco

@@ -33,13 +33,13 @@
             <div class="indetf">
                 <span class="titulos titulo-pn">Identificação</span>
                 <div class="row"></div>
-                <span class="dados-geral">Código da IES: {{options.codigo_da_ies}}</span>
-                <div class="row"></div>
+                <!-- <span class="dados-geral">Código da IES: {{options.codigo_da_ies}}</span>
+                <div class="row"></div> -->
                 <span class="dados-geral">Código do curso: {{options.codigo_curso}}</span>
                 <div class="row"></div>
                 <span class="dados-geral">{{toTitleCase(options.nome_do_curso)}}</span>
                 <div class="row"></div>
-                <span class="dados-geral">{{options.grau}}</span>
+                <span class="dados-geral"> {{options.grau}}</span>
                 <div class="row"></div>
                 <span class="dados-geral">{{options.modalidade}}</span>
                 <div class="row"></div>
@@ -50,11 +50,11 @@
                 <br>
 
                 <button mat-button class="btn btn-mat mat-mobile" type="button">
-                        <span class = "">Projeto pedagógico (2007)</span>
+                        <span class = "">Projeto pedagógico</span>
                     </button>
 
                 <button mat-button class="btn btn-mat mat-mobile" type="button">
-                        <span class = "">Matriz curricular (2007)</span>
+                        <span class = "">Matriz curricular</span>
                     </button>
             </div>
             <div class="icons-dados">
@@ -62,25 +62,26 @@
                     <mat-icon class="icones-style place-icon">place</mat-icon>
                     <span class="info-uni"> {{options.municipio}} - {{options.uf}} </span>
                     <br>
-                    <i class="fa fa-globe icones-style" aria-hidden="true"></i>
-                    <a id="uni-site" class="info-uni"> {{options.e_mail_institucional_1}} </a>
+                    <!-- <i class="fa fa-globe icones-style" aria-hidden="true"></i> -->
+                    <mat-icon class="icones-style"> email</mat-icon>
+                    <span id="uni-site" class="info-uni"> {{options.e_mail_institucional_1}} </span>
                     <br>
                     <mat-icon class="icones-style">local_phone</mat-icon>
                     <span class="info-uni"> {{options.telefone}} </span>
                     <br>
-                    <mat-icon class="icones-style">alarm_add</mat-icon>
-                    <span class="info-uni"> 7:00 ás 22:00</span>
+                    <!-- <mat-icon class="icones-style">alarm_add</mat-icon>
+                    <span class="info-uni"> 7:00 ás 22:00</span> -->
                 </div>
 
             </div>
             <div class="bts-mat">
                 <div class="wrapper-matricula">
                     <button mat-button class="btn btn-mat" type="button">
-							<span class = "">Projeto pedagógico (2007)</span>
+							<span class = "">Projeto pedagógico</span>
 						</button>
 
                     <button mat-button class="btn btn-mat" type="button">
-							<span class = "">Matriz curricular (2007)</span>
+							<span class = "">Matriz curricular</span>
 						</button>
                 </div>
             </div>
@@ -132,7 +133,7 @@
             <div class="indicadores-div">
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind"><br>
-                    <span class="nome-ind">Vagas</span><br>
+                    <span class="nome-ind nm-vgs">Vagas Oferecidas</span><br>
                     <span href="#" class="numero-ind" name="">{{options.qt_vaga_total_2018}}</span>
                 </div>
                 <div class="div-icons">
@@ -167,6 +168,7 @@
                         <br>
                         <span href="#" class="numero-ind" name="">{{(+options.tx_concorrencia).toFixed(2)}}</span>
                         <br>
+                        <br>
 
                         <span class="nome-ind">Taxa de Sucesso</span>
                         <br>
@@ -179,6 +181,7 @@
                         <span class="nome-ind">Taxa de Ocupação</span>
                         <br>
                         <span href="#" class="numero-ind" name="">{{(+options.tx_ocupacao).toFixed(2)}}%</span>
+                        <br>
                         <br>
                         <span class="nome-ind">Relação Docente/Aluno</span>
                         <br>
