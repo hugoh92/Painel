@@ -10,6 +10,9 @@
     color: white;
     background: #023a1d;
 }
+.d-md-block{
+    font-weight: bold;
+}
 
 .img {
     position: absolute;
@@ -45,6 +48,16 @@
     .img {
         background-size: 350px;
         top: 100px;
+    }
+    .d-md-none{
+        // font-size: 19px;
+        align-items: center !important;
+        justify-content: center!important;
+        text-align: center!important;
+        align-content: center!important;
+        position: relative!important;
+        
+        width: 52px;
     }
 }
 

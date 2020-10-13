@@ -121,7 +121,7 @@ mat-menu {
 
 //div das regioes
 .regiao {
-    font-size: 13px;
+    font-size: 14px;
     font-style: italic;
     align-items: flex-end;
     color: white;
@@ -132,7 +132,7 @@ mat-menu {
 
 .numero {
     color: #e1e31d;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 50;
     font-weight: bold;
 }
@@ -164,7 +164,7 @@ mat-menu {
 
 //nomes e titulos
 .titulos {
-    font-size: 15px;
+    font-size: 16px;
     font-style: italic;
     font-weight: bold;
     align-items: flex-end;
@@ -209,11 +209,12 @@ mat-menu {
 
 //nome filtro
 .filtro {
-    font-size: 12px;
+    font-size: 13px;
     color: white;
     top: 0px;
     position: relative;
     left: 4px;
+    font-weight: bold;
 }
 
 //icones geral
@@ -361,15 +362,7 @@ mat-menu {
         overflow-x: hidden;
         overflow-y: hidden;
     }
-    .example-tooltip-red {
-        display: none !important;
-    }
-    .matTooltip {
-        display: none;
-    }
-    .example-tooltip-red {
-        display: none;
-    }
+  
     .item2 {
         // min-width: 455px;
         width: 455px;
