@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { data } from 'jquery';
 import { DataService } from 'src/app/services/data.service';
@@ -22,9 +22,21 @@ export class DashboardComponent implements AfterViewInit {
   data: any = {};
   localizacao: any = {};
   flagBrasilRoute = true;
-  textCursos = 'por Região';
   matButton = "qt_cursos";
   nameDiv = dataKeys.filter(d => d.key == this.matButton).map(d => d.value);
+  textCursos = 'Cursos por Região';
+  mobileFilter = true;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    
+    if (event.target.innerWidth < 1100) {
+      this.mobileFilter = false;
+      
+    } else {
+      this.mobileFilter = true;
+    };
+  }
 
   constructor(private _highchartsService: HighchartsService, private _dataService: DataService, private router: Router
   ) {
@@ -44,9 +56,20 @@ export class DashboardComponent implements AfterViewInit {
 
   }
 
+<<<<<<< HEAD
   onValChange(val: string){
     this.matButton = val;
     this.nameDiv = dataKeys.filter(d => d.key == this.matButton).map(d => d.value);
+=======
+  ngAfterViewInit(): void {
+    if (window.innerWidth< 1100) {
+      this.mobileFilter = false;
+      
+    } else {
+      this.mobileFilter = true;
+    };
+    this.drawPlot(this.router.url.slice(-2))
+>>>>>>> 05edc49abaa93c2db5ad5c1d8fbfd1a1e6d6a4b6
 
     this.drawMap(this.router.url.slice(-2), this.matButton)
   }

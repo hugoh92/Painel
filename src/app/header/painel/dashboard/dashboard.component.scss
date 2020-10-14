@@ -398,10 +398,10 @@ mat-menu {
     }
     .wrapper {
         //grid dos icones
-        width: 300px;
+        width: 350px;
         height: auto;
         display: flex;
-        grid-template-columns: repeat(9, 1fr);
+        grid-template-columns: repeat(8, 1fr);
         grid-template-rows: repeat(1, 1fr);
         grid-row-gap: 0px;
         grid-column-gap: 0px;
@@ -450,36 +450,56 @@ mat-menu {
         top: -15px;
         filter: opacity(0.5);
     }
+    .bt-group{
+        top:0;
+        left: 40px;
+        
+    }
 }
 
 @media screen and (max-width:860px) {
     .wrapper {
-        width: 200px;
+        width: 280px;
         position: relative;
         // position: absolute;
-        right: 95px;
+        right: 75px;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        text-align: center;
     }
     .btn-icone0 {
-        width: 32px;
+        width: 35px !important;
         cursor: pointer;
-        margin: 3px 3px 0 0;
+        margin: 2px 2px 0 0;
         height: 25px;
     }
 }
 
 @media screen and (max-width:768px) {
-    .container {
-        left: 0px;
-        top: -20px;
-    }
-    .btn-icone0 {
-        width: 50px;
-    }
+    // .container {
+    //     left: 0px;
+    //     top: -20px;
+    // }
+    // .btn-icone0 {
+    //     width: 50px;
+    // }
+    // .wrapper {
+    //     width: 300px;
+    //     position: relative;
+    //     right: 40px;
+    // }
     .wrapper {
-        width: 300px;
+        width: 260px;
         position: relative;
-        right: 25px;
+        // position: absolute;
+        right: 60px;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        text-align: center;
     }
+    
 }
 
 @media screen and (max-width:460px) {
@@ -517,7 +537,7 @@ mat-menu {
     .wrapper {
         width: 300px;
         position: absolute;
-        right: -8px;
+        right: 35px;
     }
     .btn-icone0 {
         width: 38px;
