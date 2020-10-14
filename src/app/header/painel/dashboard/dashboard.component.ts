@@ -1,3 +1,4 @@
+import { HostListener } from '@angular/core';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
@@ -14,6 +15,18 @@ export class DashboardComponent implements AfterViewInit {
   localizacao: any = {};
   flagBrasilRoute = true;
   textCursos = 'Cursos por Região';
+  mobileFilter = true;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    
+    if (event.target.innerWidth < 1100) {
+      this.mobileFilter = false;
+      
+    } else {
+      this.mobileFilter = true;
+    };
+  }
 
   constructor(private _highchartsService: HighchartsService, private _dataService: DataService, private router: Router
   ) {
@@ -34,7 +47,12 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-
+    if (window.innerWidth< 1100) {
+      this.mobileFilter = false;
+      
+    } else {
+      this.mobileFilter = true;
+    };
     this.drawPlot(this.router.url.slice(-2))
 
 
