@@ -3,6 +3,7 @@ import * as HighchartsMap from "highcharts/highmaps";
 import * as Highcharts from "highcharts/highcharts";
 import Sunburst from 'highcharts/modules/sunburst';
 import Export from 'highcharts/modules/exporting';
+import { noUndefined } from '@angular/compiler/src/util';
 
 Sunburst(Highcharts)
 Export(Highcharts)
@@ -16,36 +17,8 @@ export class HighchartsService {
 
     constructor() { }
 
-    draMap(idHtml) {
-        var data = [
-            ['br-sp', 69],
-            ['br-ma', 6],
-            ['br-pa', 7],
-            ['br-sc', 17],
-            ['br-ba', 24],
-            ['br-ap', 1],
-            ['br-ms', 5],
-            ['br-mg', 46],
-            ['br-go', 14],
-            ['br-rs', 20],
-            ['br-to', 6],
-            ['br-pi', 7],
-            ['br-al', 5],
-            ['br-pb', 9],
-            ['br-ce', 8],
-            ['br-se', 3],
-            ['br-rr', 2],
-            ['br-pe', 11],
-            ['br-pr', 20],
-            ['br-es', 6],
-            ['br-rj', 22],
-            ['br-rn', 6],
-            ['br-am', 5],
-            ['br-mt', 6],
-            ['br-df', 6],
-            ['br-ac', 2],
-            ['br-ro', 5]
-        ];
+    draMap(idHtml, data) {
+  
 
 
         var options: any = {
@@ -80,10 +53,9 @@ export class HighchartsService {
 
 
             colorAxis: {
-                min: 0,
-                max: 25,
+
                 tickInterval: 5,
-                stops: [[0, '#f5ee6c'], [0.65, '#ffca34'], [1, '#f9a71f']],
+                stops: [[0, '#f5ee6c'], [0.50, '#ffca34'], [1, '#f9a71f']],
                 labels: {
                     format: '{value}%'
                 }
@@ -111,24 +83,8 @@ export class HighchartsService {
         HighchartsMap.mapChart(idHtml, options);
     }
 
-    drawPiePlot(idHtml) {
-        var data = [
-            {
-                name: 'Universidades',
-                y: 208,
-                color: '#ffc905'
-            },
-            {
-                name: 'Centros Universitários',
-                y: 60,
-                color: '#e30086'
-            },
-            {
-                name: 'Faculdades',
-                y: 70,
-                color: '#f26820'
-            },
-        ]
+    drawPiePlot(idHtml, data) {
+        
 
         Highcharts.SVGRenderer.prototype.symbols.download = function (x, y, w, h) {
             var path = [
@@ -150,8 +106,13 @@ export class HighchartsService {
 
         
         var options: any = {
+            colors: [
+                '#ffc905', 
+                '#e30086', 
+                '#f26820'
+                ],
             chart: {
-                backgroundColor: undefined,
+                backgroundColor: '#0d542a',
                 plotBorderWidth: null,
                 plotShadow: false,
                 type: 'pie',
@@ -162,12 +123,11 @@ export class HighchartsService {
             },
             title: {
                 useHTML: true,
-                text: `<small style="color: white; font-size: 10px">Cursos</small> <br> <b style="color: #e1e31d">338</b>`,
+                text: `<small style="color: white; font-size: 10px">Cursos</small> <br> <b style="color: #e1e31d">${data.map(d => d.y).reduce((a, b) => a + b)}</b>`,
                 align: 'center',
                 verticalAlign: 'middle',
                 style: {
                     "text-align": "center",
-                    "z-index": -5
                 },
                 y: 20
             },
@@ -230,7 +190,25 @@ export class HighchartsService {
             credits: {
                 enabled: false
             },
-            series: [{
+            series: [
+                {
+                    name: '',
+                    innerSize: '100%',
+                    dataLabels: {
+                        enabled:true,
+                        useHTML: true,
+                        align: 'center',
+                        format: '<span style = "font-size:10px">{point.name}</span><br><b style = "color: {point.color};font-size:12px;font-weight:bold">{point.percentage:.0f}%<b>',
+                        style: {
+                            fontAlign: 'center',
+                            color: 'white',
+                            textOutline: '0px'
+                        },
+                    },
+                    colorByPoint: true,
+                    data: data
+                },
+                {
                 name: '',
                 innerSize: '50%',
                 colorByPoint: true,
@@ -247,29 +225,13 @@ export class HighchartsService {
                     }
                 }
             },
-            {
-                name: '',
-                innerSize: '100%',
-                dataLabels: {
-                    enabled:true,
-                    useHTML: true,
-                    align: 'center',
-                    format: '<span style = "font-size:10px">{point.name}</span><br><b style = "color: {point.color};font-size:12px;font-weight:bold">{point.percentage:.0f}%<b>',
-                    style: {
-                        fontAlign: 'center',
-                        color: 'white',
-                        textOutline: '0px'
-                    },
-                },
-                colorByPoint: true,
-                data: data
-            }]
+]
         }
 
         Highcharts.chart(idHtml, options)
     }
 
-    drawSuburnPlot(idHtml) {
+    drawSuburnPlot(idHtml, data) {
         Highcharts.SVGRenderer.prototype.symbols.download = function (x, y, w, h) {
             var path = [
                 // Arrow stem
@@ -293,41 +255,6 @@ export class HighchartsService {
                 'Privada',
                 'Pública',
             ],
-            data = [
-                {
-                    y: 60.35,
-                    color: colors[0],
-                    drilldown: {
-                        name: 'Privada',
-                        categories: [
-                            'Com fins lucrativos',
-                            'Sem fins lucrativos',
-                        ],
-                        data: [
-                            32.84,
-                            27.51,
-                        ]
-                    }
-                },
-                {
-                    y: 39.64,
-                    color: colors[1],
-                    drilldown: {
-                        name: 'Pública',
-                        categories: [
-                            'Municipal',
-                            'Federal',
-                            'Estadual',
-                        ],
-                        data: [
-                            5.3,
-                            23.27,
-                            10.94,
-                        ]
-                    }
-                },
-
-            ],
             browserData = [],
             versionsData = [],
             i,
@@ -336,7 +263,7 @@ export class HighchartsService {
             drillDataLen,
             brightness;
 
-
+           
     // Build the data arrays
     for (i = 0; i < dataLen; i += 1) {
 
@@ -348,22 +275,24 @@ export class HighchartsService {
         });
 
         // add version data
-        drillDataLen = data[i].drilldown.data.length;
+        drillDataLen = data[i].drilldown.data[0].length;
+       
         for (j = 0; j < drillDataLen; j += 1) {
             brightness = 0.2 - (j / drillDataLen) / 5;
             versionsData.push({
-                name: data[i].drilldown.categories[j],
-                y: data[i].drilldown.data[j],
+                name: data[i].drilldown.categories[0][j],
+                y: data[i].drilldown.data[0][j],
                 color: Highcharts.color(data[i].color).brighten(brightness).get()
             });
         }
+       
     }
 
 // Create the chart
     var options: any =  {
             chart: {
                 type: 'pie',
-                backgroundColor: undefined,
+                backgroundColor: '#0d542a',
                 height: (7 / 12 * 100) + '%', // 16:9 ratio,
                 style: {
                     fontFamily:  'Gill35a'
@@ -420,7 +349,8 @@ export class HighchartsService {
                 }
             },
             tooltip: {
-                valueSuffix: '%'
+                headerFormat: "",
+                pointFormat: '{point.name} <b>{point.y:.0f} cursos</b> '
             },
             legend: {
                 align: 'left',

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { tap, map } from 'rxjs/operators';
+import { Observable, of, Subject } from 'rxjs';
+import { SidebarService } from './sidebar.service';
 
 
 @Injectable({
@@ -9,6 +10,7 @@ import { of } from 'rxjs';
 })
 export class DataService {
   autoCompleteOpts = [];
+  apiUrl = 'https://jequiecovid19.com/api/';
 
   constructor(private http: HttpClient) { }
 
@@ -23,10 +25,30 @@ export class DataService {
   }
 
   getAutocompleteOptions() {
-    let url = 'http://35.188.71.6/api/curso/?format=json&query=%7Bsigla_da_ies%2Cnome_da_ies%2Ccodigo_curso%2Cuf%2Cmunicipio%2Cnome_do_curso%7D'
+    let url = `${this.apiUrl}curso/?format=json&query=%7Bsigla_da_ies%2Cnome_da_ies%2Ccodigo_curso%2Cuf%2Cmunicipio%2Cnome_do_curso%7D`
     return this.autoCompleteOpts.length ?
       of(this.autoCompleteOpts) :
       this.http.get<any>(url).pipe(tap(data => this.autoCompleteOpts = data))
+  }
+
+  getPlot1Data(filter = null){
+    let url = filter === null || filter == 'el' ? `${this.apiUrl}grafico_1`:  `/api/grafico_1/${filter}`;
+    return this.http.get(url);
+  }
+
+  getPlot2Data(filter = null){
+    let url = filter === null || filter == 'el' ? `${this.apiUrl}grafico_2`:  `/api/grafico_2/${filter}`;
+    return this.http.get(url);
+  }
+
+  getCardData(filter = null){
+    let url = filter === null || filter == 'el' ? `${this.apiUrl}cards`:  `/api/cards/${filter}`;
+    return this.http.get(url);
+  }
+
+  getMapData(filter = null){
+    let url = filter === null || filter == 'el' ? `${this.apiUrl}mapa`:  `/api/mapa/${filter}`;
+    return this.http.get(url);
   }
   
 }

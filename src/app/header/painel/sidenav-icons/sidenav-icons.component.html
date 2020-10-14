@@ -23,7 +23,7 @@
                 <div class="col">
                     <span class="nome1">Cursos</span>
                     <img src="/assets/icons/cursos.png" class="icone2">
-                    <span href="#" class="numero" name="" id="">338</span>
+                    <span href="#" class="numero" name="" id="">{{data.qt_cursos}}</span>
                 </div>
 
                 <div class="col">
@@ -42,19 +42,19 @@
                 <div class="col">
                     <span class="nome1">Vagas Oferecidas</span>
                     <img src="/assets/icons/vagas.png" class="icone4">
-                    <span href="#" class="numero2" name="">{{data.qt_vaga_total_2018.toLocaleString()}}</span>
+                    <span href="#" class="numero2" name="">{{data.qt_vaga_total_2018}}</span>
                 </div>
 
                 <div class="col">
                     <span class="nome1">Inscritos</span>
                     <img src="/assets/icons/inscritos.png" class="icone5">
-                    <span href="#" class="numero2" name="">{{data.qt_inscrito_total.toLocaleString()}}</span>
+                    <span href="#" class="numero2" name="">{{data.qt_inscrito_total}}</span>
                 </div>
 
                 <div class="col">
                     <span class="nome1">Ingressos</span>
                     <img src="/assets/icons/ingressos.png" class="icone6">
-                    <span href="#" class="numero2" name="">00000</span>
+                    <span href="#" class="numero2" name="">{{data.qt_ingresso_total}}</span>
                 </div>
             </div>
         </li>
@@ -72,19 +72,19 @@
                 <div class="col">
                     <span class="nome3">Matriculados</span>
                     <img src="/assets/icons/matriculados.png" class="icone7">
-                    <span href="#" class="numero3" name="">00000</span>
+                    <span href="#" class="numero3" name="">{{data.qt_matricula_total}}</span>
                 </div>
 
                 <div class="col">
                     <span class="nome3">Concluintes</span>
                     <img src="/assets/icons/concluintes.png" class="icone8">
-                    <span href="#" class="numero3" name="">00000</span>
+                    <span href="#" class="numero3" name="">{{data.qt_concluinte_total}}</span>
                 </div>
 
                 <div class="col">
                     <span class="nome3">Docentes</span>
                     <img src="/assets/icons/docentes.png" class="icone9">
-                    <span href="#" class="numero3" name="">00000</span>
+                    <span href="#" class="numero3" name="">{{data.total_docentes}}</span>
                 </div>
 
             </div>
@@ -95,7 +95,7 @@
             <div class="indicadores align-items-start">
                 <div class="col">
                     <span class="taxac">Taxa de Concorrência</span>
-                    <span href="#" class="numero4 num-tx" name="">00000</span>
+                    <span href="#" class="numero4 num-tx" name="">{{(+data.qt_inscrito_total/data.qt_vaga_total_2018).toFixed(2)}}</span>
                     <span class="num-tx">Candidato/Vaga</span>
 
 
@@ -103,7 +103,7 @@
 
                 <div class="col">
                     <span class="taxao">Taxa de Ocupação</span>
-                    <span href="#" class="numero4" name="">00000</span>
+                    <span href="#" class="numero4" name="">{{(+data.qt_ingresso_total/data.qt_vaga_total_2018*100).toFixed(2)}}%</span>
                 </div>
             </div>
         </li>
@@ -117,8 +117,8 @@
                 </div>
 
                 <div class="col txs">
-                    <span class="relda">Relação Docente/Aluno</span>
-                    <span href="#" class="numero4" id="sucess" name="">00000</span>
+                    <span class="relda">Relação Aluno/Docente</span>
+                    <span href="#" class="numero4" id="sucess" name="">{{(+data.n_alunos_cod_curso/data.total_docentes).toFixed(2)}}</span>
                 </div>
 
             </div>
@@ -157,7 +157,7 @@
 
                                 <img src="/assets/icons/NEW_CURSOS.png" class="icone-mobile">
                                 <span class="nome-mobile">Cursos</span>
-                                <span href="#" class="numero-mobile" name="" id="">00000</span>
+                                <span href="#" class="numero-mobile" name="" id="">{{data.qt_cursos}}</span>
                             </div>
 
                             <div class="div-icon-mobile">
@@ -182,21 +182,21 @@
 
                                 <img src="/assets/icons/NEW_VAGAS.png" class="icone-mobile">
                                 <span class="nome-mobile">Vagas</span>
-                                <span href="#" class="numero-mobile" name="">00000</span>
+                                <span href="#" class="numero-mobile" name="">{{data.qt_vaga_total_2018}}</span>
                             </div>
 
                             <div class="div-icon-mobile">
 
                                 <img src="/assets/icons/NEW_INSCRITOS.png" class="icone-mobile">
                                 <span class="nome-mobile">Inscritos</span>
-                                <span href="#" class="numero-mobile" name="">00000</span>
+                                <span href="#" class="numero-mobile" name="">{{data.qt_inscrito_total}}</span>
                             </div>
 
                             <div class="div-icon-mobile">
 
                                 <img src="/assets/icons/NEW_INGRESSOS.png" class="icone-mobile">
                                 <span class="nome-mobile">Ingressos</span>
-                                <span href="#" class="numero-mobile" name="">00000</span>
+                                <span href="#" class="numero-mobile" name="">{{data.qt_ingresso_total}}</span>
                             </div>
                             <!-- </div>
                     </li>
@@ -209,21 +209,21 @@
 
                                 <img src="/assets/icons/NEW_MATRICULADOS.png" class="icone-mobile">
                                 <span class="nome-mobile">Matriculados</span>
-                                <span href="#" class="numero-mobile" name="">00000</span>
+                                <span href="#" class="numero-mobile" name="">{{data.qt_matricula_total}}</span>
                             </div>
 
                             <div class="div-icon-mobile">
 
                                 <img src="/assets/icons/NEW_CONCLUINTES.png" class="icone-mobile">
                                 <span class="nome-mobile">Concluintes</span>
-                                <span href="#" class="numero-mobile" name="">00000</span>
+                                <span href="#" class="numero-mobile" name="">{{data.qt_concluinte_total}}</span>
                             </div>
 
                             <div class="div-icon-mobile">
 
                                 <img src="/assets/icons/NEW_DOCENTES.png" class="icone-mobile">
                                 <span class="nome-mobile">Docentes</span>
-                                <span href="#" class="numero-mobile" name="">00000</span>
+                                <span href="#" class="numero-mobile" name="">{{data.total_docentes}}</span>
                             </div>
                         </div>
                     </li>
@@ -235,12 +235,12 @@
                         <div class="indicadores">
                             <br>
                             <span class="taxac">Taxa de concorrência Candidato/Vaga</span>
-                            <span href="#" class="numero-mobile" name="">00000</span>
+                            <span href="#" class="numero-mobile" name="">{{(+data.qt_inscrito_total/data.qt_vaga_total_2018).toFixed(2)}}</span>
 
                             <br>
 
                             <span class="taxao">Taxa de Ocupação</span>
-                            <span href="#" class="numero-mobile" name="">00000</span>
+                            <span href="#" class="numero-mobile" name="">{{(+data.qt_ingresso_total/data.qt_vaga_total_2018*100).toFixed(2)}}%</span>
                             <br>
 
                             <span class="taxas">Taxa de Sucesso</span>
@@ -248,7 +248,7 @@
                             <br>
 
                             <span class="relda">Relação Docente/Aluno</span>
-                            <span href="#" class="numero-mobile" name="">00000</span>
+                            <span href="#" class="numero-mobile" name="">{{(+data.n_alunos_cod_curso/data.total_docentes).toFixed(2)}}</span>
 
                         </div>
                     </li>
