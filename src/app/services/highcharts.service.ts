@@ -77,8 +77,9 @@ export class HighchartsService {
                         color: 'white'
                     }
                 },
-                align: 'left',
-                x: 20,
+                floating:false,
+                align: 'right',
+                x: 30,
                 y: -10,
                 symbolRadius: 0,
                 symbolHeight: 60,

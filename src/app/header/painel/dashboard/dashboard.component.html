@@ -45,7 +45,7 @@
                             <span>FILTRO</span>
                         </div>
 
-                        <mat-button-toggle-group #group="matButtonToggleGroup" class="bt-group" name="fontStyle" aria-label="Font Style" [vertical]="true" [value]="matButton" (change)="onValChange(group.value)">
+                        <mat-button-toggle-group #group="matButtonToggleGroup" class="bt-group" name="fontStyle" aria-label="Font Style" [vertical]="mobileFilter" [value]="matButton" (change)="onValChange(group.value)">
 
                             <mat-button-toggle class="btn-icone0" matTooltip="Cursos" matButton matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left" id="cursos" value='qt_cursos'>
                                 <img src="/assets/icons/NEW_CURSOS.png" class="iconesc icones-grid">
