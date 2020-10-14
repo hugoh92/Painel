@@ -43,7 +43,7 @@ export class ResultadoComponent implements OnInit {
   }
 
   treatNull(string, flagMetric = false){
-    return string == "NULL" || string === undefined || (flagMetric && isNaN(string))? '---' : string;
+    return string == "NULL" || string === undefined || (flagMetric && isNaN(parseFloat(string)))? '---' : string;
   }
 
 }
