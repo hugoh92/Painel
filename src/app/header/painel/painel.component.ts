@@ -54,8 +54,8 @@ export class PainelComponent implements AfterViewInit {
   }
 
   getData(event) {
-    /*let sigla_uf = event.url.match(/\/([^\/]+)\/?$/)[1]
-    let url_data = sigla_uf == 'painel' ? `http://35.188.71.6/api/curso/` : `http://35.188.71.6/api/curso/?uf=${sigla_uf}`;
+    //let sigla_uf = event.url.match(/\/([^\/]+)\/?$/)[1]
+    //let url_data = sigla_uf == 'painel' ? `http://35.188.71.6/api/curso/` : `http://35.188.71.6/api/curso/?uf=${sigla_uf}`;
 
       
     // this._dataService.getData(url_data).subscribe((json: any) => {
