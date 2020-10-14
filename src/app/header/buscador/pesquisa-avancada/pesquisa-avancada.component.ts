@@ -38,6 +38,7 @@ export class PesquisaAvancadaComponent implements OnInit {
     conceito_curso: new FormControl([0, 5]),
     conceito_enade: new FormControl([0, 5])
   });
+  filterData;
 
 
   displayedColumns: string[] = ['nome_da_ies','sigla_da_ies','natureza_juridica','org_academica','valor_cc','valor_enade','periodo'];
@@ -65,7 +66,14 @@ export class PesquisaAvancadaComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.filterData = filterValue;
+
+    this.filterFields();
+
+  }
+
+  filterFields(){
+    this.dataSource.filter = this.filterData.trim().toLowerCase();
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
@@ -129,6 +137,7 @@ export class PesquisaAvancadaComponent implements OnInit {
         this.dataSource = new MatTableDataSource<PeriodicElement>(json);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        this.filterFields();
       }
     )
   }

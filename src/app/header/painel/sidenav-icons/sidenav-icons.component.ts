@@ -11,7 +11,7 @@ import { SidebarService } from '../../../services/sidebar.service';
 })
 export class SidenavIconsComponent implements OnInit {
   data: any = {};
-  populacao: any = {};
+  populacao: number;
   nameUF = "BRASIL";
 
   constructor(public _sidebarService: SidebarService, public router: Router, private _dataService: DataService) {
@@ -32,7 +32,8 @@ export class SidenavIconsComponent implements OnInit {
   }
 
   numberWithSpaces(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    let data = x ? x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") : '---';
+    return data;
   }
 
   ngOnInit(): void {

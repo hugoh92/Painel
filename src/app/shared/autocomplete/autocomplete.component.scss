@@ -34,7 +34,6 @@ input:hover {
 
 td,
 th {
-    white-space: normal;
     word-wrap: break-word;
-    max-width: 600px;
+    table-layout: fixed;
 }

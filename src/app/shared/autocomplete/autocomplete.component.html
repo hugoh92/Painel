@@ -13,7 +13,7 @@
                         <ng-container matColumnDef="sigla_da_ies">
                             <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome e Sigla da IES </th>
                             <td class="pos " mat-cell *matCellDef="let element " class="w-100">
-                                {{element.sigla_da_ies}} - {{element.nome_da_ies}}
+                                {{element.sigla_da_ies}} - {{element.nome_da_ies.substring(0, 24) + "..."}}
                                 <small class="float-right">{{element.municipio}}/{{element.uf}}</small>
                             </td>
                         </ng-container>
@@ -22,7 +22,7 @@
 
                         <!--[routerLink]="['/buscador/', row.codigo_curso]"-->
                         <mat-option class="rowTable" *matRowDef="let row; columns: columns" [routerLink]="['/buscador/', row.codigo_curso]" [value]="row">
-                            <mat-row></mat-row>
+                            <mat-row fxFlex fxLayoutAlign="start center"></mat-row>
                         </mat-option>
                     </mat-table>
                 </mat-autocomplete>
