@@ -45,35 +45,98 @@
                             <span>FILTRO</span>
                         </div>
 
-
-                        <div class="btn btn-icone0 show active" id="cursos" matTooltip="Cursos" matButton matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left" value='qt_vaga_total_2018' (click)="updateMetric($event)">
-                            <!-- <img src="/assets/icons/cursos.png" class="iconesc icones-grid"> -->
+                        <mat-button-toggle-group class="bt-group" name="fontStyle" aria-label="Font Style" [vertical] = "true">
+                        
+                        <mat-button-toggle class="btn-icone0 show active" matTooltip="Cursos" matButton matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left" id="cursos" value='qt_cursos'>    
                             <img src="/assets/icons/NEW_CURSOS.png" class="iconesc icones-grid">
-                        </div>
-                        <div class="btn btn-icone0 disabled" matDisabled matTooltip="Cursos/Milhão Hab." matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <!-- <img src="/assets/icons/cursosmilhao.png" class="iconescm icones-grid"> -->
+                        </mat-button-toggle>
+
+                        <mat-button-toggle class="btn-icone0 disabled" matTooltip="Cursos/Milhão Hab." matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left" >    
+                            <img src="/assets/icons/NEW_POP_CURSO.png" class="iconescm icones-grid">
+                        </mat-button-toggle>
+
+                        <mat-button-toggle class="btn-icone0" matTooltip="Vagas Oferecidas" matButton matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left"  value='qt_vaga_total_2018'>    
+                            <img src="/assets/icons/NEW_VAGAS.png" class="icones icones-grid">
+                        </mat-button-toggle>
+
+                        <mat-button-toggle class="btn-icone0" matTooltip="Inscritos" matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left"  value='qt_inscrito_total'>    
+                            <img src="/assets/icons/NEW_INSCRITOS.png" class="icones icones-grid">
+                        </mat-button-toggle>
+
+                        <mat-button-toggle class="btn-icone0" matTooltip="Ingressos" matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left" value='qt_ingresso_total'>    
+                            <img src="/assets/icons/NEW_INGRESSOS.png" class="icones icones-grid">
+                        </mat-button-toggle>
+
+                        <mat-button-toggle class="btn-icone0" matTooltip="Matriculados" matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left" value='qt_matricula_total'>    
+                            <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones icones-grid">
+                        </mat-button-toggle>
+
+                        <mat-button-toggle class="btn-icone0" matTooltip="Concluintes" matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left" value='qt_concluinte_total'>     
+                            <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones icones-grid">
+                        </mat-button-toggle>
+
+                        <!-- <div class="btn-icone0 show active" id="cursos" matTooltip="Cursos" matButton matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left" value='qt_vaga_total_2018' (click)="updateMetric($event)"> --> 
+                        <!-- </div> -->
+                        
+                        <!-- <mat-button-toggle class=""  value=''></mat-button-toggle>
+                        <div class="btn-icone0 " id="" matTooltip="Cursos/Milhão Hab." matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left">
                             <img src="/assets/icons/NEW_POP_CURSO.png" class="iconescm icones-grid">
                         </div>
-                        <div class=" btn btn-icone0" matTooltip="Vagas" matButton matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left" value='qt_curso' (click)="updateMetric($event)">
-                            <!-- <img src="/assets/icons/vagas.png" class="icones icones-grid"> -->
+
+                        <mat-button-toggle class=""  value=''></mat-button-toggle>
+                        <div class="btn-icone0 " id="cursos" matTooltip="Vagas" matButton matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left">
+                            <img src="/assets/icons/NEW_VAGAS.png" class="icones icones-grid">
+                        </div>
+
+                        <mat-button-toggle class="" value=''></mat-button-toggle>
+                        <div class="btn-icone0" matTooltip="Inscritos" matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left">
+                            <img src="/assets/icons/NEW_INSCRITOS.png" class="icones icones-grid">
+                        </div>
+
+                        <mat-button-toggle class="" value=''></mat-button-toggle>
+                        <div class="btn-icone0" matTooltip="Ingressos" matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left">
+                            <img src="/assets/icons/NEW_INGRESSOS.png" class="icones icones-grid">
+                        </div>
+
+                        <mat-button-toggle class="" value=''></mat-button-toggle>
+                        <div class="btn-icone0" matTooltip="Matriculados" matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left">
+                            <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones icones-grid">
+                        </div>
+
+                        <mat-button-toggle class="" value=''></mat-button-toggle>
+                        <div class="btn-icone0" matTooltip="Concluintes" matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left">
+                            <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones icones-grid">
+                        </div> -->
+
+                        </mat-button-toggle-group>
+
+                                   
+                        <!-- <div class="btn btn-icone0 show active" id="cursos" matTooltip="Cursos" matButton matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left" value='qt_vaga_total_2018' (click)="updateMetric($event)">
+                            <img src="/assets/icons/NEW_CURSOS.png" class="iconesc icones-grid">
+                        </div>
+
+                        <div class="btn btn-icone0" matDisabled matTooltip="Cursos/Milhão Hab." matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left">
+                            <img src="/assets/icons/NEW_POP_CURSO.png" class="iconescm icones-grid">
+                        </div>
+                        
+                        <div class=" btn btn-icone0" matTooltip="Vagas" matButton matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left"  (click)="updateMetric($event)">
                             <img src="/assets/icons/NEW_VAGAS.png" class="icones icones-grid">
                         </div>
                         <div class="btn btn-icone0" matTooltip="Inscritos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <!-- <img src="/assets/icons/inscritos.png" class="icones icones-grid"> -->
                             <img src="/assets/icons/NEW_INSCRITOS.png" class="icones icones-grid">
                         </div>
                         <div class="btn btn-icone0" matTooltip="Ingressos" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <!-- <img src="/assets/icons/ingressos.png" class="icones icones-grid"> -->
+                            
                             <img src="/assets/icons/NEW_INGRESSOS.png" class="icones icones-grid">
                         </div>
                         <div class="btn btn-icone0" matTooltip="Matriculados" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <!-- <img src="/assets/icons/matriculados.png" class="icones icones-grid"> -->
+                           
                             <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones icones-grid">
                         </div>
                         <div class="btn btn-icone0" matTooltip="Concluintes" matTooltipClass="example-tooltip-red" aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="left">
-                            <!-- <img src="/assets/icons/concluintes.png" class="icones icones-grid"> -->
+                            
                             <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones icones-grid">
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
