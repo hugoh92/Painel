@@ -154,7 +154,31 @@ nav ul li span {
 .nome1 {
     width: 110px;
 }
+.a{
+    left: 93%;
+    position: relative;
+    background: #d71a20;
+    width: 23px;
+    height: 23px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 95px;
 
+    }
+    .fa-question {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        align-items: center;
+        position: relative;
+        font-size: 12px;
+        display: flex;
+        font-weight: bold;
+        color: white;
+        z-index: 9999999;
+    }
 //estilizando numero valor 
 nav ul li div .numero {
     position: absolute;
@@ -368,7 +392,7 @@ nav ul li .ano2 {
 
 nav ul li .ano3 {
     position: absolute;
-    top: 385px;
+    top: 393px;
     text-align: center;
     font-size: 13px;
     left: 55px;
