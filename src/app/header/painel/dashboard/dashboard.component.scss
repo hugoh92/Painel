@@ -292,8 +292,12 @@ mat-menu {
     margin: 5px 5px 0 0;
     width: 50px;
     height: 26px;
+    background: chartreuse;
 }
 
+.bt-group{
+    bottom: 190px;
+}
 .btn:click {
     filter: opacity(1);
     background: red;
