@@ -4,7 +4,7 @@
         <button mat-button class="btn btn-hbg" (click)="_sidebarService.toggle('sidenavInfo')">
             <mat-icon class="ham-icon">menu</mat-icon>
         </button>
-        <span class="text">BRASIL</span>
+        <span class="text">{{nameUF.toUpperCase()}}</span>
     </div>
 
 
@@ -17,7 +17,7 @@
                 <div class="col">
                     <span class="nome1">População</span>
                     <img src="/assets/icons/populacao.png" class="icone1">
-                    <span href="#" class="numero" name="" id="">209.5M</span>
+                    <span href="#" class="numero" name="" id="">{{numberWithSpaces(populacao)}}</span>
                 </div>
 
                 <div class="col">
@@ -29,7 +29,7 @@
                 <div class="col">
                     <span class="nome1">Cursos/Milhão Hab.</span>
                     <img src="/assets/icons/cursosmilhao.png" class="icone3">
-                    <span href="#" class="numero" name="">1.61</span>
+                    <span href="#" class="numero" name="">{{(data.qt_cursos/populacao*1000000).toFixed(2)}}</span>
                 </div>
             </div>
         </li>
@@ -42,31 +42,30 @@
                 <div class="col">
                     <span class="nome1">Vagas Oferecidas</span>
                     <img src="/assets/icons/vagas.png" class="icone4">
-                    <span href="#" class="numero2" name="">{{data.qt_vaga_total_2018}}</span>
+                    <span href="#" class="numero2" name="">{{numberWithSpaces(data.qt_vaga_total_2018)}}</span>
                 </div>
 
                 <div class="col">
                     <span class="nome1">Inscritos</span>
                     <img src="/assets/icons/inscritos.png" class="icone5">
-                    <span href="#" class="numero2" name="">{{data.qt_inscrito_total}}</span>
+                    <span href="#" class="numero2" name="">{{numberWithSpaces(data.qt_inscrito_total)}}</span>
                 </div>
 
                 <div class="col">
                     <span class="nome1">Ingressos</span>
                     <img src="/assets/icons/ingressos.png" class="icone6">
-                    <span href="#" class="numero2" name="">{{data.qt_ingresso_total}}</span>
+                    <span href="#" class="numero2" name="">{{numberWithSpaces(data.qt_ingresso_total)}}</span>
                 </div>
             </div>
         </li>
         <div class="a">
-            <i class="btn fas fa-question bt-help" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
-                            aria-label="" matTooltipPosition="left"></i>
+            <i class="btn fas fa-question bt-help" matTooltip="Em Breve" matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left"></i>
         </div>
         <li class="linha3">
 
             <span class="ano3">Indicadores (2018)
             </span>
-          
+
             <!-- Terceiro bloco de itens -->
 
             <i class="fas fa-info-circle"></i>
@@ -74,19 +73,19 @@
                 <div class="col">
                     <span class="nome3">Matriculados</span>
                     <img src="/assets/icons/matriculados.png" class="icone7">
-                    <span href="#" class="numero3" name="">{{data.qt_matricula_total}}</span>
+                    <span href="#" class="numero3" name="">{{numberWithSpaces(data.qt_matricula_total)}}</span>
                 </div>
 
                 <div class="col">
                     <span class="nome3">Concluintes</span>
                     <img src="/assets/icons/concluintes.png" class="icone8">
-                    <span href="#" class="numero3" name="">{{data.qt_concluinte_total}}</span>
+                    <span href="#" class="numero3" name="">{{numberWithSpaces(data.qt_concluinte_total)}}</span>
                 </div>
 
                 <div class="col">
                     <span class="nome3">Docentes</span>
                     <img src="/assets/icons/docentes.png" class="icone9">
-                    <span href="#" class="numero3" name="">{{data.total_docentes}}</span>
+                    <span href="#" class="numero3" name="">{{numberWithSpaces(data.total_docentes)}}</span>
                 </div>
 
             </div>

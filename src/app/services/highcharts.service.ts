@@ -100,7 +100,6 @@ export class HighchartsService {
 
         // Instantiate the map
         HighchartsMap.mapChart(idHtml, options);
-                console.log(data)
 
     }
 

@@ -10,7 +10,7 @@ import { HighchartsService } from 'src/app/services/highcharts.service'
 
 })
 export class DashboardComponent implements AfterViewInit {
-  data: any= {};
+  data: any = {};
   localizacao: any = {};
   flagBrasilRoute = true;
   textCursos = 'Cursos por Região';
