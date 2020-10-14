@@ -42,4 +42,8 @@ export class ResultadoComponent implements OnInit {
     this.location.back();
   }
 
+  treatNull(string, flagMetric = false){
+    return string == "NULL" || string === undefined || (flagMetric && isNaN(string))? '---' : string;
+  }
+
 }
