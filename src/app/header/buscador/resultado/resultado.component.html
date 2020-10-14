@@ -81,10 +81,10 @@
                     <br>
                     <!-- <i class="fa fa-globe icones-style" aria-hidden="true"></i> -->
                     <mat-icon class="icones-style"> email</mat-icon>
-                    <span id="uni-site" class="info-uni"> {{options.e_mail_institucional_1}} </span>
+                    <span id="uni-site" class="info-uni"> {{treatNull(options.e_mail_institucional_1)}} </span>
                     <br>
                     <mat-icon class="icones-style">local_phone</mat-icon>
-                    <span class="info-uni"> {{options.telefone}} </span>
+                    <span class="info-uni"> {{treatNull(options.telefone)}} </span>
                     <br>
                     <!-- <mat-icon class="icones-style">alarm_add</mat-icon>
                     <span class="info-uni"> 7:00 ás 22:00</span> -->
@@ -115,32 +115,32 @@
                     <br>
                     <span class="nome-ind">O curso está</span>
                     <br>
-                    <span href="#" class="numero-ind" name="">{{options.situacao_do_curso}}</span>
+                    <span href="#" class="numero-ind" name="">{{(options.situacao_do_curso)}}</span>
                 </div>
 
                 <div class="func-dados">
                     <br>
-                    <span class="nome-ind">Valor da mensalidade em {{options.ano_mensalidade}}</span>
+                    <span class="nome-ind">Valor da mensalidade em {{(options.ano_mensalidade)}}</span>
                     <br>
-                    <span href="#" class="numero-ind" name="">{{options.mensalidade}}</span>
+                    <span href="#" class="numero-ind" name="">{{(options.mensalidade)}}</span>
                 </div>
                 <div class="func-dados">
                     <br>
                     <span class="nome-ind">Inicio das atividades</span>
                     <br>
-                    <span href="#" class="numero-ind" name="">{{(options.periodo_funcionamento).split("-").reverse().join("/")}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull((options.periodo_funcionamento).split("-").reverse().join("/"))}}</span>
                 </div>
                 <div class="func-dados">
                     <br>
                     <span class="nome-ind">Vagas Autorizadas</span>
                     <br>
-                    <span href="#" class="numero-ind" name="">{{options.qt_vagas_autorizadas}} Vagas/Ano</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_vagas_autorizadas)}} Vagas/Ano</span>
                 </div>
                 <div class="func-dados">
                     <br>
                     <span class="nome-ind">Carga horária</span>
                     <br>
-                    <span href="#" class="numero-ind" name="">{{options.carga_horaria}} horas</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.carga_horaria)}} horas</span>
                 </div>
             </div>
 
@@ -151,45 +151,45 @@
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind"><br>
                     <span class="nome-ind nm-vgs">Vagas Oferecidas</span><br>
-                    <span href="#" class="numero-ind" name="">{{options.qt_vaga_total_2018}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_vaga_total_2018)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind"><br>
                     <span class="nome-ind">Inscritos</span><br>
-                    <span href="#" class="numero-ind" name="">{{options.qt_inscrito_total}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_inscrito_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind"><br>
                     <span class="nome-ind">Ingressos</span><br>
-                    <span href="#" class="numero-ind" name="">{{options.qt_ingresso_total}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_ingresso_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones-ind"><br>
                     <span class="nome-ind">Matriculados</span><br>
-                    <span href="#" class="numero-ind" name="">{{options.qt_matricula_total}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_matricula_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones-ind"><br>
                     <span class="nome-ind">Concluintes</span><br>
-                    <span href="#" class="numero-ind" name="">{{options.qt_concluinte_total}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_concluinte_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_DOCENTES.png" class="icones-ind doc-icon"><br>
                     <span class="nome-ind doc-icon">Docentes</span><br>
-                    <span href="#" class="numero-ind doc-icon" name="">{{options.total_docentes}}</span>
+                    <span href="#" class="numero-ind doc-icon" name="">{{treatNull(options.total_docentes)}}</span>
                 </div>
                 <div class="div-info">
                     <div class="info-syle">
                         <br>
                         <span class="nome-ind">Taxa de Concorrência Candidato/Vaga</span>
                         <br>
-                        <span href="#" class="numero-ind" name="">{{(+options.tx_concorrencia).toFixed(2)}}</span>
+                        <span href="#" class="numero-ind" name="">{{treatNull((+options.tx_concorrencia).toFixed(2), true)}}</span>
                         <br>
                         <br>
 
                         <span class="nome-ind">Taxa de Sucesso</span>
                         <br>
-                        <span href="#" class="numero-ind" id="sucess" name="">{{(+options.tx_sucesso).toFixed(2)}}%</span>
+                        <span href="#" class="numero-ind" id="sucess" name="">{{treatNull((+options.tx_sucesso).toFixed(2)+ '%', true)}}</span>
                     </div>
                 </div>
                 <div class="div-info">
@@ -197,12 +197,12 @@
                         <br>
                         <span class="nome-ind">Taxa de Ocupação</span>
                         <br>
-                        <span href="#" class="numero-ind" name="">{{(+options.tx_ocupacao).toFixed(2)}}%</span>
+                        <span href="#" class="numero-ind" name="">{{treatNull((+options.tx_ocupacao).toFixed(2) + '%', true)}}</span>
                         <br>
                         <br>
                         <span class="nome-ind">Relação Aluno/Docente</span>
                         <br>
-                        <span href="#" class="numero-ind" id="sucess" name=""> {{(+options.n_alunos_cod_curso/options.total_docentes).toFixed(2)}}</span>
+                        <span href="#" class="numero-ind" id="sucess" name=""> {{treatNull((+options.n_alunos_cod_curso/options.total_docentes).toFixed(2), true)}}</span>
                     </div>
                 </div>
             </div>

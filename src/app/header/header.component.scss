@@ -65,6 +65,11 @@
     top: 25px;
 }
 
+.email,
+.email svg {
+    cursor: pointer;
+}
+
 //icone direm estilizando
 .direm>img {
     height: 80px;
@@ -73,11 +78,13 @@
     align-content: flex-start;
     align-items: center;
     display: flex;
+    cursor: pointer;
 }
-.nome-beta{
-    color:#e1e31d;
+
+.nome-beta {
+    color: #e1e31d;
     position: absolute;
-    display:block;
+    display: block;
     font-weight: bold;
     top: 12px;
     left: 250px;
@@ -161,7 +168,7 @@
         // margin-left:-50px;      
         display: none;
     }
-    .nome-beta{
+    .nome-beta {
         top: 6px;
     }
     .wrapper {
@@ -377,7 +384,7 @@
 }
 
 @media screen and (min-width:1440px) {
-    .linha-vertical{
+    .linha-vertical {
         left: 98%;
     }
 }
