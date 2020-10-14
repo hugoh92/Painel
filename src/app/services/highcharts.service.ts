@@ -18,9 +18,9 @@ export class HighchartsService {
     constructor() { }
 
     draMap(idHtml, data, geojson = usaMap) {
-        var series; 
+        var series;
 
-        if(data.length == 27){
+        if (data.length == 27) {
             series = [{
                 data: data,
                 borderColor: '#f9a71f',
@@ -36,7 +36,7 @@ export class HighchartsService {
                 }
             }]
         } else {
-            series =  [{
+            series = [{
                 data: data,
                 keys: ['codarea', 'name', 'value'],
                 joinBy: 'codarea',
@@ -104,7 +104,7 @@ export class HighchartsService {
     }
 
     drawPiePlot(idHtml, data) {
-        
+
 
         Highcharts.SVGRenderer.prototype.symbols.download = function (x, y, w, h) {
             var path = [
@@ -341,6 +341,14 @@ export class HighchartsService {
                     center: ['50%', '50%'],
                     borderWidth: 0,
                     borderColor: "#0d542a",
+                    point: {
+                        events: {
+                            legendItemClick: function () {
+                                this.slice(null);
+                                return false;
+                            }
+                        }
+                    }
                 }
             },
             navigation: {
@@ -370,7 +378,7 @@ export class HighchartsService {
             },
             tooltip: {
                 headerFormat: "",
-                pointFormat: '{point.name} <b>{point.y:.0f} cursos</b> '
+                pointFormat: '{point.name} <b>{point.y:.1f}% cursos</b> '
             },
             legend: {
                 align: 'left',
