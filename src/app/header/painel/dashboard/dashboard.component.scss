@@ -281,13 +281,11 @@ mat-menu {
 //     border-radius: 20px 20px 20px 20px;
 //     align-items: center;
 // }
-
 // .plus {
 //     //botão
 //     font-size: 20px;
 //     color: #d71a20;
 // }
-
 //estilizando botoes geral
 .btn-icone0 {
     cursor: pointer;
@@ -306,7 +304,7 @@ mat-menu {
     background: red;
 }
 
-.icones:active {
+.btn-icone0.active .iconesc {
     filter: opacity(1);
 }
 
@@ -362,7 +360,6 @@ mat-menu {
         overflow-x: hidden;
         overflow-y: hidden;
     }
-  
     .item2 {
         // min-width: 455px;
         width: 455px;
@@ -499,7 +496,6 @@ mat-menu {
         width: 300px;
         min-width: 300px;
         height: 200px !important;
-        
     }
     .area {
         max-width: 280px;

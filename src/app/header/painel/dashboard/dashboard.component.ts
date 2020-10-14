@@ -10,7 +10,7 @@ import { HighchartsService } from 'src/app/services/highcharts.service'
 
 })
 export class DashboardComponent implements AfterViewInit {
-  data = {}
+  data: any= {}
 
   constructor(private _highchartsService: HighchartsService, private _dataService: DataService, private router: Router
   ) {
@@ -38,8 +38,8 @@ export class DashboardComponent implements AfterViewInit {
 
   drawPlot(filter = null) {
     this._dataService.getPlot1Data(filter).subscribe((json: any) => {
-      this.data = json.map(d => { return { y: d.n, name: d.org_academica } })
-      this._highchartsService.drawPiePlot("pieplot", this.data)
+      let data = json.map(d => { return { y: d.n, name: d.org_academica } })
+      this._highchartsService.drawPiePlot("pieplot", data)
     })
 
     this._dataService.getPlot2Data(filter).subscribe((json: any) => {
@@ -83,12 +83,26 @@ export class DashboardComponent implements AfterViewInit {
     })
   
     this._dataService.getMapData(filter).subscribe((json: any) => {
-      let data = json.map(d => { return ['br-' + d.uf.toLowerCase(), d.qt_cursos] })
-      console
-      console.log(json.map(d => { return 'br-' + d.uf }))
+      if(filter === null || filter == 'el'){
+        let data = json.map(d => { return ['br-' + d.uf.toLowerCase(), d.qt_cursos] })
+        this._highchartsService.draMap("mapPlot", data)
+      } else {
 
-      this._highchartsService.draMap("mapPlot", data)
+        let cod_uf = json[0].codigo_do_municipio.substr(0, 2)
+        this.data = json.sort((a, b) => b.qt_cursos - a.qt_cursos).slice(1, 6);
+
+        let data = json.map(d => { return [d.codigo_do_municipio, d.municipio, d.qt_cursos] })
+        this._dataService.getData(`https://servicodados.ibge.gov.br/api/v2/malhas/${cod_uf}?resolucao=5&formato=application/vnd.geo+json`).subscribe( (geojson:any) => {
+          this._highchartsService.draMap("mapPlot", data, geojson)
+        })
+      }
+
+
     })
+  }
+
+  updateMetric(event){
+    console.log(event)
   }
 
 }

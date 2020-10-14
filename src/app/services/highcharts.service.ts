@@ -17,13 +17,46 @@ export class HighchartsService {
 
     constructor() { }
 
-    draMap(idHtml, data) {
-  
+    draMap(idHtml, data, geojson = usaMap) {
+        var series; 
 
+        if(data.length == 27){
+            series = [{
+                data: data,
+                borderColor: '#f9a71f',
+                borderWidth: 0.3,
+                states: {
+                    hover: {
+                        color: '#BADA55'
+                    }
+                },
+                dataLabels: {
+                    enabled: false,
+                    format: '{point.name}'
+                }
+            }]
+        } else {
+            series =  [{
+                data: data,
+                keys: ['codarea', 'name', 'value'],
+                joinBy: 'codarea',
+                borderColor: '#f9a71f',
+                borderWidth: 0.3,
+                states: {
+                    hover: {
+                        color: '#BADA55'
+                    }
+                },
+                dataLabels: {
+                    enabled: false,
+                    format: '{point.name}'
+                }
+            }]
+        }
 
         var options: any = {
             chart: {
-                map: usaMap,
+                map: geojson,
                 backgroundColor: undefined,
                 height: (3 / 4 * 100) + '%' // 16:9 ratio
             },
@@ -57,30 +90,18 @@ export class HighchartsService {
                 tickInterval: 5,
                 stops: [[0, '#f5ee6c'], [0.50, '#ffca34'], [1, '#f9a71f']],
                 labels: {
-                    format: '{value}%'
+                    format: '{value}'
                 }
             },
 
 
-            series: [{
-                data: data,
-                name: 'Random data',
-                borderColor: '#f9a71f',
-                borderWidth: 0.3,
-                states: {
-                    hover: {
-                        color: '#BADA55'
-                    }
-                },
-                dataLabels: {
-                    enabled: false,
-                    format: '{point.name}'
-                }
-            }]
+            series: series
         }
 
         // Instantiate the map
         HighchartsMap.mapChart(idHtml, options);
+                console.log(data)
+
     }
 
     drawPiePlot(idHtml, data) {
@@ -104,13 +125,13 @@ export class HighchartsService {
             return path;
         };
 
-        
+
         var options: any = {
             colors: [
-                '#ffc905', 
-                '#e30086', 
+                '#ffc905',
+                '#e30086',
                 '#f26820'
-                ],
+            ],
             chart: {
                 backgroundColor: '#0d542a',
                 plotBorderWidth: null,
@@ -118,7 +139,7 @@ export class HighchartsService {
                 type: 'pie',
                 height: (7 / 12 * 100) + '%', // 16:9 ratio
                 style: {
-                    fontFamily:  './assets/FONTES/gilr35a.TFT'
+                    fontFamily: './assets/FONTES/gilr35a.TFT'
                 }
             },
             title: {
@@ -143,7 +164,7 @@ export class HighchartsService {
                     }
                 }
             },
-        
+
             exporting: {
                 buttons: {
                     contextButton: {
@@ -160,7 +181,7 @@ export class HighchartsService {
             subtitle: {
                 text: "<span>Organização Acadêmica</span>",
                 useHTML: true,
-                y:2,
+                y: 2,
                 align: "left",
                 style: {
                     "text-align": "left",
@@ -195,7 +216,7 @@ export class HighchartsService {
                     name: '',
                     innerSize: '100%',
                     dataLabels: {
-                        enabled:true,
+                        enabled: true,
                         useHTML: true,
                         align: 'center',
                         format: '<span style = "font-size:10px">{point.name}</span><br><b style = "color: {point.color};font-size:12px;font-weight:bold">{point.percentage:.0f}%<b>',
@@ -209,23 +230,23 @@ export class HighchartsService {
                     data: data
                 },
                 {
-                name: '',
-                innerSize: '50%',
-                colorByPoint: true,
-                data: data,
-                dataLabels: {
-                    enabled: true,
-                    distance: -20,
-                    format: '{point.y:.0f}',
-                    style: {
-                        fontSize: '10px',
-                        color: 'white',
-                        fontWeight: 'bold',
-                        textOutline: '0px'
+                    name: '',
+                    innerSize: '50%',
+                    colorByPoint: true,
+                    data: data,
+                    dataLabels: {
+                        enabled: true,
+                        distance: -20,
+                        format: '{point.y:.0f}',
+                        style: {
+                            fontSize: '10px',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            textOutline: '0px'
+                        }
                     }
-                }
-            },
-]
+                },
+            ]
         }
 
         Highcharts.chart(idHtml, options)
@@ -263,39 +284,39 @@ export class HighchartsService {
             drillDataLen,
             brightness;
 
-           
-    // Build the data arrays
-    for (i = 0; i < dataLen; i += 1) {
 
-        // add browser data
-        browserData.push({
-            name: categories[i],
-            y: data[i].y,
-            color: data[i].color
-        });
+        // Build the data arrays
+        for (i = 0; i < dataLen; i += 1) {
 
-        // add version data
-        drillDataLen = data[i].drilldown.data[0].length;
-       
-        for (j = 0; j < drillDataLen; j += 1) {
-            brightness = 0.2 - (j / drillDataLen) / 5;
-            versionsData.push({
-                name: data[i].drilldown.categories[0][j],
-                y: data[i].drilldown.data[0][j],
-                color: Highcharts.color(data[i].color).brighten(brightness).get()
+            // add browser data
+            browserData.push({
+                name: categories[i],
+                y: data[i].y,
+                color: data[i].color
             });
-        }
-       
-    }
 
-// Create the chart
-    var options: any =  {
+            // add version data
+            drillDataLen = data[i].drilldown.data[0].length;
+
+            for (j = 0; j < drillDataLen; j += 1) {
+                brightness = 0.2 - (j / drillDataLen) / 5;
+                versionsData.push({
+                    name: data[i].drilldown.categories[0][j],
+                    y: data[i].drilldown.data[0][j],
+                    color: Highcharts.color(data[i].color).brighten(brightness).get()
+                });
+            }
+
+        }
+
+        // Create the chart
+        var options: any = {
             chart: {
                 type: 'pie',
                 backgroundColor: '#0d542a',
                 height: (7 / 12 * 100) + '%', // 16:9 ratio,
                 style: {
-                    fontFamily:  'Gill35a'
+                    fontFamily: 'Gill35a'
                 }
             },
             credits: {
@@ -334,8 +355,8 @@ export class HighchartsService {
                     }
                 }
             },
-            
-        
+
+
             exporting: {
                 buttons: {
                     contextButton: {
@@ -361,7 +382,7 @@ export class HighchartsService {
                 itemStyle: {
                     color: 'white',
                 },
-              },
+            },
             series: [{
                 borderWidth: 3,
                 borderColor: '#0d542a',
@@ -372,7 +393,7 @@ export class HighchartsService {
                 opacity: 0.7,
                 innerSize: '60%',
                 dataLabels: {
-                    enabled:true,
+                    enabled: true,
                     useHTML: true,
                     align: 'center',
                     format: '<span style = "font-size:10px">{point.name}</span><br><b style = "color: {point.color};font-size:12px">{point.y:.0f}%<b>',
@@ -390,7 +411,7 @@ export class HighchartsService {
                 size: '55%',
                 innerSize: '40%',
                 dataLabels: {
-                    enabled:false
+                    enabled: false
                 },
                 showInLegend: true
             }],
