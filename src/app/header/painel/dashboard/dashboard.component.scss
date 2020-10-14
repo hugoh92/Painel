@@ -294,21 +294,23 @@ mat-menu {
     height: 26px;
     border: none;
 }
-.btn-icone0.active{
-    border: none;
-}
-.btn-group.active{
+
+.btn-icone0.active {
     border: none;
 }
 
-
-
-.bt-group{
+.btn-group.active {
     border: none;
 }
-.bt-group{
+
+.bt-group {
+    border: none;
+}
+
+.bt-group {
     bottom: 190px;
 }
+
 .btn:click {
     filter: opacity(1);
     background: red;
@@ -317,10 +319,6 @@ mat-menu {
 .btn.click>.icones {
     filter: opacity(1);
     background: red;
-}
-
-.btn-icone0.active .iconesc {
-    filter: opacity(1);
 }
 
 //animaçao qnd passar mouse 

@@ -14,6 +14,7 @@ const usaMap = require("../../assets/data/br.json");
     providedIn: 'root'
 })
 export class HighchartsService {
+    mapChart;
 
     constructor() { }
 
@@ -70,7 +71,19 @@ export class HighchartsService {
             },
 
             legend: {
-                enabled: false
+                title: {
+                    text: '<span style = "color: #fff"> Legenda </span>',
+                    style: {
+                        color: 'white'
+                    }
+                },
+                align: 'left',
+                x: 20,
+                y: -10,
+                symbolRadius: 0,
+                symbolHeight: 60,
+                layout: 'vertical',
+                verticalAlign: 'bottom',
             },
 
             credits: {
@@ -99,7 +112,10 @@ export class HighchartsService {
         }
 
         // Instantiate the map
-        HighchartsMap.mapChart(idHtml, options);
+        if(this.mapChart){
+            this.mapChart.destroy;
+        }
+        this.mapChart = HighchartsMap.mapChart(idHtml, options);
 
     }
 

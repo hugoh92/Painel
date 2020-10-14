@@ -35,25 +35,29 @@ body {
     border: none !important;
     outline: none!important;
     color: none;
-  }
-  ::ng-deep mat-button-toggle-group{
+}
+
+ ::ng-deep mat-button-toggle-group {
     outline: none !important;
     border: none !important;
-  }
-  .mat-button-toggle-checked {
-    
+}
+
+.mat-button-toggle-checked {
     border: none !important;
     outline: none!important;
     color: none;
-  }
+}
+
 .mat-button-toggle-button:focus {
     border: none!important;
     outline: none!important;
     color: none;
-  }
-  .mat-button-toggle-focus-overlay {
+}
+
+.mat-button-toggle-focus-overlay {
     display: none;
-    }
+}
+
 .bt-mobile {
     background: #023a1d;
     color: white;
@@ -138,6 +142,15 @@ body {
     * {
         cursor: wait !important;
     }
+}
+
+.mat-button-toggle-checked .icones-grid {
+    filter: opacity(1) !important;
+}
+
+.highcharts-axis-labels.highcharts-coloraxis-labels text {
+    color: white!important;
+    fill: white !important;
 }
 
 .rowTable:hover,
