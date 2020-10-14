@@ -51,10 +51,10 @@ export class DashboardComponent implements AfterViewInit {
     })
 
     this._dataService.getPlot2Data(filter).subscribe((json: any) => {
-      var total_priv = json.filter(d => d.natureza_juridica == "Privada").map(d => d.n).reduce((a, b) => a + b);
-      var total_publ = json.filter(d => d.natureza_juridica == "Pública").map(d => d.n).reduce((a, b) => a + b);
-      var total = json.map(d => d.n).reduce((a, b) => a + b);
 
+      var total_priv = json.filter(d => d.natureza_juridica == "Privada").length ? json.filter(d => d.natureza_juridica == "Privada").map(d => d.n).reduce((a, b) => a + b) : 0;
+      var total_publ = json.filter(d => d.natureza_juridica == "Pública").length ? json.filter(d => d.natureza_juridica == "Pública").map(d => d.n).reduce((a, b) => a + b) : 0;
+      var total = json.map(d => d.n).reduce((a, b) => a + b);
       let data = [
         {
           y: 100 * total_priv / total,

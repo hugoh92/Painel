@@ -25,9 +25,11 @@
                         </div>
                         <div class="row-2 area-curso bl-fim">
                             <div class="row-2 cap-interior">
-                                Capitais =
-                                <span href="#" class="numero" name="">{{localizacao[0].n}}</span> Interior =
-                                <span href="#" class="numero" name="">{{localizacao[1].n}}</span>
+                                <div *ngFor="let item of localizacao">
+                                    {{item.localizacao}} =
+                                    <span href="#" class="numero" name="">{{item.n}}</span>
+                                </div>
+
                             </div>
                         </div>
                     </div>

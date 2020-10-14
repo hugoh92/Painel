@@ -425,6 +425,7 @@ export class HighchartsService {
         };
 
         Highcharts.chart(idHtml, options)
+ 
 
     }
 }
