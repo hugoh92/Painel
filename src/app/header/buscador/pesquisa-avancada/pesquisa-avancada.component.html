@@ -395,7 +395,7 @@
 
                     <ng-container matColumnDef="periodo">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> Ano de Funcionamento </th>
-                        <td mat-cell *matCellDef="let element " [routerLink]="['/buscador/', element.codigo_curso]"> {{element.periodo}} </td>
+                        <td mat-cell *matCellDef="let element " [routerLink]="['/buscador/', element.codigo_curso]"> {{element.periodo_funcionamento.split("-").reverse().join("/")}} </td>
                     </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
