@@ -35,6 +35,16 @@
     display: none;
 }
 
+//Tooltips
+::ng-deep .mat-tooltip {
+    /* your own custom styles here */ 
+    /* e.g. */
+    // background:  #0d542a;
+    font-size: 13px;
+    justify-content: center;
+    text-align: justify;
+    opacity: 0.9;
+}
 
 /* Flex Item */
 
@@ -811,6 +821,7 @@ input:hover {
     //margin-left: 5px;
     margin-left: 20px;
     width: 25%;
+    opacity: 0.3;
 }
 .bt-ano{
     left: 87%;

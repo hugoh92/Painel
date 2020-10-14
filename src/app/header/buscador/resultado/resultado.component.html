@@ -23,9 +23,9 @@
                     <mat-icon class="icones-style">local_phone</mat-icon>
                     <span class="info-uni"> {{options.telefone}} </span>
                     <br>
-                    <mat-icon class="icones-style">alarm_add</mat-icon>
+                    <!-- <mat-icon class="icones-style">alarm_add</mat-icon>
                     <span class="info-uni"> 7:00 ás 22:00</span>
-                    <br>
+                    <br> -->
 
                 </div>
             </div>
@@ -35,6 +35,7 @@
                 <div class="row"></div>
                 <!-- <span class="dados-geral">Código da IES: {{options.codigo_da_ies}}</span>
                 <div class="row"></div> -->
+                <div class="nome-desk">
                 <span class="dados-geral">Código do curso: {{options.codigo_curso}}</span>
                 <div class="row"></div>
                 <span class="dados-geral">Nome do curso: {{toTitleCase(options.nome_do_curso)}}</span>
@@ -48,7 +49,23 @@
                 <span class="dados-geral">Categoria administrativa: {{options.cat_admin}}</span>
                 <div class="row"></div>
                 <br>
+                </div>
 
+                <div class="nome-mobile">
+                    <span class="dados-geral">Código do curso: {{options.codigo_curso}}</span>
+                    <div class="row"></div>
+                    <span class="dados-geral">Nome do curso: {{toTitleCase(options.nome_do_curso)}}</span>
+                    <div class="row"></div>
+                    <span class="dados-geral">Grau: {{options.grau}}</span>
+                    <div class="row"></div>
+                    <span class="dados-geral">{{options.modalidade}}</span>
+                    <div class="row"></div>
+                    <span class="dados-geral">{{options.org_academica}}</span>
+                    <div class="row"></div>
+                    <span class="dados-geral">{{options.cat_admin}}</span>
+                    <div class="row"></div>
+                    <br>
+                    </div>
                 <button mat-button class="btn btn-mat mat-mobile" type="button">
                         <span class = "">Projeto pedagógico</span>
                     </button>
@@ -197,7 +214,6 @@
                     aria-label="" matTooltipPosition="left">add</mat-icon>
 				</div>
 				</span>
-
         </div>
         <div class="col-itens row-alunos">
             <span class="titulos titulos-rsultados">Alunos
