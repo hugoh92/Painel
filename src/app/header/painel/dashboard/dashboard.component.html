@@ -8,7 +8,7 @@
                 <div class="col area">
                     <div class="dados-curso">
                         <div class="row-2 area-curso bl-cima">
-                            <span class="titulos" id="cregiao">Cursos por Município</span>
+                            <span class="titulos" id="cregiao">{{textCursos}}</span>
                             <!-- Nome altera regiao mun -->
                         </div>
                         <div class="row-2 area-curso bl-meio">
@@ -26,8 +26,8 @@
                         <div class="row-2 area-curso bl-fim">
                             <div class="row-2 cap-interior">
                                 Capitais =
-                                <span href="#" class="numero" name="">98</span> Interior =
-                                <span href="#" class="numero" name="">240</span>
+                                <span href="#" class="numero" name="">{{localizacao[0].n}}</span> Interior =
+                                <span href="#" class="numero" name="">{{localizacao[1].n}}</span>
                             </div>
                         </div>
                     </div>

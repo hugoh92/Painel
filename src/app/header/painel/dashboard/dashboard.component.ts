@@ -10,7 +10,10 @@ import { HighchartsService } from 'src/app/services/highcharts.service'
 
 })
 export class DashboardComponent implements AfterViewInit {
-  data: any= {}
+  data: any= {};
+  localizacao: any = {};
+  flagBrasilRoute = true;
+  textCursos = 'Cursos por Região';
 
   constructor(private _highchartsService: HighchartsService, private _dataService: DataService, private router: Router
   ) {
@@ -31,12 +34,17 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+
     this.drawPlot(this.router.url.slice(-2))
 
 
   }
 
   drawPlot(filter = null) {
+    this.flagBrasilRoute = this.router.url.slice(-2) === null || this.router.url.slice(-2) == 'el';
+    this.textCursos = this.flagBrasilRoute ? 'Cursos por Região' : 'Cursos por Município';
+
+
     this._dataService.getPlot1Data(filter).subscribe((json: any) => {
       let data = json.map(d => { return { y: d.n, name: d.org_academica } })
       this._highchartsService.drawPiePlot("pieplot", data)
@@ -89,7 +97,7 @@ export class DashboardComponent implements AfterViewInit {
       } else {
 
         let cod_uf = json[0].codigo_do_municipio.substr(0, 2)
-        this.data = json.sort((a, b) => b.qt_cursos - a.qt_cursos).slice(1, 6);
+        this.data = json.sort((a, b) => b.qt_cursos - a.qt_cursos).slice(0, 5);
 
         let data = json.map(d => { return [d.codigo_do_municipio, d.municipio, d.qt_cursos] })
         this._dataService.getData(`https://servicodados.ibge.gov.br/api/v2/malhas/${cod_uf}?resolucao=5&formato=application/vnd.geo+json`).subscribe( (geojson:any) => {
@@ -98,6 +106,10 @@ export class DashboardComponent implements AfterViewInit {
       }
 
 
+    })
+
+    this._dataService.getLocalizacaoData(filter).subscribe((json:any) => {
+      this.localizacao = json;
     })
   }
 

@@ -50,5 +50,10 @@ export class DataService {
     let url = filter === null || filter == 'el' ? `${this.apiUrl}mapa`:  `${this.apiUrl}mapa/${filter}`;
     return this.http.get(url);
   }
+
+  getLocalizacaoData(filter = null){
+    let url = filter === null || filter == 'el' ? `${this.apiUrl}localizacao`:  `${this.apiUrl}localizacao/${filter}`;
+    return this.http.get(url);
+  }
   
 }
