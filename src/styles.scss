@@ -31,6 +31,29 @@ body {
     font-size: 30px;
 }
 
+.mat-button-toggle-button:active {
+    border: none !important;
+    outline: none!important;
+    color: none;
+  }
+  ::ng-deep mat-button-toggle-group{
+    outline: none !important;
+    border: none !important;
+  }
+  .mat-button-toggle-checked {
+    
+    border: none !important;
+    outline: none!important;
+    color: none;
+  }
+.mat-button-toggle-button:focus {
+    border: none!important;
+    outline: none!important;
+    color: none;
+  }
+  .mat-button-toggle-focus-overlay {
+    display: none;
+    }
 .bt-mobile {
     background: #023a1d;
     color: white;

@@ -292,9 +292,20 @@ mat-menu {
     margin: 5px 5px 0 0;
     width: 50px;
     height: 26px;
-    background: chartreuse;
+    border: none;
+}
+.btn-icone0.active{
+    border: none;
+}
+.btn-group.active{
+    border: none;
 }
 
+
+
+.bt-group{
+    border: none;
+}
 .bt-group{
     bottom: 190px;
 }
