@@ -33,19 +33,7 @@ export class PainelComponent implements AfterViewInit {
   }
 
   constructor(public router: Router, private _dataService: DataService, public _sidebarService: SidebarService) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        // Show loading indicator
-      }
 
-      if (event instanceof NavigationEnd) {
-        this.getData(event)
-      }
-
-      if (event instanceof NavigationError) {
-        this.router.navigate(["/painel"])
-      }
-    });
   }  //create instance
 
   ngAfterViewInit(): void {
@@ -66,7 +54,7 @@ export class PainelComponent implements AfterViewInit {
   }
 
   getData(event) {
-    let sigla_uf = event.url.match(/\/([^\/]+)\/?$/)[1]
+    /*let sigla_uf = event.url.match(/\/([^\/]+)\/?$/)[1]
     let url_data = sigla_uf == 'painel' ? `http://35.188.71.6/api/curso/` : `http://35.188.71.6/api/curso/?uf=${sigla_uf}`;
 
     this._dataService.getData(url_data).subscribe((json: any) => {
@@ -75,7 +63,7 @@ export class PainelComponent implements AfterViewInit {
       } else {
         this.formatData(json);
       }
-    })
+    })*/
   }
 
   formatData(json){

@@ -51,5 +51,10 @@ export class SidenavEstComponent implements OnInit, OnDestroy {
   */
   sortData(json: any, keyToSort: string){
     return json.sort((a, b) => {a[keyToSort] - b[keyToSort]});
- }
+  }
+
+  updateName(estado = null){
+    this._sidebarService.toggle('sidenavOptions');
+    console.log(estado)
+  }
 }
