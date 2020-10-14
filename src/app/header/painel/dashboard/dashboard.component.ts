@@ -56,11 +56,13 @@ export class DashboardComponent implements AfterViewInit {
 
   }
 
-<<<<<<< HEAD
   onValChange(val: string){
     this.matButton = val;
     this.nameDiv = dataKeys.filter(d => d.key == this.matButton).map(d => d.value);
-=======
+    this.drawMap(this.router.url.slice(-2), this.matButton);
+
+  }
+
   ngAfterViewInit(): void {
     if (window.innerWidth< 1100) {
       this.mobileFilter = false;
@@ -68,15 +70,11 @@ export class DashboardComponent implements AfterViewInit {
     } else {
       this.mobileFilter = true;
     };
-    this.drawPlot(this.router.url.slice(-2))
->>>>>>> 05edc49abaa93c2db5ad5c1d8fbfd1a1e6d6a4b6
+
 
     this.drawMap(this.router.url.slice(-2), this.matButton)
   }
 
-  ngAfterViewInit(): void {
-    this.drawPlot(this.router.url.slice(-2))
-  }
 
   drawPlot(filter = null) {
     this.flagBrasilRoute = this.router.url.slice(-2) === null || this.router.url.slice(-2) == 'el';
