@@ -55,5 +55,6 @@ export class DataService {
     let url = filter === null || filter == 'el' ? `${this.apiUrl}localizacao`:  `${this.apiUrl}localizacao/${filter}`;
     return this.http.get(url);
   }
+
   
 }
