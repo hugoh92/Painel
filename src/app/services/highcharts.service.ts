@@ -24,6 +24,7 @@ export class HighchartsService {
         if (data.length == 27) {
             series = [{
                 data: data,
+                name: 'Dados 2018',
                 borderColor: '#f9a71f',
                 borderWidth: 0.3,
                 states: {
@@ -79,7 +80,7 @@ export class HighchartsService {
                 },
                 floating:false,
                 align: 'right',
-                x: 30,
+                x: 10,
                 y: -10,
                 symbolRadius: 0,
                 symbolHeight: 60,
@@ -235,7 +236,7 @@ export class HighchartsService {
                         enabled: true,
                         useHTML: true,
                         align: 'center',
-                        format: '<span style = "font-size:10px">{point.name}</span><br><b style = "color: {point.color};font-size:12px;font-weight:bold">{point.percentage:.0f}%<b>',
+                        format: '<span style = "font-size:12px">{point.name}</span><br><b style = "color: {point.color};font-size:14px;font-weight:bold">{point.percentage:.0f}%<b>',
                         style: {
                             fontAlign: 'center',
                             color: 'white',
@@ -255,7 +256,7 @@ export class HighchartsService {
                         distance: -20,
                         format: '{point.y:.0f}',
                         style: {
-                            fontSize: '10px',
+                            fontSize: '12px',
                             color: 'white',
                             fontWeight: 'bold',
                             textOutline: '0px'
@@ -420,7 +421,7 @@ export class HighchartsService {
                     enabled: true,
                     useHTML: true,
                     align: 'center',
-                    format: '<span style = "font-size:10px">{point.name}</span><br><b style = "color: {point.color};font-size:12px">{point.y:.0f}%<b>',
+                    format: '<span style = "font-size:12px">{point.name}</span><br><b style = "color: {point.color};font-size:14px">{point.y:.0f}%<b>',
                     style: {
                         fontAlign: 'center',
                         color: 'white',
