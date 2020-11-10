@@ -10,7 +10,7 @@ import { SidebarService } from './sidebar.service';
 })
 export class DataService {
   autoCompleteOpts = [];
-  apiUrl = 'https://jequiecovid19.com/api/';
+  apiUrl = 'https://django-direm.herokuapp.com/api/';
 
   constructor(private http: HttpClient) { }
 
