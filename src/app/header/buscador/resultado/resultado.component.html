@@ -4,8 +4,8 @@
     <div class="box wrapper-left">
         <div class="bt-voltar">
             <button mat-button class="btn btn-voltar" type="button" (click)="goBack()">
-					<span class = "">Voltar</span>
-				</button>
+                <span class="">Voltar</span>
+            </button>
         </div>
         <div class="painel-uni wrapper-painel-uni">
             <div class="logo-uni logo-wrapper">
@@ -18,7 +18,7 @@
                     <span class="info-uni"> {{options.municipio}} - {{options.uf}} </span>
                     <br>
                     <i class="fa fa-globe icones-style" aria-hidden="true"></i>
-                    <a id="uni-site" class="info-uni">  {{options.e_mail_institucional_1}} </a>
+                    <a id="uni-site" class="info-uni"> {{options.e_mail_institucional_1}} </a>
                     <br>
                     <mat-icon class="icones-style">local_phone</mat-icon>
                     <span class="info-uni"> {{options.telefone}} </span>
@@ -67,12 +67,12 @@
                     <br>
                 </div>
                 <button mat-button class="btn btn-mat mat-mobile" type="button">
-                        <span class = "">Projeto pedagógico</span>
-                    </button>
+                    <span class="">Projeto pedagógico</span>
+                </button>
 
                 <button mat-button class="btn btn-mat mat-mobile" type="button">
-                        <span class = "">Matriz curricular</span>
-                    </button>
+                    <span class="">Matriz curricular</span>
+                </button>
             </div>
             <div class="icons-dados">
                 <div class="icones-div-style">
@@ -94,12 +94,12 @@
             <div class="bts-mat">
                 <div class="wrapper-matricula">
                     <button mat-button class="btn btn-mat" type="button">
-							<span class = "">Projeto pedagógico</span>
-						</button>
+                        <span class="">Projeto pedagógico</span>
+                    </button>
 
                     <button mat-button class="btn btn-mat" type="button">
-							<span class = "">Matriz curricular</span>
-						</button>
+                        <span class="">Matriz curricular</span>
+                    </button>
                 </div>
             </div>
 
@@ -128,13 +128,15 @@
                     <br>
                     <span class="nome-ind">Inicio das atividades</span>
                     <br>
-                    <span href="#" class="numero-ind" name="">{{treatNull((options.periodo_funcionamento).split("-").reverse().join("/"))}}</span>
+                    <span href="#" class="numero-ind"
+                        name="">{{treatNull((options.periodo_funcionamento).split("-").reverse().join("/"))}}</span>
                 </div>
                 <div class="func-dados">
                     <br>
                     <span class="nome-ind">Vagas Autorizadas</span>
                     <br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_vagas_autorizadas)}} Vagas/Ano</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_vagas_autorizadas)}}
+                        Vagas/Ano</span>
                 </div>
                 <div class="func-dados">
                     <br>
@@ -183,13 +185,15 @@
                         <br>
                         <span class="nome-ind">Taxa de Concorrência Candidato/Vaga</span>
                         <br>
-                        <span href="#" class="numero-ind" name="">{{treatNull((+options.tx_concorrencia).toFixed(2), true)}}</span>
+                        <span href="#" class="numero-ind"
+                            name="">{{treatNull((+options.tx_concorrencia).toFixed(2), true)}}</span>
                         <br>
                         <br>
 
                         <span class="nome-ind">Taxa de Sucesso</span>
                         <br>
-                        <span href="#" class="numero-ind" id="sucess" name="">{{treatNull((+options.tx_sucesso).toFixed(2)+ '%', true)}}</span>
+                        <span href="#" class="numero-ind" id="sucess"
+                            name="">{{treatNull((+options.tx_sucesso).toFixed(2)+ '%', true)}}</span>
                     </div>
                 </div>
                 <div class="div-info">
@@ -197,41 +201,135 @@
                         <br>
                         <span class="nome-ind">Taxa de Ocupação</span>
                         <br>
-                        <span href="#" class="numero-ind" name="">{{treatNull((+options.tx_ocupacao).toFixed(2) + '%', true)}}</span>
+                        <span href="#" class="numero-ind"
+                            name="">{{treatNull((+options.tx_ocupacao).toFixed(2) + '%', true)}}</span>
                         <br>
                         <br>
                         <span class="nome-ind">Relação Aluno/Docente</span>
                         <br>
-                        <span href="#" class="numero-ind" id="sucess" name=""> {{treatNull((+options.n_alunos_cod_curso/options.total_docentes).toFixed(2), true)}}</span>
+                        <span href="#" class="numero-ind" id="sucess" name="">
+                            {{treatNull((+options.n_alunos_cod_curso/options.total_docentes).toFixed(2), true)}}</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-itens row-docentes">
+        
+        
+        
+          <div class="col-itens row-docentes">
+            
+            
             <span class="titulos titulos-rsultados">Docentes
-				<div class="border-button">
-					<mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
-                    aria-label="" matTooltipPosition="left">add</mat-icon>
-				</div>
-				</span>
+                
+                <div class="border-button">
+                    <mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
+                        aria-label="" matTooltipPosition="left">add</mat-icon>
+                </div>
+            </span>
+        </div>
+        <div class="tab-pane fade show active col-bar" id="home" role="tabpanel" aria-labelledby="home-tab"><p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#colapse1" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Sexo
+            </a>
+
+            <a class="btn btn-primary" data-toggle="collapse" href="#colapse2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Regime de trabalho
+            </a>
+
+            <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Titulação
+            </a>
+
+            <!-- <button class="btn btn-primary" type="button"  data-toggle="collapse" data-target="#colapse2" aria-expanded="false" aria-controls="collapseExample">
+              Button with data-target
+            </button>
+
+            <button class="btn btn-primary" type="button"  data-toggle="collapse" data-target="#colapse1" aria-expanded="false" aria-controls="collapseExample">
+                Button with data-target
+            </button> -->
+
+          </p>
+
+          <div class="collapse" id="colapse1">
+            <div class="card card-body2">
+              Anim pariatur cliche reprehenderit, enim eiua proident.
+            </div>
+          </div>
+
+          <div class="collapse cl2" id="colapse2">
+            <div class="card card-body2">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            </div>
+          </div>
+        
+        
         </div>
         <div class="col-itens row-alunos">
             <span class="titulos titulos-rsultados">Alunos
-				<div class="border-button">
-				<mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
-                aria-label="" matTooltipPosition="left">add</mat-icon>
-			</div>
-			</span>
+                <div class="border-button">
+                    <mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
+                        aria-label="" matTooltipPosition="left">add</mat-icon>
+                </div>
+            </span>
 
         </div>
+
+
+
+        <div class="tab-pane fade show active col-bar" id="home" role="tabpanel" aria-labelledby="home-tab"><p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#colapse5" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Sexo
+            </a>
+
+            <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse6" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Regime de trabalho
+            </a>
+
+            <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse6" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Titulação
+            </a>
+
+          </p>
+
+          <div class="collapse" id="colapse5">
+            <div class="card card-body2">
+              Anim pariatur cliche reprehenderit, enim eiua proident.
+            </div>
+          </div>
+
+          <div class="collapse cl2" id="colapse6">
+            <div class="card card-body2">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            </div>
+          </div> 
+        </div>
+
+
+
         <div class="col-itens">
             <span class="titulos titulos-rsultados">Avaliação
-				<div class="border-button">
-					<mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
-                    aria-label="" matTooltipPosition="left">add</mat-icon>
-				</div>
-				</span>
+                <div class="border-button">
+                    <mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
+                        aria-label="" matTooltipPosition="left">add</mat-icon>
+                </div>
+            </span>
 
         </div>
+
+        <div class="tab-pane fade show active col-ava" id="home" role="tabpanel" aria-labelledby="home-tab"><p>
+            <a class="btn btn-primary btn-ava" data-toggle="collapse" href="#colapse4" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Mais
+            </a>
+          </p>
+          <div class="collapse cl2" id="colapse4">
+            <div class="card card-body2">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            </div>
+          </div>
+        
+        
+        </div>
+
+
     </div>
 </div>

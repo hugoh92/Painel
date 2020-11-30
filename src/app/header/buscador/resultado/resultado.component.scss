@@ -534,3 +534,55 @@
         left: 90%;
     }
 }
+
+
+
+
+.tab-lugar{
+     display: flex;;
+    
+    top:100px;
+    // width: 450px;
+    // height: 20px;
+    // align-items: center;
+    // justify-content: center;
+    // text-align: center;
+}
+
+.col-bar {
+    align-items: end;
+    justify-content: end;
+    text-align:end;
+    bottom: 96px !important;
+    position: relative;
+    // border-top: 2px solid #e1e31d;
+    // border-bottom: 2px solid #e1e31d;
+    
+}
+
+.col-ava {
+    align-items: end;
+    justify-content: end;
+    text-align:end;
+    bottom: 146px !important;
+    position: relative;
+    // border-top: 2px solid #e1e31d;
+    // border-bottom: 2px solid #e1e31d;
+    
+}
+.card-body2{
+    background-color: #0d542a;
+    height: 400px;
+    border-color:  #0d542a;
+}
+
+.btn-ava{
+    border-radius: 115px;
+    
+}
+
+.btn-primary{
+    background-color: #d71a20;
+    border: none;
+    
+}
