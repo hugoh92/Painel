@@ -22,7 +22,7 @@ export class ResultadoComponent implements OnInit {
 
   getData() {
     let id_curso = this.router.url.match(/\/([^\/]+)\/?$/)[1]
-    this._dataService.getData(`https://jequiecovid19.com/api/curso/?codigo_curso=${id_curso}`).subscribe(
+    this._dataService.getData(`https://django-direm.herokuapp.com/api/curso/?codigo_curso=${id_curso}`).subscribe(
       json => {
         this.options = json[0]
         if (!this.options) {

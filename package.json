@@ -23,6 +23,7 @@
         "@angular/router": "~10.0.6",
         "bootstrap": "^4.5.1",
         "bootstrap-icons": "^1.0.0-alpha5",
+        "docker": "^1.0.0",
         "font-awesome": "^4.7.0",
         "highcharts": "^8.2.0",
         "highcharts-angular": "^2.8.0",
