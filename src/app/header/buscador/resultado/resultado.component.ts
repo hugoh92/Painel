@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
+//import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+//import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { HighchartsService } from 'src/app/services/highcharts.service'
 
 @Component({
   selector: 'app-resultado',
@@ -9,14 +12,37 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./resultado.component.scss']
 })
 export class ResultadoComponent implements OnInit {
+  
+  panelOpenState = false;
   options: any = {};
+  
 
   constructor(
+    private highchartsService: HighchartsService, 
     private location: Location, public router: Router,
     private _dataService: DataService
   ) { }
 
   ngOnInit(): void {
+    this.highchartsService.drawPlotPiram("piramide")
+    this.highchartsService.drawPlotPiram("piramidem")
+    this.highchartsService.drawDonutRegime("regime")
+    this.highchartsService.drawDonutRegime("regimem")
+    this.highchartsService.drawDonutTitulação("titulacao")
+    this.highchartsService.drawDonutTitulação("titulacaom")
+    this.highchartsService.drawDonutCor2("idraca")
+    //this.highchartsService.drawDonutCor2("idracam")
+    this.highchartsService.drawDonutAlunTip("tipoAluno")
+    this.highchartsService.drawDonutAlunTip("tipoAlunom")
+    this.highchartsService.drawDonutAlunCor("corAluno")
+    //this.highchartsService.drawDonutAlunCor("corAlunom")
+    this.highchartsService.drawDonutAlunPiram("PAluno")
+    this.highchartsService.drawDonutAlunPiram("PAlunom")
+    this.highchartsService.drawCorM("corM")
+    this.highchartsService.drawCorAlunM("corAlunom")
+    
+    
+    
     this.getData();
   }
 

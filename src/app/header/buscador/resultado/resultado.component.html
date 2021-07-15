@@ -145,7 +145,6 @@
                     <span href="#" class="numero-ind" name="">{{treatNull(options.carga_horaria)}} horas</span>
                 </div>
             </div>
-
         </div>
         <div class="col-itens row-indicadores">
             <span class="titulos titulos-rsultados">Indicadores (2018)</span>
@@ -185,8 +184,8 @@
                         <br>
                         <span class="nome-ind">Taxa de Concorrência Candidato/Vaga</span>
                         <br>
-                        <span href="#" class="numero-ind"
-                            name="">{{treatNull((+options.tx_concorrencia).toFixed(2), true)}}</span>
+                        <span href="#" class="numero-ind" name="">{{treatNull((+options.tx_concorrencia).toFixed(2),
+                            true)}}</span>
                         <br>
                         <br>
 
@@ -201,8 +200,8 @@
                         <br>
                         <span class="nome-ind">Taxa de Ocupação</span>
                         <br>
-                        <span href="#" class="numero-ind"
-                            name="">{{treatNull((+options.tx_ocupacao).toFixed(2) + '%', true)}}</span>
+                        <span href="#" class="numero-ind" name="">{{treatNull((+options.tx_ocupacao).toFixed(2) + '%',
+                            true)}}</span>
                         <br>
                         <br>
                         <span class="nome-ind">Relação Aluno/Docente</span>
@@ -213,34 +212,187 @@
                 </div>
             </div>
         </div>
-        
-        
-        
+
+        <div class="func-mobile">
+            <mat-accordion>
+                <mat-expansion-panel  class="tab-mobile" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Docentes
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      {{panelOpenState ? '' : ''}}
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                        <div class="card  card-body2" id="regimem">
+                        </div>
+            
+                    <br>
+                    <div class="card card-body2" id="titulacaom">
+                    </div>
+
+                    <br>
+
+                    <div class="card card-body2" id="corM">
+                    </div>
+
+                    <br>
+
+                    <div class="card card-body2">
+                        <div class="card card-body2 divp">
+                            <div class="teste">
+                                <!--  <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas"><br> -->
+                                <!-- <i class="fas fa-female pessoas icones-ind fa-6x"></i><br> -->
+                                <img src="public\assets\icons\man_teste.png" class="icones-ind pessoas"><br>
+                                <span class="nome-ind snome">Feminino</span><br>
+                                <span href="#" class="numero-ind snome" name="">00</span>
+                            </div>
+    
+                            <div class="teste">
+                                <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
+                                <i class="fas fa-male female icones-ind fa-6x"></i><br>
+                                <span class="nome-ind snome">Masculino</span><br>
+                                <span href="#" class="numero-ind snome" name="">00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="card card-body2 cardpiramM" id="piramidem">
+                    </div>
+                  <!-- <p>I'm visible because I am open</p> -->
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            <mat-accordion>
+                <mat-expansion-panel  class="tab-mobile" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Alunos
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      {{panelOpenState ? '' : ''}}
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+
+                  <div class="card mt-3 card-body2" id=tipoAlunom>
+                  </div>
+
+                  <br>
+
+                  <div class="card card-body2" id=corAlunom>
+                  </div>
+
+                  <br>
+                  
+                  <div class="card card-body2">
+                    <div class="card card-body2 divp">
+                        <div class="teste">
+                            <!--  <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas"><br> -->
+                            <!-- <i class="fas fa-female pessoas icones-ind fa-6x"></i><br> -->
+                            <img src="public\assets\icons\man_teste.png" class="icones-ind pessoas"><br>
+                            <span class="nome-ind snome">Feminino</span><br>
+                            <span href="#" class="numero-ind snome" name="">00</span>
+                        </div>
+
+                        <div class="teste">
+                            <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
+                            <i class="fas fa-male female icones-ind fa-6x"></i><br>
+                            <span class="nome-ind snome">Masculino</span><br>
+                            <span href="#" class="numero-ind snome" name="">00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="card card-body2 cardpiramM" id=PAlunom>
+                   
+                </div>
+
+                  <!-- <p>I'm visible because I am open</p> -->
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            <mat-accordion>
+                <mat-expansion-panel  class="tab-mobile" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Avaliação
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      {{panelOpenState ? '' : ''}}
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                 
+                    <div class="card-avaliacao">
+                        <div class="section-avaliacao">
+                            <span class="nome-ind">Conceito de curso (Ano)</span>
+                            <br>
+                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                        </div>
+                       
+                        <div class="section-avaliacao">
+                            <span class="nome-ind">IDD (Ano)</span>
+                            <br>
+                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                        </div>
+                        <div class="section-avaliacao">
+                            <span class="nome-ind">ENADE (2019)</span>
+                            <br>
+                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                        </div>
+                        <div class="section-avaliacao">
+                            <span class="nome-ind">ENADE (2019)</span>
+                            <br>
+                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                        </div>
+                    </div>
+               
+
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            </div>
+
+
+            
         <div class="col-itens row-docentes">
-            
-            
             <span class="titulos titulos-rsultados">Docentes
-                
-                <div class="border-button">
+
+                <!--    <div class="border-button">
                     <mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
                         aria-label="" matTooltipPosition="left">add</mat-icon>
-                </div>
+                </div> -->
             </span>
         </div>
-        <div class="tab-pane fade show active col-bar" id="home" role="tabpanel" aria-labelledby="home-tab"><p>
-            <a class="btn btn-primary" data-toggle="collapse" href="#colapse1" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="nome-tabs">Sexo</span>
-            </a>
+        <div class="tab-pane fade show active col-bar" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <p>
+                <a class="btn btn-primary" data-toggle="collapse" href="#colapse1" role="button" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    <span class="nome-tabs">Regime de trabalho</span>
+                </a>
 
-            <a class="btn btn-primary" data-toggle="collapse" href="#colapse2" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="nome-tabs">Regime de trabalho</span>
-            </a>
+                <a class="btn btn-primary" data-toggle="collapse" href="#colapse2" role="button" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    <span class="nome-tabs">Titulação</span>
+                </a>
 
-            <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse2" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="nome-tabs">Titulação</span>
-            </a>
+                <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse3" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <span class="nome-tabs">Cor\Raça</span>
+                </a>
 
-            <!-- <button class="btn btn-primary" type="button"  data-toggle="collapse" data-target="#colapse2" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse4" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <span class="nome-tabs">Sexo</span>
+                </a>
+
+                <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse5" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <span class="nome-tabs">Idade</span>
+                </a>
+
+                <!-- <button class="btn btn-primary" type="button"  data-toggle="collapse" data-target="#colapse2" aria-expanded="false" aria-controls="collapseExample">
               Button with data-target
             </button>
 
@@ -248,111 +400,161 @@
                 Button with data-target
             </button> -->
 
-          </p>
-
-          <div class="collapse" id="colapse1">
-            <div class="card card-body2">
-                EM BREVE!!
+            </p>
+            <div class="collapse" id="colapse1">
+                <div class="cardb">
+                    <div class="card  card-body2" id="regime">
+                    </div>
+                </div>
+                </div>
+              
+            <div class="collapse" id="colapse2">
+                <div class="card card-body2" id="titulacao">
+                </div>
             </div>
-          </div>
-
-          <div class="collapse cl2" id="colapse2">
-            <div class="card card-body2">
-                EM BREVE!!
+               
+            <div class="collapse cl2" id="colapse3">
+                <div class="card card-body2" id="idraca">
+                </div>
             </div>
-          </div>
-        
-        
+
+            <div class="collapse cl2" id="colapse4">
+                <div class="card card-body2">
+                    <div class="card card-body2 divp">
+                        <div class="teste">
+                            <!--  <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas"><br> -->
+                            <!-- <i class="fas fa-female pessoas icones-ind fa-6x"></i><br> -->
+                            <img src="public\assets\icons\man_teste.png" class="icones-ind pessoas"><br>
+                            <span class="nome-ind snome">Feminino</span><br>
+                            <span href="#" class="numero-ind snome" name="">00</span>
+                        </div>
+
+                        <div class="teste">
+                            <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
+                            <i class="fas fa-male female icones-ind fa-6x"></i><br>
+                            <span class="nome-ind snome">Masculino</span><br>
+                            <span href="#" class="numero-ind snome" name="">00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse cl2" id="colapse5">
+                <div class="cl1">
+                    <div class="card card-body2 cardpiram" id="piramide">
+                    </div>
+
+                </div>
+            </div>
+
+
         </div>
         <div class="col-itens row-alunos">
             <span class="titulos titulos-rsultados">Alunos
-                <div class="border-button">
+                <!--     <div class="border-button">
                     <mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
                         aria-label="" matTooltipPosition="left">add</mat-icon>
-                </div>
+                </div> -->
             </span>
-
         </div>
 
 
 
-        <div class="tab-pane fade show active col-bar" id="home" role="tabpanel" aria-labelledby="home-tab"><p>
-            
-            <a class="btn btn-primary" data-toggle="collapse" href="#colapse5" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="nome-tabs">Tipo de Escola</span>
-            </a>
-            
-            <a class="btn btn-primary" data-toggle="collapse" href="#colapse6" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="nome-tabs">Cor/Raça</span>
-            </a>
+        <div class="tab-pane fade show active col-bar" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <p>
 
-            <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse6" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="nome-tabs">Sexo</span>
-            </a>
+                <a class="btn btn-primary" data-toggle="collapse" href="#colapse6" role="button" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    <span class="nome-tabs">Tipo de Escola</span>
+                </a>
 
-            <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse6" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="nome-tabs">Idade</span>
-            </a>
+                <a class="btn btn-primary" data-toggle="collapse" href="#colapse7" role="button" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    <span class="nome-tabs">Cor\Raça</span>
+                </a>
 
-          </p>
+                <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse8" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <span class="nome-tabs">Sexo</span>
+                </a>
 
-          <div class="collapse" id="colapse5">
-            <div class="card mt-3 card-body2">
-              EM BREVE!!
+                <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse9" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <span class="nome-tabs">Idade</span>
+                </a>
+
+            </p>
+
+            <div class="collapse" id="colapse6">
+                <div class="card mt-3 card-body2" id=tipoAluno>
+
+                </div>
             </div>
-          </div>
 
-          <div class="collapse cl2" id="colapse6">
-            <div class="card card-body2">
-                EM BREVE!!
+            <div class="collapse cl2" id="colapse7">
+                <div class="card card-body2" id=corAluno>
+                   
+                </div>
             </div>
-          </div> 
+
+            <div class="collapse cl2" id="colapse8">
+                <div class="card card-body2" id=SAluno>
+                   
+                </div>
+            </div>
+
+            <div class="collapse cl2" id="colapse9">
+                <div class="card card-body2 cardpiram" id=PAluno>
+                    
+                </div>
+            </div>
         </div>
 
 
 
-        <div class="col-itens">
+        <div class="col-itens row-ava">
             <span class="titulos titulos-rsultados">Avaliação
-                <div class="border-button">
+                <!-- <div class="border-button">
                     <mat-icon class="btn bt-plus" matTooltip="Em Breve" matTooltipClass="example-tooltip-red"
                         aria-label="" matTooltipPosition="left">add</mat-icon>
-                </div>
+                </div> -->
             </span>
 
         </div>
 
-        <div class="tab-pane fade show active col-ava" id="home" role="tabpanel" aria-labelledby="home-tab"><p>
-            <a class="btn btn-primary btn-ava" data-toggle="collapse" href="#colapse4" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="nome-tabs">Mais</span>
-            </a>
-          </p>
-          <div class="collapse cl2" id="colapse4">
-            <div class="card card-body2">
-                <div class="card-avaliacao">
-                    <div class="section-avaliacao">
-                        <span class="nome-ind">Conceito de curso (Ano)</span>
-                        <br>
-                        <span href="#" class="numero-ind" name="">Sem conceito</span>
+        <div class="tab-pane fade show active col-ava" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <p>
+                <a class="btn btn-primary btna" data-toggle="collapse" href="#colapse10" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <span class="nome-tabs">Mais</span>
+                </a>
+            </p>
+            <div class="collapse cl2" id="colapse10">
+                <div class="card card-body2">
+                    <div class="card-avaliacao">
+                        <div class="section-avaliacao">
+                            <span class="nome-ind">Conceito de curso (Ano)</span>
+                            <br>
+                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                        </div>
+                        <div class="section-avaliacao">
+                            <span class="nome-ind">IDD (Ano)</span>
+                            <br>
+                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                        </div>
+                        <div class="section-avaliacao">
+                            <span class="nome-ind">ENADE (2019)</span>
+                            <br>
+                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                        </div>
+                        <div class="section-avaliacao">
+                            <span class="nome-ind">ENADE (2019)</span>
+                            <br>
+                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                        </div>
                     </div>
-                    <div class="section-avaliacao">
-                        <span class="nome-ind">IDD (Ano)</span>
-                        <br>
-                        <span href="#" class="numero-ind" name="">Sem conceito</span>
-                    </div>
-                    <div class="section-avaliacao">
-                        <span class="nome-ind">ENADE (2019)</span>
-                        <br>
-                        <span href="#" class="numero-ind" name="">Sem conceito</span>
-                    </div> 
-                    <div class="section-avaliacao">
-                        <span class="nome-ind">ENADE (2019)</span>
-                        <br>
-                        <span href="#" class="numero-ind" name="">Sem conceito</span>
-                    </div>
-
                 </div>
             </div>
-          </div>
         </div>
     </div>
 </div>

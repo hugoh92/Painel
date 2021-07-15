@@ -147,7 +147,8 @@ export class HighchartsService {
             colors: [
                 '#ffc905',
                 '#e30086',
-                '#f26820'
+                'rgb(242, 104, 32)'
+               
             ],
             chart: {
                 backgroundColor: '#0d542a',
@@ -445,5 +446,1277 @@ export class HighchartsService {
         Highcharts.chart(idHtml, options)
  
 
+    }
+    drawPlotPiram(idHtml){
+    
+        var categories = [
+            '15-19',
+            '20-24', '25-29', '30-34', '35-39', '40-44',
+            '45-49', '50-54', '55-59', '60-64', '65-69',
+            '70-74', '75-79', '80-84', '85-89', '90-94',
+            '95-99', '100 + '
+        ];
+        
+
+        var options: any =  {
+            colors: [
+                '#fff300',
+                '#dc582c',
+               
+            ],
+            chart: {
+                type: 'bar',
+                backgroundColor: '#0d542a',
+                plotBorderWidth: 0
+            },
+            title: {
+                text: 'Idade dos Docentes',
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white',
+                    fontSize: '19px',
+                }
+            },
+            subtitle: {
+                text: ''
+            },
+            accessibility: {
+                point: {
+                    valueDescriptionFormat: '{index}. Age {xDescription}, {value}%.'
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: [{
+                lineColor: 'transparent',
+                categories: categories,
+                reversed: false,
+                gridLineWidth: 0,
+                minorGridLineWidth: 0,
+                plotBorderWidth: 0,
+                labels: {
+                    enabled: false
+                    //step: 1
+                },
+                
+                accessibility: {
+                    description: 'Age (male)',
+                    
+                }
+                
+            }, { // mirror axis on right side
+                opposite: true,
+                reversed: false,
+                lineColor: 'transparent',
+                categories: categories,
+                linkedTo: 0,
+                labels: {
+                    enabled: false
+                    //step: 1
+                },
+                accessibility: {
+                    description: 'Age (female)'
+                }
+            }],
+            yAxis: {
+                gridLineWidth: 0,
+                minorGridLineWidth: 0,
+                lineColor: 'transparent',
+                title: {
+                    text: null
+                },
+                labels: {
+                    enabled: false
+                  /*   formatter: function () {
+                        return Math.abs(this.value) + '%';
+                    } */
+                },
+                accessibility: {
+                    description: 'Percentage population',
+                    rangeDescription: 'Range: 0 to 5%'
+                }
+            },
+            navigation: {
+                buttonOptions: {
+                    theme: {
+                        // Good old text links
+                        fill: '#c3081c',
+                        color: 'white',
+                        r: 15,
+
+                    }
+                }
+            },
+            exporting: {
+                buttons: {
+                    contextButton: {
+                        symbol: 'download',
+                        symbolStroke: '#fff',
+                        symbolSize: 10,
+                        height: 25,
+                        width: 25,
+                        enabled: true
+                    },
+                }
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal',
+                }
+                
+            },
+        
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                        'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 1) + '%';
+                }
+            },
+        
+            series: 
+            [{
+                name: 'Feminino',
+                data: [
+                    -2.4,
+                    -2.7, -3.0, -3.3, -3.2,
+                    -2.9, -3.5, -4.4, -4.1,
+                    -3.4, -2.7, -2.3, -2.2,
+                    -1.6, -0.6, -0.3, -0.0,
+                    -0.0
+                ],
+            }, {
+                name: 'Masculino',
+                data: [
+                    2.3, 2.6,
+                    2.9, 3.2, 3.1, 2.9, 3.4,
+                    4.3, 4.0, 3.5, 2.9, 2.5,
+                    2.7, 2.2, 1.1, 0.6, 0.2,
+                    0.0
+                ]
+            }],
+
+            legend: {
+                itemStyle: {
+                    color: 'white'
+                }
+            }
+            
+        }
+        Highcharts.chart(idHtml, options);
+
+        
+    }
+   
+    drawDonutRegime(idHtml){
+        
+        var options: any =  {
+           
+            colors: [
+                '#F1C730',
+                '#61ABEC',
+                '#9EB01D',
+                
+            ],
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            backgroundColor: '#0d542a',
+            align: 'center',
+            
+            style: {
+                fontFamily: './assets/FONTES/gilr35a.TFT',
+               
+            }
+            
+        },
+        title: {
+            text: 'Regime de trabalho dos docentes do IES',
+            align: 'center',
+            style: {
+                fontWeight: 'bold',
+                color: 'white',
+                fontSize: '16px',
+            }
+            //verticalAlign: 'middle',
+            //y: 60
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/> qnt: 000',
+            
+        },
+        
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        navigation: {
+            buttonOptions: {
+                theme: {
+                    // Good old text links
+                    fill: '#c3081c',
+                    color: 'white',
+                    r: 15,
+
+                }
+            }
+        },
+        exporting: {
+            buttons: {
+                contextButton: {
+                    symbol: 'download',
+                    symbolStroke: '#fff',
+                    symbolSize: 10,
+                    height: 25,
+                    width: 25,
+                    enabled: true
+                },
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                   
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white',
+                        fontSize: '16px',
+                    }
+                    
+                },
+                center: ['50%', '50%'],
+                size: '80%'
+            }
+        },
+        series: [{
+            type: 'pie',
+            //name: 'Browser share',
+            innerSize: '50%',
+            dataLabels: {
+                enabled: true,
+                useHTML: true,
+                align: 'center',
+                format: '<span style = "font-size:16px">{point.name}</span><br><b style = "color: {point.color};font-size:14px">{point.y:.0f}%<b>',
+                style: {
+                    fontAlign: 'center',
+                    color: 'white',
+                    textOutline: '0px'
+                },
+            },
+            align: 'center',
+            data: [
+                ['Integral', 11],
+                ['Horista', 29],
+                ['Parcial', 60],
+                
+                {
+                    name: 'Other',
+                    //y: 7.61,
+                    dataLabels: {
+                        enabled: false
+                        }
+                    }
+                ]
+            }]
+        }
+        Highcharts.chart(idHtml, options);
+    }
+    
+    drawDonutTitulação(idHtml){
+        var options: any =  {
+           
+            colors: [
+                '#F1C730',
+                '#61ABEC',
+                '#9EB01D',
+                '#D5672B',
+               
+            ],
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            backgroundColor: '#0d542a',
+            style: {
+                fontFamily: './assets/FONTES/gilr35a.TFT'
+            }
+            
+        },
+        title: {
+            text: 'Titulação do corpo docente do IES',
+            align: 'center',
+            style: {
+                fontWeight: 'bold',
+                color: 'white',
+                fontSize: '16px',
+            }
+            //verticalAlign: 'middle',
+            //y: 60
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/> qnt: 000',
+            
+        },
+        
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        navigation: {
+            buttonOptions: {
+                theme: {
+                    // Good old text links
+                    fill: '#c3081c',
+                    color: 'white',
+                    r: 15,
+
+                }
+            }
+        },
+        exporting: {
+            buttons: {
+                contextButton: {
+                    symbol: 'download',
+                    symbolStroke: '#fff',
+                    symbolSize: 10,
+                    height: 25,
+                    width: 25,
+                    enabled: true
+                },
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    useHTML: true,
+                    align: 'center',
+                    format: '<span style = "font-size:16px">{point.name}</span><br><b style = "color: {point.color};font-size:14px">{point.y:.0f}%<b>',
+                    style: {
+                        fontAlign: 'center',
+                        color: 'white',
+                        textOutline: '0px'
+                    },
+                },
+                center: ['50%', '50%'],
+                size: '80%'
+            }
+        },
+        series: [{
+            type: 'pie',
+            //name: 'Browser share',
+            innerSize: '50%',
+            align: 'center',
+            data: [
+                ['Graduação', 30],
+                ['Doutor', 11],
+                ['Mestre', 29],
+                ['Especialista', 30],
+                
+                {
+                    name: 'Other',
+                    //y: 7.61,
+                    dataLabels: {
+                        enabled: false
+                        }
+                    }
+                ]
+            }]
+        }
+        Highcharts.chart(idHtml, options);
+    }
+    drawDonutCor(idHtml){
+         var options: any =  {
+           
+            colors: [
+                '#F1C730',
+                '#61ABEC',
+                '#9EB01D',
+                '#D5672B',
+                '#f3456c',
+                '#fff35c',
+                '#00f',
+               
+            ],
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            backgroundColor: '#0d542a',
+            style: {
+                fontFamily: './assets/FONTES/gilr35a.TFT'
+            }
+            
+        },
+        title: {
+            text: 'Cor\Raça dos docentes da IES',
+            align: 'center',
+            style: {
+                fontWeight: 'bold',
+                color: 'white',
+                fontSize: '16px',
+            }
+            //verticalAlign: 'middle',
+            //y: 60
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/> qnt: 000',
+            
+        },
+        
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        navigation: {
+            buttonOptions: {
+                theme: {
+                    // Good old text links
+                    fill: '#c3081c',
+                    color: 'white',
+                    r: 15,
+
+                }
+            }
+        },
+        exporting: {
+            buttons: {
+                contextButton: {
+                    symbol: 'download',
+                    symbolStroke: '#fff',
+                    symbolSize: 10,
+                    height: 25,
+                    width: 25,
+                    enabled: true
+                },
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    useHTML: true,
+                    align: 'center',
+                    format: '<span style = "font-size:16px">{point.name}</span><br><b style = "color: {point.color};font-size:14px">{point.y:.0f}%<b>',
+                    style: {
+                        fontAlign: 'center',
+                        color: 'white',
+                        textOutline: '0px'
+                    },
+                },
+                startAngle: 10,
+                endAngle: 10,
+                center: ['50%', '50%'],
+                size: '80%'
+            }
+        },
+        series: [{
+            type: 'pie',
+            //name: 'Browser share',
+            innerSize: '50%',
+            align: 'center',
+            data: [
+                ['Não declarou', 1],
+                ['Branco', 9],
+                ['Preto', 20],
+                ['Pardo', 30],
+                ['Amarelo', 30],
+                ['Indígena', 9],
+                ['Sem Informação', 1],
+                
+                {
+                    name: 'Other',
+                    //y: 7.61,
+                    dataLabels: {
+                        enabled: false
+                        }
+                    }
+                ]
+            }]
+        }
+        Highcharts.chart(idHtml, options);
+    }
+
+    drawDonutCor2(idHtml){
+        var options: any =  {
+           
+            colors: [
+                '#F1C730',
+                '#61ABEC',
+                '#9EB01D',
+                '#D5672B',
+                '#0069B4',
+                '#C20082',
+                '#CECECE',
+               
+            ],
+            chart: {
+                plotBorderWidth: 0,
+                backgroundColor: null,
+                //renderTo: 'container',
+                type: 'bar',
+                align: 'center'
+            },
+            title: {
+                text: 'Cor\\Raça dos docentes da IES',
+                align: 'center',
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white',
+                    fontSize: '16px',
+                }
+            },
+            xAxis: {
+                minorGridLineWidth: 0,
+                lineColor: 'transparent',
+                gridLineWidth: 0,
+                enabled: false,
+                lineWidth: -1,
+                categories: [''],
+                labels: {
+                    enabled: false
+                }
+            },
+            yAxis: {
+                enabled: false,
+                gridLineWidth: 0,
+                lineWidth: 0,
+                min: 0,
+                title: {
+                    text: '',
+                    margin: 0
+                },
+                labels: {
+                    enabled: false
+                }
+            },
+            legend: {
+                enabled: false,
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/> Qnt: 000',
+                
+            },
+            
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            navigation: {
+                buttonOptions: {
+                    theme: {
+                        // Good old text links
+                        fill: '#c3081c',
+                        color: 'white',
+                        r: 15,
+    
+                    }
+                }
+            },
+            exporting: {
+                buttons: {
+                    contextButton: {
+                        symbol: 'download',
+                        symbolStroke: '#fff',
+                        symbolSize: 10,
+                        height: 25,
+                        width: 25,
+                        enabled: true
+                    },
+                }
+            },
+            credits: 
+            {
+                enabled: false,
+                
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal',
+                    align: 'center'
+                },
+                bar: {
+                    dataLabels: {
+                        enabled: true,
+                        distance : -150,
+                        formatter: function() {
+                            var dlabel = this.series.name + '<br/>';
+                            dlabel += Math.round(this.percentage*100)/100 + ' %';
+                                return dlabel
+                         },
+                        style: {
+                            color: 'white',
+                            },
+                        },
+                        center: ['50%', '50%'],
+                        size: '50%'
+                    },
+                },
+         
+            series: [ 
+            {
+                name: 'Branco',
+                data: [9]
+            },
+            {
+                name: 'Preto',
+                data: [20]
+            },
+            {
+                name: 'Pardo',
+                data: [30]
+            },
+            {
+                name: 'Amarelo',
+                data: [30]
+            },
+            {
+                name: 'Indígena',
+                data: [9]
+            },
+            {
+                name: 'Não declarou',
+                data: [1]
+            },
+            {
+                name: 'Sem Informação',
+                data: [1]
+            }],
+         
+        }
+        $('.highcharts-axis').css('display','none');
+            Highcharts.chart(idHtml, options);
+    }
+    drawDonutAlunTip(idHtml){
+        var options: any =  {
+           
+            colors: [
+                '#F1C730',
+                '#61ABEC',
+                '#9EB01D',
+                
+                
+            ],
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            backgroundColor: '#0d542a',
+            style: {
+                fontFamily: './assets/FONTES/gilr35a.TFT'
+            }
+            
+        },
+        title: {
+            text: 'Tipo de escola da conclusão do Ensino Médio',
+            align: 'center',
+            style: {
+                fontWeight: 'bold',
+                color: 'white',
+                fontSize: '16px',
+            }
+            //verticalAlign: 'middle',
+            //y: 60
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/> qnt: 000',
+            
+        },
+        
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        navigation: {
+            buttonOptions: {
+                theme: {
+                    // Good old text links
+                    fill: '#c3081c',
+                    color: 'white',
+                    r: 15,
+
+                }
+            }
+        },
+        exporting: {
+            buttons: {
+                contextButton: {
+                    symbol: 'download',
+                    symbolStroke: '#fff',
+                    symbolSize: 10,
+                    height: 25,
+                    width: 25,
+                    enabled: true
+                },
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    useHTML: true,
+                    align: 'center',
+                    format: '<span style = "font-size:16px">{point.name}</span><br><b style = "color: {point.color};font-size:14px">{point.y:.0f}%<b>',
+                    style: {
+                        fontAlign: 'center',
+                        color: 'white',
+                        textOutline: '0px'
+                    },
+                },
+                center: ['50%', '50%'],
+                size: '80%'
+            }
+        },
+        series: [{
+            type: 'pie',
+            //name: 'Browser share',
+            innerSize: '50%',
+            align: 'center',
+            data: [
+                ['Público', 11],
+                ['Privado', 29],
+                ['Sem informações', 60],
+          
+                ]
+            }]
+        }
+        Highcharts.chart(idHtml, options);
+    }
+
+    drawDonutAlunCor(idHtml){
+        var options: any =  {
+           
+            colors: [
+                '#F1C730',
+                '#61ABEC',
+                '#9EB01D',
+                '#D5672B',
+                '#0069B4',
+                '#C20082',
+                '#CECECE',
+               
+            ],
+            chart: {
+                plotBorderWidth: 0,
+                backgroundColor: null,
+                //renderTo: 'container',
+                type: 'bar',
+                align: 'center'
+            },
+            title: {
+                text: 'Cor\\Raça dos alunos da IES',
+                align: 'center',
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white',
+                    fontSize: '16px',
+                }
+            },
+            xAxis: {
+                minorGridLineWidth: 0,
+                lineColor: 'transparent',
+                gridLineWidth: 0,
+                enabled: false,
+                lineWidth: -1,
+                categories: [''],
+                labels: {
+                    enabled: false
+                }
+            },
+            yAxis: {
+                enabled: false,
+                gridLineWidth: 0,
+                lineWidth: 0,
+                min: 0,
+                title: {
+                    text: '',
+                    margin: 0
+                },
+                labels: {
+                    enabled: false
+                }
+            },
+            legend: {
+                enabled: false,
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/> Qnt: 000',
+                
+            },
+            
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            navigation: {
+                buttonOptions: {
+                    theme: {
+                        // Good old text links
+                        fill: '#c3081c',
+                        color: 'white',
+                        r: 15,
+    
+                    }
+                }
+            },
+            exporting: {
+                buttons: {
+                    contextButton: {
+                        symbol: 'download',
+                        symbolStroke: '#fff',
+                        symbolSize: 10,
+                        height: 25,
+                        width: 25,
+                        enabled: true
+                    },
+                }
+            },
+            credits: 
+            {
+                enabled: false,
+                
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal',
+                    align: 'center'
+                },
+                bar: {
+                    dataLabels: {
+                        enabled: true,
+                        distance : -150,
+                        formatter: function() {
+                            var dlabel = this.series.name + '<br/>';
+                            dlabel += Math.round(this.percentage*100)/100 + ' %';
+                                return dlabel
+                         },
+                        style: {
+                            color: 'white',
+                            },
+                        },
+                        center: ['50%', '50%'],
+                        size: '50%'
+                    },
+                },
+         
+            series: [ 
+            {
+                name: 'Branco',
+                data: [9]
+            },
+            {
+                name: 'Preto',
+                data: [20]
+            },
+            {
+                name: 'Pardo',
+                data: [30]
+            },
+            {
+                name: 'Amarelo',
+                data: [30]
+            },
+            {
+                name: 'Indígena',
+                data: [9]
+            },
+            {
+                name: 'Não declarou',
+                data: [1]
+            },
+            {
+                name: 'Sem Informação',
+                data: [1]
+            }],
+         
+        }
+        $('.highcharts-axis').css('display','none');
+            Highcharts.chart(idHtml, options);
+    }
+
+    drawDonutAlunPiram(idHtml){
+
+        var categories = [
+            '15-19',
+            '20-24', '25-29', '30-34', '35-39', '40-44',
+            '45-49', '50-54', '55-59', '60-64', '65-69',
+            '70-74', '75-79', '80-84', '85-89', '90-94',
+            '95-99', '100 + '
+        ];
+        
+        var options: any =  {
+            colors: [
+                '#fff300',
+                '#dc582c',
+               
+            ],
+            chart: {
+                type: 'bar',
+                backgroundColor: '#0d542a',
+                plotBorderWidth: 0
+            },
+            title: {
+                text: 'Idade dos Alunos',
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white',
+                    fontSize: '19px',
+                }
+            },
+            subtitle: {
+                text: ''
+            },
+            accessibility: {
+                point: {
+                    valueDescriptionFormat: '{index}. Age {xDescription}, {value}%.'
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: [{
+                lineColor: 'transparent',
+                categories: categories,
+                reversed: false,
+                gridLineWidth: 0,
+                minorGridLineWidth: 0,
+                plotBorderWidth: 0,
+                labels: {
+                    enabled: false
+                    //step: 1
+                },
+                
+                accessibility: {
+                    description: 'Age (male)',
+                    
+                }
+                
+            }, { // mirror axis on right side
+                opposite: true,
+                reversed: false,
+                lineColor: 'transparent',
+                categories: categories,
+                linkedTo: 0,
+                labels: {
+                    enabled: false
+                    //step: 1
+                },
+                accessibility: {
+                    description: 'Age (female)'
+                }
+            }],
+            yAxis: {
+                gridLineWidth: 0,
+                minorGridLineWidth: 0,
+                lineColor: 'transparent',
+                title: {
+                    text: null
+                },
+                labels: {
+                    enabled: false
+                  /*   formatter: function () {
+                        return Math.abs(this.value) + '%';
+                    } */
+                },
+                accessibility: {
+                    description: 'Percentage population',
+                    rangeDescription: 'Range: 0 to 5%'
+                }
+            },
+            navigation: {
+                buttonOptions: {
+                    theme: {
+                        // Good old text links
+                        fill: '#c3081c',
+                        color: 'white',
+                        r: 15,
+
+                    }
+                }
+            },
+            exporting: {
+                buttons: {
+                    contextButton: {
+                        symbol: 'download',
+                        symbolStroke: '#fff',
+                        symbolSize: 10,
+                        height: 25,
+                        width: 25,
+                        enabled: true
+                    },
+                }
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal',
+                }
+                
+            },
+        
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                        'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 1) + '%';
+                }
+            },
+        
+            series: 
+            [{
+                name: 'Feminino',
+                data: [
+                    -2.4,
+                    -2.7, -3.0, -3.3, -3.2,
+                    -2.9, -3.5, -4.4, -4.1,
+                    -3.4, -2.7, -2.3, -2.2,
+                    -1.6, -0.6, -0.3, -0.0,
+                    -0.0
+                ],
+            }, {
+                name: 'Masculino',
+                data: [
+                    2.3, 2.6,
+                    2.9, 3.2, 3.1, 2.9, 3.4,
+                    4.3, 4.0, 3.5, 2.9, 2.5,
+                    2.7, 2.2, 1.1, 0.6, 0.2,
+                    0.0
+                ]
+            }],
+
+            legend: {
+                itemStyle: {
+                    color: 'white'
+                }
+            }
+            
+        }
+        Highcharts.chart(idHtml, options); 
+
+    }
+
+    drawCorM(idHtml){
+        
+        var options: any =  {
+            colors: [
+                '#F1C730',
+                '#61ABEC',
+                '#9EB01D',
+                '#D5672B',
+                '#0069B4',
+                '#C20082',
+                '#CECECE',
+               
+            ],
+            chart: {
+                plotBorderWidth: 0,
+                backgroundColor: null,
+                //renderTo: 'container',
+                
+                align: 'center'
+            },
+                series: [{
+                    dataLabels: {
+                        useHTML: true,
+                        // this is optional formatter, if you need more editing on text with html tags and css then you can use
+                        formatter() {
+                            return '<div>'+this.point.name+'</div>';
+                        }
+                    },
+                    type: 'treemap',
+                   
+                    layoutAlgorithm: 'squarified',
+                    data: [{
+                        name: 'Branco',
+                        label: "A",
+                        value: 6,
+                        //colorValue: 1
+                    }, {
+                        name: 'Preto',
+                        value: 6,
+                        //colorValue: 2
+                    }, {
+                        name: 'Pardo',
+                        value: 4,
+                        colorValue: 3
+                    }, {
+                        name: 'Amarelo',
+                        value: 3,
+                        colorValue: 4
+                    }, {
+                        name: 'Índigena',
+                        value: 2,
+                        colorValue: 5
+                    }, {
+                        name: 'Não declarou',
+                        value: 2,
+                        colorValue: 6
+                    }, {
+                        name: 'Sem informação',
+                        value: 1,
+                        colorValue: 7
+                    }]
+                }],
+                navigation: {
+                    buttonOptions: {
+                        theme: {
+                            // Good old text links
+                            fill: '#c3081c',
+                            color: 'white',
+                            r: 15,
+    
+                        }
+                    }
+                },
+                exporting: {
+                    buttons: {
+                        contextButton: {
+                            symbol: 'download',
+                            symbolStroke: '#fff',
+                            symbolSize: 10,
+                            height: 25,
+                            width: 25,
+                            enabled: true
+                        },
+                    }
+                },
+                credits: 
+            {
+                enabled: false,
+                
+            },
+         
+                title: {
+                    text: 'Highcharts Treemap',
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white',
+                        fontSize: '19px',
+                    }
+                    
+                },
+                
+        }  
+        Highcharts.chart(idHtml, options); 
+    }
+
+    drawCorAlunM(idHtml){
+        var options: any =  {
+            colors: [
+                '#F1C730',
+                '#61ABEC',
+                '#9EB01D',
+                '#D5672B',
+                '#0069B4',
+                '#C20082',
+                '#CECECE',
+               
+            ],
+            chart: {
+                plotBorderWidth: 0,
+                backgroundColor: null,
+                //renderTo: 'container',
+                
+                align: 'center'
+            },
+                series: [{
+                    dataLabels: {
+                        useHTML: true,
+                        // this is optional formatter, if you need more editing on text with html tags and css then you can use
+                        formatter() {
+                            return '<div>'+this.point.name+'</div>';
+                        }
+                    },
+                    type: 'treemap',
+                   
+                    layoutAlgorithm: 'squarified',
+                    data: [{
+                        name: 'Branco',
+                        label: "A",
+                        value: 6,
+                        //colorValue: 1
+                    }, {
+                        name: 'Preto',
+                        value: 6,
+                        //colorValue: 2
+                    }, {
+                        name: 'Pardo',
+                        value: 4,
+                        colorValue: 3
+                    }, {
+                        name: 'Amarelo',
+                        value: 3,
+                        colorValue: 4
+                    }, {
+                        name: 'Índigena',
+                        value: 2,
+                        colorValue: 5
+                    }, {
+                        name: 'Não declarou',
+                        value: 2,
+                        colorValue: 6
+                    }, {
+                        name: 'Sem informação',
+                        value: 1,
+                        colorValue: 7
+                    }]
+                }],
+                navigation: {
+                    buttonOptions: {
+                        theme: {
+                            // Good old text links
+                            fill: '#c3081c',
+                            color: 'white',
+                            r: 15,
+    
+                        }
+                    }
+                },
+                exporting: {
+                    buttons: {
+                        contextButton: {
+                            symbol: 'download',
+                            symbolStroke: '#fff',
+                            symbolSize: 10,
+                            height: 25,
+                            width: 25,
+                            enabled: true
+                        },
+                    }
+                },
+                credits: 
+            {
+                enabled: false,
+                
+            },
+                title: {
+                    text: 'Highcharts Treemap',
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white',
+                        fontSize: '19px',
+                    }
+                },
+                
+        }  
+        Highcharts.chart(idHtml, options); 
     }
 }
