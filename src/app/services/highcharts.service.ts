@@ -23,7 +23,7 @@ export class HighchartsService {
 
         if (data.length == 27) {
             series = [{
-                data: data,
+                data: data,          
                 name: 'Dados 2018',
                 borderColor: '#f9a71f',
                 borderWidth: 0.3,
@@ -40,6 +40,11 @@ export class HighchartsService {
         } else {
             series = [{
                 data: data,
+                    //"name": "North",
+                    "value": "26",
+                    "path": "produtos.direm.org/painel/BA",
+                     url : "produtos.direm.org/painel/BA",
+               
                 keys: ['codarea', 'name', 'value'],
                 joinBy: 'codarea',
                 borderColor: '#f9a71f',
@@ -99,17 +104,103 @@ export class HighchartsService {
                 }
             },
 
-
+            plotOptions:{
+                series:{
+                    point:{
+                        events:{
+                           click:function(){
+                                if (this.name == "Maranhão"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/MA");
+                                }
+                                if (this.name == "Tocantins"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/TO");
+                                }
+                                if (this.name == "Rondônia"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/RO");
+                                }
+                                if (this.name == "Acre"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/AC");
+                                }
+                                if (this.name == "Amazonas"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/AM");
+                                }
+                                if (this.name == "Roraima"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/RR");
+                                }
+                                if (this.name == "Pará"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/PA");
+                                }
+                                if (this.name == "Amapá"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/AP");
+                                }
+                                if (this.name == "Sergipe"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/SE");
+                                }
+                                if (this.name == "Pernambuco"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/PE");
+                                }
+                                if (this.name == "Ceará"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/CE");
+                                }
+                                if (this.name == "Piauí"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/PI");
+                                }
+                                if (this.name == "Rio Grande do Norte"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/RN");
+                                }
+                                if (this.name == "São Paulo"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/SP");
+                                }
+                                if (this.name == "Bahia"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/BA");
+                                }
+                                if (this.name == "Paraíba"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/PB");
+                                }
+                                if (this.name == "Minas Gerais"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/MG");
+                                }
+                                if (this.name == "Espírito Santo"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/ES");
+                                }
+                                if (this.name == "Rio de Janeiro"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/RJ");
+                                }
+                                if (this.name == "Paraná"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/PR");
+                                }
+                                if (this.name == "Santa Catarina"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/SC");
+                                }
+                                if (this.name == "Rio Grande do Sul"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/RS");
+                                }
+                                if (this.name == "Mato Grosso do Sul"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/MS");
+                                }
+                                if (this.name == "Mato Grosso"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/MT");
+                                }
+                                if (this.name == "Goiás"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/GO");
+                                }
+                                if (this.name == "Distrito Federal"){
+                                    return document.location.href = ("https://produtos.direm.org/painel/DF");
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             colorAxis: {
 
                 tickInterval: 5,
                 stops: [[0, '#f5ee6c'], [0.50, '#ffca34'], [1, '#f9a71f']],
+                //stops: [[0, '#ffff'],[0.25, '#f5ee6c'],[0.50, '#ffca34'], [1, '#f9a71f']],
                 labels: {
                     format: '{value}'
                 }
             },
-
-
             series: series
         }
 
