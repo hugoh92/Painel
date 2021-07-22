@@ -97,7 +97,7 @@
                         <span class="">Projeto pedagógico</span>
                     </button>
 
-                   <!--  <button mat-button class="btn btn-mat" type="button">
+                    <!--  <button mat-button class="btn btn-mat" type="button">
                         <span class="">Matriz curricular</span>
                     </button> -->
                 </div>
@@ -215,18 +215,19 @@
 
         <div class="func-mobile">
             <mat-accordion>
-                <mat-expansion-panel  class="tab-mobile" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Docentes
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      {{panelOpenState ? '' : ''}}
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-                        <div class="card  card-body2" id="regimem">
-                        </div>
-            
+                <mat-expansion-panel class="tab-mobile" (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Docentes
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{panelOpenState ? '' : ''}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="card  card-body2" id="regimem">
+                    </div>
+
                     <br>
                     <div class="card card-body2" id="titulacaom">
                     </div>
@@ -244,11 +245,11 @@
                                 <!--  <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas"><br> -->
                                 <!-- <i class="fas fa-female pessoas icones-ind fa-6x"></i><br> -->
                                 <img src="/assets/icons/FEM_ICON.png" class=""><br><br>
-                                
+
                                 <span class="nome-ind snome">Feminino</span><br>
                                 <span href="#" class="numero-ind snome" name="">00</span>
                             </div>
-    
+
                             <div class="teste">
                                 <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
                                 <img src="/assets/icons/MASC_ICON.png" class=""><br><br>
@@ -261,78 +262,80 @@
 
                     <div class="card card-body2 cardpiramM" id="piramidem">
                     </div>
-                  <!-- <p>I'm visible because I am open</p> -->
+                    <!-- <p>I'm visible because I am open</p> -->
                 </mat-expansion-panel>
             </mat-accordion>
 
             <mat-accordion>
-                <mat-expansion-panel  class="tab-mobile" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Alunos
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      {{panelOpenState ? '' : ''}}
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
+                <mat-expansion-panel class="tab-mobile" (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Alunos
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{panelOpenState ? '' : ''}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
 
-                  <div class="card mt-3 card-body2" id=tipoAlunom>
-                  </div>
+                    <div class="card mt-3 card-body2" id=tipoAlunom>
+                    </div>
 
-                  <br>
+                    <br>
 
-                  <div class="card card-body2" id=corAlunom>
-                  </div>
+                    <div class="card card-body2" id=corAlunom>
+                    </div>
 
-                  <br>
-                  
-                  <div class="card card-body2">
-                    <div class="card card-body2 divp">
-                        <div class="teste">
-                            <!--  <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas"><br> -->
-                            <!-- <i class="fas fa-female pessoas icones-ind fa-6x"></i><br> -->
-                            <img src="/assets/icons/FEM_ICON.png" class=""><br><br>
-                            
-                            <span class="nome-ind snome">Feminino</span><br>
-                            <span href="#" class="numero-ind snome" name="">00</span>
-                        </div>
+                    <br>
 
-                        <div class="teste">
-                            <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
-                            <img src="/assets/icons/MASC_ICON.png" class=""><br><br>
-                            <span class="nome-ind snome">Masculino</span><br>
-                            <span href="#" class="numero-ind snome" name="">00</span>
+                    <div class="card card-body2">
+                        <div class="card card-body2 divp">
+                            <div class="teste">
+                                <!--  <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas"><br> -->
+                                <!-- <i class="fas fa-female pessoas icones-ind fa-6x"></i><br> -->
+                                <img src="/assets/icons/FEM_ICON.png" class=""><br><br>
+
+                                <span class="nome-ind snome">Feminino</span><br>
+                                <span href="#" class="numero-ind snome" name="">00</span>
+                            </div>
+
+                            <div class="teste">
+                                <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
+                                <img src="/assets/icons/MASC_ICON.png" class=""><br><br>
+                                <span class="nome-ind snome">Masculino</span><br>
+                                <span href="#" class="numero-ind snome" name="">00</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <br>
-                <div class="card card-body2 cardpiramM" id=PAlunom>
-                   
-                </div>
+                    <br>
+                    <div class="card card-body2 cardpiramM" id=PAlunom>
 
-                  <!-- <p>I'm visible because I am open</p> -->
+                    </div>
+
+                    <!-- <p>I'm visible because I am open</p> -->
                 </mat-expansion-panel>
             </mat-accordion>
 
             <mat-accordion>
-                <mat-expansion-panel  class="tab-mobile" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Avaliação
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      {{panelOpenState ? '' : ''}}
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-                 
+                <mat-expansion-panel class="tab-mobile" (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Avaliação
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{panelOpenState ? '' : ''}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
                     <div class="card-avaliacao">
                         <div class="section-avaliacao">
                             <span class="nome-ind">Conceito de curso (Ano)</span>
                             <br>
                             <span href="#" class="numero-ind" name="">Sem conceito</span>
                         </div>
-                       
+
                         <div class="section-avaliacao">
                             <span class="nome-ind">IDD (Ano)</span>
                             <br>
@@ -349,13 +352,13 @@
                             <span href="#" class="numero-ind" name="">Sem conceito</span>
                         </div>
                     </div>
-              </mat-expansion-panel>
+                </mat-expansion-panel>
             </mat-accordion>
 
-            </div>
+        </div>
 
 
-            
+
         <div class="col-itens row-docentes">
             <span class="titulos titulos-rsultados">Docentes
 
@@ -401,18 +404,25 @@
             </button> -->
 
             </p>
-            <div class="collapse" id="colapse1">
-                <div class="cardb">
-                    <div class="card  card-body2" id="regime">
+            <div class="row colaprow">
+                <div class="col colacol">
+
+                    <div class="collapse" id="colapse1">
+                        <div class="cardb">
+                            <div class="card  card-body2" id="regime">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col colacol">
+                    <div class="collapse" id="colapse2">
+                        <div class="card card-body2" id="titulacao">
+                        </div>
                     </div>
                 </div>
-                </div>
-              
-            <div class="collapse" id="colapse2">
-                <div class="card card-body2" id="titulacao">
-                </div>
             </div>
-               
+
             <div class="collapse cl2" id="colapse3">
                 <div class="card card-body2" id="idraca">
                 </div>
@@ -425,7 +435,7 @@
                             <!--  <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas"><br> -->
                             <!-- <i class="fas fa-female pessoas icones-ind fa-6x"></i><br> -->
                             <img src="/assets/icons/FEM_ICON.png" class=""><br><br>
-                            
+
                             <span class="nome-ind snome">Feminino</span><br>
                             <span href="#" class="numero-ind snome" name="">00</span>
                         </div>
@@ -494,7 +504,7 @@
 
             <div class="collapse cl2" id="colapse7">
                 <div class="card card-body2" id=corAluno>
-                   
+
                 </div>
             </div>
 
@@ -505,7 +515,7 @@
                             <!--  <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas"><br> -->
                             <!-- <i class="fas fa-female pessoas icones-ind fa-6x"></i><br> -->
                             <img src="/assets/icons/FEM_ICON.png" class=""><br><br>
-                            
+
                             <span class="nome-ind snome">Feminino</span><br>
                             <span href="#" class="numero-ind snome" name="">00</span>
                         </div>
@@ -518,12 +528,12 @@
                         </div>
                     </div>
                 </div>
-           
+
             </div>
 
             <div class="collapse cl2" id="colapse9">
                 <div class="card card-body2 cardpiram" id=PAluno>
-                    
+
                 </div>
             </div>
         </div>

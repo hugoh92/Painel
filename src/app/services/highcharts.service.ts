@@ -926,123 +926,7 @@ export class HighchartsService {
         }
         Highcharts.chart(idHtml, options);
     }
-    drawDonutCor(idHtml){
-         var options: any =  {
-           
-            colors: [
-                '#F1C730',
-                '#61ABEC',
-                '#9EB01D',
-                '#D5672B',
-                '#f3456c',
-                '#fff35c',
-                '#00f',
-               
-            ],
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: 0,
-            plotShadow: false,
-            backgroundColor: '#0d542a',
-            style: {
-                fontFamily: './assets/FONTES/gilr35a.TFT'
-            }
-            
-        },
-        title: {
-            text: 'Cor\Raça dos docentes da IES',
-            align: 'center',
-            style: {
-                fontWeight: 'bold',
-                color: 'white',
-                fontSize: '16px',
-            }
-            //verticalAlign: 'middle',
-            //y: 60
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/> qnt: 000',
-            
-        },
-        
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        navigation: {
-            buttonOptions: {
-                theme: {
-                    // Good old text links
-                    fill: '#c3081c',
-                    color: 'white',
-                    r: 15,
-
-                }
-            }
-        },
-        exporting: {
-            buttons: {
-                contextButton: {
-                    symbol: 'download',
-                    symbolStroke: '#fff',
-                    symbolSize: 10,
-                    height: 25,
-                    width: 25,
-                    enabled: true
-                },
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        plotOptions: {
-            pie: {
-                dataLabels: {
-                    enabled: true,
-                    useHTML: true,
-                    align: 'center',
-                    format: '<span style = "font-size:16px">{point.name}</span><br><b style = "color: {point.color};font-size:14px">{point.y:.0f}%<b>',
-                    style: {
-                        fontAlign: 'center',
-                        color: 'white',
-                        textOutline: '0px'
-                    },
-                },
-                startAngle: 10,
-                endAngle: 10,
-                center: ['50%', '50%'],
-                size: '80%'
-            }
-        },
-        series: [{
-            type: 'pie',
-            //name: 'Browser share',
-            innerSize: '50%',
-            align: 'center',
-            data: [
-                ['Não declarou', 1],
-                ['Branco', 9],
-                ['Preto', 20],
-                ['Pardo', 30],
-                ['Amarelo', 30],
-                ['Indígena', 9],
-                ['Sem Informação', 1],
-                
-                {
-                    name: 'Other',
-                    //y: 7.61,
-                    dataLabels: {
-                        enabled: false
-                        }
-                    }
-                ]
-            }]
-        }
-        Highcharts.chart(idHtml, options);
-    }
-
-    drawDonutCor2(idHtml){
+   /*  drawDonutCor2(idHtml){
         var options: any =  {
            
             colors: [
@@ -1192,7 +1076,7 @@ export class HighchartsService {
         }
         $('.highcharts-axis').css('display','none');
             Highcharts.chart(idHtml, options);
-    }
+    } */
     drawDonutAlunTip(idHtml){
         var options: any =  {
            
@@ -1293,7 +1177,7 @@ export class HighchartsService {
         Highcharts.chart(idHtml, options);
     }
 
-    drawDonutAlunCor(idHtml){
+    /* drawDonutAlunCor(idHtml){
         var options: any =  {
            
             colors: [
@@ -1444,7 +1328,7 @@ export class HighchartsService {
         $('.highcharts-axis').css('display','none');
             Highcharts.chart(idHtml, options);
     }
-
+ */
     drawDonutAlunPiram(idHtml){
 
         var categories = [
@@ -1696,7 +1580,7 @@ export class HighchartsService {
             },
          
                 title: {
-                    text: 'Highcharts Treemap',
+                    text: 'Cor\\Raça dos docentes da IES',
                     style: {
                         fontWeight: 'bold',
                         color: 'white',
@@ -1799,7 +1683,7 @@ export class HighchartsService {
                 
             },
                 title: {
-                    text: 'Highcharts Treemap',
+                    text: 'Cor\\Raça dos alunos da IES',
                     style: {
                         fontWeight: 'bold',
                         color: 'white',
