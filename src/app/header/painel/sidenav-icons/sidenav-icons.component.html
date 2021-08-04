@@ -10,7 +10,7 @@
 
 
     <ul class="rolagem">
-        <span class="ano1">2020</span>
+        <span class="ano1">2021</span>
         <li class="active1">
             <!-- Primeiro bloco de itens -->
             <div class="wrapper marcadorl align-items-start">
@@ -23,26 +23,28 @@
                 <div class="col">
                     <span class="nome1">Cursos</span>
                     <img src="/assets/icons/cursos.png" class="icone2">
-                    <span href="#" class="numero" name="" id="">{{data.qt_cursos}}</span>
+                    <!-- <span href="#" class="numero" name="" id="">{{data.qt_cursos}}</span> -->
+                    <span href="#" class="numero" name="" id="">371</span>
                 </div>
 
                 <div class="col">
                     <span class="nome1">Cursos/Milhão Hab.</span>
                     <img src="/assets/icons/cursosmilhao.png" class="icone3">
-                    <span href="#" class="numero" name="">{{(data.qt_cursos/populacao*1000000).toFixed(2)}}</span>
+                    <!-- <span href="#" class="numero" name="">{{(data.qt_cursos/populacao*1000000).toFixed(2)}}</span> -->
+                    <span href="#" class="numero" name="">{{(371/populacao*1000000).toFixed(2)}}</span>
                 </div>
             </div>
         </li>
 
 
         <li class="linha2">
-            <span class="ano2">2018</span>
+            <span class="ano2">2019</span>
             <!-- Segundo bloco de itens -->
             <div class="wrapper marcador1 align-items-start">
                 <div class="col">
                     <span class="nome1">Vagas Oferecidas</span>
                     <img src="/assets/icons/vagas.png" class="icone4">
-                    <span href="#" class="numero2" name="">{{numberWithSpaces(data.qt_vaga_total_2018)}}</span>
+                    <span href="#" class="numero2" name="">{{numberWithSpaces(data.qt_vagas_autorizadas)}}</span>
                 </div>
 
                 <div class="col">
@@ -58,12 +60,12 @@
                 </div>
             </div>
         </li>
-        <div class="a">
+       <!--  <div class="a">
             <i class="btn fas fa-question bt-help" matTooltip="Em Breve" matTooltipClass="example-tooltip-red" aria-label="" matTooltipPosition="left"></i>
-        </div>
+        </div> -->
         <li class="linha3">
 
-            <span class="ano3">Indicadores (2018)
+            <span class="ano3">Indicadores (2019)
             </span>
 
             <!-- Terceiro bloco de itens -->
@@ -96,7 +98,7 @@
             <div class="indicadores align-items-start">
                 <div class="col">
                     <span class="taxac">Taxa de Concorrência</span>
-                    <span href="#" class="numero4 num-tx" name="">{{(+data.qt_inscrito_total/data.qt_vaga_total_2018).toFixed(2)}}</span>
+                    <span href="#" class="numero4 num-tx" name="">{{(+data.qt_inscrito_total/data.qt_vagas_autorizadas).toFixed(2)}}</span>
                     <span class="num-tx">Candidato/Vaga</span>
 
 
@@ -104,7 +106,7 @@
 
                 <div class="col">
                     <span class="taxao">Taxa de Ocupação</span>
-                    <span href="#" class="numero4" name="">{{(+data.qt_ingresso_total/data.qt_vaga_total_2018*100).toFixed(2)}}%</span>
+                    <span href="#" class="numero4" name="">{{(+data.qt_ingresso_total/data.qt_vagas_autorizadas*100).toFixed(2)}}%</span>
                 </div>
             </div>
         </li>
@@ -114,12 +116,13 @@
 
                 <div class="col txs">
                     <span class="taxas">Taxa de Sucesso</span>
-                    <span href="#" class="numero4" id="sucess" name="">{{(+data.qt_concluinte_total/data.qt_ingresso_curso_2013*100).toFixed(2)}}%</span>
+                    <span href="#" class="numero4" id="sucess" name="">{{(+data.qt_concluinte_total/data.qt_ingresso_total*100).toFixed(2)}}%</span>
                 </div>
 
                 <div class="col txs">
                     <span class="relda">Relação Aluno/Docente</span>
-                    <span href="#" class="numero4" id="sucess" name="">{{(+data.n_alunos_cod_curso/data.total_docentes).toFixed(2)}}</span>
+                    <!-- <span href="#" class="numero4" id="sucess" name="">{{(+data.n_alunos_cod_curso/data.total_docentes).toFixed(2)}}</span> -->
+                    <span href="#" class="numero4" id="sucess" name="">--</span>
                 </div>
 
             </div>
@@ -143,7 +146,7 @@
         <div class="btn-group">
             <div class="tab-content">
                 <div id="home" class="tab-pane menu-mobile fade in active">
-                    <span class="ano-mobile">2020</span>
+                    <span class="ano-mobile">2021</span>
                     <li class="mobile-2018">
                         <!-- Primeiro bloco de itens -->
                         <div class="mc2">
@@ -174,7 +177,7 @@
 
 
                 <div id="menu1" class="tab-pane menu-mobile">
-                    <span class="ano-mobile">2018</span>
+                    <span class="ano-mobile">2019</span>
                     <li class="mobile-2018">
 
                         <!-- Segundo bloco de itens -->
@@ -183,7 +186,7 @@
 
                                 <img src="/assets/icons/NEW_VAGAS.png" class="icone-mobile">
                                 <span class="nome-mobile">Vagas Oferecidas</span>
-                                <span href="#" class="numero-mobile" name="">{{data.qt_vaga_total_2018}}</span>
+                                <span href="#" class="numero-mobile" name="">{{data.qt_vagas_autorizadas}}</span>
                             </div>
 
                             <div class="div-icon-mobile">
@@ -230,26 +233,26 @@
                     </li>
                 </div>
                 <div id="menu2" class="tab-pane fade">
-                    <span class="ano-mobile ind-mobile">Indicadores (2018)</span>
+                    <span class="ano-mobile ind-mobile">Indicadores (2019)</span>
                     <li class="mobile-indicadores">
                         <!-- Quarto bloco de itens -->
                         <div class="indicadores">
                             <br>
                             <span class="taxac">Taxa de concorrência Candidato/Vaga</span>
-                            <span href="#" class="numero-mobile" name="">{{(+data.qt_inscrito_total/data.qt_vaga_total_2018).toFixed(2)}}</span>
+                            <span href="#" class="numero-mobile" name="">{{(+data.qt_inscrito_total/data.qt_vagas_autorizadas).toFixed(2)}}</span>
 
                             <br>
 
                             <span class="taxao">Taxa de Ocupação</span>
-                            <span href="#" class="numero-mobile" name="">{{(+data.qt_ingresso_total/data.qt_vaga_total_2018*100).toFixed(2)}}%</span>
+                            <span href="#" class="numero-mobile" name="">{{(+data.qt_ingresso_total/data.qt_vagas_autorizadas*100).toFixed(2)}}%</span>
                             <br>
 
                             <span class="taxas">Taxa de Sucesso</span>
-                            <span href="#" class="numero-mobile" name="">{{(+data.qt_concluinte_total/data.qt_ingresso_curso_2013*100).toFixed(2)}}%</span>
+                            <span href="#" class="numero-mobile" name="">{{(+data.qt_concluinte_total/data.qt_ingresso_total*100).toFixed(2)}}%</span>
                             <br>
 
                             <span class="relda">Relação Docente/Aluno</span>
-                            <span href="#" class="numero-mobile" name="">{{(+data.n_alunos_cod_curso/data.total_docentes).toFixed(2)}}</span>
+                            <span href="#" class="numero-mobile" name="">{{(+data.qt_matriculas_total/data.total_docentes).toFixed(2)}}</span>
 
                         </div>
                     </li>
@@ -257,9 +260,9 @@
             </div>
             <div class="tab-lugar">
                 <ul class="nav nav-tabs nav-divbt">
-                    <li class="active btn-group-mobile"><a class="btn-mb-geral" data-toggle="tab" href="#home">2020</a>
+                    <li class="active btn-group-mobile"><a class="btn-mb-geral" data-toggle="tab" href="#home">2021</a>
                     </li>
-                    <li class="btn-group-mobile"><a class="btn-mb-geral" data-toggle="tab" href="#menu1">2018</a></li>
+                    <li class="btn-group-mobile"><a class="btn-mb-geral" data-toggle="tab" href="#menu1">2019</a></li>
                     <li class="btn-group-mobile"><a class="btn-mb-geral" data-toggle="tab" href="#menu2">Indicadores</a>
                     </li>
                 </ul>

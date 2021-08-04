@@ -914,13 +914,7 @@ export class HighchartsService {
                 ['Mestre', 29],
                 ['Especialista', 30],
                 
-                {
-                    name: 'Other',
-                    //y: 7.61,
-                    dataLabels: {
-                        enabled: false
-                        }
-                    }
+              
                 ]
             }]
         }

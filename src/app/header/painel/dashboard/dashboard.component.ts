@@ -82,14 +82,14 @@ export class DashboardComponent implements AfterViewInit {
 
 
     this._dataService.getPlot1Data(filter).subscribe((json: any) => {
-      let data = json.map(d => { return { y: d.n, name: d.org_academica } })
+      let data = json.map(d => { return { y: d.n, name: d.codigo_ies__org_academica } })
       this._highchartsService.drawPiePlot("pieplot", data)
     })
 
     this._dataService.getPlot2Data(filter).subscribe((json: any) => {
 
-      var total_priv = json.filter(d => d.natureza_juridica == "Privada").length ? json.filter(d => d.natureza_juridica == "Privada").map(d => d.n).reduce((a, b) => a + b) : 0;
-      var total_publ = json.filter(d => d.natureza_juridica == "Pública").length ? json.filter(d => d.natureza_juridica == "Pública").map(d => d.n).reduce((a, b) => a + b) : 0;
+      var total_priv = json.filter(d => d.codigo_ies__natureza_juridica == "Privada").length ? json.filter(d => d.codigo_ies__natureza_juridica == "Privada").map(d => d.n).reduce((a, b) => a + b) : 0;
+      var total_publ = json.filter(d => d.codigo_ies__natureza_juridica == "Pública").length ? json.filter(d => d.codigo_ies__natureza_juridica == "Pública").map(d => d.n).reduce((a, b) => a + b) : 0;
       var total = json.map(d => d.n).reduce((a, b) => a + b);
       let data = [
         {
@@ -98,10 +98,10 @@ export class DashboardComponent implements AfterViewInit {
           drilldown: {
             name: 'Privada',
             categories: [
-              json.filter(d => d.natureza_juridica == "Privada").map(d => d.cat_admin)
+              json.filter(d => d.codigo_ies__natureza_juridica == "Privada").map(d => d.codigo_ies__cat_admin)
             ],
             data: [
-              json.filter(d => d.natureza_juridica == "Privada").map(d => 100 * d.n / total)
+              json.filter(d => d.codigo_ies__natureza_juridica == "Privada").map(d => 100 * d.n / total)
             ]
           }
         },
@@ -111,10 +111,10 @@ export class DashboardComponent implements AfterViewInit {
           drilldown: {
             name: 'Pública',
             categories: [
-              json.filter(d => d.natureza_juridica == "Pública").map(d => d.cat_admin)
+              json.filter(d => d.codigo_ies__natureza_juridica == "Pública").map(d => d.codigo_ies__cat_admin)
             ],
             data: [
-              json.filter(d => d.natureza_juridica == "Pública").map(d => 100 * d.n / total)
+              json.filter(d => d.codigo_ies__natureza_juridica == "Pública").map(d => 100 * d.n / total)
             ]
           }
         },

@@ -136,7 +136,7 @@
                     <span class="nome-ind">Vagas Autorizadas</span>
                     <br>
                     <span href="#" class="numero-ind" name="">{{treatNull(options.qt_vagas_autorizadas)}}
-                        Vagas/Ano</span>
+                        </span>
                 </div>
                 <div class="func-dados">
                     <br>
@@ -152,39 +152,39 @@
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind"><br>
                     <span class="nome-ind nm-vgs">Vagas Oferecidas</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_vaga_total_2018)}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_vagas_autorizadas)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind"><br>
                     <span class="nome-ind">Inscritos</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_inscrito_total)}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_inscrito_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind"><br>
                     <span class="nome-ind">Ingressos</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_ingresso_total)}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_ingresso_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones-ind"><br>
                     <span class="nome-ind">Matriculados</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_matricula_total)}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_matricula_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones-ind"><br>
                     <span class="nome-ind">Concluintes</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_concluinte_total)}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_concluinte_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_DOCENTES.png" class="icones-ind doc-icon"><br>
                     <span class="nome-ind doc-icon">Docentes</span><br>
-                    <span href="#" class="numero-ind doc-icon" name="">{{treatNull(options.total_docentes)}}</span>
+                    <span href="#" class="numero-ind doc-icon" name="">{{treatNull(options.indicadores[0].qt_docentes_total)}}</span>
                 </div>
                 <div class="div-info">
                     <div class="info-syle">
                         <br>
                         <span class="nome-ind">Taxa de Concorrência Candidato/Vaga</span>
                         <br>
-                        <span href="#" class="numero-ind" name="">{{treatNull((+options.tx_concorrencia).toFixed(2),
+                        <span href="#" class="numero-ind" name="">{{treatNull((+options.indicadores[0].tx_concorrencia).toFixed(2),
                             true)}}</span>
                         <br>
                         <br>
@@ -192,7 +192,7 @@
                         <span class="nome-ind">Taxa de Sucesso</span>
                         <br>
                         <span href="#" class="numero-ind" id="sucess"
-                            name="">{{treatNull((+options.tx_sucesso).toFixed(2)+ '%', true)}}</span>
+                            name="">{{treatNull((+options.indicadores[0].tx_sucesso).toFixed(2)+ '%', true)}}</span>
                     </div>
                 </div>
                 <div class="div-info">
@@ -200,14 +200,14 @@
                         <br>
                         <span class="nome-ind">Taxa de Ocupação</span>
                         <br>
-                        <span href="#" class="numero-ind" name="">{{treatNull((+options.tx_ocupacao).toFixed(2) + '%',
+                        <span href="#" class="numero-ind" name="">{{treatNull((+options.indicadores[0].tx_ocupacao).toFixed(2) + '%',
                             true)}}</span>
                         <br>
                         <br>
                         <span class="nome-ind">Relação Aluno/Docente</span>
                         <br>
                         <span href="#" class="numero-ind" id="sucess" name="">
-                            {{treatNull((+options.n_alunos_cod_curso/options.total_docentes).toFixed(2), true)}}</span>
+                            {{treatNull((+options.n_alunos_cod_curso/options.indicadores[0].qt_docentes_total).toFixed(2), true)}}</span>
                     </div>
                 </div>
             </div>
@@ -561,25 +561,21 @@
                 <div class="card card-body2">
                     <div class="card-avaliacao">
                         <div class="section-avaliacao">
-                            <span class="nome-ind">Conceito de curso (Ano)</span>
+                            <span class="nome-ind">Conceito de curso ({{options.indicadores[0].ano_cc}})</span>
                             <br>
-                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                            <span href="#" class="numero-ind" name="">{{treatNull(+options.indicadores[0].valor_cc)}}</span>
                         </div>
                         <div class="section-avaliacao">
-                            <span class="nome-ind">IDD (Ano)</span>
+                            <span class="nome-ind">IDD ({{options.indicadores[0].idd_ano}})</span>
                             <br>
-                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                            <span href="#" class="numero-ind" name="">{{treatNull((+options.indicadores[0].valor_idd).toFixed(2), true)}}</span>
                         </div>
                         <div class="section-avaliacao">
-                            <span class="nome-ind">ENADE (2019)</span>
+                            <span class="nome-ind">ENADE ({{options.indicadores[0].enade_ano}})</span>
                             <br>
-                            <span href="#" class="numero-ind" name="">Sem conceito</span>
+                            <span href="#" class="numero-ind" name="">{{options.indicadores[0].valor_enade}}</span>
                         </div>
-                        <div class="section-avaliacao">
-                            <span class="nome-ind">ENADE (2019)</span>
-                            <br>
-                            <span href="#" class="numero-ind" name="">Sem conceito</span>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
