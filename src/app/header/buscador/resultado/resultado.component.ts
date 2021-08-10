@@ -24,14 +24,11 @@ export class ResultadoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getData();
+
     this.highchartsService.drawPlotPiram("piramide")
     this.highchartsService.drawPlotPiram("piramidem")
-    this.highchartsService.drawDonutRegime("regime")
-    this.highchartsService.drawDonutRegime("regimem")
-    this.highchartsService.drawDonutTitulação("titulacao")
-    this.highchartsService.drawDonutTitulação("titulacaom")
-    this.highchartsService.drawCorM("idraca")
-    this.highchartsService.drawCorM("corM")
+    
     //this.highchartsService.drawDonutCor2("idraca")
     //this.highchartsService.drawDonutCor2("idracam")
 
@@ -41,19 +38,36 @@ export class ResultadoComponent implements OnInit {
     //this.highchartsService.drawDonutAlunCor("corAlunom")
     this.highchartsService.drawDonutAlunPiram("PAluno")
     this.highchartsService.drawDonutAlunPiram("PAlunom")
-    this.highchartsService.drawCorM("corAluno")
+    /* this.highchartsService.drawCorM("corAluno") */
     this.highchartsService.drawCorAlunM("corAlunom")
     
     
     
-    this.getData();
+   
   }
-
+  formatData(data) {
+    let keys = Object.keys(data)
+    let values = Object.values(data)
+    let l = []
+    var c_l
+    for(var i:number = 0; i < keys.length; i++){
+      c_l = [keys[i], values[i]]
+      l.push(c_l)
+    }
+    console.log(l)
+    return l;
+  }
   getData() {
     let id_curso = this.router.url.match(/\/([^\/]+)\/?$/)[1]
     this._dataService.getData(`http://warm-everglades-94375.herokuapp.com/curso/?codigo_curso=${id_curso}`).subscribe(
       json => {
         this.options = json[0]
+        this.highchartsService.drawDonutRegime("regime",this.formatData(this.options.indicadores[0].plot_regime))
+        this.highchartsService.drawDonutRegime("regimem",this.formatData(this.options.indicadores[0].plot_regime))
+        this.highchartsService.drawDonutTitulação("titulacao",this.formatData(this.options.indicadores[0].plot_schooling))
+        this.highchartsService.drawDonutTitulação("titulacaom",this.formatData(this.options.indicadores[0].plot_schooling))
+        this.highchartsService.drawCorM("idraca",this.formatData(this.options.indicadores[0].plot_race))
+        this.highchartsService.drawCorM("corM",this.formatData(this.options.indicadores[0].plot_race))
         if (!this.options) {
           this.router.navigate(["/buscador"])
         }

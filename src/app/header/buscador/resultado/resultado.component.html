@@ -10,7 +10,7 @@
         <div class="painel-uni wrapper-painel-uni">
             <div class="logo-uni logo-wrapper">
                 <div class="div-logo-uni">
-                    <img class="logos" [src]='options.nome_img'>
+                    <img class="logos" [src]='"http://warm-everglades-94375.herokuapp.com/"+ options.nome_img'>
                     <!--{{options.sigla_da_ies}} <br> {{options.nome_da_ies}}-->
                 </div>
                 <div class="icones-div-style icon-mobile">
@@ -135,7 +135,7 @@
                     <br>
                     <span class="nome-ind">Vagas Autorizadas</span>
                     <br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.qt_vagas_autorizadas)}}
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_vagas_autorizadas)}}
                         </span>
                 </div>
                 <div class="func-dados">
@@ -152,7 +152,7 @@
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind"><br>
                     <span class="nome-ind nm-vgs">Vagas Oferecidas</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_vagas_autorizadas)}}</span>
+                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].quantitativo_de_vagas_integral)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind"><br>
@@ -207,7 +207,7 @@
                         <span class="nome-ind">Relação Aluno/Docente</span>
                         <br>
                         <span href="#" class="numero-ind" id="sucess" name="">
-                            {{treatNull((+options.n_alunos_cod_curso/options.indicadores[0].qt_docentes_total).toFixed(2), true)}}</span>
+                            {{treatNull((+options.indicadores[0].qt_matricula_total/options.indicadores[0].qt_docentes_total).toFixed(2), true)}}</span>
                     </div>
                 </div>
             </div>
@@ -260,7 +260,9 @@
                     </div>
                     <br>
 
+                    <!-- <div class="card card-body2 cardpiramM" id="piramidem"> -->
                     <div class="card card-body2 cardpiramM" id="piramidem">
+                        EM BREVE
                     </div>
                     <!-- <p>I'm visible because I am open</p> -->
                 </mat-expansion-panel>
@@ -278,12 +280,16 @@
                         </mat-panel-description>
                     </mat-expansion-panel-header>
 
-                    <div class="card mt-3 card-body2" id=tipoAlunom>
+                   <!--  <div class="card mt-3 card-body2" id=tipoAlunom> -->
+                    <div class="card mt-3 card-body2">
+                        EM BREVE
                     </div>
-
+                   
                     <br>
 
-                    <div class="card card-body2" id=corAlunom>
+                    <!-- <div class="card card-body2" id=corAlunom> -->
+                    <div class="card card-body2">
+                        EM BREVE
                     </div>
 
                     <br>
@@ -296,21 +302,24 @@
                                 <img src="/assets/icons/FEM_ICON.png" class=""><br><br>
 
                                 <span class="nome-ind snome">Feminino</span><br>
-                                <span href="#" class="numero-ind snome" name="">00</span>
+                                <span href="#" class="numero-ind snome" name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_fem),
+                                    true)}}</span>
                             </div>
 
                             <div class="teste">
                                 <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
                                 <img src="/assets/icons/MASC_ICON.png" class=""><br><br>
                                 <span class="nome-ind snome">Masculino</span><br>
-                                <span href="#" class="numero-ind snome" name="">00</span>
+                                <span href="#" class="numero-ind snome" name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_masc),
+                                    true)}}</span>
                             </div>
                         </div>
                     </div>
 
                     <br>
-                    <div class="card card-body2 cardpiramM" id=PAlunom>
-
+                    <!-- <div class="card card-body2 cardpiramM" id=PAlunom> -->
+                    <div class="card card-body2 cardpiramM">
+                        EM BREVE
                     </div>
 
                     <!-- <p>I'm visible because I am open</p> -->
@@ -437,14 +446,16 @@
                             <img src="/assets/icons/FEM_ICON.png" class=""><br><br>
 
                             <span class="nome-ind snome">Feminino</span><br>
-                            <span href="#" class="numero-ind snome" name="">00</span>
+                            <span href="#" class="numero-ind snome" name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_fem),
+                                true)}}</span>
                         </div>
 
                         <div class="teste">
                             <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
                             <img src="/assets/icons/MASC_ICON.png" class=""><br><br>
                             <span class="nome-ind snome">Masculino</span><br>
-                            <span href="#" class="numero-ind snome" name="">00</span>
+                            <span href="#" class="numero-ind snome" name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_masc),
+                                true)}}</span>
                         </div>
                     </div>
                 </div>
@@ -452,7 +463,9 @@
 
             <div class="collapse cl2" id="colapse5">
                 <div class="cl1">
-                    <div class="card card-body2 cardpiram" id="piramide">
+                   <!--  <div class="card card-body2 cardpiram" id="piramide"> -->
+                    <div class="card card-body2 cardpiram">
+                        EM BREVE
                     </div>
 
                 </div>
@@ -497,14 +510,16 @@
             </p>
 
             <div class="collapse" id="colapse6">
-                <div class="card mt-3 card-body2" id=tipoAluno>
-
+                <!-- <div class="card mt-3 card-body2" id=tipoAluno> -->
+                    <div class="card mt-3 card-body2">
+                    EM BREVE
                 </div>
             </div>
 
             <div class="collapse cl2" id="colapse7">
-                <div class="card card-body2" id=corAluno>
-
+                <!-- <div class="card card-body2" id=corAluno> -->
+                    <div class="card card-body2" id=corAluno>
+                    EM BREVE
                 </div>
             </div>
 
@@ -532,8 +547,9 @@
             </div>
 
             <div class="collapse cl2" id="colapse9">
-                <div class="card card-body2 cardpiram" id=PAluno>
-
+                <!-- <div class="card card-body2 cardpiram" id=PAluno> -->
+                    <div class="card card-body2 cardpiram" id=PAluno>
+                        EM BREVE
                 </div>
             </div>
         </div>

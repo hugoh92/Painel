@@ -699,7 +699,7 @@ export class HighchartsService {
         
     }
    
-    drawDonutRegime(idHtml){
+    drawDonutRegime(idHtml, data){
         
         var options: any =  {
            
@@ -801,25 +801,13 @@ export class HighchartsService {
                 },
             },
             align: 'center',
-            data: [
-                ['Integral', 11],
-                ['Horista', 29],
-                ['Parcial', 60],
-                
-                {
-                    name: 'Other',
-                    //y: 7.61,
-                    dataLabels: {
-                        enabled: false
-                        }
-                    }
-                ]
+            data: data  
             }]
         }
         Highcharts.chart(idHtml, options);
     }
     
-    drawDonutTitulação(idHtml){
+    drawDonutTitulação(idHtml,data){
         var options: any =  {
            
             colors: [
@@ -908,14 +896,7 @@ export class HighchartsService {
             //name: 'Browser share',
             innerSize: '50%',
             align: 'center',
-            data: [
-                ['Graduação', 30],
-                ['Doutor', 11],
-                ['Mestre', 29],
-                ['Especialista', 30],
-                
-              
-                ]
+            data: data
             }]
         }
         Highcharts.chart(idHtml, options);
@@ -1482,7 +1463,7 @@ export class HighchartsService {
 
     }
 
-    drawCorM(idHtml){
+    drawCorM(idHtml,data){
         
         var options: any =  {
             colors: [
@@ -1513,36 +1494,7 @@ export class HighchartsService {
                     type: 'treemap',
                    
                     layoutAlgorithm: 'squarified',
-                    data: [{
-                        name: 'Branco',
-                        label: "A",
-                        value: 6,
-                        //colorValue: 1
-                    }, {
-                        name: 'Preto',
-                        value: 6,
-                        //colorValue: 2
-                    }, {
-                        name: 'Pardo',
-                        value: 4,
-                        colorValue: 3
-                    }, {
-                        name: 'Amarelo',
-                        value: 3,
-                        colorValue: 4
-                    }, {
-                        name: 'Índigena',
-                        value: 2,
-                        colorValue: 5
-                    }, {
-                        name: 'Não declarou',
-                        value: 2,
-                        colorValue: 6
-                    }, {
-                        name: 'Sem informação',
-                        value: 1,
-                        colorValue: 7
-                    }]
+                    data: data
                 }],
                 navigation: {
                     buttonOptions: {
