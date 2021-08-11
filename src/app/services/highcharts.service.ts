@@ -839,7 +839,7 @@ export class HighchartsService {
             //y: 60
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/> qnt: 000',
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/>',
             
         },
         

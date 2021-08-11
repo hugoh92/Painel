@@ -11,7 +11,7 @@ import { SidebarService } from './sidebar.service';
 export class DataService {
   autoCompleteOpts = [];
   apiUrl = 'https://django-direm.herokuapp.com/api/';
-  apiUrl2 =  'http://warm-everglades-94375.herokuapp.com/';
+  apiUrl2 =  'https://warm-everglades-94375.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 

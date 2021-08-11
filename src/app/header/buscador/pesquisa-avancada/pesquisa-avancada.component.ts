@@ -131,7 +131,7 @@ export class PesquisaAvancadaComponent implements OnInit {
     }
 
     var filter = [cursos_ativos, natureza_juridica, org_academica, conceito_enade, conceito_curso].filter(d => d).join("&")
-    this._dataService.getData(`http://warm-everglades-94375.herokuapp.com/curso/?format=json&${filter}`).subscribe(
+    this._dataService.getData(`https://warm-everglades-94375.herokuapp.com/curso/?format=json&${filter}`).subscribe(
       (json: PeriodicElement[]) => {
         this.resultsLength = json.length; 
         this.dataSource = new MatTableDataSource<PeriodicElement>(json);
