@@ -35,16 +35,20 @@
 .icon-painel {
     background-image: url("/assets/icons/painel.svg");
     filter: opacity(0.2);
+    bottom: 10px;
 }
 
 .icon-med-numeros {
     background-image: url("/assets/icons/med_numeros.svg");
     filter: opacity(0.2);
+    bottom: 10px;
 }
 
 .icon-buscador {
     background-image: url("/assets/icons/buscador.svg");
     filter: opacity(0.2);
+    bottom: 10px;
+    
 }
 
 .icon-dcgs {
@@ -282,12 +286,12 @@
 //Estilizando tab-nav-------------------------------------------------------------------
 .nav-tabs .nav-link.active {
     position: relative;
-    border: 2px solid white;
-    border-right: 2px solid white;
-    border-left: 2px solid white;
+    border: 1px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
     border-bottom: 0px;
     background-color: #0d542a;
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 8px 8px 0px 0px;
     filter: opacity(1);
 }
 
@@ -314,6 +318,7 @@
 
 .nav-tabs .nav-item {
     padding: 0px;
+   
 }
 
 //Arredondando bordas
@@ -329,39 +334,58 @@
 //Arredondando bordas
 .nav-link.active::after {
     right: -20px;
-    border-left: 2px solid white;
-    border-radius: 0 0 0 10px;
-    -moz-border-radius: 0 0 0 10px;
-    -webkit-border-radius: 0 0 0 10px;
-    -webkit-box-shadow: -10px 0 0 0 #0d542a;
+    //border-left: 2px solid white;
+    //border-radius: 0 0 0 10px;
+    //-moz-border-radius: 0 0 0 10px;
+    //-webkit-border-radius: 0 0 0 10px;
+    //-webkit-box-shadow: -10px 0 0 0 #0d542a;
     box-shadow: -10px 0 0 0 #0d542a;
 }
 
 //Arredondando bordas
 .nav-link.active::before {
     left: -20px;
-    border-right: 2px solid white;
-    border-radius: 0 0 10px 0;
-    -moz-border-radius: 0 0 10px 0;
-    -webkit-border-radius: 0 0 10px 0;
-    -webkit-box-shadow: 10px 0 0 0 #0d542a;
+    //border-right: 2px solid white;
+    //border-radius: 0 0 10px 0;
+    //-moz-border-radius: 0 0 10px 0;
+    //-webkit-border-radius: 0 0 10px 0;
+    //-webkit-box-shadow: 10px 0 0 0 #0d542a;
     box-shadow: 10px 0 0 0 #0d542a;
 }
 
 //fontes
 .nav-item span {
     display: none;
-}
-
-//Mostrar texto pra aba ativa
-.nav-link.active>span {
     color: white;
     font-size: 0.5em;
+    width: 64px;
+   
+    text-align: center;
+   
+}
+.nav-link.active>svg{
+    color: #E1E31D;
+    fill: #E1E31D;
+}
+//Mostrar texto pra aba ativa
+.nav-link.active>span {
+    color: #E1E31D;
+    font-size: 11px;
     width: 64px;
     display: block;
     text-align: center;
     position: absolute !important;
     z-index: 9999 !important;
+    bottom: 2px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 12px;
+/* or 109% */
+
+text-align: center;
 }
 
 .nav-item>li>span {
@@ -382,7 +406,7 @@
 }
 
 .nomepi {
-    z-index: 999999;
+    //z-index: 999999;
 }
 
 @media screen and (min-width:1440px) {

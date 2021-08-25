@@ -24,7 +24,7 @@ export class HighchartsService {
         if (data.length == 27) {
             series = [{
                 data: data,          
-                name: 'Dados 2018',
+                name: 'Dados 2019',
                 borderColor: '#f9a71f',
                 borderWidth: 0.3,
                 states: {
