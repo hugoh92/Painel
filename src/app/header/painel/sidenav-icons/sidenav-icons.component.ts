@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
-
+import * as data from '.src/assets/data/cursos_uf.json';
 import { SidebarService } from '../../../services/sidebar.service';
 
 @Component({
@@ -13,6 +13,7 @@ export class SidenavIconsComponent implements OnInit {
   data: any = {};
   populacao: number;
   nameUF = "BRASIL";
+  num_curso = cursos_uf.filter(d => d.sigla == "Brasil")[0]
 
   constructor(public _sidebarService: SidebarService, public router: Router, private _dataService: DataService) {
     this.router.events.subscribe((event) => {
@@ -43,6 +44,7 @@ export class SidenavIconsComponent implements OnInit {
 
   getData(filter = null) {
     this._dataService.getCardData(filter).subscribe((json: any) => {
+      this.num_curso = cursos_uf.filter(d => d.sigla == filter)[0]
       this.data = json
     })
   }
