@@ -1,114 +1,114 @@
 [
   {
-    "Localização": "Brasil",
-    "Quantidade": 369
+    "sigla": "Brasil",
+    "num_cursos": 369
   },
   {
-    "Localização": "AC",
-    "Quantidade": 3
+    "sigla": "AC",
+    "num_cursos": 3
   },
   {
-    "Localização": "AL",
-    "Quantidade": 5
+    "sigla": "AL",
+    "num_cursos": 5
   },
   {
-    "Localização": "AM",
-    "Quantidade": 5
+    "sigla": "AM",
+    "num_cursos": 5
   },
   {
-    "Localização": "AP",
-    "Quantidade": 1
+    "sigla": "AP",
+    "num_cursos": 1
   },
   {
-    "Localização": "BA",
-    "Quantidade": 28
+    "sigla": "BA",
+    "num_cursos": 28
   },
   {
-    "Localização": "CE",
-    "Quantidade": 9
+    "sigla": "CE",
+    "num_cursos": 9
   },
   {
-    "Localização": "DF",
-    "Quantidade": 6
+    "sigla": "DF",
+    "num_cursos": 6
   },
   {
-    "Localização": "ES",
-    "Quantidade": 6
+    "sigla": "ES",
+    "num_cursos": 6
   },
   {
-    "Localização": "GO",
-    "Quantidade": 16
+    "sigla": "GO",
+    "num_cursos": 16
   },
   {
-    "Localização": "MA",
-    "Quantidade": 9
+    "sigla": "MA",
+    "num_cursos": 9
   },
   {
-    "Localização": "MG",
-    "Quantidade": 47
+    "sigla": "MG",
+    "num_cursos": 47
   },
   {
-    "Localização": "MT",
-    "Quantidade": 7
+    "sigla": "MT",
+    "num_cursos": 7
   },
   {
-    "Localização": "MS",
-    "Quantidade": 6
+    "sigla": "MS",
+    "num_cursos": 6
   },
   {
-    "Localização": "PA",
-    "Quantidade": 10
+    "sigla": "PA",
+    "num_cursos": 10
   },
   {
-    "Localização": "PB",
-    "Quantidade": 9
+    "sigla": "PB",
+    "num_cursos": 9
   },
   {
-    "Localização": "PR",
-    "Quantidade": 15
+    "sigla": "PR",
+    "num_cursos": 15
   },
   {
-    "Localização": "PI",
-    "Quantidade": 8
+    "sigla": "PI",
+    "num_cursos": 8
   },
   {
-    "Localização": "PR",
-    "Quantidade": 21
+    "sigla": "PR",
+    "num_cursos": 21
   },
   {
-    "Localização": "RJ",
-    "Quantidade": 22
+    "sigla": "RJ",
+    "num_cursos": 22
   },
   {
-    "Localização": "RN",
-    "Quantidade": 6
+    "sigla": "RN",
+    "num_cursos": 6
   },
   {
-    "Localização": "RO",
-    "Quantidade": 6
+    "sigla": "RO",
+    "num_cursos": 6
   },
   {
-    "Localização": "RR",
-    "Quantidade": 2
+    "sigla": "RR",
+    "num_cursos": 2
   },
   {
-    "Localização": "RS",
-    "Quantidade": 20
+    "sigla": "RS",
+    "num_cursos": 20
   },
   {
-    "Localização": "SC",
-    "Quantidade": 17
+    "sigla": "SC",
+    "num_cursos": 17
   },
   {
-    "Localização": "SE",
-    "Quantidade": 4
+    "sigla": "SE",
+    "num_cursos": 4
   },
   {
-    "Localização": "SP",
-    "Quantidade": 74
+    "sigla": "SP",
+    "num_cursos": 74
   },
   {
-    "Localização": "TO",
-    "Quantidade": 7
+    "sigla": "TO",
+    "num_cursos": 7
   }
 ]
