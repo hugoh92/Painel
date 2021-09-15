@@ -57,6 +57,5 @@ export class SidenavEstComponent implements OnInit, OnDestroy {
 
   updateName(estado = null){
     this._sidebarService.toggle('sidenavOptions');
-    console.log(estado)
   }
 }

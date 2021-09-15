@@ -77,6 +77,5 @@ export class PainelComponent implements AfterViewInit {
     })
 
     this.data = data;
-    console.log(data);
   }
 }

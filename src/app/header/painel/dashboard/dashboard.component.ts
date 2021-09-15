@@ -137,7 +137,6 @@ export class DashboardComponent implements AfterViewInit {
       if (filter === null || filter == 'el') {
         let dataEstados = json.map(d => { return { municipio: d.uf, qt_cursos: d[metric] } }).sort((a, b) => b[metric] - a[metric]);
         let data = json.map(d => { return ['br-' + d.uf.toLowerCase(), d[metric]] })
-        console.log(data)
         this._highchartsService.draMap("mapPlot", data)
 
        
@@ -184,7 +183,7 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   updateMetric(event) {
-    console.log(event)
+    event
   }
 
 }
