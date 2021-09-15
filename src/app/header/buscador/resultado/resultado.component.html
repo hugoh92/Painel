@@ -136,7 +136,7 @@
                     <span class="nome-ind">Vagas Autorizadas</span>
                     <br>
                     <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_vagas_autorizadas)}}
-                        </span>
+                    </span>
                 </div>
                 <div class="func-dados">
                     <br>
@@ -152,39 +152,46 @@
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind"><br>
                     <span class="nome-ind nm-vgs">Vagas Oferecidas</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].quantitativo_de_vagas_integral)}}</span>
+                    <span href="#" class="numero-ind"
+                        name="">{{treatNull(options.indicadores[0].quantitativo_de_vagas_integral)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind"><br>
                     <span class="nome-ind">Inscritos</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_inscrito_total)}}</span>
+                    <span href="#" class="numero-ind"
+                        name="">{{treatNull(options.indicadores[0].qt_inscrito_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind"><br>
                     <span class="nome-ind">Ingressos</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_ingresso_total)}}</span>
+                    <span href="#" class="numero-ind"
+                        name="">{{treatNull(options.indicadores[0].qt_ingresso_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones-ind"><br>
                     <span class="nome-ind">Matriculados</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_matricula_total)}}</span>
+                    <span href="#" class="numero-ind"
+                        name="">{{treatNull(options.indicadores[0].qt_matricula_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones-ind"><br>
                     <span class="nome-ind">Concluintes</span><br>
-                    <span href="#" class="numero-ind" name="">{{treatNull(options.indicadores[0].qt_concluinte_total)}}</span>
+                    <span href="#" class="numero-ind"
+                        name="">{{treatNull(options.indicadores[0].qt_concluinte_total)}}</span>
                 </div>
                 <div class="div-icons">
                     <img src="/assets/icons/NEW_DOCENTES.png" class="icones-ind doc-icon"><br>
                     <span class="nome-ind doc-icon">Docentes</span><br>
-                    <span href="#" class="numero-ind doc-icon" name="">{{treatNull(options.indicadores[0].qt_docentes_total)}}</span>
+                    <span href="#" class="numero-ind doc-icon"
+                        name="">{{treatNull(options.indicadores[0].qt_docentes_total)}}</span>
                 </div>
                 <div class="div-info">
                     <div class="info-syle">
                         <br>
                         <span class="nome-ind">Taxa de Concorrência Candidato/Vaga</span>
                         <br>
-                        <span href="#" class="numero-ind" name="">{{treatNull((+options.indicadores[0].tx_concorrencia).toFixed(2),
+                        <span href="#" class="numero-ind"
+                            name="">{{treatNull((+options.indicadores[0].tx_concorrencia).toFixed(2),
                             true)}}</span>
                         <br>
                         <br>
@@ -200,14 +207,16 @@
                         <br>
                         <span class="nome-ind">Taxa de Ocupação</span>
                         <br>
-                        <span href="#" class="numero-ind" name="">{{treatNull((+options.indicadores[0].tx_ocupacao).toFixed(2) + '%',
+                        <span href="#" class="numero-ind"
+                            name="">{{treatNull((+options.indicadores[0].tx_ocupacao).toFixed(2) + '%',
                             true)}}</span>
                         <br>
                         <br>
                         <span class="nome-ind">Relação Aluno/Docente</span>
                         <br>
                         <span href="#" class="numero-ind" id="sucess" name="">
-                            {{treatNull((+options.indicadores[0].qt_matricula_total/options.indicadores[0].qt_docentes_total).toFixed(2), true)}}</span>
+                            {{treatNull((+options.indicadores[0].qt_matricula_total/options.indicadores[0].qt_docentes_total).toFixed(2),
+                            true)}}</span>
                     </div>
                 </div>
             </div>
@@ -234,7 +243,7 @@
 
                     <br>
 
-                    <div class="card card-body2" id="corM">
+                    <div class="card card-body2" id="idracam">
                     </div>
 
                     <br>
@@ -280,11 +289,11 @@
                         </mat-panel-description>
                     </mat-expansion-panel-header>
 
-                   <!--  <div class="card mt-3 card-body2" id=tipoAlunom> -->
+                    <!--  <div class="card mt-3 card-body2" id=tipoAlunom> -->
                     <div class="card mt-3 card-body2">
                         EM BREVE
                     </div>
-                   
+
                     <br>
 
                     <!-- <div class="card card-body2" id=corAlunom> -->
@@ -302,7 +311,8 @@
                                 <img src="/assets/icons/FEM_ICON.png" class=""><br><br>
 
                                 <span class="nome-ind snome">Feminino</span><br>
-                                <span href="#" class="numero-ind snome" name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_fem),
+                                <span href="#" class="numero-ind snome"
+                                    name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_fem),
                                     true)}}</span>
                             </div>
 
@@ -310,7 +320,8 @@
                                 <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
                                 <img src="/assets/icons/MASC_ICON.png" class=""><br><br>
                                 <span class="nome-ind snome">Masculino</span><br>
-                                <span href="#" class="numero-ind snome" name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_masc),
+                                <span href="#" class="numero-ind snome"
+                                    name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_masc),
                                     true)}}</span>
                             </div>
                         </div>
@@ -446,7 +457,8 @@
                             <img src="/assets/icons/FEM_ICON.png" class=""><br><br>
 
                             <span class="nome-ind snome">Feminino</span><br>
-                            <span href="#" class="numero-ind snome" name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_fem),
+                            <span href="#" class="numero-ind snome"
+                                name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_fem),
                                 true)}}</span>
                         </div>
 
@@ -454,7 +466,8 @@
                             <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
                             <img src="/assets/icons/MASC_ICON.png" class=""><br><br>
                             <span class="nome-ind snome">Masculino</span><br>
-                            <span href="#" class="numero-ind snome" name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_masc),
+                            <span href="#" class="numero-ind snome"
+                                name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_masc),
                                 true)}}</span>
                         </div>
                     </div>
@@ -463,7 +476,7 @@
 
             <div class="collapse cl2" id="colapse5">
                 <div class="cl1">
-                   <!--  <div class="card card-body2 cardpiram" id="piramide"> -->
+                    <!--  <div class="card card-body2 cardpiram" id="piramide"> -->
                     <div class="card card-body2 cardpiram">
                         EM BREVE
                     </div>
@@ -511,14 +524,14 @@
 
             <div class="collapse" id="colapse6">
                 <!-- <div class="card mt-3 card-body2" id=tipoAluno> -->
-                    <div class="card mt-3 card-body2">
+                <div class="card mt-3 card-body2">
                     EM BREVE
                 </div>
             </div>
 
             <div class="collapse cl2" id="colapse7">
                 <!-- <div class="card card-body2" id=corAluno> -->
-                    <div class="card card-body2" id=corAluno>
+                <div class="card card-body2" id=corAluno>
                     EM BREVE
                 </div>
             </div>
@@ -548,8 +561,8 @@
 
             <div class="collapse cl2" id="colapse9">
                 <!-- <div class="card card-body2 cardpiram" id=PAluno> -->
-                    <div class="card card-body2 cardpiram" id=PAluno>
-                        EM BREVE
+                <div class="card card-body2 cardpiram" id=PAluno>
+                    EM BREVE
                 </div>
             </div>
         </div>
@@ -579,19 +592,21 @@
                         <div class="section-avaliacao">
                             <span class="nome-ind">Conceito de curso ({{options.indicadores[0].ano_cc}})</span>
                             <br>
-                            <span href="#" class="numero-ind" name="">{{treatNull(+options.indicadores[0].valor_cc)}}</span>
+                            <span href="#" class="numero-ind"
+                                name="">{{treatNull(+options.indicadores[0].valor_cc)}}</span>
                         </div>
                         <div class="section-avaliacao">
                             <span class="nome-ind">IDD ({{options.indicadores[0].idd_ano}})</span>
                             <br>
-                            <span href="#" class="numero-ind" name="">{{treatNull((+options.indicadores[0].valor_idd).toFixed(2), true)}}</span>
+                            <span href="#" class="numero-ind"
+                                name="">{{treatNull((+options.indicadores[0].valor_idd).toFixed(2), true)}}</span>
                         </div>
                         <div class="section-avaliacao">
                             <span class="nome-ind">ENADE ({{options.indicadores[0].enade_ano}})</span>
                             <br>
                             <span href="#" class="numero-ind" name="">{{options.indicadores[0].valor_enade}}</span>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

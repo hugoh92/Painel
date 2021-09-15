@@ -57,7 +57,9 @@ export class ResultadoComponent implements OnInit {
     for(var i:number = 0; i < keys.length; i++){
       if(fl_relative){
         val = values[i]
-      c_l = [keys[i], val*100/total]
+        c_l = [keys[i], val*100/total]
+      } else{
+        c_l = [keys[i], values[i]]
       }
       l.push(c_l)
       
@@ -78,7 +80,7 @@ export class ResultadoComponent implements OnInit {
         this.highchartsService.drawDonutTitulação("titulacao",this.formatData(this.options.indicadores[0].plot_schooling, true))
         this.highchartsService.drawDonutTitulação("titulacaom",this.formatData(this.options.indicadores[0].plot_schooling, true))
         this.highchartsService.drawCorM("idraca",this.formatData(this.options.indicadores[0].plot_race))
-        this.highchartsService.drawCorM("corM",this.formatData(this.options.indicadores[0].plot_race))
+        this.highchartsService.drawCorM("idracam",this.formatData(this.options.indicadores[0].plot_race))
         if (!this.options) {
           this.router.navigate(["/buscador"])
         }

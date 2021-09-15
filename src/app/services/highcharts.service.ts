@@ -1519,7 +1519,6 @@ export class HighchartsService {
     }
 
     drawCorM(idHtml, data) {
-
         var options: any = {
             colors: [
                 '#F1C730',
@@ -1538,6 +1537,10 @@ export class HighchartsService {
 
                 align: 'center'
             },
+            colorAxis: {
+                minColor: '#FFFFFF',
+                maxColor: Highcharts.getOptions().colors[0]
+            },
             series: [{
                 dataLabels: {
                     useHTML: true,
@@ -1547,7 +1550,7 @@ export class HighchartsService {
                     }
                 },
                 type: 'treemap',
-
+                colorByPoint: true,
                 layoutAlgorithm: 'squarified',
                 data: data
             }],
