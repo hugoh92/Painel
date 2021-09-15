@@ -15,6 +15,7 @@ export class ResultadoComponent implements OnInit {
   
   panelOpenState = false;
   options: any = {};
+  path_image = "";
   
 
   constructor(
@@ -99,6 +100,7 @@ export class ResultadoComponent implements OnInit {
     this._dataService.getData(`https://warm-everglades-94375.herokuapp.com/curso/?codigo_curso=${id_curso}`).subscribe(
       json => {
         this.options = json[0]
+        this.path_image = this.options.nome_img.substring(this.options.nome_img.lastIndexOf('/')+1)
         this.highchartsService.drawDonutRegime("regime",this.formatData(this.options.indicadores[0].plot_regime, true))
         this.highchartsService.drawDonutRegime("regimem",this.formatData(this.options.indicadores[0].plot_regime, true))
         this.highchartsService.drawDonutTitulação("titulacao",this.formatData(this.options.indicadores[0].plot_schooling, true))
