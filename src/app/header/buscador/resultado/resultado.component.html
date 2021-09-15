@@ -289,16 +289,13 @@
                         </mat-panel-description>
                     </mat-expansion-panel-header>
 
-                    <!--  <div class="card mt-3 card-body2" id=tipoAlunom> -->
-                    <div class="card mt-3 card-body2">
-                        EM BREVE
+                    <div class="card mt-3 card-body2" id=tipoAlunom>
+
                     </div>
 
                     <br>
 
-                    <!-- <div class="card card-body2" id=corAlunom> -->
-                    <div class="card card-body2">
-                        EM BREVE
+                    <div class="card card-body2" id=corAlunom> 
                     </div>
 
                     <br>
@@ -312,7 +309,7 @@
 
                                 <span class="nome-ind snome">Feminino</span><br>
                                 <span href="#" class="numero-ind snome"
-                                    name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_fem),
+                                    name="">{{treatNull((+options.indicadores[0].plot_gender_aluno.qt_alunos_sexo_feminino),
                                     true)}}</span>
                             </div>
 
@@ -321,7 +318,7 @@
                                 <img src="/assets/icons/MASC_ICON.png" class=""><br><br>
                                 <span class="nome-ind snome">Masculino</span><br>
                                 <span href="#" class="numero-ind snome"
-                                    name="">{{treatNull((+options.indicadores[0].plot_gender.qt_docentes_sexo_masc),
+                                    name="">{{treatNull((+options.indicadores[0].plot_gender_aluno.qt_alunos_sexo_masculino),
                                     true)}}</span>
                             </div>
                         </div>
@@ -502,7 +499,7 @@
 
                 <a class="btn btn-primary" data-toggle="collapse" href="#colapse6" role="button" aria-expanded="false"
                     aria-controls="collapseExample">
-                    <span class="nome-tabs">Tipo de Escola</span>
+                    <span class="nome-tabs">Origem Escolar</span>
                 </a>
 
                 <a class="btn btn-primary" data-toggle="collapse" href="#colapse7" role="button" aria-expanded="false"
@@ -523,41 +520,42 @@
             </p>
 
             <div class="collapse" id="colapse6">
-                <!-- <div class="card mt-3 card-body2" id=tipoAluno> -->
-                <div class="card mt-3 card-body2">
-                    EM BREVE
+                <div class="card mt-3 card-body2" id=tipoAluno>
+
                 </div>
             </div>
 
             <div class="collapse cl2" id="colapse7">
-                <!-- <div class="card card-body2" id=corAluno> -->
                 <div class="card card-body2" id=corAluno>
-                    EM BREVE
+
                 </div>
             </div>
+
 
             <div class="collapse cl2" id="colapse8">
                 <div class="card card-body2">
                     <div class="card card-body2 divp">
                         <div class="teste">
-                            <!--  <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas"><br> -->
-                            <!-- <i class="fas fa-female pessoas icones-ind fa-6x"></i><br> -->
                             <img src="/assets/icons/FEM_ICON.png" class=""><br><br>
 
                             <span class="nome-ind snome">Feminino</span><br>
-                            <span href="#" class="numero-ind snome" name="">00</span>
+                            <span href="#" class="numero-ind snome"
+                                name="">{{treatNull((+options.indicadores[0].plot_gender_aluno.qt_alunos_sexo_feminino),
+                                true)}}</span>
                         </div>
 
                         <div class="teste">
                             <!-- <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind pessoas "><br> -->
                             <img src="/assets/icons/MASC_ICON.png" class=""><br><br>
                             <span class="nome-ind snome">Masculino</span><br>
-                            <span href="#" class="numero-ind snome" name="">00</span>
+                            <span href="#" class="numero-ind snome"
+                                name="">{{treatNull((+options.indicadores[0].plot_gender_aluno.qt_alunos_sexo_masculino),
+                                true)}}</span>
                         </div>
                     </div>
                 </div>
-
             </div>
+
 
             <div class="collapse cl2" id="colapse9">
                 <!-- <div class="card card-body2 cardpiram" id=PAluno> -->

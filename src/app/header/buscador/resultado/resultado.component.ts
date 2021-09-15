@@ -81,6 +81,11 @@ export class ResultadoComponent implements OnInit {
         this.highchartsService.drawDonutTitulação("titulacaom",this.formatData(this.options.indicadores[0].plot_schooling, true))
         this.highchartsService.drawCorM("idraca",this.formatData(this.options.indicadores[0].plot_race))
         this.highchartsService.drawCorM("idracam",this.formatData(this.options.indicadores[0].plot_race))
+        this.highchartsService.drawDonutAlunTip("tipoAluno",this.formatData(this.options.indicadores[0].plot_origem_escolar, true))
+        this.highchartsService.drawDonutAlunTip("tipoAlunom",this.formatData(this.options.indicadores[0].plot_origem_escolar, true))
+        this.highchartsService.drawCorAlunM("corAluno",this.formatData(this.options.indicadores[0].plot_race_aluno, true))
+        this.highchartsService.drawCorAlunM("corAlunom",this.formatData(this.options.indicadores[0].plot_race_aluno, true))
+
         if (!this.options) {
           this.router.navigate(["/buscador"])
         }

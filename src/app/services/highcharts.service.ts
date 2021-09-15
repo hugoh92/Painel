@@ -1107,7 +1107,7 @@ export class HighchartsService {
          $('.highcharts-axis').css('display','none');
              Highcharts.chart(idHtml, options);
      } */
-    drawDonutAlunTip(idHtml) {
+    drawDonutAlunTip(idHtml, data) {
         var options: any = {
 
             colors: [
@@ -1196,12 +1196,7 @@ export class HighchartsService {
                 //name: 'Browser share',
                 innerSize: '50%',
                 align: 'center',
-                data: [
-                    ['Público', 11],
-                    ['Privado', 29],
-                    ['Sem informações', 60],
-
-                ]
+                data: data
             }]
         }
         Highcharts.chart(idHtml, options);
@@ -1597,7 +1592,7 @@ export class HighchartsService {
         Highcharts.chart(idHtml, options);
     }
 
-    drawCorAlunM(idHtml) {
+    drawCorAlunM(idHtml, data) {
         var options: any = {
             colors: [
                 '#F1C730',
@@ -1625,38 +1620,9 @@ export class HighchartsService {
                     }
                 },
                 type: 'treemap',
-
+                colorByPoint: true,
                 layoutAlgorithm: 'squarified',
-                data: [{
-                    name: 'Branco',
-                    label: "A",
-                    value: 6,
-                    //colorValue: 1
-                }, {
-                    name: 'Preto',
-                    value: 6,
-                    //colorValue: 2
-                }, {
-                    name: 'Pardo',
-                    value: 4,
-                    colorValue: 3
-                }, {
-                    name: 'Amarelo',
-                    value: 3,
-                    colorValue: 4
-                }, {
-                    name: 'Índigena',
-                    value: 2,
-                    colorValue: 5
-                }, {
-                    name: 'Não declarou',
-                    value: 2,
-                    colorValue: 6
-                }, {
-                    name: 'Sem informação',
-                    value: 1,
-                    colorValue: 7
-                }]
+                data: data
             }],
             navigation: {
                 buttonOptions: {
