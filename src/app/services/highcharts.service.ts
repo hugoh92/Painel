@@ -54,9 +54,26 @@ export class HighchartsService {
         return uniqueValues
     }
 
+    getIntervalls(arr, nbIntervalls = 5) {
+        var max = Math.max.apply(null, arr)
+        var min = Math.min.apply(null, arr)
+        var size = Math.round((max-min) / nbIntervalls);
+        var result = [];
+    
+        for (let i = 0; i <= nbIntervalls ; i++) {
+            var inf = i + i * size;
+            result.push(inf);
+        }
+        if(inf < max) {
+            result.push(max + 1)
+        }
+
+        return result;
+    }
+
     get_data_labels(arr:any){
         var dataLabels = [];
-        var colors = ["#ffe6a1", "#ffca34", "#f9a71f", "#c97f04"];
+        var colors = ["#fff3d1", "#ffe6a1", "#ffca34", "#f9a71f", "#c97f04", "#a16502"];
         var current;
 
         for(var i = 0; i < arr.length - 1; i++){
@@ -64,7 +81,7 @@ export class HighchartsService {
                 from: arr[i],
                 to: arr[i+1],
                 color: colors[i],
-                name: `De ${arr[i]} a ${arr[i+1]}`
+                name: `De ${arr[i]} a ${arr[i+1] - 1}`
             }
 
             dataLabels.push(current)
@@ -76,7 +93,7 @@ export class HighchartsService {
     draMap(idHtml, data, geojson = usaMap) {
         var series;
 
-        var dataLabels = this.get_data_labels(this.get_quantiles(data.map(d => d[d.length - 1])));
+        var dataLabels = this.get_data_labels(this.getIntervalls(data.map(d => d[d.length - 1])));
 
         if (data.length == 27) {
             series = [{

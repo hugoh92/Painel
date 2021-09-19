@@ -17,7 +17,7 @@
 
 // Animaçao dos icones
 .icon:hover {
-    animation: icon-animation 1s;
+    animation: animation 1s;
     fill: #e1e31d;
 }
 
@@ -73,7 +73,6 @@
 }
 .icon-biblio {
     background-image: url("/assets/icons/biblio_icon.svg");
-    //filter: opacity(0.2);
     bottom: 10px;
     width: 3.7em;
     height: 3.7em;
