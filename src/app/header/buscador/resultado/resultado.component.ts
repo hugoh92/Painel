@@ -33,14 +33,14 @@ export class ResultadoComponent implements OnInit {
     //this.highchartsService.drawDonutCor2("idraca")
     //this.highchartsService.drawDonutCor2("idracam")
 
-    this.highchartsService.drawDonutAlunTip("tipoAluno")
-    this.highchartsService.drawDonutAlunTip("tipoAlunom")
+    //this.highchartsService.drawDonutAlunTip("tipoAluno")
+    //this.highchartsService.drawDonutAlunTip("tipoAlunom")
     //this.highchartsService.drawDonutAlunCor("corAluno")
     //this.highchartsService.drawDonutAlunCor("corAlunom")
     this.highchartsService.drawDonutAlunPiram("PAluno")
     this.highchartsService.drawDonutAlunPiram("PAlunom")
     /* this.highchartsService.drawCorM("corAluno") */
-    this.highchartsService.drawCorAlunM("corAlunom")
+    //this.highchartsService.drawCorAlunM("corAlunom")
     
     
     
