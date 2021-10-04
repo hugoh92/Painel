@@ -62,7 +62,7 @@
 
 .icon-dcgs {
     background-image: url("/assets/icons/dcgs.svg");
-    filter: opacity(0.2);
+    //filter: opacity(0.2);
 }
 .icon-info {
     background-image: url("/assets/icons/info_icon.svg");
@@ -73,7 +73,7 @@
 }
 .icon-biblio {
     background-image: url("/assets/icons/biblio_icon.svg");
-    //filter: opacity(0.2);
+    filter: opacity(1);
     bottom: 10px;
     width: 3.7em;
     height: 3.7em;
