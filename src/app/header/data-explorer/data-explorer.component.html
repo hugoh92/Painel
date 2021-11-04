@@ -1,0 +1,175 @@
+<div class="row start-xs wrapper-tela">
+   <div class="box wrapper-left">
+      <p></p>
+      <span class="title-bt"> Período</span>
+      <div class="range-date">
+
+         <mat-form-field appearance="fill">
+            <mat-label>Selecione o intervalo</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+               <input matStartDate placeholder="">
+               <input matEndDate placeholder="">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker" color="primary"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+         </mat-form-field>
+      </div>
+
+      <p></p>
+      <br>
+      <span class="title-bt"> Localização</span>
+      <div class="input-group input-focus">
+         <div class="input-group-prepend">
+            <span class="input-group-text bg-white"><i class="fa fa-search"></i></span>
+         </div>
+         <input type="search" placeholder="Digite uma Localização" class="form-control border-left-0">
+      </div>
+      <p></p>
+
+      <div class="dropdown">
+         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            População
+         </button>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button">Action</button>
+            <button class="dropdown-item" type="button">Another action</button>
+            <button class="dropdown-item" type="button">Something else here</button>
+         </div>
+      </div>
+
+      <!--  <div class="div-pesq">
+         <div class="busca-text">
+             <span class="title-bt">Pesquisa Avançada
+             </span>
+         </div>
+         <div class="form-pesquisa">
+             <input class="form-control form-control-sm p-3" #input placeholder="Digite o nome">
+         </div>
+      </div> -->
+
+   </div>
+   <div class="wrapper-geral">
+      <div class="wrapper-icons">
+         <div class="indicadores-div">
+            <div class="div-icons div-break">
+               <div>
+                  <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind">
+               </div>
+               <div class="break-nome">
+                  <span class="nome-ind oneword">Vagas<p>Oferecidas</span>
+               </div>
+            </div>
+
+            <button class="div-icons">
+               <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind">
+               <span class="nome-ind oneword">Inscritos</span>
+            </button>
+
+            <button class="div-icons">
+               <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind">
+               <span class="nome-ind oneword">Ingressos</span>
+            </button>
+
+            <button class="div-icons">
+               <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones-ind">
+               <span class="nome-ind oneword">Matriculados</span>
+            </button>
+
+            <button class="div-icons">
+               <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones-ind">
+               <span class="nome-ind oneword">Concluintes</span>
+            </button>
+
+            <button class="div-icons">
+               <img src="/assets/icons/NEW_DOCENTES.png" class="icones-ind doc-icon">
+               <span class="nome-ind doc-icon oneword">Docentes</span>
+            </button>
+
+
+            <div class="check-div">
+               <div class="div-ops">
+                  <span class="title-bt title-check"> Agregação</span>
+                  <p></p>
+                  <section class="example-section">
+                     <mat-checkbox class="example-margin">Capital/Interior</mat-checkbox>
+                     <mat-checkbox class="example-margin">Público/Privado</mat-checkbox>
+                     <mat-checkbox class="example-margin">Organização Acadêmica</mat-checkbox>
+                  </section>
+               </div>
+            </div>
+            <button class="div-icons">
+               <span class="nome-ind doc-icon ">Taxa de <p> Concorrência</span>
+            </button>
+
+            <button class="div-icons">
+               <span class="nome-ind doc-icon ">Taxa de <p> Ocupação</span>
+            </button>
+            <button class="div-icons">
+               <span class="nome-ind doc-icon ">Taxa de <p> Sucesso</span>
+            </button>
+
+            <button class="div-icons">
+               <span class="nome-ind doc-icon ">Relação <p> Aluno/Docente</span>
+            </button>
+
+            <button class="div-icons">
+               <span class="nome-ind doc-icon ">Conceito de Curso</span>
+            </button>
+
+            <button class="div-icons">
+               <span class="nome-ind doc-icon ">Conceito de Enade</span>
+            </button>
+         </div>
+      </div>
+      
+      <div class="geral-map">
+         <!-- HEADER ICONS -->
+         <div class="header-map">
+            <div class="titulo-pag">
+               <span class="nome-indf titulo- ">TITULO</span>
+            </div>
+            
+
+            <div class="logo-bts">
+               <span class="nome-indf doc-icon "> Relativo/Absoluto</span>
+               <mat-slide-toggle class= "bt-relativo"></mat-slide-toggle>
+               <img src="/assets/icons/Direm-logo.png" class="doc-icon">
+            </div>
+
+         </div>
+         <!-- FOOTER BUTTONS -->
+         <div class="footer-map">
+            <button class="div-iconsf">
+               <img src="/assets/icons/Graf-direm.png" class="doc-icon">
+               <span class="nome-indf doc-icon "> GRÁFICO</span>
+            </button>
+
+            <button class="div-iconsf">
+               <img src="/assets/icons/Brasil-direm.png" class="doc-icon">
+               <span class="nome-indf doc-icon "> MAPA</span>
+            </button>
+
+            <button class="div-iconsf">
+               <img src="/assets/icons/Tab-direm.png" class="doc-icon">
+               <span class="nome-indf doc-icon "> TABELA</span>
+            </button>
+
+            <button class="div-iconsf">
+               <img src="/assets/icons/Fonte-direm.png" class="doc-icon">
+               <span class="nome-indf doc-icon "> FONTE</span>
+            </button>
+
+            <button class="div-iconsf bt-filter">
+               <img src="/assets/icons/Down-direm.png" class="doc-icon">
+               <span class="nome-indf doc-icon "> DOWNLOAD</span>
+            </button>
+
+            <button class="div-iconsf">
+               <img src="/assets/icons/share-direm.png" class="doc-icon">
+               <span class="nome-indf"> COMPARTILHAR</span>
+            </button>
+         </div>
+      </div>
+   </div>
+</div>

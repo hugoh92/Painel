@@ -16,12 +16,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { ResultadoComponent } from './header/buscador/resultado/resultado.component';
+import {MatNativeDateModule} from '@angular/material/core';
 
 import { Ng5SliderModule } from 'ng5-slider';
 import { AlertComponent } from './shared/alert/alert.component';
 import { LoaderService } from './services/loader.service';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { LoaderComponent } from './shared/loader/loader.component';
+import { DataExplorerComponent } from './header/data-explorer/data-explorer.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { LoaderComponent } from './shared/loader/loader.component';
     ResultadoComponent,
     AlertComponent,
     LoaderComponent,
+    DataExplorerComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,8 @@ import { LoaderComponent } from './shared/loader/loader.component';
     MatInputModule,
     MatTableModule,
     BuscadorModule,
-    Ng5SliderModule 
+    Ng5SliderModule ,
+    MatNativeDateModule
   ],
   providers: [
     LoaderService,

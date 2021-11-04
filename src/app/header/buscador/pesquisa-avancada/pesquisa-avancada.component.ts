@@ -8,6 +8,7 @@ import { DataService } from 'src/app/services/data.service';
 import { MatSort } from '@angular/material/sort';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-pesquisa-avancada',
   templateUrl: './pesquisa-avancada.component.html',
