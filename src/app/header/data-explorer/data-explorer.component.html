@@ -51,55 +51,55 @@
    </div>
    <div class="wrapper-geral">
       <div class="wrapper-icons">
-         <div class="row w-100">
-            <div class="col-10">
+         <div class="row w-115 ">
+            <div class="col-9">
                <mat-button-toggle-group id="buttonExplorer" name="fontStyle" aria-label="Font Style" class="w-100"
                   [(ngModel)]="metricaSelecionada">
                   <div class="container">
                      <div class="row">
-                        <mat-button-toggle value="qt_vaga_total" class="ml-3">
+                        <mat-button-toggle value="qt_vaga_total" class="ml-2">
                            <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind">
                            <span class="nome-ind oneword">Vagas Oferecidas</span>
                         </mat-button-toggle>
-                        <mat-button-toggle value="qt_inscrito_total" class="ml-3">
+                        <mat-button-toggle value="qt_inscrito_total" class="ml-2">
                            <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind">
                            <span class="nome-ind oneword">Inscritos</span>
                         </mat-button-toggle>
-                        <mat-button-toggle value="qt_ingresso_total" class="ml-3">
+                        <mat-button-toggle value="qt_ingresso_total" class="ml-2">
                            <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind">
                            <span class="nome-ind oneword">Ingressos</span>
                         </mat-button-toggle>
-                        <mat-button-toggle value="qt_matricula_total" class="ml-3">
+                        <mat-button-toggle value="qt_matricula_total" class="ml-2">
                            <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones-ind">
                            <span class="nome-ind oneword">Matriculados</span>
                         </mat-button-toggle>
-                        <mat-button-toggle value="qt_concluinte_total" class="ml-3">
+                        <mat-button-toggle value="qt_concluinte_total" class="ml-2">
                            <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones-ind">
                            <span class="nome-ind oneword">Concluintes</span>
                         </mat-button-toggle>
-                        <mat-button-toggle value="qt_docentes_total">
-                           <img src="/assets/icons/NEW_DOCENTES.png" class="icones-ind doc-icon">
+                        <mat-button-toggle value="qt_docentes_total" class="ml-2">
+                           <img src="/assets/icons/NEW_DOCENTES.png" class="icones-ind">
                            <span class="nome-ind oneword">Docentes</span>
                         </mat-button-toggle>
                      </div>
 
-                     <div class="row mt-4">
-                        <mat-button-toggle value="tx_concorrencia" class="ml-3">
+                     <div class="row mt-2">
+                        <mat-button-toggle value="tx_concorrencia" class="ml-2">
                            <span class="nome-ind doc-icon ">Taxa de <p> Concorrência</span>
                         </mat-button-toggle>
-                        <mat-button-toggle value="tx_ocupacao" class="ml-3">
+                        <mat-button-toggle value="tx_ocupacao" class="ml-2">
                            <span class="nome-ind doc-icon ">Taxa de <p> Ocupação</span>
                         </mat-button-toggle>
-                        <mat-button-toggle value="tx_sucesso" class="ml-3">
+                        <mat-button-toggle value="tx_sucesso" class="ml-2">
                            <span class="nome-ind doc-icon ">Taxa de <p> Sucesso</span>
                         </mat-button-toggle>
-                        <mat-button-toggle value="underline" class="ml-3">
-                           <span class="nome-ind doc-icon ">Relação <p> Aluno/Docente</span>
+                        <mat-button-toggle value="underline" class="ml-2">
+                           <span class="nome-ind doc-icon ">Relação Aluno/Docente</span>
                         </mat-button-toggle>
-                        <mat-button-toggle value="valor_cc" class="ml-3">
+                        <mat-button-toggle value="valor_cc" class="ml-2">
                            <span class="nome-ind doc-icon ">Conceito de Curso</span>
                         </mat-button-toggle>
-                        <mat-button-toggle value="valor_enade">
+                        <mat-button-toggle value="valor_enade" class="ml-2">
                            <span class="nome-ind doc-icon ">Conceito de Enade</span>
                         </mat-button-toggle>
                      </div>
@@ -107,9 +107,9 @@
                </mat-button-toggle-group>
             </div>
 
-            <div class="col-2">
-               <div class="check-div">
-                  <div class="div-ops">
+            <div class="col-2 radio-bts">
+            <!--    <div class="check-div">
+                  <div class="div-ops"> -->
                      <span class="title-bt title-check"> Agregação</span>
                      <p></p>
                      <!-- TODO: TROCAR BOTÃO POR RADIO BUTTON -->
@@ -121,12 +121,12 @@
                         </mat-radio-group>
                      </section>
                   </div>
-               </div>
-            </div>
+            <!--    </div>
+            </div> -->
 
          </div>
       </div>
-   </div>
+   
 
    <div class="geral-map">
       <!-- HEADER ICONS -->
@@ -134,8 +134,6 @@
          <div class="titulo-pag">
             <span class="nome-indf titulo- ">TITULO</span>
          </div>
-
-
          <div class="logo-bts">
             <span class="nome-indf doc-icon "> Relativo/Absoluto</span>
             <mat-slide-toggle class="bt-relativo"></mat-slide-toggle>
@@ -175,5 +173,6 @@
             <span class="nome-indf"> COMPARTILHAR</span>
          </button>
       </div>
+   </div>
    </div>
 </div>
