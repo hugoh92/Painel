@@ -58,6 +58,22 @@ body {
     display: none;
 }
 
+#buttonExplorer .mat-button-toggle-button:active {
+    border: #e1e31d solid 2px!important;
+}
+
+#buttonExplorer ::ng-deep mat-button-toggle-group {
+    border: #e1e31d solid 2px!important;
+}
+
+#buttonExplorer .mat-button-toggle-checked {
+    border: #e1e31d solid 2px!important;
+}
+
+#buttonExplorer  .mat-button-toggle-button:focus {
+    border: #e1e31d solid 2px!important;
+}
+
 .bt-mobile {
     background: #023a1d;
     color: white;

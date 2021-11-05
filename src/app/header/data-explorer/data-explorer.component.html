@@ -11,7 +11,7 @@
                <input matEndDate placeholder="">
             </mat-date-range-input>
             <mat-datepicker-toggle matSuffix [for]="picker" color="primary"></mat-datepicker-toggle>
-            <mat-date-range-picker #picker></mat-date-range-picker>
+            <mat-date-range-picker #picker startView="multi-year" (yearSelected)="chosenYearHandler($event, picker)"></mat-date-range-picker>
          </mat-form-field>
       </div>
 
@@ -51,125 +51,129 @@
    </div>
    <div class="wrapper-geral">
       <div class="wrapper-icons">
-         <div class="indicadores-div">
-            <div class="div-icons div-break">
-               <div>
-                  <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind">
-               </div>
-               <div class="break-nome">
-                  <span class="nome-ind oneword">Vagas<p>Oferecidas</span>
+         <div class="row w-100">
+            <div class="col-10">
+               <mat-button-toggle-group id="buttonExplorer" name="fontStyle" aria-label="Font Style" class="w-100"
+                  [(ngModel)]="metricaSelecionada">
+                  <div class="container">
+                     <div class="row">
+                        <mat-button-toggle value="qt_vaga_total" class="ml-3">
+                           <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind">
+                           <span class="nome-ind oneword">Vagas Oferecidas</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="qt_inscrito_total" class="ml-3">
+                           <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind">
+                           <span class="nome-ind oneword">Inscritos</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="qt_ingresso_total" class="ml-3">
+                           <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind">
+                           <span class="nome-ind oneword">Ingressos</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="qt_matricula_total" class="ml-3">
+                           <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones-ind">
+                           <span class="nome-ind oneword">Matriculados</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="qt_concluinte_total" class="ml-3">
+                           <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones-ind">
+                           <span class="nome-ind oneword">Concluintes</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="qt_docentes_total">
+                           <img src="/assets/icons/NEW_DOCENTES.png" class="icones-ind doc-icon">
+                           <span class="nome-ind oneword">Docentes</span>
+                        </mat-button-toggle>
+                     </div>
+
+                     <div class="row mt-4">
+                        <mat-button-toggle value="tx_concorrencia" class="ml-3">
+                           <span class="nome-ind doc-icon ">Taxa de <p> Concorrência</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="tx_ocupacao" class="ml-3">
+                           <span class="nome-ind doc-icon ">Taxa de <p> Ocupação</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="tx_sucesso" class="ml-3">
+                           <span class="nome-ind doc-icon ">Taxa de <p> Sucesso</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="underline" class="ml-3">
+                           <span class="nome-ind doc-icon ">Relação <p> Aluno/Docente</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="valor_cc" class="ml-3">
+                           <span class="nome-ind doc-icon ">Conceito de Curso</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="valor_enade">
+                           <span class="nome-ind doc-icon ">Conceito de Enade</span>
+                        </mat-button-toggle>
+                     </div>
+                  </div>
+               </mat-button-toggle-group>
+            </div>
+
+            <div class="col-2">
+               <div class="check-div">
+                  <div class="div-ops">
+                     <span class="title-bt title-check"> Agregação</span>
+                     <p></p>
+                     <!-- TODO: TROCAR BOTÃO POR RADIO BUTTON -->
+                     <section class="example-section" [(ngModel)]="cruzamentoSelecionado">
+                        <mat-radio-group aria-label="Select an option">
+                           <mat-radio-button #button class="example-margin" (click)="checkState(button)" value="localizacao">Capital/Interior</mat-radio-button>
+                           <mat-radio-button #button1 class="example-margin" (click)="checkState(button1)" value="cat_admin">Público/Privado</mat-radio-button>
+                           <mat-radio-button #button2 class="example-margin" (click)="checkState(button2)" value="organizacao_academica">Organização Acadêmica</mat-radio-button>
+                        </mat-radio-group>
+                     </section>
+                  </div>
                </div>
             </div>
 
-            <button class="div-icons">
-               <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind">
-               <span class="nome-ind oneword">Inscritos</span>
-            </button>
-
-            <button class="div-icons">
-               <img src="/assets/icons/NEW_INGRESSOS.png" class="icones-ind">
-               <span class="nome-ind oneword">Ingressos</span>
-            </button>
-
-            <button class="div-icons">
-               <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones-ind">
-               <span class="nome-ind oneword">Matriculados</span>
-            </button>
-
-            <button class="div-icons">
-               <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones-ind">
-               <span class="nome-ind oneword">Concluintes</span>
-            </button>
-
-            <button class="div-icons">
-               <img src="/assets/icons/NEW_DOCENTES.png" class="icones-ind doc-icon">
-               <span class="nome-ind doc-icon oneword">Docentes</span>
-            </button>
-
-
-            <div class="check-div">
-               <div class="div-ops">
-                  <span class="title-bt title-check"> Agregação</span>
-                  <p></p>
-                  <section class="example-section">
-                     <mat-checkbox class="example-margin">Capital/Interior</mat-checkbox>
-                     <mat-checkbox class="example-margin">Público/Privado</mat-checkbox>
-                     <mat-checkbox class="example-margin">Organização Acadêmica</mat-checkbox>
-                  </section>
-               </div>
-            </div>
-            <button class="div-icons">
-               <span class="nome-ind doc-icon ">Taxa de <p> Concorrência</span>
-            </button>
-
-            <button class="div-icons">
-               <span class="nome-ind doc-icon ">Taxa de <p> Ocupação</span>
-            </button>
-            <button class="div-icons">
-               <span class="nome-ind doc-icon ">Taxa de <p> Sucesso</span>
-            </button>
-
-            <button class="div-icons">
-               <span class="nome-ind doc-icon ">Relação <p> Aluno/Docente</span>
-            </button>
-
-            <button class="div-icons">
-               <span class="nome-ind doc-icon ">Conceito de Curso</span>
-            </button>
-
-            <button class="div-icons">
-               <span class="nome-ind doc-icon ">Conceito de Enade</span>
-            </button>
          </div>
+      </div>
+   </div>
+
+   <div class="geral-map">
+      <!-- HEADER ICONS -->
+      <div class="header-map">
+         <div class="titulo-pag">
+            <span class="nome-indf titulo- ">TITULO</span>
+         </div>
+
+
+         <div class="logo-bts">
+            <span class="nome-indf doc-icon "> Relativo/Absoluto</span>
+            <mat-slide-toggle class="bt-relativo"></mat-slide-toggle>
+            <img src="/assets/icons/Direm-logo.png" class="doc-icon">
+         </div>
+
       </div>
-      
-      <div class="geral-map">
-         <!-- HEADER ICONS -->
-         <div class="header-map">
-            <div class="titulo-pag">
-               <span class="nome-indf titulo- ">TITULO</span>
-            </div>
-            
+      <!-- FOOTER BUTTONS -->
+      <div class="footer-map">
+         <button class="div-iconsf">
+            <img src="/assets/icons/Graf-direm.png" class="doc-icon">
+            <span class="nome-indf doc-icon "> GRÁFICO</span>
+         </button>
 
-            <div class="logo-bts">
-               <span class="nome-indf doc-icon "> Relativo/Absoluto</span>
-               <mat-slide-toggle class= "bt-relativo"></mat-slide-toggle>
-               <img src="/assets/icons/Direm-logo.png" class="doc-icon">
-            </div>
+         <button class="div-iconsf">
+            <img src="/assets/icons/Brasil-direm.png" class="doc-icon">
+            <span class="nome-indf doc-icon "> MAPA</span>
+         </button>
 
-         </div>
-         <!-- FOOTER BUTTONS -->
-         <div class="footer-map">
-            <button class="div-iconsf">
-               <img src="/assets/icons/Graf-direm.png" class="doc-icon">
-               <span class="nome-indf doc-icon "> GRÁFICO</span>
-            </button>
+         <button class="div-iconsf">
+            <img src="/assets/icons/Tab-direm.png" class="doc-icon">
+            <span class="nome-indf doc-icon "> TABELA</span>
+         </button>
 
-            <button class="div-iconsf">
-               <img src="/assets/icons/Brasil-direm.png" class="doc-icon">
-               <span class="nome-indf doc-icon "> MAPA</span>
-            </button>
+         <button class="div-iconsf">
+            <img src="/assets/icons/Fonte-direm.png" class="doc-icon">
+            <span class="nome-indf doc-icon "> FONTE</span>
+         </button>
 
-            <button class="div-iconsf">
-               <img src="/assets/icons/Tab-direm.png" class="doc-icon">
-               <span class="nome-indf doc-icon "> TABELA</span>
-            </button>
+         <button class="div-iconsf bt-filter">
+            <img src="/assets/icons/Down-direm.png" class="doc-icon">
+            <span class="nome-indf doc-icon "> DOWNLOAD</span>
+         </button>
 
-            <button class="div-iconsf">
-               <img src="/assets/icons/Fonte-direm.png" class="doc-icon">
-               <span class="nome-indf doc-icon "> FONTE</span>
-            </button>
-
-            <button class="div-iconsf bt-filter">
-               <img src="/assets/icons/Down-direm.png" class="doc-icon">
-               <span class="nome-indf doc-icon "> DOWNLOAD</span>
-            </button>
-
-            <button class="div-iconsf">
-               <img src="/assets/icons/share-direm.png" class="doc-icon">
-               <span class="nome-indf"> COMPARTILHAR</span>
-            </button>
-         </div>
+         <button class="div-iconsf">
+            <img src="/assets/icons/share-direm.png" class="doc-icon">
+            <span class="nome-indf"> COMPARTILHAR</span>
+         </button>
       </div>
    </div>
 </div>
