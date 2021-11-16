@@ -15,36 +15,75 @@
 .wrapper-icons {
     //wrapper do painel esquerdo
     grid-template-rows: repeat(2, 1fr);
-    width: 100%;
-    height: 200px;
-    //background-color: #e1e31d;
+    width: 100% !important;
+    height: 150px;
+    justify-self: end !important;
+    
    
 }
+.back-color{
+    background-color: #336925;
+    height: 120px;
+    align-items: center !important;
+    align-self: center!important;
+    align-content: center!important;
+    justify-content: center!important;
+    //line-height: 1 !important;
+    text-align: center !important;
+    width: 100% !important;
+    //margin-left: 15px;
+   // width: auto;
+   
+}
+.ml-2{
+    width: 100%;
+    display: grid;
+    flex: 1;
+    grid-template-columns: repeat(1fr,1fr);
+    
+}
 .wrapper-geral {
-    float: left;
+    //float: left;
     display: grid;
     flex: 1;
     grid-template-rows:1fr 3fr;
     
 }
+.container{
+    background-color: rebeccapurple;
+    //display: flex;
+ /*    align-content: flex-end!important;
+    align-self: flex-end!important;
+    align-items:flex-end!important;
+    justify-content:end!important;
+    justify-self: end!important; */
+    
+    
+}
 .wrapper-icons {
     grid-column-gap: 1px;
     grid-row-gap: 3px;
-    padding: 2px;
+    //padding: 20px;
     margin-top: 20px !important;
-    margin-left: 2px !important;
-    margin: 1px auto; //prolblema busca
+    //margin-left: 2px !important;
+    //margin: 1px auto; //prolblema busca
     width: 100%;
     //min-width: 20%;
-    float: left;
+    //float: left;
     display: block;
     flex: 1;
     grid-template-columns: repeat(1fr,1fr);
     grid-template-rows: repeat(2, 1fr);
     //grid-template-columns: 3fr 1fr;
     //display: grid;
-    height: 150px;
+    height: 160px;
     //min-width: 200px;
+    /* align-content: center!important;
+    align-self: center!important;
+    align-items: center!important;
+    justify-content: center!important;
+    justify-self: center!important; */
+    
     
 }
 .indicadores-div {
@@ -63,23 +102,23 @@
     //width: 200px;
     //background-color: #E1E31D;
     
+    
 }
 .title-check{
     
     color: #E1E31D;
    
     position: relative;
-    right: 23px !important;
-    top: 7px !important;
+    //right: 23px !important;
+    //top: 7px !important;
 }
-.div-ops{
-    height: 50px;
- 
-}
-.div-icons {
-    //width: 105px;
-    //width: 80%;
 
+.back-color2{
+    //grid-column-gap: 20px;
+    justify-self: end !important;
+}
+
+.div-icons {
     margin-top: 10px !important;
     height: 52px;
     text-align: center;
@@ -88,16 +127,17 @@
     border: 2px solid #ffff;
     text-align:center;
     
+    
 }
 .div-break{
     grid-template-columns: repeat(2, 1fr);
     display: grid;
 }
-.break-nome{
+/* .break-nome{
     text-align:start;
     margin-top: 5px !important;
     right: 5px !important;
-}
+} */
 .nome-ind {
     position: relative;
     font-size: 12px;
@@ -107,15 +147,30 @@
     //font-family: Roboto;
     font-style: normal;    
     word-wrap: break-all !important;
-    line-height: 0.5em !important;
+    line-height: 1.4;
+    padding-top: 8px;
+    
+    
 }
 .oneword{
     right: 5px;
 }
 .icones-ind {
     position: relative;
-    height: 49px;
+    height: 45px;
     width: 50px;
+    text-align: start !important;
+    //right: 30px;
+    
+}
+.div-year{
+    background-color: #336925;
+    width: 233px;
+    height: 120px;
+    //padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px !important;
+    margin-left: 25px;
 }
 
 .range-date{
@@ -125,18 +180,17 @@
     //margin: 8px;
 
     margin: 0;
-    padding-left: 30px;
+    padding: 10px;
     height: 50px;
-    
+    //width: 100px !important;
     //size: 10px;
 }
 mat-form-field{
-    width: 230px;
+    width: 210px;
     height: 60px;
     background: white;
     color: grey;
-    border-radius: 5px;
-   
+    border-radius: 5px; 
 }
 
 mat-label{
@@ -148,7 +202,7 @@ mat-label{
     
 }
 .title-bt{
-    padding-left: 30px;
+    padding-left: 10px;
     font-weight: 400;
     //top: 20px !important;
     font-size: 13px;
@@ -165,11 +219,19 @@ mat-date-range-input{
 }
 
 .input-group{
-    width: 260px;
-    padding-left: 30px;
+    width: 210px;
+    margin-left: 10px;
     
 }
-
+.div-estados{
+    background-color: #336925;
+    width: 233px;
+    height: 540px;
+    //padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px !important;
+    margin-left: 25px;
+}
 ::placeholder {
     color: gray !important;
     font-size: 13px;
@@ -196,7 +258,14 @@ mat-date-range-input{
 
 
 .radio-bts{
-  //background-color: aqua;
+  background-color: #336925;
+  padding-right: 140px !important;
+  left: 2% !important;
+  border-radius: 5px;
+  width: 100px !important;
+  justify-self: end !important;
+  //position: sticky;
+ 
 }
 
 .example-margin{
@@ -258,7 +327,7 @@ mat-date-range-input{
     height: 30px;
     border-radius: 5px;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 5px;
+    //grid-column-gap: 5px;
     display: grid;
     flex: 1;
     position: relative;
@@ -353,12 +422,52 @@ mat-date-range-input{
 }
 mat-button-toggle{
    
-    text-align: center;
+    /* text-align: center; */
     background-color: #023A1D;
     border-radius: 5px;
     border: 2px solid #ffff !important;
-    text-align:center;
-    width:15% !important;
+    width:128px !important;
+    height: 50px !important;
+    text-align: start!important;
+   
+}
+
+.abc{
+    
+    width: 100px;
+    display: flex;//text-align: start!important;
+    align-content: center!important;
+    align-self:center!important;
+    align-items:center!important;
+    justify-content:center!important;
+   
+    text-align: start!important;
+    //width: 450px!important;
+
+}
+.abcd{
+    //text-align: start!important;
+    display: flex;
+    padding-right: 5px !important;
+    right: 5px !important;
+    margin-right: 5px !important;
+    //background-color: aqua;
+}
+
+.bt-taxa2{
+    padding-right: 5px !important;
+    right: 5px !important;
+    margin-right: 5px !important;
+    display: flex;
+    text-align: start!important;
+}
+.ab{
+    //padding-right: 5px !important;
+    right: 12px !important;
+    //margin-right: 5px !important;
+}
+.linha-cima{
+    padding-right: 8px !important;
 }
 /* #buttonExplorer .mat-button-toggle-disabled {
     background-color: rgba(0,0,0,.12);
@@ -385,10 +494,3 @@ background-color: blue !important;
 .mat-button-toggle-button{
     background-color: blue;
 }
-
-.example-radio-group {
-    display: flex; flex-direction: column;
-    /* display: inline-grid; */ 
-    /* display: grid; */
-    margin: 15px 0;
-  }

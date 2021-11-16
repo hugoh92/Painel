@@ -1,6 +1,7 @@
 <div class="row start-xs wrapper-tela">
    <div class="box wrapper-left">
       <p></p>
+      <div class="div-year">
       <span class="title-bt"> Período</span>
       <div class="range-date">
 
@@ -14,15 +15,15 @@
             <mat-date-range-picker #picker startView="multi-year" (yearSelected)="chosenYearHandler($event, picker)"></mat-date-range-picker>
          </mat-form-field>
       </div>
-
-      <p></p>
-      <br>
+   </div>
+      
+   <div class="div-estados">
       <span class="title-bt"> Localização</span>
       <div class="input-group input-focus">
          <div class="input-group-prepend">
             <span class="input-group-text bg-white"><i class="fa fa-search"></i></span>
          </div>
-         <input type="search" placeholder="Digite uma Localização" class="form-control border-left-0">
+         <input type="search" placeholder="Localização" class="form-control border-left-0">
       </div>
       <p></p>
 
@@ -37,6 +38,7 @@
             <button class="dropdown-item" type="button">Something else here</button>
          </div>
       </div>
+   </div>
 
       <!--  <div class="div-pesq">
          <div class="busca-text">
@@ -51,15 +53,18 @@
    </div>
    <div class="wrapper-geral">
       <div class="wrapper-icons">
-         <div class="row w-115 ">
+         <div class="row back-color2 ">
             <div class="col-9">
-               <mat-button-toggle-group id="buttonExplorer" name="fontStyle" aria-label="Font Style" class="w-100"
+               <mat-button-toggle-group id="buttonExplorer" name="fontStyle" aria-label="Font Style" class="w-100 back-color"
                   [(ngModel)]="metricaSelecionada">
-                  <div class="container">
-                     <div class="row">
-                        <mat-button-toggle value="qt_vaga_total" class="ml-2">
-                           <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind">
-                           <span class="nome-ind oneword">Vagas Oferecidas</span>
+                  <div class="" >
+                     <div class="row linha-cima" >
+                        <mat-button-toggle value="qt_vaga_total" class="ml-2 abc">
+                           <div class="bt-taxa2 nome-ind ab">
+                              <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind">
+                              <p class="nome-ind bt-taxa abcd">Vagas<br>Oferecidas</p>
+                           </div>
+                
                         </mat-button-toggle>
                         <mat-button-toggle value="qt_inscrito_total" class="ml-2">
                            <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind">
@@ -70,12 +75,12 @@
                            <span class="nome-ind oneword">Ingressos</span>
                         </mat-button-toggle>
                         <mat-button-toggle value="qt_matricula_total" class="ml-2">
-                           <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones-ind">
-                           <span class="nome-ind oneword">Matriculados</span>
+                           <img src="/assets/icons/NEW_MATRICULADOS.png" class="icones-ind ab">
+                           <span class="nome-ind oneword ab">Matriculados</span>
                         </mat-button-toggle>
                         <mat-button-toggle value="qt_concluinte_total" class="ml-2">
-                           <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones-ind">
-                           <span class="nome-ind oneword">Concluintes</span>
+                           <img src="/assets/icons/NEW_CONCLUINTES.png" class="icones-ind ab">
+                           <span class="nome-ind oneword ">Concluintes</span>
                         </mat-button-toggle>
                         <mat-button-toggle value="qt_docentes_total" class="ml-2">
                            <img src="/assets/icons/NEW_DOCENTES.png" class="icones-ind">
@@ -83,24 +88,24 @@
                         </mat-button-toggle>
                      </div>
 
-                     <div class="row mt-2">
+                     <div class="row mt-2 linha-cima">
                         <mat-button-toggle value="tx_concorrencia" class="ml-2">
-                           <span class="nome-ind doc-icon ">Taxa de <p> Concorrência</span>
+                           <p class="nome-ind doc-icon ">Taxa de<br>Concorrência</p>
                         </mat-button-toggle>
                         <mat-button-toggle value="tx_ocupacao" class="ml-2">
-                           <span class="nome-ind doc-icon ">Taxa de <p> Ocupação</span>
+                           <p class="nome-ind doc-icon ">Taxa de<br>Ocupação</p>
                         </mat-button-toggle>
                         <mat-button-toggle value="tx_sucesso" class="ml-2">
-                           <span class="nome-ind doc-icon ">Taxa de <p> Sucesso</span>
+                           <p class="nome-ind doc-icon ">Taxa de<br>Sucesso</p>
                         </mat-button-toggle>
                         <mat-button-toggle value="underline" class="ml-2">
-                           <span class="nome-ind doc-icon ">Relação Aluno/Docente</span>
+                           <p class="nome-ind doc-icon ">Relação<br>Aluno/Docente</p>
                         </mat-button-toggle>
                         <mat-button-toggle value="valor_cc" class="ml-2">
-                           <span class="nome-ind doc-icon ">Conceito de Curso</span>
+                           <p class="nome-ind doc-icon ">Conceito de<br>Curso</p>
                         </mat-button-toggle>
                         <mat-button-toggle value="valor_enade" class="ml-2">
-                           <span class="nome-ind doc-icon ">Conceito de Enade</span>
+                           <p class="nome-ind doc-icon ">Conceito<br>ENADE</p>
                         </mat-button-toggle>
                      </div>
                   </div>
@@ -111,7 +116,7 @@
             <!--    <div class="check-div">
                   <div class="div-ops"> -->
                      <span class="title-bt title-check"> Agregação</span>
-                     <p></p>
+                    
                      <!-- TODO: TROCAR BOTÃO POR RADIO BUTTON -->
                      <section class="example-section" [(ngModel)]="cruzamentoSelecionado">
                         <mat-radio-group aria-label="Select an option">
