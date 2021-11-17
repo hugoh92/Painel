@@ -24,6 +24,7 @@ import { LoaderService } from './services/loader.service';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { DataExplorerComponent } from './header/data-explorer/data-explorer.component';
+import { OutputComponent } from './header/data-explorer/output/output.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { DataExplorerComponent } from './header/data-explorer/data-explorer.comp
     AlertComponent,
     LoaderComponent,
     DataExplorerComponent,
+    OutputComponent,
     
   ],
   imports: [

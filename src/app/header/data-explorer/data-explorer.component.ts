@@ -18,7 +18,6 @@ export const MY_FORMATS = {
   
 })
 
-
   
 export class DataExplorerComponent implements OnInit {
   metricaSelecionada = "qt_vaga_total";
@@ -45,6 +44,7 @@ export class DataExplorerComponent implements OnInit {
         this.ren.removeClass(el['_elementRef'].nativeElement, 'cdk-focused');
         this.ren.removeClass(el['_elementRef'].nativeElement, 'cdk-program-focused');
         this.currentCheckedValue = null;
+        this.cruzamentoSelecionado = null;
       } else {
         this.currentCheckedValue = el.value
       }

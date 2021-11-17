@@ -2,43 +2,44 @@
    <div class="box wrapper-left">
       <p></p>
       <div class="div-year">
-      <span class="title-bt"> Período</span>
-      <div class="range-date">
+         <span class="title-bt"> Período</span>
+         <div class="range-date">
 
-         <mat-form-field appearance="fill">
-            <mat-label>Selecione o intervalo</mat-label>
-            <mat-date-range-input [rangePicker]="picker">
-               <input matStartDate placeholder="">
-               <input matEndDate placeholder="">
-            </mat-date-range-input>
-            <mat-datepicker-toggle matSuffix [for]="picker" color="primary"></mat-datepicker-toggle>
-            <mat-date-range-picker #picker startView="multi-year" (yearSelected)="chosenYearHandler($event, picker)"></mat-date-range-picker>
-         </mat-form-field>
-      </div>
-   </div>
-      
-   <div class="div-estados">
-      <span class="title-bt"> Localização</span>
-      <div class="input-group input-focus">
-         <div class="input-group-prepend">
-            <span class="input-group-text bg-white"><i class="fa fa-search"></i></span>
-         </div>
-         <input type="search" placeholder="Localização" class="form-control border-left-0">
-      </div>
-      <p></p>
-
-      <div class="dropdown">
-         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            População
-         </button>
-         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button">Action</button>
-            <button class="dropdown-item" type="button">Another action</button>
-            <button class="dropdown-item" type="button">Something else here</button>
+            <mat-form-field appearance="fill">
+               <mat-label>Selecione o intervalo</mat-label>
+               <mat-date-range-input [rangePicker]="picker">
+                  <input matStartDate placeholder="">
+                  <input matEndDate placeholder="">
+               </mat-date-range-input>
+               <mat-datepicker-toggle matSuffix [for]="picker" color="primary"></mat-datepicker-toggle>
+               <mat-date-range-picker #picker startView="multi-year" (yearSelected)="chosenYearHandler($event, picker)">
+               </mat-date-range-picker>
+            </mat-form-field>
          </div>
       </div>
-   </div>
+
+      <div class="div-estados">
+         <span class="title-bt"> Localização</span>
+         <div class="input-group input-focus">
+            <div class="input-group-prepend">
+               <span class="input-group-text bg-white"><i class="fa fa-search"></i></span>
+            </div>
+            <input type="search" placeholder="Localização" class="form-control border-left-0">
+         </div>
+         <p></p>
+
+         <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+               População
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+               <button class="dropdown-item" type="button">Action</button>
+               <button class="dropdown-item" type="button">Another action</button>
+               <button class="dropdown-item" type="button">Something else here</button>
+            </div>
+         </div>
+      </div>
 
       <!--  <div class="div-pesq">
          <div class="busca-text">
@@ -55,16 +56,16 @@
       <div class="wrapper-icons">
          <div class="row back-color2 ">
             <div class="col-9">
-               <mat-button-toggle-group id="buttonExplorer" name="fontStyle" aria-label="Font Style" class="w-100 back-color"
-                  [(ngModel)]="metricaSelecionada">
-                  <div class="" >
-                     <div class="row linha-cima" >
+               <mat-button-toggle-group id="buttonExplorer" name="buttonExplorer" aria-label="Font Style"
+                  class="w-100 back-color" [(ngModel)]="metricaSelecionada" ngDefaultControl>
+                  <div class="">
+                     <div class="row linha-cima">
                         <mat-button-toggle value="qt_vaga_total" class="ml-2 abc">
                            <div class="bt-taxa2 nome-ind ab">
                               <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind">
                               <p class="nome-ind bt-taxa abcd">Vagas<br>Oferecidas</p>
                            </div>
-                
+
                         </mat-button-toggle>
                         <mat-button-toggle value="qt_inscrito_total" class="ml-2">
                            <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind">
@@ -95,13 +96,13 @@
                         <mat-button-toggle value="tx_ocupacao" class="ml-2">
                            <p class="nome-ind doc-icon ">Taxa de<br>Ocupação</p>
                         </mat-button-toggle>
-                        <mat-button-toggle value="tx_sucesso" class="ml-2">
+                        <mat-button-toggle value="tx_sucesso" class="ml-2" disabled>
                            <p class="nome-ind doc-icon ">Taxa de<br>Sucesso</p>
                         </mat-button-toggle>
-                        <mat-button-toggle value="underline" class="ml-2">
+                        <mat-button-toggle value="underline" class="ml-2" disabled>
                            <p class="nome-ind doc-icon ">Relação<br>Aluno/Docente</p>
                         </mat-button-toggle>
-                        <mat-button-toggle value="valor_cc" class="ml-2">
+                        <mat-button-toggle value="valor_cc" class="ml-2" disabled>
                            <p class="nome-ind doc-icon ">Conceito de<br>Curso</p>
                         </mat-button-toggle>
                         <mat-button-toggle value="valor_enade" class="ml-2">
@@ -113,71 +114,51 @@
             </div>
 
             <div class="col-2 radio-bts">
-            <!--    <div class="check-div">
+               <!--    <div class="check-div">
                   <div class="div-ops"> -->
-                     <span class="title-bt title-check"> Agregação</span>
-                    
-                     <!-- TODO: TROCAR BOTÃO POR RADIO BUTTON -->
-                     <section class="example-section" [(ngModel)]="cruzamentoSelecionado">
-                        <mat-radio-group aria-label="Select an option">
-                           <mat-radio-button #button class="example-margin" (click)="checkState(button)" value="localizacao">Capital/Interior</mat-radio-button>
-                           <mat-radio-button #button1 class="example-margin" (click)="checkState(button1)" value="cat_admin">Público/Privado</mat-radio-button>
-                           <mat-radio-button #button2 class="example-margin" (click)="checkState(button2)" value="organizacao_academica">Organização Acadêmica</mat-radio-button>
-                        </mat-radio-group>
-                     </section>
-                  </div>
+               <span class="title-bt title-check"> Agregação</span>
+
+               <!-- TODO: TROCAR BOTÃO POR RADIO BUTTON -->
+               <section class="example-section">
+                  <mat-radio-group aria-label="Select an option" [(ngModel)]="cruzamentoSelecionado"
+                     name="cruzamentoSelecionado">
+                     <mat-radio-button #button class="example-margin" (click)="checkState(button)" value="localizacao">
+                        Capital/Interior</mat-radio-button>
+                     <mat-radio-button #button1 class="example-margin" (click)="checkState(button1)" value="cat_admin">
+                        Público/Privado</mat-radio-button>
+                     <mat-radio-button #button2 class="example-margin" (click)="checkState(button2)"
+                        value="organizacao_academica">Organização Acadêmica</mat-radio-button>
+                  </mat-radio-group>
+               </section>
+            </div>
             <!--    </div>
             </div> -->
 
          </div>
       </div>
-   
 
-   <div class="geral-map">
-      <!-- HEADER ICONS -->
-      <div class="header-map">
-         <div class="titulo-pag">
-            <span class="nome-indf titulo- ">TITULO</span>
-         </div>
-         <div class="logo-bts">
-            <span class="nome-indf doc-icon "> Relativo/Absoluto</span>
-            <mat-slide-toggle class="bt-relativo"></mat-slide-toggle>
-            <img src="/assets/icons/Direm-logo.png" class="doc-icon">
+
+      <div class="geral-map">
+         <!-- HEADER ICONS -->
+         <div class = "p-2">
+            <app-output [outputSelecionado]="outputSelecionado" [metricaSelecionada]="metricaSelecionada"
+            [cruzamentoSelecionado]="cruzamentoSelecionado"></app-output>
          </div>
 
+         
+         <!-- FOOTER BUTTONS -->
+         <div class="footer-map">
+
+            <button class="div-iconsf bt-filter">
+               <img src="/assets/icons/Down-direm.png" class="doc-icon">
+               <span class="nome-indf doc-icon "> DOWNLOAD</span>
+            </button>
+
+            <button class="div-iconsf">
+               <img src="/assets/icons/share-direm.png" class="doc-icon">
+               <span class="nome-indf"> COMPARTILHAR</span>
+            </button>
+         </div>
       </div>
-      <!-- FOOTER BUTTONS -->
-      <div class="footer-map">
-         <button class="div-iconsf">
-            <img src="/assets/icons/Graf-direm.png" class="doc-icon">
-            <span class="nome-indf doc-icon "> GRÁFICO</span>
-         </button>
-
-         <button class="div-iconsf">
-            <img src="/assets/icons/Brasil-direm.png" class="doc-icon">
-            <span class="nome-indf doc-icon "> MAPA</span>
-         </button>
-
-         <button class="div-iconsf">
-            <img src="/assets/icons/Tab-direm.png" class="doc-icon">
-            <span class="nome-indf doc-icon "> TABELA</span>
-         </button>
-
-         <button class="div-iconsf">
-            <img src="/assets/icons/Fonte-direm.png" class="doc-icon">
-            <span class="nome-indf doc-icon "> FONTE</span>
-         </button>
-
-         <button class="div-iconsf bt-filter">
-            <img src="/assets/icons/Down-direm.png" class="doc-icon">
-            <span class="nome-indf doc-icon "> DOWNLOAD</span>
-         </button>
-
-         <button class="div-iconsf">
-            <img src="/assets/icons/share-direm.png" class="doc-icon">
-            <span class="nome-indf"> COMPARTILHAR</span>
-         </button>
-      </div>
-   </div>
    </div>
 </div>

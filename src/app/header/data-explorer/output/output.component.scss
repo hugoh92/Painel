@@ -1,0 +1,47 @@
+// .header-map{
+//     height: 30px;
+//     border-radius: 5px;
+//     grid-template-columns: repeat(2, 1fr);
+//     //grid-column-gap: 5px;
+//     display: grid;
+//     flex: 1;
+//     position: relative;
+//     width: 100%;
+//     align-self:flex-start;
+//     justify-self: center;
+//     top: 10px !important;
+// }
+
+// .logo-bts{
+//     padding-right: 10px;
+//     justify-self: end;
+//  }
+
+
+.div-iconsf{
+    
+    //width: 70px;
+    //height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #EDEDED;
+}
+
+.div-iconsf:hover{
+    border: 2px solid #023A1D;
+    opacity: 0.7;
+}
+
+.div-iconsf:focus{
+    outline: none;
+    border: none;
+    background-color: #023A1D;
+    
+    .nome-indf {
+        color: #E1E31D;
+    
+    }
+    // .doc-icon{
+    //     background-image: url("/assets/icons/share-direm.png"); 
+    // }
+}
