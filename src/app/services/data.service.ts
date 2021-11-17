@@ -57,5 +57,10 @@ export class DataService {
     return this.http.get(url);
   }
 
+  getIndicadoresData(metric, cruzamento = null){
+    let url = `${this.apiUrl2}indicadores/?query=%7B${metric}%7D`;
+    return this.http.get(url);
+  }
+
   
 }

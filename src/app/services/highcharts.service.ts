@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import * as HighchartsMap from "highcharts/highmaps";
 import * as Highcharts from "highcharts/highcharts";
+
 import Sunburst from 'highcharts/modules/sunburst';
 import Export from 'highcharts/modules/exporting';
-import { noUndefined } from '@angular/compiler/src/util';
-import { CursorError } from '@angular/compiler/src/ml_parser/lexer';
+import Histogram from 'highcharts/modules/histogram-bellcurve';
 
+Histogram(Highcharts);
 Sunburst(Highcharts)
 Export(Highcharts)
 declare var require: any;
@@ -41,11 +42,11 @@ export class HighchartsService {
         var values = [min, q1, median, q3, max]
         var uniqueValues = [...new Set(values)]
 
-        if(uniqueValues.length == 2){
-            var aux = Math.round((uniqueValues[0] + uniqueValues[1])/2)
+        if (uniqueValues.length == 2) {
+            var aux = Math.round((uniqueValues[0] + uniqueValues[1]) / 2)
             uniqueValues.push(aux)
             uniqueValues = uniqueValues.sort(function (a, b) { return a - b; });
-        } else if(uniqueValues.length == 1){
+        } else if (uniqueValues.length == 1) {
             var aux = 0
             uniqueValues.push(aux)
             uniqueValues = uniqueValues.sort(function (a, b) { return a - b; });
@@ -57,31 +58,31 @@ export class HighchartsService {
     getIntervalls(arr, nbIntervalls = 5) {
         var max = Math.max.apply(null, arr)
         var min = Math.min.apply(null, arr)
-        var size = Math.round((max-min) / nbIntervalls);
+        var size = Math.round((max - min) / nbIntervalls);
         var result = [];
-    
-        for (let i = 0; i <= nbIntervalls ; i++) {
+
+        for (let i = 0; i <= nbIntervalls; i++) {
             var inf = i + i * size;
             result.push(inf);
         }
-        if(inf < max) {
+        if (inf < max) {
             result.push(max + 1)
         }
 
         return result;
     }
 
-    get_data_labels(arr:any){
+    get_data_labels(arr: any) {
         var dataLabels = [];
         var colors = ["#fff3d1", "#ffe6a1", "#ffca34", "#f9a71f", "#c97f04", "#a16502"];
         var current;
 
-        for(var i = 0; i < arr.length - 1; i++){
+        for (var i = 0; i < arr.length - 1; i++) {
             current = {
                 from: arr[i],
-                to: arr[i+1],
+                to: arr[i + 1],
                 color: colors[i],
-                name: `De ${arr[i]} a ${arr[i+1] - 1}`
+                name: `De ${arr[i]} a ${arr[i + 1] - 1}`
             }
 
             dataLabels.push(current)
@@ -157,7 +158,7 @@ export class HighchartsService {
                         color: 'white'
                     }
                 },
-                itemStyle:{
+                itemStyle: {
                     color: "white"
                 },
                 floating: false,
@@ -973,157 +974,7 @@ export class HighchartsService {
         }
         Highcharts.chart(idHtml, options);
     }
-    /*  drawDonutCor2(idHtml){
-         var options: any =  {
-            
-             colors: [
-                 '#F1C730',
-                 '#61ABEC',
-                 '#9EB01D',
-                 '#D5672B',
-                 '#0069B4',
-                 '#C20082',
-                 '#CECECE',
-                
-             ],
-             chart: {
-                 plotBorderWidth: 0,
-                 backgroundColor: null,
-                 //renderTo: 'container',
-                 type: 'bar',
-                 align: 'center'
-             },
-             title: {
-                 text: 'Cor\\Raça dos docentes da IES',
-                 align: 'center',
-                 style: {
-                     fontWeight: 'bold',
-                     color: 'white',
-                     fontSize: '16px',
-                 }
-             },
-             xAxis: {
-                 minorGridLineWidth: 0,
-                 lineColor: 'transparent',
-                 gridLineWidth: 0,
-                 enabled: false,
-                 lineWidth: -1,
-                 categories: [''],
-                 labels: {
-                     enabled: false
-                 }
-             },
-             yAxis: {
-                 enabled: false,
-                 gridLineWidth: 0,
-                 lineWidth: 0,
-                 min: 0,
-                 title: {
-                     text: '',
-                     margin: 0
-                 },
-                 labels: {
-                     enabled: false
-                 }
-             },
-             legend: {
-                 enabled: false,
-             },
-             tooltip: {
-                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/> Qnt: 000',
-                 
-             },
-             
-             accessibility: {
-                 point: {
-                     valueSuffix: '%'
-                 }
-             },
-             navigation: {
-                 buttonOptions: {
-                     theme: {
-                         // Good old text links
-                         fill: '#c3081c',
-                         color: 'white',
-                         r: 15,
-     
-                     }
-                 }
-             },
-             exporting: {
-                 buttons: {
-                     contextButton: {
-                         symbol: 'download',
-                         symbolStroke: '#fff',
-                         symbolSize: 10,
-                         height: 25,
-                         width: 25,
-                         enabled: true
-                     },
-                 }
-             },
-             credits: 
-             {
-                 enabled: false,
-                 
-             },
-             plotOptions: {
-                 series: {
-                     stacking: 'normal',
-                     align: 'center'
-                 },
-                 bar: {
-                     dataLabels: {
-                         enabled: true,
-                         distance : -150,
-                         formatter: function() {
-                             var dlabel = this.series.name + '<br/>';
-                             dlabel += Math.round(this.percentage*100)/100 + ' %';
-                                 return dlabel
-                          },
-                         style: {
-                             color: 'white',
-                             },
-                         },
-                         center: ['50%', '50%'],
-                         size: '50%'
-                     },
-                 },
-          
-             series: [ 
-             {
-                 name: 'Branco',
-                 data: [9]
-             },
-             {
-                 name: 'Preto',
-                 data: [20]
-             },
-             {
-                 name: 'Pardo',
-                 data: [30]
-             },
-             {
-                 name: 'Amarelo',
-                 data: [30]
-             },
-             {
-                 name: 'Indígena',
-                 data: [9]
-             },
-             {
-                 name: 'Não declarou',
-                 data: [1]
-             },
-             {
-                 name: 'Sem Informação',
-                 data: [1]
-             }],
-          
-         }
-         $('.highcharts-axis').css('display','none');
-             Highcharts.chart(idHtml, options);
-     } */
+
     drawDonutAlunTip(idHtml, data) {
         var options: any = {
 
@@ -1219,158 +1070,7 @@ export class HighchartsService {
         Highcharts.chart(idHtml, options);
     }
 
-    /* drawDonutAlunCor(idHtml){
-        var options: any =  {
-           
-            colors: [
-                '#F1C730',
-                '#61ABEC',
-                '#9EB01D',
-                '#D5672B',
-                '#0069B4',
-                '#C20082',
-                '#CECECE',
-               
-            ],
-            chart: {
-                plotBorderWidth: 0,
-                backgroundColor: null,
-                //renderTo: 'container',
-                type: 'bar',
-                align: 'center'
-            },
-            title: {
-                text: 'Cor\\Raça dos alunos da IES',
-                align: 'center',
-                style: {
-                    fontWeight: 'bold',
-                    color: 'white',
-                    fontSize: '16px',
-                }
-            },
-            xAxis: {
-                minorGridLineWidth: 0,
-                lineColor: 'transparent',
-                gridLineWidth: 0,
-                enabled: false,
-                lineWidth: -1,
-                categories: [''],
-                labels: {
-                    enabled: false
-                }
-            },
-            yAxis: {
-                enabled: false,
-                gridLineWidth: 0,
-                lineWidth: 0,
-                min: 0,
-                title: {
-                    text: '',
-                    margin: 0
-                },
-                labels: {
-                    enabled: false
-                }
-            },
-            legend: {
-                enabled: false,
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b> </b><br/> Qnt: 000',
-                
-            },
-            
-            accessibility: {
-                point: {
-                    valueSuffix: '%'
-                }
-            },
-            navigation: {
-                buttonOptions: {
-                    theme: {
-                        // Good old text links
-                        fill: '#c3081c',
-                        color: 'white',
-                        r: 15,
-    
-                    }
-                }
-            },
-            exporting: {
-                buttons: {
-                    contextButton: {
-                        symbol: 'download',
-                        symbolStroke: '#fff',
-                        symbolSize: 10,
-                        height: 25,
-                        width: 25,
-                        enabled: true
-                    },
-                }
-            },
-            credits: 
-            {
-                enabled: false,
-                
-            },
-            plotOptions: {
-                series: {
-                    stacking: 'normal',
-                    align: 'center'
-                },
-                bar: {
-                    dataLabels: {
-                        enabled: true,
-                        distance : -150,
-                        formatter: function() {
-                            var dlabel = this.series.name + '<br/>';
-                            dlabel += Math.round(this.percentage*100)/100 + ' %';
-                                return dlabel
-                         },
-                        style: {
-                            color: 'white',
-                            },
-                        },
-                        center: ['50%', '50%'],
-                        size: '50%'
-                    },
-                },
-         
-            series: [ 
-            {
-                name: 'Branco',
-                data: [9]
-            },
-            {
-                name: 'Preto',
-                data: [20]
-            },
-            {
-                name: 'Pardo',
-                data: [30]
-            },
-            {
-                name: 'Amarelo',
-                data: [30]
-            },
-            {
-                name: 'Indígena',
-                data: [9]
-            },
-            {
-                name: 'Não declarou',
-                data: [1]
-            },
-            {
-                name: 'Sem Informação',
-                data: [1]
-            }],
-         
-        }
-        $('.highcharts-axis').css('display','none');
-            Highcharts.chart(idHtml, options);
-    }
- */
+
     drawDonutAlunPiram(idHtml) {
 
         var categories = [
@@ -1679,6 +1379,67 @@ export class HighchartsService {
             },
 
         }
+        Highcharts.chart(idHtml, options);
+    }
+
+    drawHistogram(idHtml, data, metadata) {
+        var options = {
+            title: {
+                text:  metadata.title
+            },
+            subtitle: {
+                text: metadata.subtitle
+            },
+            xAxis: [{
+                title: { text: 'Data' },
+                alignTicks: false,
+                visible: false
+            }, {
+                title: { text: 'Histogram' },
+                alignTicks: false
+            }],
+
+            yAxis: [{
+                title: { text: 'Data' }, visible:false
+            }, {
+                title: { text: 'Número de cursos' }
+            }],
+
+            plotOptions: {
+                histogram: {
+                    accessibility: {
+                        point: {
+                            valueDescriptionFormat: '{index}. {point.x:.0f} to {point.x2:.0f}, {point.y}.'
+                        }
+                    },
+                    tooltip: {
+                        valueDecimals: 0
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+
+            series: [{
+                name: 'Histogram',
+                type: 'histogram',
+                xAxis: 1,
+                yAxis: 1,
+                baseSeries: 's1',
+                zIndex: -1
+            }, {
+                name: 'Data',
+                type: 'scatter',
+                data: data,
+                id: 's1',
+                visible: false,
+                marker: {
+                    radius: 0
+                }
+            }]
+        }
+
         Highcharts.chart(idHtml, options);
     }
 }
