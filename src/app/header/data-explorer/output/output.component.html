@@ -1,17 +1,17 @@
 <div class="header-map">
     <div class="logo-bts">
-        <div class="titulo-pag">
+        <!-- <div class="titulo-pag"> -->
             <!-- <span class="nome-indf titulo- "> {{metadata.title}}</span> <br>
             <span class="nome-indf titulo- "> {{metadata.subtitle}}</span> -->
-        </div>
+        <!-- </div> -->
         <mat-slide-toggle class="bt-relativo" [disabled]="true" labelPosition="before"> <span
                 class="nome-indf doc-icon "> Relativo/Absoluto</span></mat-slide-toggle>
         <img src="/assets/icons/Direm-logo.png" class="doc-icon">
     </div>
 </div>
 
-<mat-tab-group mat-align-tabs="center" headerPosition="below">
-    <mat-tab>
+<mat-tab-group mat-align-tabs="center" headerPosition="below" color="transparent">
+    <mat-tab class="tab-style">
         <ng-template mat-tab-label class="div-iconsf">
             <img src="/assets/icons/Graf-direm.png" class="doc-icon">
             <span class="nome-indf doc-icon "> GRÁFICO</span>
@@ -36,4 +36,19 @@
             <span class="nome-indf doc-icon "> FONTE</span>
         </ng-template>
     </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label class="div-iconsf">
+        <img src="/assets/icons/Down-direm.png" class="doc-icon">
+        <span class="nome-indf doc-icon "> DOWNLOAD</span>
+    </ng-template>
+</mat-tab>
+
+<mat-tab>
+    <ng-template mat-tab-label class="div-iconsf">
+        <img src="/assets/icons/share-direm.png" class="doc-icon">
+        <span class="nome-indf"> COMPARTILHAR</span>
+    </ng-template>
+</mat-tab>
+
 </mat-tab-group>

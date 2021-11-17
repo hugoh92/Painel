@@ -1383,7 +1383,7 @@ export class HighchartsService {
     }
 
     drawHistogram(idHtml, data, metadata) {
-        var options = {
+        var options: any = {
             title: {
                 text:  metadata.title
             },

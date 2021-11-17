@@ -300,7 +300,7 @@ mat-date-range-input{
 
 .div-icons:hover{
     border: 2px solid #e1e31d;
-    opacity: 0.7;
+    //opacity: 0.7;
 }
 
 .div-icons:focus{
@@ -313,7 +313,7 @@ mat-date-range-input{
     background-color: white;
     width: 95%;
     padding-bottom: 40px !important;
-    bottom: 20px !important;
+    bottom: 33px !important;
     grid-template-columns: repeat(1, 1fr);
     display: grid;
     //height: auto;
@@ -361,27 +361,6 @@ mat-date-range-input{
 
 
 
-<<<<<<< HEAD
-.div-iconsf:focus{
-    outline: none;
-    border: none;
-    //background-color: #023A1D;
-    
-    .nome-indf {
-        color: #E1E31D;
-    
-    }
-    .doc-icon{
-       background-image: url("/assets/icons/share-direm.png"); 
-    }
-}
-
-.logo-bts{
-   padding-right: 10px;
-   justify-self: end;
-}
-=======
->>>>>>> 8e981823b2aa0880b4af739bccfa4bb0bcb1ef32
 
 #buttonExplorer .mat-button-toggle-button:active {
     border: #e1e31d solid 2px!important;
