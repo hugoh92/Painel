@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -47,6 +47,7 @@ import { OutputComponent } from './header/data-explorer/output/output.component'
     HttpClientModule,
     MatDatepickerModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatTableModule,
     BuscadorModule,

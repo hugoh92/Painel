@@ -1,4 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { MatFormFieldControl } from '@angular/material/form-field';
+import { DataService } from 'src/app/services/data.service';
 
 export const MY_FORMATS = {
   parse: {
@@ -20,11 +22,19 @@ export const MY_FORMATS = {
 
   
 export class DataExplorerComponent implements OnInit {
-  metricaSelecionada = "qt_vaga_total";
+  metricaSelecionada = "qt_vagas_autorizadas";
   cruzamentoSelecionado = "cat_admin";
 
   currentCheckedValue = null;
-  constructor(private ren: Renderer2) { } 
+  subscription: any;
+  stateOptions: any;
+  modelGroup: any[]; // the selected values
+
+  constructor(private ren: Renderer2, private _dataService: DataService) {
+    this.subscription = this._dataService.getData("./assets/data/state_list.json").subscribe(json => {
+      this.stateOptions = json;
+    })
+   } 
 
   ngOnInit(): void {
   }
@@ -34,7 +44,9 @@ export class DataExplorerComponent implements OnInit {
     input._destroyPopup()
   }
 
-
+  open() {
+    console.log(this.modelGroup)
+  }
 
   checkState(el) {
     setTimeout(() => {

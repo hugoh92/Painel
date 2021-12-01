@@ -282,6 +282,7 @@ export class HighchartsService {
             this.mapChart.destroy;
         }
         this.mapChart = HighchartsMap.mapChart(idHtml, options);
+        return this.mapChart
 
     }
 
@@ -1383,61 +1384,37 @@ export class HighchartsService {
     }
 
     drawHistogram(idHtml, data, metadata) {
-        var options:any = {
+        var options: any = {
+                chart: {
+                    type: 'bar'
+            },
             title: {
                 text:  metadata.title
             },
             subtitle: {
                 text: metadata.subtitle
             },
-            xAxis: [{
-                title: { text: 'Data' },
-                alignTicks: false,
-                visible: false
-            }, {
-                title: { text: 'Histogram' },
-                alignTicks: false
-            }],
-
-            yAxis: [{
-                title: { text: 'Data' }, visible:false
-            }, {
-                title: { text: 'Número de cursos' }
-            }],
-
+            xAxis: {
+                categories: data.map(d => d.name),
+                title: {
+                    text: null
+                }
+            },
             plotOptions: {
-                histogram: {
-                    accessibility: {
-                        point: {
-                            valueDescriptionFormat: '{index}. {point.x:.0f} to {point.x2:.0f}, {point.y}.'
-                        }
-                    },
-                    tooltip: {
-                        valueDecimals: 0
+                bar: {
+                    dataLabels: {
+                        enabled: true
                     }
+                },
+                series: {
+                    colorByPoint: true
                 }
             },
             credits: {
                 enabled: false
             },
 
-            series: [{
-                name: 'Histogram',
-                type: 'histogram',
-                xAxis: 1,
-                yAxis: 1,
-                baseSeries: 's1',
-                zIndex: -1
-            }, {
-                name: 'Data',
-                type: 'scatter',
-                data: data,
-                id: 's1',
-                visible: false,
-                marker: {
-                    radius: 0
-                }
-            }]
+            series: [{name: metadata.metrica, data: data.map(d => d.data)}]
         }
 
         Highcharts.chart(idHtml, options);

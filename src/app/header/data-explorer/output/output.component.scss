@@ -1,16 +1,26 @@
-// .header-map{
-//     height: 30px;
-//     border-radius: 5px;
-//     grid-template-columns: repeat(2, 1fr);
-//     //grid-column-gap: 5px;
-//     display: grid;
-//     flex: 1;
-//     position: relative;
-//     width: 100%;
-//     align-self:flex-start;
-//     justify-self: center;
-//     top: 10px !important;
-// }
+.header-map{
+/* height: 30px;
+ border-radius: 5px;
+ grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5px;
+   display: grid;
+   flex: 1;
+    position: relative;
+    width: 100%;
+     align-self:flex-start;
+     
+     top: 10px !important; */
+     
+    text-align:end;
+    border-radius: 5px;
+}
+/* .logo-bts{
+    align-content: flex-end!important;
+    align-self: flex-end!important;
+    align-items:flex-end!important;
+    justify-content:end!important;
+    justify-self: end!important;
+} */
 
 // .logo-bts{
 //     padding-right: 10px;
@@ -18,30 +28,47 @@
 //  }
 
 
-.div-iconsf{
+ng-template .div-iconsf{
     
     //width: 70px;
     //height: 35px;
-    border: none;
+    //border: none;
     border-radius: 5px;
     background-color: #EDEDED;
+    border-width: 9px !important;
+    border-style: solid !important;
+    //border-color: orange !important;
 }
 
-.div-iconsf:hover{
-    border: 2px solid #023A1D;
-    opacity: 0.7;
+
+
+.nome-indf {
+    position: relative;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+    color: #023A1D;
+    font-family: Roboto;
+    //font-style: normal;    
+    word-wrap: break-all !important;
+    line-height: 0.5em !important;
+    margin-left: 5px;
+  
 }
 
-.div-iconsf:focus{
-    outline: none;
-    border: none;
-    background-color: #023A1D;
+
+ ::ng-deep .mat-tab-label{
     
-    .nome-indf {
-        color: #E1E31D;
+    padding-left: 5px;
+    margin-left: 10px;
+    background-color: #EDEDED;
+    //color: grey;
+    border-radius: 5px;
+  }
+  ::ng-deep .mat-tab-label-active{
+    border-width: 2px;
+    border-style: solid;
+    border-color: #023A1D;
     
-    }
-    // .doc-icon{
-    //     background-image: url("/assets/icons/share-direm.png"); 
-    // }
+    
 }
