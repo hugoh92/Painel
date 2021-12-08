@@ -19,7 +19,10 @@ var titles: Array<Metadata> = [
   { metrica: "total_docentes", title: "Distribuição do número de docentes.", subtitle: "Brasil, 2019" },
   { metrica: "tx_concorrencia", title: "Distribuição da taxa de concorrência.", subtitle: "Brasil, 2019" },
   { metrica: "tx_ocupacao", title: "Distribuição da taxa de ocupação.", subtitle: "Brasil, 2019" },
-  { metrica: "valor_enade", title: "Distribuição do conceito de curso ENADE", subtitle: "Brasil, 2019" },
+  { metrica: "tx_sucesso", title: "Distribuição da taxa de sucesso.", subtitle: "Brasil, 2019" },
+  { metrica: "aluno_docente", title: "Distribuição da relação aluno docente.", subtitle: "Brasil, 2019" },
+  { metrica: "valor_enade", title: "Distribuição do conceito de curso ENADE.", subtitle: "Brasil, 2019" },
+  { metrica: "valor_cc", title: "Distribuição do conceito de curso.", subtitle: "Brasil, 2019" },
 ]
 
 @Component({
@@ -76,7 +79,7 @@ export class OutputComponent implements OnChanges {
   }
 
   getData(metrica, estado = null, cruzamento = null) {
-    const filter = estado === null ? null : estado.sigla
+    const filter = estado === null ? null : estado.id
     const nome = estado === null ? "Brasil" : estado.nome
 
     this._dataService.getCardData(filter).subscribe(data => {
@@ -101,7 +104,6 @@ export class OutputComponent implements OnChanges {
 
   drawMap(metrica){
     this._dataService.getMapData().subscribe((json: any) => {
-      let dataEstados = json.map(d => { return { municipio: d.uf, qt_cursos: d[metrica] } }).sort((a, b) => b[metrica] - a[metrica]);
       let data = json.map(d => { return ['br-' + d.uf.toLowerCase(), d[metrica]] })
 
       this.map = this._highchartsService.draMap("mapPlot", data)
@@ -109,7 +111,6 @@ export class OutputComponent implements OnChanges {
   }
 
   openMap(){
-    console.log("oi")
     this.map.reflow()
   }
 
