@@ -34,7 +34,7 @@ var titles: Array<Metadata> = [
 export class OutputComponent implements OnChanges {
 
   @Input() metricaSelecionada = 'qt_vagas_autorizadas';
-  @Input() cruzamentoSelecionado = '';
+  @Input() cruzamentoSelecionado = 'cat_admin';
   @Input() estadosSelecionados: any[] = [];
   dataPlot = []
   map;
@@ -47,7 +47,7 @@ export class OutputComponent implements OnChanges {
       this.drawMap(this.metricaSelecionada)
 
       if(prev == undefined){
-        this.getData(this.metricaSelecionada)
+        this.getData(this.metricaSelecionada, null)
       } else {
         this.drawPlot(this.metricaSelecionada)
       }
@@ -63,8 +63,11 @@ export class OutputComponent implements OnChanges {
           this.getData(this.metricaSelecionada, novaLocalizacao[0])
         } else {
           const removeLocalizacao = prev.filter(x => !current.map(d => d.nome).includes(x.nome));
-          const index = this.dataPlot.findIndex(d => d.nome == removeLocalizacao[0].nome)
-          this.dataPlot.splice(index, 1)
+          const index = this.dataPlot.findIndex(d => d.name == removeLocalizacao[0].nome)
+
+          if(index > -1){
+            this.dataPlot.splice(index, 1)
+          }
           this.drawPlot(this.metricaSelecionada)
         }
 
@@ -83,8 +86,8 @@ export class OutputComponent implements OnChanges {
     const nome = estado === null ? "Brasil" : estado.nome
 
     this._dataService.getCardData(filter).subscribe(data => {
-      data["nome"] = nome;
-      this.dataPlot.push(data);
+      let data_ = {"name": nome, "data": data}
+      this.dataPlot.push(data_);
       this.drawPlot(metrica)
     })
 
@@ -94,8 +97,8 @@ export class OutputComponent implements OnChanges {
     var result = [];
     data.forEach(d => {
       result.push({
-        name: d.nome,
-        data: [d[metrica]]
+        name: d.name,
+        data: d.data.map(u => u[metrica])
       })
     })
 

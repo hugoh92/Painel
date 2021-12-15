@@ -46,7 +46,7 @@ export class SidenavIconsComponent implements OnInit {
 
   getData(filter = null) {
     this._dataService.getCardData(filter).subscribe((json: any) => {
-      this.data = json
+      this.data = json[0]
     })
     if (filter === null || filter == 'el') {
       this.num_curso = json_estados.filter(d => d.sigla == "Brasil")[0]

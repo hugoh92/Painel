@@ -42,8 +42,9 @@ export class DataService {
     return this.http.get(url);
   }
 
-  getCardData(filter = null){
-    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}cards`:  `${this.apiUrl2}cards/${filter}`;
+  getCardData(filter = null, cruzamento = null){
+    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}cards?  `:  `${this.apiUrl2}cards?uf=${filter}`;
+    url = cruzamento === null ? url : `${url}&cruzamento=codigo_ies__${cruzamento}`
     return this.http.get(url);
   }
 
