@@ -1,0 +1,11 @@
+version: '3'
+services:
+  angular-ui:
+    build:
+      context: .
+    ports:
+      - "4201:4201"
+    container_name: angular-ui
+    volumes:
+       - .:/usr/src/app
+       - /usr/src/app/node_modules
