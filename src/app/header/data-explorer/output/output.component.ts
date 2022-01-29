@@ -36,15 +36,16 @@ export class OutputComponent implements OnChanges {
   @Input() metricaSelecionada = 'qt_vagas_autorizadas';
   @Input() cruzamentoSelecionado = 'cat_admin';
   @Input() estadosSelecionados: any[] = [];
+  @Input() anosSelecionados: any[] = [2010, this._dataService.year]
   dataPlot = []
   map;
+  dataFiltered = []
 
   constructor(private _dataService: DataService, private _highchartsService: HighchartsService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['metricaSelecionada'] && changes['metricaSelecionada'].previousValue != changes['metricaSelecionada'].currentValue) {
       const prev = changes['metricaSelecionada'].previousValue
-      this.drawMap(this.metricaSelecionada)
 
       if(prev == undefined){
         this.getData(this.metricaSelecionada, null)
@@ -52,6 +53,11 @@ export class OutputComponent implements OnChanges {
         this.drawPlot(this.metricaSelecionada)
       }
     }
+    if (changes['anosSelecionados'] && changes['anosSelecionados'].previousValue != changes['anosSelecionados'].currentValue) {
+        
+        this.drawPlot(this.metricaSelecionada)
+    }
+    
     if (changes['estadosSelecionados'] && changes['estadosSelecionados'].previousValue != changes['estadosSelecionados'].currentValue) {
       const prev = changes['estadosSelecionados'].previousValue,
           current = changes['estadosSelecionados'].currentValue;
@@ -77,15 +83,25 @@ export class OutputComponent implements OnChanges {
   }
 
   drawPlot(metrica) {
+    let data = this.dataPlot.map(d => {return {name: d.name, data: d.data
+      .filter((d:any) => d.ano >= this.anosSelecionados[0])
+      .filter((d:any) => d.ano <= this.anosSelecionados[1])}})
+
     var metadata = titles.filter(d => d.metrica == metrica)[0];
-    this._highchartsService.drawHistogram("plotData", this.formatData(this.dataPlot, metrica), metadata)
+    let dataplot = this.formatData(data, metrica)
+    if(Math.max(...dataplot.map(d => d.data.length)) == 1){
+      this._highchartsService.drawHistogram("plotData",dataplot , metadata)
+    }else{
+      this._highchartsService.drawLinePlot("plotData",dataplot , metadata)
+    }
+    
   }
 
   getData(metrica, estado = null, cruzamento = null) {
     const filter = estado === null ? null : estado.id
     const nome = estado === null ? "Brasil" : estado.nome
 
-    this._dataService.getCardData(filter).subscribe(data => {
+    this._dataService.getCardData(filter, null, false).subscribe(data => {
       let data_ = {"name": nome, "data": data}
       this.dataPlot.push(data_);
       this.drawPlot(metrica)
@@ -98,11 +114,11 @@ export class OutputComponent implements OnChanges {
     data.forEach(d => {
       result.push({
         name: d.name,
-        data: d.data.map(u => u[metrica])
+        data: d.data.map(u =>{ return {x: parseInt(u["ano"]), y: u[metrica]}}).filter(n => n.y).map(d => [d.x, d.y])
       })
     })
 
-    return result;
+    return result
   }
 
   drawMap(metrica){

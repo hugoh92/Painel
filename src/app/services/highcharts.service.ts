@@ -1384,6 +1384,9 @@ export class HighchartsService {
     }
 
     drawHistogram(idHtml, data, metadata) {
+        let year = data[0].data.map(d => d[0])
+        data = data.map(d => {return {name: d.name, data: [d.data[0][1]]}})
+
         var options: any = {
                 chart: {
                     type: 'bar'
@@ -1392,7 +1395,7 @@ export class HighchartsService {
                 text:  metadata.title
             },
             subtitle: {
-                text: metadata.subtitle
+                text: `Dados de ${year}`
             },
             xAxis: {
                 categories: data.map(d => d.name),
@@ -1415,6 +1418,45 @@ export class HighchartsService {
             },
 
             series: [{name: metadata.metrica, data: data.map(d => d.data)}]
+        }
+
+        Highcharts.chart(idHtml, options);
+    }
+
+    drawLinePlot(idHtml, data, metadata) {
+        let years = data[0].data.map(d => d[0])
+        var options: any = {
+            chart: {
+                    type: 'line',
+                    zoomType: 'x'
+            },
+            title: {
+                text:  metadata.title
+            },
+            subtitle: {
+                text: `${years[0]} a ${years[years.length -1]}`
+            },
+            xAxis: {
+                categories: data.map(d => d.years),
+                title: {
+                    text: null
+                }
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                },
+                series: {
+                    colorByPoint: false
+                }
+            },
+            credits: {
+                enabled: false
+            },
+
+            series: data
         }
 
         Highcharts.chart(idHtml, options);

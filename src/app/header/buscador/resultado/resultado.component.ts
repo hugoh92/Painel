@@ -52,8 +52,9 @@ export class ResultadoComponent implements OnInit {
 
   getData() {
     let id_curso = this.router.url.match(/\/([^\/]+)\/?$/)[1]
-    this._dataService.getData(`https://warm-everglades-94375.herokuapp.com/curso/?codigo_curso=${id_curso}`).subscribe(
+    this._dataService.getData(`${this._dataService.apiUrl2}curso/?codigo_curso=${id_curso}`).subscribe(
       json => {
+        console.log(json)
         this.options = json[0]
         this.path_image = this.options.nome_img.substring(this.options.nome_img.lastIndexOf('/')+1)
         this.highchartsService.drawDonutRegime("regime",this.formatData(this.options.indicadores[0].plot_regime, true))

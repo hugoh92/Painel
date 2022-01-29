@@ -10,8 +10,9 @@ import { SidebarService } from './sidebar.service';
 })
 export class DataService {
   autoCompleteOpts = [];
-  apiUrl = 'https://django-direm.herokuapp.com/api/';
-  apiUrl2 =  'https://warm-everglades-94375.herokuapp.com/';
+  apiUrl2 =  'http://127.0.0.1:8000/';
+  year = '2019';
+  complementUrl = `&year=${this.year}`
 
   constructor(private http: HttpClient) { }
 
@@ -33,29 +34,30 @@ export class DataService {
   }
 
   getPlot1Data(filter = null){
-    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}grafico_1`:  `${this.apiUrl2}grafico_1/${filter}`;
-    return this.http.get(url);
+    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}grafico_1?`:  `${this.apiUrl2}grafico_1/${filter}`;
+    return this.http.get(url + this.complementUrl);
   }
 
   getPlot2Data(filter = null){
-    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}grafico_2`:  `${this.apiUrl2}grafico_2/${filter}`;
-    return this.http.get(url);
+    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}grafico_2?`:  `${this.apiUrl2}grafico_2/${filter}`;
+    return this.http.get(url + this.complementUrl);
   }
 
-  getCardData(filter = null, cruzamento = null){
-    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}cards?  `:  `${this.apiUrl2}cards?uf=${filter}`;
+  getCardData(filter = null, cruzamento = null, filterYear = true){
+    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}cards?`:  `${this.apiUrl2}cards?uf=${filter}`;
     url = cruzamento === null ? url : `${url}&cruzamento=codigo_ies__${cruzamento}`
+    url = filterYear ? url + this.complementUrl: url
     return this.http.get(url);
   }
 
   getMapData(filter = null){
-    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}mapa`:  `${this.apiUrl2}mapa/${filter}`;
-    return this.http.get(url);
+    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}mapa?`:  `${this.apiUrl2}mapa/${filter}`;
+    return this.http.get(url + this.complementUrl);
   }
 
   getLocalizacaoData(filter = null){
-    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}localizacao`:  `${this.apiUrl2}localizacao/${filter}`;
-    return this.http.get(url);
+    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}localizacao?`:  `${this.apiUrl2}localizacao/${filter}`;
+    return this.http.get(url + this.complementUrl);
   }
 
   getIndicadoresData(metric, cruzamento = null){
