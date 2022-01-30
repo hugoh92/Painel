@@ -1,0 +1,10 @@
+version: '3'
+services:
+  angular-ui:
+    build:
+      context: .
+    network_mode: host
+    container_name: angular-ui
+    volumes:
+       - .:/usr/src/app
+       - /usr/src/app/node_modules

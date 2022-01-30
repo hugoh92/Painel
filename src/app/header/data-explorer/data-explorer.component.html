@@ -4,8 +4,11 @@
       <div class="div-year">
          <span class="title-bt"> Período</span>
          <div class="range-date">
+            <div class="custom-slider">
+               <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options" (userChange) = "updateYear()"></ng5-slider>
 
-            <mat-form-field appearance="fill">
+            </div>
+            <!--<mat-form-field appearance="fill">
                <mat-label>Selecione o intervalo</mat-label>
                <mat-date-range-input [rangePicker]="picker">
                   <input matStartDate placeholder="">
@@ -14,7 +17,7 @@
                <mat-datepicker-toggle matSuffix [for]="picker" color="primary"></mat-datepicker-toggle>
                <mat-date-range-picker #picker startView="multi-year" (yearSelected)="chosenYearHandler($event, picker)">
                </mat-date-range-picker>
-            </mat-form-field>
+            </mat-form-field>!-->
          </div>
       </div>
 
@@ -136,7 +139,8 @@
          <div class="p-2">
             <app-output [metricaSelecionada]="metricaSelecionada" 
             [estadosSelecionados]="modelGroup"
-            [cruzamentoSelecionado]="cruzamentoSelecionado">
+            [cruzamentoSelecionado]="cruzamentoSelecionado"
+            [anosSelecionados]="anosSelecionados">
             </app-output>
          </div>
 

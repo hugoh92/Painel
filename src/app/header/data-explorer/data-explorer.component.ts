@@ -24,6 +24,14 @@ export const MY_FORMATS = {
 export class DataExplorerComponent implements OnInit {
   metricaSelecionada = "qt_vagas_autorizadas";
   cruzamentoSelecionado = "cat_admin";
+  value: number = 2010;
+  highValue: number = 2019;
+  options = {
+    floor: 2010,
+    ceil: 2019,
+    showTicks: true
+  };
+  anosSelecionados = [this.value, this.highValue]
 
   currentCheckedValue = null;
   subscription: any;
@@ -44,13 +52,12 @@ export class DataExplorerComponent implements OnInit {
     input._destroyPopup()
   }
 
-  open() {
-    console.log(this.modelGroup)
+  updateYear() {
+    this.anosSelecionados = [this.value, this.highValue]
   }
 
   checkState(el) {
     setTimeout(() => {
-      console.log(el)
       if (this.currentCheckedValue && this.currentCheckedValue === el.value) {
         el.checked = false;
         this.ren.removeClass(el['_elementRef'].nativeElement, 'cdk-focused');
