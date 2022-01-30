@@ -457,3 +457,41 @@ background-color: blue !important;
 .mat-button-toggle-button{
     background-color: blue;
 }
+
+mat-selection-list{
+    //background-color: white;
+    border: 1px rgba(0,0,0,0) solid !important;
+}
+::ng-deep {
+    .mat-selection-list{
+        border: 1px rgba(0,0,0,0) solid !important;
+    }
+    }
+
+    md-select {
+        background-color: white;   
+        color: black;
+        border : 1px solid #666666;
+
+}
+
+.btn-option{
+    background-color:grey;
+    border-bottom : 1px solid white;
+}
+/* ::ng-deep {
+
+    .mat-accent .mat-pseudo-checkbox-checked,
+    .mat-accent .mat-pseudo-checkbox-indeterminate {
+      background: green;
+    }
+  
+    .mat-accent .mat-pseudo-checkbox.mat-pseudo-checkbox-checked,
+    .mat-accent .mat-pseudo-checkbox.mat-pseudo-checkbox-indeterminate {
+      border-color: blue;
+    }
+  
+    .mat-accent .mat-pseudo-checkbox::after {
+      color: red;
+    }
+  } */
