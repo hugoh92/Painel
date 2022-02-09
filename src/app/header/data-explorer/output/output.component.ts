@@ -4,6 +4,7 @@ import { tap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 import { HighchartsService } from 'src/app/services/highcharts.service';
 
+
 class Metadata {
   metrica: string;
   title: string;

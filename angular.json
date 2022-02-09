@@ -28,6 +28,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/scss/font-awesome.scss",
               "src/styles.scss"
+              
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.slim.min.js",

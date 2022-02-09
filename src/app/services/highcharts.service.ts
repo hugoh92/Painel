@@ -1440,7 +1440,8 @@ export class HighchartsService {
                 categories: data.map(d => d.years),
                 title: {
                     text: null
-                }
+                },
+                
             },
             plotOptions: {
                 bar: {

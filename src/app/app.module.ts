@@ -25,7 +25,8 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { DataExplorerComponent } from './header/data-explorer/data-explorer.component';
 import { OutputComponent } from './header/data-explorer/output/output.component';
-
+/* import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons'; */
 
 @NgModule({
   declarations: [
@@ -52,7 +53,10 @@ import { OutputComponent } from './header/data-explorer/output/output.component'
     MatTableModule,
     BuscadorModule,
     Ng5SliderModule ,
-    MatNativeDateModule
+    MatNativeDateModule,
+  
+    
+    
   ],
   providers: [
     LoaderService,

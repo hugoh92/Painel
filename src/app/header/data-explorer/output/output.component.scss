@@ -69,6 +69,13 @@ ng-template .div-iconsf{
     border-width: 2px;
     border-style: solid;
     border-color: #023A1D;
-    
-    
 }
+::ng-deep .mat-tab-labels{
+    border-bottom: 0;
+}
+::ng-deep .mat-tab-header, .mat-tab-nav-bar {
+    border-top: none !important;
+   
+}
+
+
