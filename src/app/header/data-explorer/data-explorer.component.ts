@@ -37,13 +37,18 @@ export class DataExplorerComponent implements OnInit {
   subscription: any;
   stateOptions: any;
   modelGroup: any[]; // the selected values
+  
+  deselectCloth(){
+    this.stateOptions.deselectAll(); 
+  }
 
   constructor(private ren: Renderer2, private _dataService: DataService) {
     this.subscription = this._dataService.getData("./assets/data/state_list.json").subscribe(json => {
       this.stateOptions = json;
     })
    } 
-
+        
+  
   ngOnInit(): void {
   }
 

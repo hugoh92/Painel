@@ -105,10 +105,9 @@
     display: grid;
     flex: 1;
     grid-template-rows:1fr 3fr;
-    padding-left: 100px;
+    padding-left: 80px;
+    height: auto;
     //padding-right: 20px;
-   
-    
 }
 .container{
     background-color: rebeccapurple;
@@ -166,9 +165,7 @@
     
 }
 .title-check{
-    
     color: #E1E31D;
-   
     position: relative;
     //right: 23px !important;
     //top: 7px !important;
@@ -247,18 +244,20 @@
     //size: 10px;
 }
 mat-form-field{
-    width: 210px;
+    width: 180px;
     height: 60px;
     background: white;
     color: grey;
     border-radius: 5px; 
+    left: 25px !important;
+    top: 20px !important;
+    height: 50px;
 }
 
 mat-label{
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 1px;
-    padding-bottom:20px;
     color: grey;
     
 }
@@ -284,12 +283,17 @@ mat-date-range-input{
     margin-left: 10px;
     
 }
+.searchP{
+
+}
 .div-estados{
     //background-color: #336925;
     width: 233px;
     height: 470px;
     //padding: 10px;
     border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
     margin-top: 87px !important;
     margin-left: 25px;
 }
@@ -323,7 +327,7 @@ mat-date-range-input{
   padding-right: 140px !important;
   left: 1% !important;
   border-radius: 5px;
-  width: 100px !important;
+  width: 100px;
   //justify-self: end !important;
   //position: sticky;
  
@@ -448,7 +452,7 @@ mat-button-toggle{
     background-color: #023A1D;
     border-radius: 5px;
     border: 2px solid #ffff !important;
-    width:128px !important;
+    width:125px !important;
     height: 50px !important;
     text-align: start!important;
    
@@ -544,6 +548,25 @@ mat-selection-list{
     background-color:#EDEDED;
     border-bottom : 1px solid white;
 }
+.deselect{
+  text-align:left;
+  color: white;
+  background-color:#336925;
+  font-weight: bold;
+  height: 40px;
+  width: 223px;
+  border-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: 25px;
+  text-align: center;
+}
+::ng-deep{
+  .deselect{
+    border: 1px solid white !important;
+  }
+}
+
 ::-webkit-scrollbar {
     width: 10px;
   }
@@ -765,13 +788,105 @@ body{
     left:10px;
   }
   &.bottomRight{
-    bottom:46px;
+    bottom:59px;
     right:10px;
   }
 }
+@media screen and (max-width:1400px) {
+  .wrapper-left {
+    //wrapper do painel esquerdo
+    grid-template-rows: repeat(2, 1fr);
+    //width: 270px;
+    //height: 600px;
+    padding-left: 30px;
+    }
 
+    .wrapper-geral {
+      //float: left;
+      display: grid;
+      flex: 1;
+      grid-template-rows:1fr 3fr;
+      padding-left: 30px;
+      //padding-right: 20px;
+    }
+  }
 
-/* @media screen and (max-width:1024px) {
+  @media screen and (max-width:400px) {
+    .wrapper-left {
+      //wrapper do painel esquerdo
+      grid-template-rows: repeat(2, 1fr);
+      //width: 270px;
+      //height: 600px;
+      //padding-left: 50px;
+  
+    
+      //width: 30%;
+      margin-bottom: 100px;
+      }
+  
+      .wrapper-geral {
+        //float: left;
+        display: grid;
+        flex: 1;
+        grid-template-rows:1fr 3fr;
+        padding-left: 0px;
+        //width: 30%;
+        //padding-right: 20px;
+        
+      }
+      .geral-map{
+        background-color: white;
+        //width: 330px;
+        //padding-bottom: 600px !important;
+        margin-top: 250px;
+        margin-left: 0px;
+        //bottom: 33px !important;
+        grid-template-columns: repeat(1, 1fr);
+        display: grid;
+        position: relative;
+        border-radius: 5px;
+
+        width: 100%;
+        padding-bottom: 0px !important;
+        bottom: 0px !important;
+        //height: 0px;
+      }
+      .wrapper-icons {
+        //wrapper do painel esquerdo
+        
+        grid-template-rows: repeat(4, 1fr);
+        height: 120px;
+        justify-self: end !important;
+        //width: 80%;
+      }
+      .wrapper-tela {
+        grid-template-rows: repeat(2, 1fr);
+        width: 350px;
+      }
+      .radio-bts{
+        background-color: #336925;
+        //padding-right: 140px !important;
+        //left: 1% !important;
+        border-radius: 5px;
+        width: 300px !important;
+        
+        //justify-self: end !important;
+        //position: sticky;
+        margin-top: 40px;
+      }
+
+      .back-color2{
+        //grid-column-gap: 20px;
+        justify-self: center !important;
+        margin-top: 20px;
+        //height: 500px;
+        margin-left: 80px;
+    }
+    
+    
+  
+  }
+/* @media screen and (max-width:1400px) {
   .geral-map{
     background-color: white;
     width: 60%;
@@ -803,7 +918,6 @@ body{
     //height: 600px;
     padding-left: 80px;
     width: 60%;
-    
 }
 
 } */

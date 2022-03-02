@@ -21,19 +21,17 @@
          </div>
       </div>
 
-      <div class="div-estados overflow-auto">
-         <!-- <span class="title-bt"> Localização</span>
-         <div class="input-group input-focus">
-            <div class="input-group-prepend">
-               <span class="input-group-text bg-white"><i class="fa fa-search"></i></span>
-            </div>
-            <input type="search" placeholder="Localização" class="form-control border-left-0">
-         </div>
-         <p></p> -->
+      <mat-form-field appearance="fill">
+         <mat-label class="searchP">Pesquisar...</mat-label>
+         <input matInput>
+      </mat-form-field>
 
+      <div class="div-estados overflow-auto">
          <section class="example-section">
-            <mat-selection-list #shoes [(ngModel)]="modelGroup">
-               <mat-list-option [value]="{nome: 'Brasil'}" class='btn-option' [selected]="true">Brasil</mat-list-option>
+            <mat-selection-list #cloths [(ngModel)]="modelGroup">
+               <mat-list-option [value]="{nome: 'Brasil'}" class='btn-option' [selected]="true">Brasil
+                  
+               </mat-list-option>
                <div *ngFor="let regiao of stateOptions">
                   <mat-list-option class='btn-option' [value]="regiao">
                      {{regiao.nome}}
@@ -48,7 +46,7 @@
          </section>
          
       </div>
-      <!-- <button mat-button >Deselect all Cloths</button> -->
+      <button mat-button  class="deselect btn-option" (click)="deselectCloth()">Limpar Seleção</button>
    </div>
    <div class="wrapper-geral">
       <div class="wrapper-icons">
