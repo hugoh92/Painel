@@ -1443,6 +1443,9 @@ export class HighchartsService {
                 },
                 
             },
+            tooltip: {
+                shared: true
+            },
             plotOptions: {
                 bar: {
                     dataLabels: {
