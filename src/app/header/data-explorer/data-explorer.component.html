@@ -5,48 +5,31 @@
          <span class="title-bt"> Período</span>
          <div class="range-date">
             <div class="custom-slider">
-               <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options" (userChange) = "updateYear()"></ng5-slider>
-
+               <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options" (userChange)="updateYear()">
+               </ng5-slider>
             </div>
-            <!--<mat-form-field appearance="fill">
-               <mat-label>Selecione o intervalo</mat-label>
-               <mat-date-range-input [rangePicker]="picker">
-                  <input matStartDate placeholder="">
-                  <input matEndDate placeholder="">
-               </mat-date-range-input>
-               <mat-datepicker-toggle matSuffix [for]="picker" color="primary"></mat-datepicker-toggle>
-               <mat-date-range-picker #picker startView="multi-year" (yearSelected)="chosenYearHandler($event, picker)">
-               </mat-date-range-picker>
-            </mat-form-field>!-->
          </div>
       </div>
 
-      <mat-form-field appearance="fill">
-         <mat-label class="searchP">Pesquisar...</mat-label>
-         <input matInput>
-      </mat-form-field>
-
       <div class="div-estados overflow-auto">
          <section class="example-section">
+            <input matInput [(ngModel)]="query" type="text" class="form-control mb-2" placeholder="Buscar">
             <mat-selection-list #cloths [(ngModel)]="modelGroup">
                <mat-list-option [value]="{nome: 'Brasil'}" class='btn-option' [selected]="true">Brasil
-                  
+
                </mat-list-option>
-               <div *ngFor="let regiao of stateOptions">
+               <div *ngFor="let regiao of stateOptions | LockFilter: query">
                   <mat-list-option class='btn-option' [value]="regiao">
                      {{regiao.nome}}
-                  </mat-list-option>
-                  <mat-list-option *ngFor="let estado of regiao.estados" class='btn-option' [value]="estado">
-                     {{estado.nome}}
                   </mat-list-option>
                </div>
 
             </mat-selection-list>
-            
+
          </section>
-         
+
       </div>
-      <button mat-button  class="deselect btn-option" (click)="deselectCloth()">Limpar Seleção</button>
+      <button mat-button class="deselect btn-option" (click)="deselectCloth()">Limpar Seleção</button>
    </div>
    <div class="wrapper-geral">
       <div class="wrapper-icons">
@@ -92,13 +75,13 @@
                         <mat-button-toggle value="tx_ocupacao" class="ml-2">
                            <p class="nome-ind doc-icon ">Taxa de<br>Ocupação</p>
                         </mat-button-toggle>
-                        <mat-button-toggle value="tx_sucesso" class="ml-2" >
+                        <mat-button-toggle value="tx_sucesso" class="ml-2">
                            <p class="nome-ind doc-icon ">Taxa de<br>Sucesso</p>
                         </mat-button-toggle>
-                        <mat-button-toggle value="aluno_docente" class="ml-2" >
+                        <mat-button-toggle value="aluno_docente" class="ml-2">
                            <p class="nome-ind doc-icon ">Relação<br>Aluno/Docente</p>
                         </mat-button-toggle>
-                        <mat-button-toggle value="valor_cc" class="ml-2" >
+                        <mat-button-toggle value="valor_cc" class="ml-2">
                            <p class="nome-ind doc-icon ">Conceito de<br>Curso</p>
                         </mat-button-toggle>
                         <mat-button-toggle value="valor_enade" class="ml-2">
@@ -137,10 +120,8 @@
       <div class="geral-map">
          <!-- HEADER ICONS -->
          <div class="p-2">
-            <app-output [metricaSelecionada]="metricaSelecionada" 
-            [estadosSelecionados]="modelGroup"
-            [cruzamentoSelecionado]="cruzamentoSelecionado"
-            [anosSelecionados]="anosSelecionados">
+            <app-output [metricaSelecionada]="metricaSelecionada" [estadosSelecionados]="modelGroup"
+               [cruzamentoSelecionado]="cruzamentoSelecionado" [anosSelecionados]="anosSelecionados">
             </app-output>
          </div>
 
@@ -160,15 +141,15 @@
          </div> -->
          <ul class="menu bottomRight">
             <li class="share top">
-              <i class="fa fa-share-alt"></i>
-              <ul class="submenu">
-                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-              </ul>
+               <i class="fa fa-share-alt"></i>
+               <ul class="submenu">
+                  <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+               </ul>
             </li>
-          </ul>
+         </ul>
       </div>
    </div>
 </div>

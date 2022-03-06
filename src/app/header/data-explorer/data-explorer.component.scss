@@ -1,5 +1,7 @@
 // We need to use ::ng-deep to overcome view encapsulation
-
+.form-control{
+  color:  #333 !important;
+}
 
 ::ng-deep {
     .custom-slider .ng5-slider .ng5-slider-bar {
@@ -283,9 +285,7 @@ mat-date-range-input{
     margin-left: 10px;
     
 }
-.searchP{
 
-}
 .div-estados{
     //background-color: #336925;
     width: 233px;
@@ -294,7 +294,7 @@ mat-date-range-input{
     border-radius: 5px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    margin-top: 87px !important;
+    margin-top: 20px !important;
     margin-left: 25px;
 }
 ::placeholder {

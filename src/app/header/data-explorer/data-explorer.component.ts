@@ -1,5 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
-import { MatFormFieldControl } from '@angular/material/form-field';
+import { Component, OnInit, Renderer2, Pipe, PipeTransform } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 export const MY_FORMATS = {
@@ -17,10 +16,10 @@ export const MY_FORMATS = {
   selector: 'app-data-explorer',
   templateUrl: './data-explorer.component.html',
   styleUrls: ['./data-explorer.component.scss'],
-  
+
 })
 
-  
+
 export class DataExplorerComponent implements OnInit {
   metricaSelecionada = "qt_vagas_autorizadas";
   cruzamentoSelecionado = "cat_admin";
@@ -32,27 +31,28 @@ export class DataExplorerComponent implements OnInit {
     showTicks: true
   };
   anosSelecionados = [this.value, this.highValue]
+  query;
 
   currentCheckedValue = null;
   subscription: any;
   stateOptions: any;
   modelGroup: any[]; // the selected values
-  
-  deselectCloth(){
-    this.stateOptions.deselectAll(); 
+
+  deselectCloth() {
+    this.stateOptions;
   }
 
   constructor(private ren: Renderer2, private _dataService: DataService) {
-    this.subscription = this._dataService.getData("./assets/data/state_list.json").subscribe(json => {
-      this.stateOptions = json;
+    this.subscription = this._dataService.getData("./assets/data/state_list.json").subscribe((json:any) => {
+      this.stateOptions = flattenObject(json);
     })
-   } 
-        
-  
+  }
+
+
   ngOnInit(): void {
   }
 
-  chosenYearHandler(ev, input){
+  chosenYearHandler(ev, input) {
     let { _d } = ev;
     input._destroyPopup()
   }
@@ -75,4 +75,36 @@ export class DataExplorerComponent implements OnInit {
     })
   }
 
+}
+
+export const flattenObject = (obj:any) => {
+  const flattened = []
+  obj.map(d => {  
+    if (d.estados) {
+      flattened.push(d)
+      flattened.push(...flattenObject(d.estados))
+    } else {
+      flattened.push(d)
+    }
+  })
+
+  return flattened
+}
+
+@Pipe({
+  name: 'LockFilter'
+})
+
+export class SearchPipe implements PipeTransform {
+  transform(value: any, args?: any): any {
+
+    if (!value) return null;
+    if (!args) return value;
+    args = args.toLowerCase();
+
+    let resul = value.filter(function (item) {
+      return JSON.stringify(item.nome).toLowerCase().includes(args);
+    });
+    return resul
+  }
 }
