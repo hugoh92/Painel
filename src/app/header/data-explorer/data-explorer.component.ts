@@ -22,7 +22,7 @@ export const MY_FORMATS = {
 
 export class DataExplorerComponent implements OnInit {
   metricaSelecionada = "qt_vagas_autorizadas";
-  cruzamentoSelecionado = "cat_admin";
+  cruzamentoSelecionado = null;
   value: number = 2010;
   highValue: number = 2019;
   options = {

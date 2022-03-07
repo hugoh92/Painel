@@ -1385,14 +1385,14 @@ export class HighchartsService {
 
     drawHistogram(idHtml, data, metadata) {
         let year = data[0].data.map(d => d[0])
-        data = data.map(d => {return {name: d.name, data: [d.data[0][1]]}})
+        data = data.map(d => { return { name: d.name, data: [d.data[0][1]] } })
 
         var options: any = {
-                chart: {
-                    type: 'bar'
+            chart: {
+                type: 'bar'
             },
             title: {
-                text:  metadata.title
+                text: metadata.title
             },
             subtitle: {
                 text: `Dados de ${year}`
@@ -1417,7 +1417,7 @@ export class HighchartsService {
                 enabled: false
             },
 
-            series: [{name: metadata.metrica, data: data.map(d => d.data)}]
+            series: [{ name: metadata.metrica, data: data.map(d => d.data) }]
         }
 
         Highcharts.chart(idHtml, options);
@@ -1427,21 +1427,21 @@ export class HighchartsService {
         let years = data[0].data.map(d => d[0])
         var options: any = {
             chart: {
-                    type: 'line',
-                    zoomType: 'x'
+                type: 'line',
+                zoomType: 'x'
             },
             title: {
-                text:  metadata.title
+                text: metadata.title
             },
             subtitle: {
-                text: `${years[0]} a ${years[years.length -1]}`
+                text: `${years[0]} a ${years[years.length - 1]}`
             },
             xAxis: {
                 categories: data.map(d => d.years),
                 title: {
                     text: null
                 },
-                
+
             },
             tooltip: {
                 shared: true
@@ -1460,6 +1460,26 @@ export class HighchartsService {
                 enabled: false
             },
 
+            series: data
+        }
+
+        Highcharts.chart(idHtml, options);
+    }
+
+    drawHistogramCruz(idHtml, data, metadata) {
+        var options: any = {
+            chart: {
+                type: 'bar'
+            },
+            xAxis: {
+                type: "category",
+                title: {
+                    text: null
+                }
+            },
+            credits: {
+                enabled: false
+            },
             series: data
         }
 

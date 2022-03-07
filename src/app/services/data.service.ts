@@ -10,7 +10,7 @@ import { SidebarService } from './sidebar.service';
 })
 export class DataService {
   autoCompleteOpts = [];
-  apiUrl2 = 'http://localhost:8000/';
+  apiUrl2 = 'https://warm-everglades-94375.herokuapp.com/';
   year = '2019';
   complementUrl = `&year=${this.year}`
 
@@ -45,7 +45,7 @@ export class DataService {
 
   getCardData(filter = null, cruzamento = null, filterYear = true){
     let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}cards?`:  `${this.apiUrl2}cards?uf=${filter}`;
-    url = cruzamento === null ? url : `${url}&cruzamento=codigo_ies__${cruzamento}`
+    url = cruzamento === null ? url : `${url}&cruzamento=${cruzamento}`
     url = filterYear ? url + this.complementUrl: url
     return this.http.get(url);
   }
