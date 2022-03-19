@@ -1431,10 +1431,10 @@ export class HighchartsService {
                 zoomType: 'x'
             },
             title: {
-                text: metadata.title
+                text: `${metadata.title}`
             },
             subtitle: {
-                text: `${years[0]} a ${years[years.length - 1]}`
+                text: `${data.name || ''} ${years[0]} a ${years[years.length - 1]}`
             },
             xAxis: {
                 categories: data.map(d => d.years),
@@ -1467,9 +1467,17 @@ export class HighchartsService {
     }
 
     drawHistogramCruz(idHtml, data, metadata) {
+        var year = data[0].year
+
         var options: any = {
             chart: {
                 type: 'bar'
+            },
+            title: {
+                text: metadata.title
+            },
+            subtitle: {
+                text: `Dados de ${year}`
             },
             xAxis: {
                 type: "category",

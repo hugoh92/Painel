@@ -63,7 +63,6 @@ export class OutputComponent implements OnChanges {
         current = changes['cruzamentoSelecionado'].currentValue,
         estados = this.estadosSelecionados || [null]
 
-      console.log(current)
       this.dataPlot = []
       estados.forEach(
         d => {
@@ -112,12 +111,17 @@ export class OutputComponent implements OnChanges {
     let flagCruzamento = this.cruzamentoSelecionado === null ? false : true;
     let dataplot = this.formatData(data, metrica, flagCruzamento)
     if (this.cruzamentoSelecionado !== null) {
-      this._highchartsService.drawHistogramCruz("plotData", dataplot, metadata)
+      if(dataplot.type == "histogram"){
+        this._highchartsService.drawHistogramCruz("plotData", dataplot.data, metadata)
+      } else {
+        this._highchartsService.drawLinePlot("plotData", dataplot.data, metadata)
+      }
+      
     }
-    else if (Math.max(...dataplot.map(d => d.data.length)) == 1) {
-      this._highchartsService.drawHistogram("plotData", dataplot, metadata)
+    else if (Math.max(...dataplot.data.map(d => d.data.length)) == 1) {
+      this._highchartsService.drawHistogram("plotData", dataplot.data, metadata)
     } else {
-      this._highchartsService.drawLinePlot("plotData", dataplot, metadata)
+      this._highchartsService.drawLinePlot("plotData", dataplot.data, metadata)
     }
 
   }
@@ -136,6 +140,9 @@ export class OutputComponent implements OnChanges {
 
   formatData(data, metrica, cruzamento = false) {
     var result = [];
+    var num_anos = data[0].data.map(d => d.ano).filter((v, i, a) => a.indexOf(v) === i).length
+    var num_localizacao = data.length
+
     if (!cruzamento) {
       data.forEach(d => {
         result.push({
@@ -143,45 +150,57 @@ export class OutputComponent implements OnChanges {
           data: d.data.map(u => { return { x: parseInt(u["ano"]), y: u[metrica] } }).filter(n => n.y).map(d => [d.x, d.y])
         })
       })
+      return {"type": "line", "data": result}
     } else {
       var vals = []
-      data.forEach(d => {
-        vals.push({
-          local: d.name,
-          ano: d.data.map(d => parseInt(d["ano"])).filter((v, i, a) => a.indexOf(v) === i),
-          data: d.data.map(d => {
-            let obj = {};
-            let key = d[this.cruzamentoSelecionado];
-            obj[key] = d[metrica]
 
-            return obj
+      if (num_anos == 1) {
+        var year = data[0].data[0].ano
+        data.forEach(d => {
+          vals.push({
+            local: d.name,
+            data: d.data.map(d => {
+              let obj = {};
+              let key = d[this.cruzamentoSelecionado];
+              obj[key] = d[metrica]
+
+              return obj
+            })
           })
         })
-      })
 
-      let current = {}
-      vals.forEach(function (obj) {
-        let objs = obj.data.reduce((prev, current) => {
-          return Object.assign(prev, current)
+
+        let current = {}
+        vals.forEach(function (obj) {
+          let objs = obj.data.reduce((prev, current) => {
+            return Object.assign(prev, current)
+          })
+
+          for (var key in objs) {
+            if (current[key] === undefined)
+              current[key] = []
+
+            current[key].push([obj.local, objs[key]])
+          }
         })
 
-        for (var key in objs) {
-          if (current[key] === undefined)
-            current[key] = []
-
-          current[key].push([obj.local, objs[key]])
+        for (var key in current) {
+          result.push({
+            year: year,
+            name: key,
+            data: current[key]
+          })
         }
-      })
+        return {"type": "histogram", "data": result}
+      } 
+      
+      if (num_anos > 1 && num_localizacao == 1) {
+        const result = transformArr(data[0].data, this.cruzamentoSelecionado, metrica)
+        result["name"] = data[0].name
 
-      for (var key in current) {
-        result.push({
-          name: key,
-          data: current[key]
-        })
+        return {"type": "line", "data": result}
       }
     }
-
-    return result
   }
 
   drawMap(metrica) {
@@ -197,4 +216,22 @@ export class OutputComponent implements OnChanges {
   }
 
 
+}
+
+
+function transformArr(orig, key, value) {
+  var newArr = [],
+      types = {},
+      i, j, cur;
+  for (i = 0, j = orig.length; i < j; i++) {
+      cur = orig[i];
+      if (!(cur[key] in types)) {
+          types[cur[key]] = {name: cur[key], data: []};
+          newArr.push(types[cur[key]]);
+      }
+      if (cur[value]) {
+          types[cur[key]].data.push([cur["ano"], cur[value]]);
+      }
+  }
+  return newArr;
 }
