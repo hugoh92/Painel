@@ -1,50 +1,27 @@
-<div class="row start-xs wrapper-tela">
-   <div class="box wrapper-left">
-      <p></p>
-      <div class="div-year">
-         <span class="title-bt"> Período</span>
-         <div class="range-date">
-            <div class="custom-slider">
-               <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options" (userChange)="updateYear()">
-               </ng5-slider>
-            </div>
-         </div>
-      </div>
-
-      <div class="div-estados overflow-auto">
-         <section class="example-section">
-            <input matInput [(ngModel)]="query" type="text" class="form-control mb-2" placeholder="Buscar">
-            <mat-selection-list #cloths [(ngModel)]="modelGroup">
-               <mat-list-option [value]="{nome: 'Brasil'}" class='btn-option' [selected]="true">Brasil
-
-               </mat-list-option>
-               <div *ngFor="let regiao of stateOptions | LockFilter: query">
-                  <mat-list-option class='btn-option' [value]="regiao">
-                     {{regiao.nome}}
-                  </mat-list-option>
-               </div>
-
-            </mat-selection-list>
-
-         </section>
-
-      </div>
-      <button mat-button class="deselect btn-option" (click)="deselectCloth()">Limpar Seleção</button>
-   </div>
-   <div class="wrapper-geral">
+<div class="row start-xs  wrapper-tela">
+   <div class=" row wrapper-header">
       <div class="wrapper-icons">
          <div class="row back-color2 ">
             <div class="col-9">
                <mat-button-toggle-group id="buttonExplorer" name="buttonExplorer" aria-label="Font Style"
                   class="w-100 back-color" [(ngModel)]="metricaSelecionada" ngDefaultControl>
                   <div class="">
+                    <!--  <div class="wrapper-inputs"> -->
+                        <section class="grid grid-template-areas-1">
+                        <div class="input-cursos">
+                           <mat-button-toggle value="qt_cursos" class="ml-2 bt-cursos">
+                              <img src="/assets/icons/NEW_CURSOS.png" class="icones-ind icon-cursos">
+                              <span class="row nome-cursos">Cursos</span>
+                           </mat-button-toggle>
+                        </div>
+                     
                      <div class="row linha-cima">
+                       
                         <mat-button-toggle value="qt_vagas_autorizadas" class="ml-2 abc">
                            <div class="bt-taxa2 nome-ind ab">
                               <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind">
                               <p class="nome-ind bt-taxa abcd">Vagas<br>Oferecidas</p>
                            </div>
-
                         </mat-button-toggle>
                         <mat-button-toggle value="qt_inscrito_total" class="ml-2">
                            <img src="/assets/icons/NEW_INSCRITOS.png" class="icones-ind">
@@ -68,7 +45,7 @@
                         </mat-button-toggle>
                      </div>
 
-                     <div class="row mt-2 linha-cima">
+                     <div class="row mt-2  linha-cima2">
                         <mat-button-toggle value="tx_concorrencia" class="ml-2">
                            <p class="nome-ind doc-icon ">Taxa de<br>Concorrência</p>
                         </mat-button-toggle>
@@ -88,6 +65,7 @@
                            <p class="nome-ind doc-icon ">Conceito<br>ENADE</p>
                         </mat-button-toggle>
                      </div>
+                  </section>
                   </div>
                </mat-button-toggle-group>
             </div>
@@ -115,9 +93,50 @@
 
          </div>
       </div>
+   </div>
+   <div class="box wrapper-left">
+      
+      <div class="div-year">
+         <span class="title-bt"> Período</span>
+         <div class="range-date">
+            <div class="custom-slider">
+               <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options" (userChange)="updateYear()">
+               </ng5-slider>
+            </div>
+         </div>
+      </div>
 
+      <div class="div-estados overflow-auto">
+         <section class="example-section">
+            <input matInput [(ngModel)]="query" type="text" class="form-control mb-2" placeholder="Buscar">
+            <mat-selection-list #cloths [(ngModel)]="modelGroup">
+               <mat-list-option [value]="{nome: 'Brasil'}" class='btn-option' [selected]="true">Brasil
 
+               </mat-list-option>
+               <div *ngFor="let regiao of stateOptions | LockFilter: query">
+                  <mat-list-option class='btn-option' [value]="regiao">
+                     {{regiao.nome}}
+                  </mat-list-option>
+               </div>
+
+            </mat-selection-list>
+         </section>
+      </div>
+      <button mat-button class="deselect btn-option" (click)="deselectCloth()">Limpar Seleção</button>
+   </div>
+   
+   <div class="wrapper-geral">
       <div class="geral-map">
+      <div class="header-map">
+         <div class="logo-direm-panel">
+               <img src="/assets/icons/Direm-logo.png" class="doc-icon">
+         </div>
+
+            <div class="bt-relativo">
+               <mat-slide-toggle class="bt-relativo" [disabled]="true" labelPosition="before"> <span
+                  class="nome-indf doc-icon "> Relativo/Absoluto</span></mat-slide-toggle>
+            </div>
+      </div>
          <!-- HEADER ICONS -->
          <div class="p-2">
             <app-output [metricaSelecionada]="metricaSelecionada" [estadosSelecionados]="modelGroup"

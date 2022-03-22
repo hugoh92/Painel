@@ -24,6 +24,7 @@ var titles: Array<Metadata> = [
   { metrica: "aluno_docente", title: "Distribuição da relação aluno docente.", subtitle: "Brasil, 2019" },
   { metrica: "valor_enade", title: "Distribuição do conceito de curso ENADE.", subtitle: "Brasil, 2019" },
   { metrica: "valor_cc", title: "Distribuição do conceito de curso.", subtitle: "Brasil, 2019" },
+  { metrica: "qt_cursos", title: "Distribuição do número de cursos.", subtitle: "Brasil, 2019" },
 ]
 
 @Component({
@@ -45,6 +46,7 @@ export class OutputComponent implements OnChanges {
   constructor(private _dataService: DataService, private _highchartsService: HighchartsService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
+     
     if (changes['metricaSelecionada'] && changes['metricaSelecionada'].previousValue != changes['metricaSelecionada'].currentValue) {
       const prev = changes['metricaSelecionada'].previousValue
 
