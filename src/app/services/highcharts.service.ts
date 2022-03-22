@@ -1414,7 +1414,8 @@ export class HighchartsService {
                 }
             },
             credits: {
-                enabled: false
+                text: "Direm.org",
+                link: "https://direm.org/"
             },
 
             series: [{ name: metadata.metrica, data: data.map(d => d.data) }]
@@ -1431,10 +1432,10 @@ export class HighchartsService {
                 zoomType: 'x'
             },
             title: {
-                text: metadata.title
+                text: `${metadata.title}`
             },
             subtitle: {
-                text: `${years[0]} a ${years[years.length - 1]}`
+                text: `${data.name || ''} ${years[0]} a ${years[years.length - 1]}`
             },
             xAxis: {
                 categories: data.map(d => d.years),
@@ -1457,7 +1458,8 @@ export class HighchartsService {
                 }
             },
             credits: {
-                enabled: false
+                text: "Direm",
+                link: "https://direm.org/"
             },
 
             series: data
@@ -1467,9 +1469,17 @@ export class HighchartsService {
     }
 
     drawHistogramCruz(idHtml, data, metadata) {
+        var year = data[0].year
+
         var options: any = {
             chart: {
                 type: 'bar'
+            },
+            title: {
+                text: metadata.title
+            },
+            subtitle: {
+                text: `Dados de ${year}`
             },
             xAxis: {
                 type: "category",
@@ -1478,11 +1488,54 @@ export class HighchartsService {
                 }
             },
             credits: {
-                enabled: false
+                text: "Direm.org",
+                link: "https://direm.org/"
             },
             series: data
         }
 
         Highcharts.chart(idHtml, options);
+    }
+
+    drawColumnPlotCruz(idHtml, data, metadata) {
+        var options = {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: metadata.title
+            },
+            credits: {
+                text: "Direm.org",
+                link: "https://direm.org/"
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.userOptions.stack + " - " + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>' +
+                        'Total: ' + this.point.stackTotal;
+                }
+            },
+
+            xAxis: {
+                lineWidth: 0,
+                gridLineWidth: 1
+              },
+
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    borderWidth: 1
+                },
+                series:{
+                    colorByPoint: false
+                }
+            },
+
+            series: data
+        }
+        Highcharts.chart(idHtml, options);
+
     }
 }
