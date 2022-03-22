@@ -93,6 +93,8 @@ export class OutputComponent implements OnChanges {
           this.drawPlot(this.metricaSelecionada)
         }
 
+      } else {
+        this.getData(this.metricaSelecionada, current[1], this.cruzamentoSelecionado)
       }
 
     }
@@ -113,8 +115,10 @@ export class OutputComponent implements OnChanges {
     if (this.cruzamentoSelecionado !== null) {
       if(dataplot.type == "histogram"){
         this._highchartsService.drawHistogramCruz("plotData", dataplot.data, metadata)
-      } else {
+      } else if(dataplot.type == "line") {
         this._highchartsService.drawLinePlot("plotData", dataplot.data, metadata)
+      } else if(dataplot.type == "column") {
+        this._highchartsService.drawColumnPlotCruz("plotData", dataplot.data, metadata)
       }
       
     }
@@ -197,8 +201,42 @@ export class OutputComponent implements OnChanges {
       if (num_anos > 1 && num_localizacao == 1) {
         const result = transformArr(data[0].data, this.cruzamentoSelecionado, metrica)
         result["name"] = data[0].name
-
         return {"type": "line", "data": result}
+      }
+
+      var colors = ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+      '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']
+      if (num_anos > 1 && num_localizacao > 1) {
+        let result = data.map(d => {
+          return transformArr2(d.data, this.cruzamentoSelecionado, metrica, d.name)
+        }).reduce((a, b) => a.concat(b), [])
+
+        let n_types = result.map(d => d.name).filter((v, i, a) => a.indexOf(v) === i).length
+        let fator_opacity = 0.8 / n_types
+
+        var types = {}, states = {},
+        i, j, cur, axis = 0, opacity = 1;
+        for (i = 0, j = result.length; i < j; i++) {
+            cur = result[i];
+            if (!(cur.name in types)) {
+                types[cur.name] = opacity;
+                result[i].id = cur.name
+                opacity = opacity - fator_opacity;
+            } else {
+                result[i].linkedTo = cur.name
+            }
+
+            if (!(cur.stack in states)) {
+              states[cur.stack] = colors[axis];
+              axis = axis + 1;
+            } 
+            result[i].opacity = types[cur.name];
+            result[i].color = states[cur.stack];
+        }
+
+        console.log(result)
+
+        return {"type": "column", "data": result}
       }
     }
   }
@@ -218,6 +256,23 @@ export class OutputComponent implements OnChanges {
 
 }
 
+function transformArr2(orig, key, value, name) {
+  var newArr = [],
+      types = {},
+      i, j, cur;
+  for (i = 0, j = orig.length; i < j; i++) {
+      cur = orig[i];
+      if (!(cur[key] in types)) {
+          types[cur[key]] = {name: cur[key], data: []};
+          newArr.push(types[cur[key]]);
+      } 
+      if (cur[value]) {
+          types[cur[key]].data.push([cur["ano"], cur[value]]);
+          types[cur[key]].stack = name
+      }
+  }
+  return newArr;
+}
 
 function transformArr(orig, key, value) {
   var newArr = [],
