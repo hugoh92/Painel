@@ -60,7 +60,8 @@
     background:#C4C4C4;
 }
 .wrapper-tela {
-    grid-template-rows: repeat(2, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+   height: 800px !important;
    
 }
 
@@ -69,7 +70,9 @@
     grid-template-rows: repeat(2, 1fr);
     width: 270px;
     height: 600px;
-    padding-left: 80px;
+    //background-color: #3b5999;
+    margin-left: 25px;
+    
     
 }
 
@@ -78,7 +81,10 @@
     grid-template-rows: repeat(2, 1fr);
     width: 100% !important;
     height: 150px;
-    justify-self: end !important;
+    //justify-self: end !important;
+    margin-left: 95px;
+    
+    //margin-right: 55px;
 }
 .back-color{
     background-color: #336925;
@@ -87,12 +93,17 @@
     align-self: center!important;
     align-content: center!important;
     justify-content: center!important;
-    //line-height: 1 !important;
+    line-height: 1 !important;
     text-align: center !important;
     width: 100% !important;
     //margin-left: 15px;
    // width: auto;
    
+}
+.wrapper-header{
+  height: 155px;
+  
+ 
 }
 .ml-2{
     width: 100%;
@@ -103,12 +114,14 @@
 }
 .wrapper-geral {
     //float: left;
-    display: grid;
+    //display: grid;
     flex: 1;
     grid-template-rows:1fr 3fr;
-    padding-left: 80px;
-    height: auto;
+    //padding-left: 80px;
+    //height: auto;
     //padding-right: 20px;
+    //background-color: rebeccapurple;
+    
 }
 .container{
     background-color: rebeccapurple;
@@ -118,8 +131,6 @@
     align-items:flex-end!important;
     justify-content:end!important;
     justify-self: end!important; */
-    
-    
 }
 .wrapper-icons {
     grid-column-gap: 1px;
@@ -147,7 +158,7 @@
     
     
 }
-.indicadores-div {
+/* .indicadores-div {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 7px;
@@ -159,12 +170,28 @@
     margin-top: 10px;
     width: 95%;
 }
-.check-div{
-    //width: 200px;
-    //background-color: #E1E31D;
-    
-    
+ */
+.input-cursos{
+  grid-area: input-cursos;
+  }
+.grid {
+	display: grid;
 }
+
+.grid-template-areas-1 {
+	grid-template-areas:
+		
+		"input-cursos linha-cima "
+		"input-cursos linha-cima2"
+		;
+}
+
+
+ .bt-cursos{
+  width: 200px; 
+  height: 108px !important;
+  margin-right: 15px;
+ }
 .title-check{
     color: #E1E31D;
     position: relative;
@@ -174,7 +201,7 @@
 
 .back-color2{
     //grid-column-gap: 20px;
-    justify-self: end !important;
+    //justify-self: end !important;
 }
 
 .div-icons {
@@ -188,10 +215,10 @@
     
     
 }
-.div-break{
+/* .div-break{
     grid-template-columns: repeat(2, 1fr);
     display: grid;
-}
+} */
 /* .break-nome{
     text-align:start;
     margin-top: 5px !important;
@@ -208,8 +235,25 @@
     word-wrap: break-all !important;
     line-height: 1.4;
     padding-top: 8px;
+}
+.nome-cursos{
+    position: relative;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #E1E31D;
+    //font-family: Roboto;
+    font-style: normal;    
+    line-height: 1.8;
+    align-content: center!important;
+    align-self:center!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align: center!important;
     
-    
+}
+.icon-cursos{
+
 }
 .oneword{
     right: 5px;
@@ -225,11 +269,12 @@
 .div-year{
     background-color: #336925;
     width: 233px;
-    height: 120px;
+    height: 110px;
     //padding: 10px;
     border-radius: 5px;
-    margin-top: 20px !important;
+    //margin-top: 160px !important;
     margin-left: 25px;
+   
 }
 
 .range-date{
@@ -288,12 +333,12 @@ mat-date-range-input{
 .div-estados{
     //background-color: #336925;
     width: 233px;
-    height: 470px;
+    height: 380px;
     //padding: 10px;
     border-radius: 5px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    margin-top: 20px !important;
+    margin-top: 10px !important;
     margin-left: 25px;
 }
 ::placeholder {
@@ -379,24 +424,48 @@ mat-date-range-input{
    
     width: 93.5%;
     //padding-bottom: 40px !important;
-    bottom: 20px !important;
+    //bottom: 20px !important;
     grid-template-columns: repeat(1, 1fr);
     display: grid;
     //height: auto;
     // margin: 1px auto; //prolblema busca
     position: relative;
     border-radius: 5px;
-    height: auto;
+    height: 500px;
     //padding-right: 299px;
     
 }
-
+.header-map{
+    
+   height: 0px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5px;
+    display: grid;
+    flex: 1;
+    position: relative;
+    width: 100%;
+    align-self:flex-start;
+    text-align:start;
+    
+    z-index: 10000000;
+    margin: 10px;
+  }
+  .logo-direm-panel{
+    padding-top:20px;
+    height: 40px
+    
+  }
 .lineup{
     width: 300px;
 }
 .bt-relativo{
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 30px;
+    text-align:end;
+    z-index: 10000000;
+    padding-top:14px;
+    height: 40px;
+    
 }
 .footer-map{
     height: 30px;
@@ -493,6 +562,11 @@ mat-button-toggle{
 }
 .linha-cima{
     padding-right: 8px !important;
+    grid-area: linha-cima;
+}
+.linha-cima2{
+  padding-right: 8px !important;
+  grid-area: linha-cima2;
 }
 /* #buttonExplorer .mat-button-toggle-disabled {
     background-color: rgba(0,0,0,.12);
@@ -787,7 +861,7 @@ body{
     left:10px;
   }
   &.bottomRight{
-    bottom:59px;
+    bottom:15px;
     right:10px;
   }
 }
@@ -807,6 +881,7 @@ body{
       grid-template-rows:1fr 3fr;
       padding-left: 30px;
       //padding-right: 20px;
+      height: 600px;
     }
   }
 
@@ -831,7 +906,7 @@ body{
         padding-left: 0px;
         //width: 30%;
         //padding-right: 20px;
-        
+        //height: 600px;
       }
       .geral-map{
         background-color: white;
@@ -876,11 +951,11 @@ body{
 
       .back-color2{
         //grid-column-gap: 20px;
-        justify-self: center !important;
+        //justify-self: center !important;
         margin-top: 20px;
         //height: 500px;
-        margin-left: 80px;
-    }
+        //margin-left: 80px;
+      }
     
     
   
