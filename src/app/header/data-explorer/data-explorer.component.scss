@@ -5,25 +5,28 @@
 
 ::ng-deep {
     .custom-slider .ng5-slider .ng5-slider-bar {
-      background: #ffe4d1;
-      height: 2px;
+      background: #023A1D; 
+      height: 3px;
     }
     .custom-slider .ng5-slider .ng5-slider-selection {
-      background: orange;
+      background:  #E1E31D;
     }
   
     .custom-slider .ng5-slider .ng5-slider-pointer {
-      width: 8px;
-      height: 16px;
-      top: auto; /* to remove the default positioning */
-      bottom: 0;
-      background-color: #333;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
+      width: 15px;
+      height: 15px;
+      top: -6px;
+      background:  #E1E31D;
+      //bottom: 0px;
+      //background-color: #333;
+      //border-top-left-radius: 3px;
+      //border-top-right-radius: 3px;
     }
-  
+
+   
     .custom-slider .ng5-slider .ng5-slider-pointer:after {
       display: none;
+      
     }
     .custom-slider .ng5-slider .ng5-slider-bubble {
       bottom: 14px;
@@ -32,20 +35,20 @@
   
     .custom-slider .ng5-slider .ng5-slider-limit {
       font-weight: bold;
-      color: pink;
+      color: #023A1D; ;
     }
   
     .custom-slider .ng5-slider .ng5-slider-tick {
-      width: 1px;
-      height: 10px;
+      width: 7px;
+      height: 7px;
       margin-left: 4px;
-      border-radius: 0;
-      background: #ffe4d1;
-      top: -1px;
+      //border-radius: 0;
+      background: #023A1D; 
+      top: 1px;
     }
   
     .custom-slider .ng5-slider .ng5-slider-tick.ng5-slider-selected {
-      background: orange;
+      background: #E1E31D;
     }
   }
   
@@ -72,9 +75,8 @@
     width: 270px;
     height: 600px;
     //background-color: #3b5999;
-    margin-left: 25px;
-    
-    
+    margin-left: 35px;
+    padding-left: 35px;
 }
 
 .wrapper-icons {
@@ -83,7 +85,7 @@
     width: 100% !important;
     height: 150px;
     //justify-self: end !important;
-    margin-left: 95px;
+    margin-left: 110px;
     
     //margin-right: 55px;
 }
@@ -102,8 +104,8 @@
    
 }
 .wrapper-header{
-  height: 155px;
-  
+  height: 130px;
+  //background-color: red;
  
 }
 .ml-2{
@@ -118,21 +120,14 @@
     //display: grid;
     flex: 1;
     grid-template-rows:1fr 3fr;
-    //padding-left: 80px;
+    padding-left: 40px;
     //height: auto;
+    margin-right: 5px;
     //padding-right: 20px;
     //background-color: rebeccapurple;
-    
+    padding-bottom: 20px !important;   
 }
-.container{
-    background-color: rebeccapurple;
-    //display: flex;
- /*    align-content: flex-end!important;
-    align-self: flex-end!important;
-    align-items:flex-end!important;
-    justify-content:end!important;
-    justify-self: end!important; */
-}
+
 .wrapper-icons {
     grid-column-gap: 1px;
     grid-row-gap: 3px;
@@ -206,7 +201,7 @@
 }
 
 .div-icons {
-    margin-top: 10px !important;
+    //margin-top: 10px !important;
     height: 52px;
     text-align: center;
     //background-color: #023A1D;
@@ -432,41 +427,45 @@ mat-date-range-input{
     // margin: 1px auto; //prolblema busca
     position: relative;
     border-radius: 5px;
-    height: 500px;
+    height: 540px;
     //padding-right: 299px;
     
 }
 .header-map{
-    
-   height: 0px;
+    //height: 0px;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 5px;
+    grid-column-gap: 2px;
     display: grid;
     flex: 1;
     position: relative;
     width: 100%;
     align-self:flex-start;
     text-align:start;
-    
-    z-index: 10000000;
+    height: 0px;
+    //z-index: 10000000;
     margin: 10px;
   }
   .logo-direm-panel{
-    padding-top:20px;
-    height: 40px
-    
+    padding-top:10px;
+    height: 0px;
+    z-index: 10000000;
   }
 .lineup{
     width: 300px;
 }
 .bt-relativo{
     padding-left: 10px;
-    padding-right: 30px;
+    padding-right: 10px;
     text-align:end;
     z-index: 10000000;
-    padding-top:14px;
-    height: 40px;
+    padding-top:10px;
+    height: 0px;
     
+}
+.p-2{
+  
+ 
+ 
 }
 .footer-map{
     height: 30px;
@@ -862,7 +861,7 @@ body{
     left:10px;
   }
   &.bottomRight{
-    bottom:15px;
+    bottom:35px;
     right:10px;
   }
 }
@@ -872,6 +871,7 @@ body{
     grid-template-rows: repeat(2, 1fr);
     //width: 270px;
     //height: 600px;
+    margin-left: 25px;
     padding-left: 30px;
     }
 
@@ -883,6 +883,10 @@ body{
       padding-left: 30px;
       //padding-right: 20px;
       height: 600px;
+      margin-right: 0px;
+    }
+    .wrapper-icons{
+      margin-left: 95px;
     }
   }
 
@@ -893,8 +897,6 @@ body{
       //width: 270px;
       //height: 600px;
       //padding-left: 50px;
-  
-    
       //width: 30%;
       margin-bottom: 100px;
       }

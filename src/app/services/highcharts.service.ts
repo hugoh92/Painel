@@ -1498,7 +1498,7 @@ export class HighchartsService {
     }
 
     drawColumnPlotCruz(idHtml, data, metadata) {
-        var options = {
+        var options: any = {
             chart: {
                 type: 'column'
             },
