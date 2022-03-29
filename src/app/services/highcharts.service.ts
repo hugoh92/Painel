@@ -1389,7 +1389,12 @@ export class HighchartsService {
 
         var options: any = {
             chart: {
-                type: 'bar'
+                type: 'bar',
+                events: {
+                load: function (chart) {
+                    var target = document.getElementById('customLegend');
+                    target.innerHTML = '';
+                }}
             },
             title: {
                 text: metadata.title
@@ -1429,7 +1434,12 @@ export class HighchartsService {
         var options: any = {
             chart: {
                 type: 'line',
-                zoomType: 'x'
+                zoomType: 'x',
+                events: {
+                load: function (chart) {
+                    var target = document.getElementById('customLegend');
+                    target.innerHTML = '';
+                }}
             },
             title: {
                 text: `${metadata.title}`
@@ -1473,7 +1483,12 @@ export class HighchartsService {
 
         var options: any = {
             chart: {
-                type: 'bar'
+                type: 'bar',
+                events: {
+                load: function (chart) {
+                    var target = document.getElementById('customLegend');
+                    target.innerHTML = '';
+                }}
             },
             title: {
                 text: metadata.title
@@ -1500,7 +1515,25 @@ export class HighchartsService {
     drawColumnPlotCruz(idHtml, data, metadata) {
         var options: any = {
             chart: {
-                type: 'column'
+                type: 'column',
+                events: {
+                    load: function (chart) {
+                        var target = document.getElementById('customLegend');
+                        target.innerHTML = '';
+
+                        var types = {}
+                        this.series.forEach(function (series) {
+                            let cur = series.userOptions.cat
+                            if (!(cur in types)) {
+                                target.insertAdjacentHTML('beforeend', ('<li class="item"><span class="symbol" style="color:' +
+                                    series.color + '"></span>' +
+                                    series.userOptions.cat + '</li>')
+                                )
+                                types[cur] = true
+                            }
+                        })
+                    }
+                }
             },
             title: {
                 text: metadata.title
@@ -1512,8 +1545,8 @@ export class HighchartsService {
 
             tooltip: {
                 formatter: function () {
-                    return '<b>' + this.series.userOptions.stack + " - " + this.x + '</b><br/>' +
-                        this.series.name + ': ' + this.y + '<br/>' +
+                    return '<b>' + this.series.userOptions.cat + " - " + this.x + '</b><br/>' +
+                        this.series.userOptions.stack + ': ' + this.y + '<br/>' +
                         'Total: ' + this.point.stackTotal;
                 }
             },
@@ -1521,15 +1554,15 @@ export class HighchartsService {
             xAxis: {
                 lineWidth: 0,
                 gridLineWidth: 1
-              },
+            },
 
             plotOptions: {
                 column: {
                     stacking: 'normal',
-                    borderWidth: 1
+                    borderWidth: 1,
                 },
-                series:{
-                    colorByPoint: false
+                series: {
+                    colorByPoint: false,
                 }
             },
 
