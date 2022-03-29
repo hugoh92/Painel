@@ -1,43 +1,28 @@
+#customLegend {
+  position: absolute !important;
+  top: 50px;
+  left: 100px;
+  background-color: white;
+  border: 1px solid rgb(204, 203, 203);
+  padding:2px;
+  font-size: 12px;
+}
+
+
+
 .header-map{
-/* height: 30px;
- border-radius: 5px;
- grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 5px;
-   display: grid;
-   flex: 1;
-    position: relative;
-    width: 100%;
-     align-self:flex-start;
-     
-     top: 10px !important; */
      
     text-align:end;
     border-radius: 5px;
 }
-/* .logo-bts{
-    align-content: flex-end!important;
-    align-self: flex-end!important;
-    align-items:flex-end!important;
-    justify-content:end!important;
-    justify-self: end!important;
-} */
-
-// .logo-bts{
-//     padding-right: 10px;
-//     justify-self: end;
-//  }
 
 
 ng-template .div-iconsf{
-    
-    //width: 70px;
-    //height: 35px;
-    //border: none;
+
     border-radius: 5px;
     background-color: #EDEDED;
     border-width: 9px !important;
     border-style: solid !important;
-    //border-color: orange !important;
 }
 
 

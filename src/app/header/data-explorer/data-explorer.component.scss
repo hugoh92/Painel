@@ -5,21 +5,21 @@
 
 ::ng-deep {
     .custom-slider .ng5-slider .ng5-slider-bar {
-      background: #ffe4d1;
-      height: 2px;
+      background: #23441b;
+      height: 3px;
     }
     .custom-slider .ng5-slider .ng5-slider-selection {
-      background: orange;
+      background: #E1E31D;
+      height: 3px;
     }
   
     .custom-slider .ng5-slider .ng5-slider-pointer {
-      width: 8px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
       top: auto; /* to remove the default positioning */
-      bottom: 0;
-      background-color: #333;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
+      bottom: -5px;
+      background-color: #E1E31D;
     }
   
     .custom-slider .ng5-slider .ng5-slider-pointer:after {
@@ -30,22 +30,21 @@
       color: white !important;
     }
   
-    .custom-slider .ng5-slider .ng5-slider-limit {
-      font-weight: bold;
-      color: pink;
-    }
-  
+
     .custom-slider .ng5-slider .ng5-slider-tick {
       width: 1px;
       height: 10px;
       margin-left: 4px;
-      border-radius: 0;
-      background: #ffe4d1;
+      width: 3px;
+      border-radius: 10px;
+      background: #23441b;
       top: -1px;
     }
   
     .custom-slider .ng5-slider .ng5-slider-tick.ng5-slider-selected {
-      background: orange;
+      background: #E1E31D;
+      width: 3px;
+      border-radius: 10px;
     }
   }
   

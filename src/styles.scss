@@ -4,6 +4,23 @@
 
 
 /* You can add global styles to this file, and also import other style files */
+#customLegend ul{
+    background-color: white !important;
+    border-radius: 3px;
+    border-color: grey !important;
+    border-width: 1px;
+}
+
+#customLegend li {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+
+    .symbol:before {
+        content: ' \25CF';
+        font-size: 20px;
+    }
+}
 
 *,
 body {

@@ -223,7 +223,7 @@ export class OutputComponent implements OnChanges {
                 result[i].id = cur.name
                 opacity = opacity - fator_opacity;
             } else {
-                result[i].linkedTo = cur.name
+              result[i].linkedTo = cur.name
             }
 
             if (!(cur.stack in states)) {
@@ -232,9 +232,9 @@ export class OutputComponent implements OnChanges {
             } 
             result[i].opacity = types[cur.name];
             result[i].color = states[cur.stack];
+            result[i].name = cur.name
+            result[i].cat = cur.stack
         }
-
-        console.log(result)
 
         return {"type": "column", "data": result}
       }
