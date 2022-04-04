@@ -22,8 +22,11 @@
       //border-top-left-radius: 3px;
       //border-top-right-radius: 3px;
     }
-
-   
+    
+    .ng5-slider-pointer { 
+      &:focus { 
+        outline:0 !important; }
+    }
     .custom-slider .ng5-slider .ng5-slider-pointer:after {
       display: none;
       
@@ -835,7 +838,7 @@ body{
           }
           &.instagram{
             i.fa{
-              background-color: #e4405f;
+              background-color: #075E54;
             }
           }
         }
