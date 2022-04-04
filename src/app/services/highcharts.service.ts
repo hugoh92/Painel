@@ -6,11 +6,13 @@ import Sunburst from 'highcharts/modules/sunburst';
 import Export from 'highcharts/modules/exporting';
 import Histogram from 'highcharts/modules/histogram-bellcurve';
 
+
 Histogram(Highcharts);
 Sunburst(Highcharts)
 Export(Highcharts)
 declare var require: any;
 const usaMap = require("../../assets/data/br.json");
+
 
 @Injectable({
     providedIn: 'root'
@@ -91,6 +93,85 @@ export class HighchartsService {
         return dataLabels
     }
 
+    getMapOptions(idHtml, result, metadata){
+        var series;
+        let geojson = usaMap
+        let data = result.data
+        
+        var dataLabels = this.get_data_labels(this.getIntervalls(data.map(d => d[d.length - 1])));
+        
+        series = [{
+            data: data,
+            name: 'Dados 2019',
+            borderColor: '#0d542a',
+            borderWidth: 1,
+            states: {
+                hover: {
+                    color: '#BADA55'
+                }
+            },
+            dataLabels: {
+                enabled: false,
+                format: '{point.name}'
+            }
+        }]
+
+        var options: any = {
+            chart: {
+                map: geojson,
+                backgroundColor: undefined
+            },
+
+            title: {
+                text: ''
+            },
+
+            subtitle: {
+                text: ''
+            },
+
+            legend: {
+                title: {
+                    text: `<span style = "color: #fff"> ${metadata.title} </span>`,
+                    style: {
+                        color: 'grey'
+                    }
+                },
+                itemStyle: {
+                    color: "black"
+                },
+                layout: "vertical",
+                align: "left",
+                width: 200,
+                itemWidth: 100
+            },
+
+            credits: {
+                enabled: false
+            },
+
+            mapNavigation: {
+                enabled: false,
+                buttonOptions: {
+                    verticalAlign: 'bottom'
+                }
+            },
+            colorAxis: {
+                min: result.min,
+                max: result.max,
+                labels: {
+                    format: "{value}"
+                },
+                tickAmount: 5
+            },
+            series: series
+        }
+
+        HighchartsMap.mapChart(idHtml, options);
+
+        return options
+
+    }
     draMap(idHtml, data, geojson = usaMap) {
         var series;
 
@@ -1427,6 +1508,8 @@ export class HighchartsService {
         }
 
         Highcharts.chart(idHtml, options);
+
+        return options
     }
 
     drawLinePlot(idHtml, data, metadata) {
@@ -1476,6 +1559,8 @@ export class HighchartsService {
         }
 
         Highcharts.chart(idHtml, options);
+
+        return options
     }
 
     drawHistogramCruz(idHtml, data, metadata) {
@@ -1510,6 +1595,8 @@ export class HighchartsService {
         }
 
         Highcharts.chart(idHtml, options);
+
+        return options
     }
 
     drawColumnPlotCruz(idHtml, data, metadata) {
@@ -1568,7 +1655,10 @@ export class HighchartsService {
 
             series: data
         }
+
         Highcharts.chart(idHtml, options);
+
+        return options
 
     }
 }
