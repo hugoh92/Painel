@@ -50,9 +50,10 @@ export class DataService {
     return this.http.get(url);
   }
 
-  getMapData(filter = null){
+  getMapData(filter = null, filterYear = true){
     let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}mapa?`:  `${this.apiUrl2}mapa/${filter}`;
-    return this.http.get(url + this.complementUrl);
+    url = filterYear ? url + this.complementUrl: url
+    return this.http.get(url);
   }
 
   getLocalizacaoData(filter = null){

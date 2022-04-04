@@ -1,7 +1,7 @@
 <div class="header-map">
     <div class="logo-bts">
         <!-- <div class="titulo-pag"> -->
-            <!-- <span class="nome-indf titulo- "> {{metadata.title}}</span> <br>
+        <!-- <span class="nome-indf titulo- "> {{metadata.title}}</span> <br>
             <span class="nome-indf titulo- "> {{metadata.subtitle}}</span> -->
         <!-- </div> 
         <mat-slide-toggle class="bt-relativo" [disabled]="true" labelPosition="before"> <span
@@ -10,21 +10,35 @@
     </div>
 </div>
 
-<mat-tab-group  class="bt-tabs" mat-align-tabs="center" headerPosition="below" color="transparent">
+<mat-tab-group class="bt-tabs" mat-align-tabs="center" 
+headerPosition="below" color="transparent" (selectedTabChange)="createPlots($event)">
     <mat-tab class="tab-style">
         <ng-template mat-tab-label class="div-iconsf">
             <img src="/assets/icons/Graf-direm.png" class="doc-icon">
             <span class="nome-indf doc-icon "> GRÁFICO</span>
         </ng-template>
-        <div id="plotData"></div>
-        <ul id="customLegend"></ul>
+        <ng-template matTabContent>
+            <div id="plotData"></div>
+            <ul id="customLegend"></ul>
+        </ng-template>
+
+        <!--<highcharts-chart class = "highchartsPlot" [Highcharts]="Highcharts" constructorType="chart"
+         [oneToOne] = 'true' [options]="plotOptions" class = "w-100 pb-5"
+        [(update)]="updatePlot"></highcharts-chart>-->
     </mat-tab>
     <mat-tab>
         <ng-template mat-tab-label class="div-iconsf">
             <img src="/assets/icons/Brasil-direm.png" class="doc-icon">
             <span class="nome-indf doc-icon "> MAPA</span>
         </ng-template>
-        <div id="mapPlot"></div>
+        <ng-template matTabContent>
+            <div id="mapData2"></div>
+            <div class="custom-slider2">
+                <ng5-slider class = "slider" [(value)]="value" [options]="options" (userChange)="drawMap()">
+                </ng5-slider>
+             </div>
+        </ng-template>
+
     </mat-tab>
     <mat-tab>
         <ng-template mat-tab-label class="div-iconsf">
@@ -40,9 +54,9 @@
         </ng-template>
     </mat-tab>
 
- 
-       
-   <!--  <ul class="menu bottomRight">
+
+
+    <!--  <ul class="menu bottomRight">
         <li class="share top">
           <i class="fa fa-share-alt"></i>
           <ul class="submenu">
@@ -54,15 +68,15 @@
         </li>
       </ul>
      -->
- 
-  <!--   <mat-tab>
+
+    <!--   <mat-tab>
         <ng-template mat-tab-label class="div-iconsf">
         <img src="/assets/icons/Down-direm.png" class="doc-icon">
         <span class="nome-indf doc-icon "> DOWNLOAD</span>
     </ng-template>
     </mat-tab> -->
 
-<!-- <mat-tab>
+    <!-- <mat-tab>
     <ng-template mat-tab-label class="div-iconsf">
         <img src="/assets/icons/share-direm.png" class="doc-icon">
         <span class="nome-indf"> COMPARTILHAR</span>
@@ -70,4 +84,3 @@
 </mat-tab> -->
 
 </mat-tab-group>
-

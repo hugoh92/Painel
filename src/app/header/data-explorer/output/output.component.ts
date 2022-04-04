@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 import { HighchartsService } from 'src/app/services/highcharts.service';
 
@@ -27,6 +25,10 @@ var titles: Array<Metadata> = [
   { metrica: "qt_cursos", title: "Distribuição do número de cursos.", subtitle: "Brasil, 2019" },
 ]
 
+import * as Highcharts from 'highcharts';
+import HC_map from 'highcharts/modules/map';
+HC_map(Highcharts);
+
 @Component({
   selector: 'app-output',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,16 +36,27 @@ var titles: Array<Metadata> = [
   styleUrls: ['./output.component.scss']
 })
 export class OutputComponent implements OnChanges {
-
   @Input() metricaSelecionada = 'qt_vagas_autorizadas';
   @Input() cruzamentoSelecionado = null;
   @Input() estadosSelecionados: any[] = [{ nome: 'Brasil' }];
   @Input() anosSelecionados: any[] = [2010, this._dataService.year]
   dataPlot = []
-  map;
+  mapData;
   dataFiltered = []
+  Highcharts: typeof Highcharts = Highcharts;
+  mapOptions: Highcharts.Options;
+  plotOptions: Highcharts.Options;
+  updateMap = false
+  currentTab = 0;
+  value: number = 2019
+  options = {
+    floor: 2010,
+    ceil: 2019
+  };
 
-  constructor(private _dataService: DataService, private _highchartsService: HighchartsService) { }
+  constructor(private _dataService: DataService, private _highchartsService: HighchartsService) { 
+    this.drawMap(this.metricaSelecionada)
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
      
@@ -53,11 +66,11 @@ export class OutputComponent implements OnChanges {
       if (prev == undefined) {
         this.getData(this.metricaSelecionada, null)
       } else {
-        this.drawPlot(this.metricaSelecionada)
+        this.createPlots(this.currentTab)
       }
     }
     if (changes['anosSelecionados'] && changes['anosSelecionados'].previousValue != changes['anosSelecionados'].currentValue) {
-      this.drawPlot(this.metricaSelecionada)
+      this.createPlots(this.currentTab)
     }
 
     if (changes['cruzamentoSelecionado']) {
@@ -92,7 +105,7 @@ export class OutputComponent implements OnChanges {
           if (index > -1) {
             this.dataPlot.splice(index, 1)
           }
-          this.drawPlot(this.metricaSelecionada)
+          this.createPlots(this.currentTab)
         }
 
       } else {
@@ -116,18 +129,18 @@ export class OutputComponent implements OnChanges {
     let dataplot = this.formatData(data, metrica, flagCruzamento)
     if (this.cruzamentoSelecionado !== null) {
       if(dataplot.type == "histogram"){
-        this._highchartsService.drawHistogramCruz("plotData", dataplot.data, metadata)
+        this.plotOptions = this._highchartsService.drawHistogramCruz("plotData", dataplot.data, metadata)
       } else if(dataplot.type == "line") {
-        this._highchartsService.drawLinePlot("plotData", dataplot.data, metadata)
+        this.plotOptions =  this._highchartsService.drawLinePlot("plotData", dataplot.data, metadata)
       } else if(dataplot.type == "column") {
-        this._highchartsService.drawColumnPlotCruz("plotData", dataplot.data, metadata)
+        this.plotOptions =  this._highchartsService.drawColumnPlotCruz("plotData", dataplot.data, metadata)
       }
       
     }
     else if (Math.max(...dataplot.data.map(d => d.data.length)) == 1) {
-      this._highchartsService.drawHistogram("plotData", dataplot.data, metadata)
+      this.plotOptions =  this._highchartsService.drawHistogram("plotData", dataplot.data, metadata)
     } else {
-      this._highchartsService.drawLinePlot("plotData", dataplot.data, metadata)
+      this.plotOptions = this._highchartsService.drawLinePlot("plotData", dataplot.data, metadata)
     }
 
   }
@@ -139,10 +152,24 @@ export class OutputComponent implements OnChanges {
     this._dataService.getCardData(filter, cruzamento, false).subscribe(data => {
       let data_ = { "name": nome, "data": data }
       this.dataPlot.push(data_);
-      this.drawPlot(metrica)
+      this.createPlots(this.currentTab)
     })
 
   }
+
+  createPlots(event) {
+    if(event.index !== undefined){
+      this.currentTab = event.index
+    }
+
+    if (this.currentTab == 0){
+      this.drawPlot(this.metricaSelecionada)
+      this.drawMap(this.metricaSelecionada)
+    } else {
+      this.drawMap(this.metricaSelecionada)
+    }
+  }
+
 
   formatData(data, metrica, cruzamento = false) {
     var result = [];
@@ -152,6 +179,7 @@ export class OutputComponent implements OnChanges {
     if (!cruzamento) {
       data.forEach(d => {
         result.push({
+          id: d.name,
           name: d.name,
           data: d.data.map(u => { return { x: parseInt(u["ano"]), y: u[metrica] } }).filter(n => n.y).map(d => [d.x, d.y])
         })
@@ -243,19 +271,30 @@ export class OutputComponent implements OnChanges {
     }
   }
 
-  drawMap(metrica) {
-    this._dataService.getMapData().subscribe((json: any) => {
-      let data = json.map(d => { return ['br-' + d.uf.toLowerCase(), d[metrica]] })
-
-      this.map = this._highchartsService.draMap("mapPlot", data)
-    })
+  drawMap() {
+    let metrica = this.metricaSelecionada
+    if(this.mapData === undefined){
+      this._dataService.getMapData(null, false).subscribe((json: any) => {
+        var metadata = titles.filter(d => d.metrica == metrica)[0];
+        this.mapData = json;
+        let data = formatMap(this.mapData, this.value, metrica)
+        this.mapOptions = this._highchartsService.getMapOptions("mapData2", data, metadata)
+      })
+    } else {
+      var metadata = titles.filter(d => d.metrica == metrica)[0];
+      let data = formatMap(this.mapData, this.value, metrica)
+      this.mapOptions = this._highchartsService.getMapOptions("mapData2", data, metadata)
+    }
   }
+}
 
-  openMap() {
-    this.map.reflow()
-  }
+function formatMap(data, year, metrica){
+  let data_aux = data.map(d => d[metrica]),
+  max = Math.max(...data_aux),
+  min = Math.min(...data_aux);
 
-
+  let result = data.filter(d => d.ano == year).map(d => { return ['br-' + d.uf.toLowerCase(), d[metrica]] })
+  return {data: result, min: min, max: max}
 }
 
 function transformArr2(orig, key, value, name) {

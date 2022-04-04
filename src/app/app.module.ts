@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { ResultadoComponent } from './header/buscador/resultado/resultado.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 import { Ng5SliderModule } from 'ng5-slider';
 import { AlertComponent } from './shared/alert/alert.component';
@@ -42,6 +43,7 @@ import { OutputComponent } from './header/data-explorer/output/output.component'
     AppRoutingModule,
     DashboardModule,
     DemoMaterialModule,
+    HighchartsChartModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatDatepickerModule,
