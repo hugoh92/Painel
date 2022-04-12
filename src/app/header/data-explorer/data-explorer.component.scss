@@ -69,7 +69,10 @@
 .wrapper-tela {
    grid-template-rows: repeat(2, 1fr);
    height: 800px !important;
-   
+   width:100%;
+   margin: 0 auto;
+   min-width:600px;
+   max-width:1600px
 }
 
 .wrapper-left {
@@ -433,6 +436,15 @@ mat-date-range-input{
     height: 540px;
     //padding-right: 299px;
     
+}
+.p-2{
+  //background-color: #55acee;
+  position: relative;
+  width: 100%;
+  display: grid;
+}
+.rect{
+  background-color: #dd4b39;
 }
 .header-map{
     //height: 0px;
@@ -887,6 +899,7 @@ body{
       //padding-right: 20px;
       height: 600px;
       margin-right: 0px;
+      
     }
     .wrapper-icons{
       margin-left: 95px;
@@ -901,6 +914,7 @@ body{
       //height: 600px;
       //padding-left: 50px;
       //width: 30%;
+      
       margin-bottom: 100px;
       }
   
@@ -913,6 +927,8 @@ body{
         //width: 30%;
         //padding-right: 20px;
         //height: 600px;
+        
+       
       }
       .geral-map{
         background-color: white;
@@ -925,7 +941,6 @@ body{
         display: grid;
         position: relative;
         border-radius: 5px;
-
         width: 100%;
         padding-bottom: 0px !important;
         bottom: 0px !important;

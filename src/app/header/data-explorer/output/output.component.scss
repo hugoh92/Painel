@@ -26,15 +26,42 @@
 
 
 ng-template .div-iconsf{
-
     border-radius: 5px;
     background-color: #EDEDED;
     border-width: 9px !important;
     border-style: solid !important;
 }
 
+.card-fonte{
+    width: auto;
+    height: 375px;
+    font-weight: 600 !important;
+    font-family: Roboto;
+}
 
+.card-header{
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+    font-family: Roboto;
+    
+}
 
+.container-table{
+    background-color: aqua;
+    width: auto;
+    height: 390px !important;
+}
+table {
+    width: 100% !important;
+    background-color: #EDEDED !important;
+    //height: 330px !important;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+    
+  }
 .nome-indf {
     position: relative;
     font-size: 12px;

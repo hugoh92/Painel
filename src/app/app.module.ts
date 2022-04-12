@@ -6,6 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { BuscadorModule } from './modules/buscador/buscador.module'
 
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { MatTableModule } from '@angular/material/table';
 import { ResultadoComponent } from './header/buscador/resultado/resultado.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HighchartsChartModule } from 'highcharts-angular';
+import {MatSortModule} from '@angular/material/sort';
 
 import { Ng5SliderModule } from 'ng5-slider';
 import { AlertComponent } from './shared/alert/alert.component';
@@ -26,6 +28,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { DataExplorerComponent, SearchPipe } from './header/data-explorer/data-explorer.component';
 import { OutputComponent } from './header/data-explorer/output/output.component';
+
 
 @NgModule({
   declarations: [
@@ -54,6 +57,7 @@ import { OutputComponent } from './header/data-explorer/output/output.component'
     BuscadorModule,
     Ng5SliderModule,
     MatNativeDateModule,
+    MatSortModule,
   ],
   providers: [
     SearchPipe,
