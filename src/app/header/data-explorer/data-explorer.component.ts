@@ -94,9 +94,11 @@ export const flattenObject = (obj:any) => {
     } else {
       flattened.push(d)
     }
+    
   })
 
   return flattened
+  
 }
 
 @Pipe({
