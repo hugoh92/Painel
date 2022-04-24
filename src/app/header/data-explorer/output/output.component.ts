@@ -321,7 +321,11 @@ export class OutputComponent implements OnChanges {
     }
   }
 
+
+ 
   drawMap() {
+    
+        
     let metrica = this.metricaSelecionada
     if(this.mapData === undefined){
       this._dataService.getMapData(null, false).subscribe((json: any) => {
@@ -329,6 +333,7 @@ export class OutputComponent implements OnChanges {
         this.mapData = json;
         let data = formatMap(this.mapData, this.value, metrica)
         this.mapOptions = this._highchartsService.getMapOptions("mapData2", data, metadata)
+        
       })
     } else {
       var metadata = titles.filter(d => d.metrica == metrica)[0];

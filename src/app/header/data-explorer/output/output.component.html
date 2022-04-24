@@ -32,9 +32,10 @@
             <span class="nome-indf doc-icon "> MAPA</span>
         </ng-template>
         <ng-template matTabContent>
+          
             <div id="mapData2"></div>
             <div class="custom-slider2">
-                <ng5-slider class="slider" [(value)]="value" [options]="options" (userChange)="drawMap()">
+                <ng5-slider class="slider" [(value)]="value" [(highValue)]="highValue" [options]="options" (userChange)="drawMap()">
                 </ng5-slider>
             </div>
         </ng-template>
@@ -45,7 +46,9 @@
             <img src="/assets/icons/Tab-direm.png" class="doc-icon">
             <span class="nome-indf doc-icon "> TABELA</span>
         </ng-template>
-        <ng-template matTabContent>
+        <ng-template matTabContent >
+            <br>
+            
             <div class="container-table">
             <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
             class="mat-elevation-z8">
@@ -87,6 +90,7 @@
         </table>
         </div>
         </ng-template>
+        
     </mat-tab>
 
     <mat-tab>
@@ -95,6 +99,7 @@
             <span class="nome-indf doc-icon "> FONTE</span>
         </ng-template>
         <ng-template matTabContent>
+            <br>
             <br>
             <div class="card-fonte">
                 <div class="card-header">

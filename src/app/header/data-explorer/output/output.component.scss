@@ -19,26 +19,36 @@
 
 
 .header-map{
-     
     text-align:end;
     border-radius: 5px;
 }
 
-
+.matTabContent{
+background-color: #E1E31D !important;
+}
 ng-template .div-iconsf{
     border-radius: 5px;
-    background-color: #EDEDED;
+    //background-color: #EDEDED;
     border-width: 9px !important;
     border-style: solid !important;
+    background-color: #336925 !important;
 }
 
 .card-fonte{
     width: auto;
-    height: 375px;
+    height: 405px;
     font-weight: 600 !important;
     font-family: Roboto;
+    
 }
-
+#mapData2{
+    width: auto;
+    height: 400px;
+}
+#plotData{
+    width: auto;
+    height: 454px;
+}
 .card-header{
     font-size: 14px;
     letter-spacing: 1px;
@@ -48,9 +58,9 @@ ng-template .div-iconsf{
 }
 
 .container-table{
-    background-color: aqua;
+    //background-color: aqua !important;
     width: auto;
-    height: 390px !important;
+    height: 430px !important;
 }
 table {
     width: 100% !important;
@@ -73,9 +83,8 @@ table {
     word-wrap: break-all !important;
     line-height: 0.5em !important;
     margin-left: 5px;
-    
-  
 }
+
 
 
  ::ng-deep .mat-tab-label{
@@ -98,6 +107,60 @@ table {
     border-top: none !important;
    
 }
+
+::ng-deep {
+    .custom-slider2 .ng5-slider .ng5-slider-bar {
+      background: #336925; 
+      height: 3px;
+    }
+    .custom-slider2 .ng5-slider .ng5-slider-selection {
+      background:  #E1E31D;
+    }
+  
+    .custom-slider2 .ng5-slider .ng5-slider-pointer {
+      width: 15px;
+      height: 15px;
+      top: -6px;
+      background:  #E1E31D;
+      //bottom: 0px;
+      //background-color: #333;
+      //border-top-left-radius: 3px;
+      //border-top-right-radius: 3px;
+    }
+    
+    .ng5-slider-pointer { 
+      &:focus { 
+        outline:0 !important; }
+    }
+    .custom-slider2 .ng5-slider .ng5-slider-pointer:after {
+      display: none;
+      
+    }
+    .custom-slider .ng5-slider .ng5-slider-bubble {
+      bottom: 14px;
+      color: white !important;
+    }
+  
+    .custom-slider2 .ng5-slider .ng5-slider-limit {
+      font-weight: bold;
+      color: #023A1D; ;
+    }
+  
+    .custom-slider2 .ng5-slider .ng5-slider-tick {
+      width: 7px;
+      height: 7px;
+      margin-left: 4px;
+      //border-radius: 0;
+      background: #023A1D; 
+      top: 1px;
+    }
+  
+    .custom-slider2 .ng5-slider .ng5-slider-tick.ng5-slider-selected {
+      background: red !important;
+      width: 10px;
+      height: 10px;
+    }
+  }
 
 @media screen and (max-width:400px) {
     .bt-tabs{
