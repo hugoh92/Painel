@@ -143,14 +143,20 @@ export class OutputComponent implements OnChanges {
       const prev = changes['estadosSelecionados'].previousValue,
         current = changes['estadosSelecionados'].currentValue;
 
-      if (prev != undefined) {
+      if(current.length == 1 && current[0] == 'Brasil'){
+        this.dataPlot = []
+        this.getData(this.metricaSelecionada, null, this.cruzamentoSelecionado)
+      }
+      else if (prev != undefined) {
         const novaLocalizacao = current.filter(x => !prev.map(d => d.nome).includes(x.nome));
 
         if (novaLocalizacao.length > 0) {
-          this.getData(this.metricaSelecionada, novaLocalizacao[0], this.cruzamentoSelecionado)
+          let newLoc = novaLocalizacao[0].nome ? novaLocalizacao[0] : { nome: 'Brasil' }
+          this.getData(this.metricaSelecionada, newLoc, this.cruzamentoSelecionado)
         } else {
-          const removeLocalizacao = prev.filter(x => !current.map(d => d.nome).includes(x.nome));
-          const index = this.dataPlot.findIndex(d => d.name == removeLocalizacao[0].nome)
+          const removeLocalizacao = prev.filter(x => !current.map(d => d.nome || d).includes(x.nome || x));
+          let to_remove = removeLocalizacao[0].nome || removeLocalizacao[0]
+          const index = this.dataPlot.findIndex(d => d.name == to_remove)
 
           if (index > -1) {
             this.dataPlot.splice(index, 1)

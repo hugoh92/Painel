@@ -1,5 +1,6 @@
-import { Component, OnInit, Renderer2, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit, Renderer2, Pipe, PipeTransform, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import {FormControl, FormBuilder, FormGroup} from '@angular/forms';
 
 export const MY_FORMATS = {
   parse: {
@@ -21,6 +22,8 @@ export const MY_FORMATS = {
 
 
 export class DataExplorerComponent implements OnInit {
+  @ViewChild('brazilOpt') public brazilOpt;
+
   metricaSelecionada = "qt_vagas_autorizadas";
   cruzamentoSelecionado = null;
   value: number = 2010;
@@ -37,19 +40,24 @@ export class DataExplorerComponent implements OnInit {
   subscription: any;
   stateOptions: any;
   modelGroup: any[]; // the selected values
+  myForm: FormGroup;
 
-  deselectCloth() {
-    this.stateOptions;
+  clearSelection() {
+    this.myForm.get('estados').setValue(["Brasil"]);
   }
 
-  constructor(private ren: Renderer2, private _dataService: DataService) {
+  constructor(private ren: Renderer2, private _dataService: DataService, private fb: FormBuilder) {
     this.subscription = this._dataService.getData("./assets/data/state_list.json").subscribe((json:any) => {
       this.stateOptions = flattenObject(json);
+    })
+    this.myForm = this.fb.group({
+      estados: new FormControl(["Brasil"])
     })
   }
 
 
   ngOnInit(): void {
+
   }
 
   chosenYearHandler(ev, input) {

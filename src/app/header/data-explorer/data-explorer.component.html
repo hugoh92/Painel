@@ -105,10 +105,10 @@
       </div>
 
       <div class="div-estados overflow-auto">
-         <section class="example-section">
+         <section class="example-section" [formGroup]="myForm">
             <input matInput [(ngModel)]="query" type="text" class="form-control mb-2" placeholder="Buscar">
-            <mat-selection-list #cloths [(ngModel)]="modelGroup">
-               <mat-list-option [value]="{nome: 'Brasil'}" class='btn-option' [selected]="true">Brasil
+            <mat-selection-list #cloths formControlName="estados">
+               <mat-list-option value="Brasil" class='btn-option'>Brasil
 
                </mat-list-option>
                <div *ngFor="let regiao of stateOptions | LockFilter: query">
@@ -120,7 +120,7 @@
             </mat-selection-list>
          </section>
       </div>
-      <button mat-button class="deselect btn-option" (click)="deselectCloth()">Limpar Seleção</button>
+      <button mat-button class="deselect btn-option" (click)="clearSelection()">Limpar Seleção</button>
    </div>
    
    <div class="wrapper-geral">
@@ -137,7 +137,7 @@
       </div>
          <!-- HEADER ICONS -->
          <div class="p-2">
-            <app-output [metricaSelecionada]="metricaSelecionada" [estadosSelecionados]="modelGroup"
+            <app-output [metricaSelecionada]="metricaSelecionada" [estadosSelecionados]="myForm.get('estados').value"
                [cruzamentoSelecionado]="cruzamentoSelecionado" [anosSelecionados]="anosSelecionados">
             </app-output>
          </div>
