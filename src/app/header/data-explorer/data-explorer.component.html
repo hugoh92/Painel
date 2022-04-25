@@ -106,7 +106,7 @@
 
       <div class="div-estados overflow-auto">
          <section class="example-section" [formGroup]="myForm">
-            <input matInput [(ngModel)]="query" type="text" class="form-control mb-2" placeholder="Buscar">
+            <input matInput [(ngModel)]="query" [ngModelOptions]="{standalone: true}" type="text" class="form-control mb-2" placeholder="Buscar">
             <mat-selection-list #cloths formControlName="estados">
                <mat-list-option value="Brasil" class='btn-option'>Brasil
 

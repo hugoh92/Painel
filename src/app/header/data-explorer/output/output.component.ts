@@ -1,31 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { HighchartsService } from 'src/app/services/highcharts.service';
 
-import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {AfterViewInit, ViewChild} from '@angular/core';
-import {MatSort, Sort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { MatTableDataSource, MatTable } from '@angular/material/table';
+;
+import { BehaviorSubject } from 'rxjs'
 
 class Metadata {
   metrica: string;
@@ -60,8 +40,7 @@ HC_map(Highcharts);
   styleUrls: ['./output.component.scss']
 })
 export class OutputComponent implements OnChanges {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  columns$: string[] = ['name', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'];
 
   @Input() metricaSelecionada = 'qt_vagas_autorizadas';
   @Input() cruzamentoSelecionado = null;
@@ -80,36 +59,17 @@ export class OutputComponent implements OnChanges {
     floor: 2010,
     ceil: 2019
   };
+  dataTable = new MatTableDataSource();
+  @ViewChild("table", { static: false }) table: MatTable<any>;
 
-  
 
-  
 
-  constructor(private _dataService: DataService, private _highchartsService: HighchartsService, private _liveAnnouncer: LiveAnnouncer) { 
+  constructor(private _dataService: DataService, private _highchartsService: HighchartsService, private _liveAnnouncer: LiveAnnouncer) {
     this.drawMap()
-  }
-  
-  @ViewChild(MatSort) sort: MatSort;
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-  }
-
-  /** Announce the change in sort state for assistive technology. */
-  announceSortChange(sortState: Sort) {
-    // This example uses English messages. If your application supports
-    // multiple language, you would internationalize these strings.
-    // Furthermore, you can customize the message to add additional
-    // details about the values being sorted.
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-     
+
     if (changes['metricaSelecionada'] && changes['metricaSelecionada'].previousValue != changes['metricaSelecionada'].currentValue) {
       const prev = changes['metricaSelecionada'].previousValue
 
@@ -131,10 +91,10 @@ export class OutputComponent implements OnChanges {
       this.dataPlot = []
       estados.forEach(
         d => {
-          this.getData(this.metricaSelecionada, d, current)
+          let newLoc = d[0].nome ? d[0] : { nome: 'Brasil' }
+          return this.getData(this.metricaSelecionada, newLoc, current)
         }
       )
-
 
     }
 
@@ -143,7 +103,7 @@ export class OutputComponent implements OnChanges {
       const prev = changes['estadosSelecionados'].previousValue,
         current = changes['estadosSelecionados'].currentValue;
 
-      if(current.length == 1 && current[0] == 'Brasil'){
+      if (current.length == 1 && current[0] == 'Brasil') {
         this.dataPlot = []
         this.getData(this.metricaSelecionada, null, this.cruzamentoSelecionado)
       }
@@ -171,6 +131,7 @@ export class OutputComponent implements OnChanges {
     }
   }
 
+
   drawPlot(metrica) {
     let data = this.dataPlot.map(d => {
       return {
@@ -182,19 +143,20 @@ export class OutputComponent implements OnChanges {
 
     var metadata = titles.filter(d => d.metrica == metrica)[0];
     let flagCruzamento = this.cruzamentoSelecionado === null ? false : true;
+    this.formatTableData(data)
     let dataplot = this.formatData(data, metrica, flagCruzamento)
     if (this.cruzamentoSelecionado !== null) {
-      if(dataplot.type == "histogram"){
+      if (dataplot.type == "histogram") {
         this.plotOptions = this._highchartsService.drawHistogramCruz("plotData", dataplot.data, metadata)
-      } else if(dataplot.type == "line") {
-        this.plotOptions =  this._highchartsService.drawLinePlot("plotData", dataplot.data, metadata)
-      } else if(dataplot.type == "column") {
-        this.plotOptions =  this._highchartsService.drawColumnPlotCruz("plotData", dataplot.data, metadata)
+      } else if (dataplot.type == "line") {
+        this.plotOptions = this._highchartsService.drawLinePlot("plotData", dataplot.data, metadata)
+      } else if (dataplot.type == "column") {
+        this.plotOptions = this._highchartsService.drawColumnPlotCruz("plotData", dataplot.data, metadata)
       }
-      
+
     }
     else if (Math.max(...dataplot.data.map(d => d.data.length)) == 1) {
-      this.plotOptions =  this._highchartsService.drawHistogram("plotData", dataplot.data, metadata)
+      this.plotOptions = this._highchartsService.drawHistogram("plotData", dataplot.data, metadata)
     } else {
       this.plotOptions = this._highchartsService.drawLinePlot("plotData", dataplot.data, metadata)
     }
@@ -213,101 +175,121 @@ export class OutputComponent implements OnChanges {
 
   }
 
+  formatTableData(dados) {
+    this.columns$ = dados[0] ? ["name", ...dados[0].data.map(d => d.ano.toString())] : ["name"]
+
+    let aux = dados.map(d => {
+      let result = {}
+      result['name'] = d.name
+      return {
+        data: d.data.map((d) => {
+          let ano = d.ano
+          result[ano] = d[this.metricaSelecionada]
+          return result
+        })[0],
+      }
+    }).map(d => d.data)
+
+    this.dataTable.data = aux
+  }
+
   createPlots(event) {
-    if(event.index !== undefined){
+    if (event.index !== undefined) {
       this.currentTab = event.index
     }
 
-    if (this.currentTab == 0){
+    if (this.currentTab == 0) {
       this.drawPlot(this.metricaSelecionada)
       this.drawMap()
-    } else {
+    } else if (this.currentTab == 1) {
       this.drawMap()
     }
   }
 
 
   formatData(data, metrica, cruzamento = false) {
-    var result = [];
-    var num_anos = data[0].data.map(d => d.ano).filter((v, i, a) => a.indexOf(v) === i).length
-    var num_localizacao = data.length
+    if (data.length >= 1) {
+      var result = [];
+      var anos_selecionados = data[0].data.map(d => d.ano).filter((v, i, a) => a.indexOf(v) === i)
+      var num_anos = anos_selecionados.length
+      var num_localizacao = data.length
 
-    if (!cruzamento) {
-      data.forEach(d => {
-        result.push({
-          id: d.name,
-          name: d.name,
-          data: d.data.map(u => { return { x: parseInt(u["ano"]), y: u[metrica] } }).filter(n => n.y).map(d => [d.x, d.y])
-        })
-      })
-      return {"type": "line", "data": result}
-    } else {
-      var vals = []
-
-      if (num_anos == 1) {
-        var year = data[0].data[0].ano
+      if (!cruzamento) {
         data.forEach(d => {
-          vals.push({
-            local: d.name,
-            data: d.data.map(d => {
-              let obj = {};
-              let key = d[this.cruzamentoSelecionado];
-              obj[key] = d[metrica]
+          result.push({
+            id: d.name,
+            name: d.name,
+            data: d.data.map(u => { return { x: parseInt(u["ano"]), y: u[metrica] } }).filter(n => n.y).map(d => [d.x, d.y])
+          })
+        })
+        return { "type": "line", "data": result }
+      } else {
+        var vals = []
 
-              return obj
+        if (num_anos == 1) {
+          var year = data[0].data[0].ano
+          data.forEach(d => {
+            vals.push({
+              local: d.name,
+              data: d.data.map(d => {
+                let obj = {};
+                let key = d[this.cruzamentoSelecionado];
+                obj[key] = d[metrica]
+
+                return obj
+              })
             })
           })
-        })
 
 
-        let current = {}
-        vals.forEach(function (obj) {
-          let objs = obj.data.reduce((prev, current) => {
-            return Object.assign(prev, current)
+          let current = {}
+          vals.forEach(function (obj) {
+            let objs = obj.data.reduce((prev, current) => {
+              return Object.assign(prev, current)
+            })
+
+            for (var key in objs) {
+              if (current[key] === undefined)
+                current[key] = []
+
+              current[key].push([obj.local, objs[key]])
+            }
           })
 
-          for (var key in objs) {
-            if (current[key] === undefined)
-              current[key] = []
-
-            current[key].push([obj.local, objs[key]])
+          for (var key in current) {
+            result.push({
+              year: year,
+              name: key,
+              data: current[key]
+            })
           }
-        })
-
-        for (var key in current) {
-          result.push({
-            year: year,
-            name: key,
-            data: current[key]
-          })
+          return { "type": "histogram", "data": result }
         }
-        return {"type": "histogram", "data": result}
-      } 
-      
-      if (num_anos > 1 && num_localizacao == 1) {
-        const result = transformArr(data[0].data, this.cruzamentoSelecionado, metrica)
-        result["name"] = data[0].name
-        return {"type": "line", "data": result}
-      }
 
-      var colors = ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',
-      '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']
-      if (num_anos > 1 && num_localizacao > 1) {
-        let result = data.map(d => {
-          return transformArr2(d.data, this.cruzamentoSelecionado, metrica, d.name)
-        }).reduce((a, b) => a.concat(b), [])
+        if (num_anos > 1 && num_localizacao == 1) {
+          const result = transformArr(data[0].data, this.cruzamentoSelecionado, metrica)
+          result["name"] = data[0].name
+          return { "type": "line", "data": result }
+        }
 
-        let n_types = result.map(d => d.name).filter((v, i, a) => a.indexOf(v) === i).length
-        let fator_opacity = 0.8 / n_types
+        var colors = ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+          '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a']
+        if (num_anos > 1 && num_localizacao > 1) {
+          let result = data.map(d => {
+            return transformArr2(d.data, this.cruzamentoSelecionado, metrica, d.name)
+          }).reduce((a, b) => a.concat(b), [])
 
-        var types = {}, states = {},
-        i, j, cur, axis = 0, opacity = 1;
-        for (i = 0, j = result.length; i < j; i++) {
+          let n_types = result.map(d => d.name).filter((v, i, a) => a.indexOf(v) === i).length
+          let fator_opacity = 0.8 / n_types
+
+          var types = {}, states = {},
+            i, j, cur, axis = 0, opacity = 1;
+          for (i = 0, j = result.length; i < j; i++) {
             cur = result[i];
             if (!(cur.name in types)) {
-                types[cur.name] = opacity;
-                result[i].id = cur.name
-                opacity = opacity - fator_opacity;
+              types[cur.name] = opacity;
+              result[i].id = cur.name
+              opacity = opacity - fator_opacity;
             } else {
               result[i].linkedTo = cur.name
             }
@@ -315,31 +297,34 @@ export class OutputComponent implements OnChanges {
             if (!(cur.stack in states)) {
               states[cur.stack] = colors[axis];
               axis = axis + 1;
-            } 
+            }
             result[i].opacity = types[cur.name];
             result[i].color = states[cur.stack];
             result[i].name = cur.name
             result[i].cat = cur.stack
-        }
+          }
 
-        return {"type": "column", "data": result}
+          return { "type": "column", "data": result }
+        }
       }
+
+
     }
   }
 
 
- 
+
   drawMap() {
-    
-        
+
+
     let metrica = this.metricaSelecionada
-    if(this.mapData === undefined){
+    if (this.mapData === undefined) {
       this._dataService.getMapData(null, false).subscribe((json: any) => {
         var metadata = titles.filter(d => d.metrica == metrica)[0];
         this.mapData = json;
         let data = formatMap(this.mapData, this.value, metrica)
         this.mapOptions = this._highchartsService.getMapOptions("mapData2", data, metadata)
-        
+
       })
     } else {
       var metadata = titles.filter(d => d.metrica == metrica)[0];
@@ -349,46 +334,46 @@ export class OutputComponent implements OnChanges {
   }
 }
 
-function formatMap(data, year, metrica){
+function formatMap(data, year, metrica) {
   let data_aux = data.map(d => d[metrica]),
-  max = Math.max(...data_aux),
-  min = Math.min(...data_aux);
+    max = Math.max(...data_aux),
+    min = Math.min(...data_aux);
 
   let result = data.filter(d => d.ano == year).map(d => { return ['br-' + d.uf.toLowerCase(), d[metrica]] })
-  return {data: result, min: min, max: max}
+  return { data: result, min: min, max: max }
 }
 
 function transformArr2(orig, key, value, name) {
   var newArr = [],
-      types = {},
-      i, j, cur;
+    types = {},
+    i, j, cur;
   for (i = 0, j = orig.length; i < j; i++) {
-      cur = orig[i];
-      if (!(cur[key] in types)) {
-          types[cur[key]] = {name: cur[key], data: []};
-          newArr.push(types[cur[key]]);
-      } 
-      if (cur[value]) {
-          types[cur[key]].data.push([cur["ano"], cur[value]]);
-          types[cur[key]].stack = name
-      }
+    cur = orig[i];
+    if (!(cur[key] in types)) {
+      types[cur[key]] = { name: cur[key], data: [] };
+      newArr.push(types[cur[key]]);
+    }
+    if (cur[value]) {
+      types[cur[key]].data.push([cur["ano"], cur[value]]);
+      types[cur[key]].stack = name
+    }
   }
   return newArr;
 }
 
 function transformArr(orig, key, value) {
   var newArr = [],
-      types = {},
-      i, j, cur;
+    types = {},
+    i, j, cur;
   for (i = 0, j = orig.length; i < j; i++) {
-      cur = orig[i];
-      if (!(cur[key] in types)) {
-          types[cur[key]] = {name: cur[key], data: []};
-          newArr.push(types[cur[key]]);
-      }
-      if (cur[value]) {
-          types[cur[key]].data.push([cur["ano"], cur[value]]);
-      }
+    cur = orig[i];
+    if (!(cur[key] in types)) {
+      types[cur[key]] = { name: cur[key], data: [] };
+      newArr.push(types[cur[key]]);
+    }
+    if (cur[value]) {
+      types[cur[key]].data.push([cur["ano"], cur[value]]);
+    }
   }
   return newArr;
 }

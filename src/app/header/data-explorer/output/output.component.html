@@ -1,123 +1,98 @@
 <div class="header-map">
-    <div class="logo-bts">
-        <!-- <div class="titulo-pag"> -->
-        <!-- <span class="nome-indf titulo- "> {{metadata.title}}</span> <br>
+  <div class="logo-bts">
+    <!-- <div class="titulo-pag"> -->
+    <!-- <span class="nome-indf titulo- "> {{metadata.title}}</span> <br>
             <span class="nome-indf titulo- "> {{metadata.subtitle}}</span> -->
-        <!-- </div> 
+    <!-- </div> 
         <mat-slide-toggle class="bt-relativo" [disabled]="true" labelPosition="before"> <span
                 class="nome-indf doc-icon "> Relativo/Absoluto</span></mat-slide-toggle>-->
-        <!-- <img src="/assets/icons/Direm-logo.png" class="doc-icon"> -->
-    </div>
+    <!-- <img src="/assets/icons/Direm-logo.png" class="doc-icon"> -->
+  </div>
 </div>
 
 <mat-tab-group class="bt-tabs" mat-align-tabs="center" headerPosition="below" color="transparent"
-    (selectedTabChange)="createPlots($event)">
-    <mat-tab class="tab-style">
-        <ng-template mat-tab-label class="div-iconsf">
-            <img src="/assets/icons/Graf-direm.png" class="doc-icon">
-            <span class="nome-indf doc-icon "> GRÁFICO</span>
-        </ng-template>
-        <ng-template matTabContent>
-            <div id="plotData"></div>
-            <ul id="customLegend"></ul>
-        </ng-template>
+  (selectedTabChange)="createPlots($event)">
+  <mat-tab class="tab-style">
+    <ng-template mat-tab-label class="div-iconsf">
+      <img src="/assets/icons/Graf-direm.png" class="doc-icon">
+      <span class="nome-indf doc-icon "> GRÁFICO</span>
+    </ng-template>
+    <ng-template matTabContent>
+      <div id="plotData"></div>
+      <ul id="customLegend"></ul>
+    </ng-template>
 
-        <!--<highcharts-chart class = "highchartsPlot" [Highcharts]="Highcharts" constructorType="chart"
+    <!--<highcharts-chart class = "highchartsPlot" [Highcharts]="Highcharts" constructorType="chart"
          [oneToOne] = 'true' [options]="plotOptions" class = "w-100 pb-5"
         [(update)]="updatePlot"></highcharts-chart>-->
-    </mat-tab>
-    <mat-tab>
-        <ng-template mat-tab-label class="div-iconsf">
-            <img src="/assets/icons/Brasil-direm.png" class="doc-icon">
-            <span class="nome-indf doc-icon "> MAPA</span>
-        </ng-template>
-        <ng-template matTabContent>
-          
-            <div id="mapData2"></div>
-            <div class="custom-slider2">
-                <ng5-slider class="slider" [(value)]="value" [(highValue)]="highValue" [options]="options" (userChange)="drawMap()">
-                </ng5-slider>
-            </div>
-        </ng-template>
-    </mat-tab>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label class="div-iconsf">
+      <img src="/assets/icons/Brasil-direm.png" class="doc-icon">
+      <span class="nome-indf doc-icon "> MAPA</span>
+    </ng-template>
+    <ng-template matTabContent>
 
-    <mat-tab>
-        <ng-template mat-tab-label class="div-iconsf">
-            <img src="/assets/icons/Tab-direm.png" class="doc-icon">
-            <span class="nome-indf doc-icon "> TABELA</span>
-        </ng-template>
-        <ng-template matTabContent >
-            <br>
-            
-            <div class="container-table">
-            <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
-            class="mat-elevation-z8">
-        
-          <!-- Position Column -->
-          <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
-              No.
-            </th>
-            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      <div id="mapData2"></div>
+      <div class="custom-slider2">
+        <ng5-slider class="slider" [(value)]="value" [(highValue)]="highValue" [options]="options"
+          (userChange)="drawMap()">
+        </ng5-slider>
+      </div>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label class="div-iconsf">
+      <img src="/assets/icons/Tab-direm.png" class="doc-icon">
+      <span class="nome-indf doc-icon "> TABELA</span>
+    </ng-template>
+    <ng-template matTabContent>
+      <br>
+
+      <div class="container-table">
+        <table #table mat-table [dataSource]="dataTable" class="mat-elevation-z8">
+
+
+          <ng-container *ngFor="let disCol of (columns$); let colIndex = index" matColumnDef="{{disCol}}">
+            <th mat-header-cell *matHeaderCellDef>{{disCol}}</th>
+            <td mat-cell *matCellDef="let element">{{element[disCol]}}</td>
           </ng-container>
-        
-          <!-- Name Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
-              Name
-            </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-          </ng-container>
-        
-          <!-- Weight Column -->
-          <ng-container matColumnDef="weight">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
-              Weight
-            </th>
-            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-          </ng-container>
-        
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="symbol">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
-              Symbol
-            </th>
-            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-          </ng-container>
-        
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+          <tr mat-header-row *matHeaderRowDef="(columns$)"></tr>
+          <tr mat-row *matRowDef="let row; columns: (columns$)"></tr>
         </table>
+      </div>
+    </ng-template>
+
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label class="div-iconsf">
+      <img src="/assets/icons/Fonte-direm.png" class="doc-icon">
+      <span class="nome-indf doc-icon "> FONTE</span>
+    </ng-template>
+    <ng-template matTabContent>
+      <br>
+      <br>
+      <div class="card-fonte">
+        <div class="card-header">
+          FONTE
         </div>
-        </ng-template>
-        
-    </mat-tab>
-
-    <mat-tab>
-        <ng-template mat-tab-label class="div-iconsf">
-            <img src="/assets/icons/Fonte-direm.png" class="doc-icon">
-            <span class="nome-indf doc-icon "> FONTE</span>
-        </ng-template>
-        <ng-template matTabContent>
-            <br>
-            <br>
-            <div class="card-fonte">
-                <div class="card-header">
-                  FONTE
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Período de tempo das variáveis,    2010 a 2020</li>
-                  <li class="list-group-item">Dados publicados por: Intituto Brasileiro de Geografia e Estatística (IBGE), 
-                      Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP).</li>
-                  <li class="list-group-item">texto</li>
-                </ul>
-              </div>
-        </ng-template>
-    </mat-tab>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Período de tempo das variáveis, 2010 a 2020</li>
+          <li class="list-group-item">Dados publicados por: Intituto Brasileiro de Geografia e Estatística (IBGE),
+            Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP).</li>
+          <li class="list-group-item">texto</li>
+        </ul>
+      </div>
+    </ng-template>
+  </mat-tab>
 
 
 
-    <!--  <ul class="menu bottomRight">
+  <!--  <ul class="menu bottomRight">
         <li class="share top">
           <i class="fa fa-share-alt"></i>
           <ul class="submenu">
@@ -130,14 +105,14 @@
       </ul>
      -->
 
-    <!--   <mat-tab>
+  <!--   <mat-tab>
         <ng-template mat-tab-label class="div-iconsf">
         <img src="/assets/icons/Down-direm.png" class="doc-icon">
         <span class="nome-indf doc-icon "> DOWNLOAD</span>
     </ng-template>
     </mat-tab> -->
 
-    <!-- <mat-tab>
+  <!-- <mat-tab>
     <ng-template mat-tab-label class="div-iconsf">
         <img src="/assets/icons/share-direm.png" class="doc-icon">
         <span class="nome-indf"> COMPARTILHAR</span>
