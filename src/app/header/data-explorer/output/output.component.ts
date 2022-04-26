@@ -91,7 +91,7 @@ export class OutputComponent implements OnChanges {
       this.dataPlot = []
       estados.forEach(
         d => {
-          let newLoc = d[0].nome ? d[0] : { nome: 'Brasil' }
+          let newLoc = d.nome ? d : { nome: 'Brasil' }
           return this.getData(this.metricaSelecionada, newLoc, current)
         }
       )
@@ -131,6 +131,18 @@ export class OutputComponent implements OnChanges {
     }
   }
 
+  updateTable(metrica){
+    let data = this.dataPlot.map(d => {
+      return {
+        name: d.name, data: d.data
+          .filter((d: any) => d.ano >= this.anosSelecionados[0])
+          .filter((d: any) => d.ano <= this.anosSelecionados[1])
+      }
+    })
+
+    this.formatTableData(data)
+  }
+
 
   drawPlot(metrica) {
     let data = this.dataPlot.map(d => {
@@ -143,7 +155,7 @@ export class OutputComponent implements OnChanges {
 
     var metadata = titles.filter(d => d.metrica == metrica)[0];
     let flagCruzamento = this.cruzamentoSelecionado === null ? false : true;
-    this.formatTableData(data)
+
     let dataplot = this.formatData(data, metrica, flagCruzamento)
     if (this.cruzamentoSelecionado !== null) {
       if (dataplot.type == "histogram") {
@@ -176,19 +188,57 @@ export class OutputComponent implements OnChanges {
   }
 
   formatTableData(dados) {
-    this.columns$ = dados[0] ? ["name", ...dados[0].data.map(d => d.ano.toString())] : ["name"]
+    let aux;
+    if(this.cruzamentoSelecionado === null){
+      this.columns$ = dados[0] ? ["Localização", ...dados[0].data.map(d => d.ano.toString())] : ["Localização"]
+    
+      aux = dados.map(d => {
+        let result = {}
+        result['Localização'] = d.name
+        return {
+          data: d.data.map((d) => {
+            let ano = d.ano
+            result[ano] = d[this.metricaSelecionada]
+            return result
+          })[0],
+        }
+      }).map(d => d.data)
+    } else {
+      let years = unique(dados[0].data.map(d => d.ano.toString()))
+      this.columns$ = dados[0] ? ["Localização", "Cruzamento", ...years] : ["Localização"]
+      let groupBy = function(xs, key) {
+        return xs.reduce(function(rv, x) {
+          (rv[x[key]] = rv[x[key]] || []).push(x);
+        return rv;
+        }, {});
+      };
 
-    let aux = dados.map(d => {
-      let result = {}
-      result['name'] = d.name
-      return {
-        data: d.data.map((d) => {
-          let ano = d.ano
-          result[ano] = d[this.metricaSelecionada]
-          return result
-        })[0],
-      }
-    }).map(d => d.data)
+      aux = dados.map(d => {
+        let out = groupBy(d.data, this.cruzamentoSelecionado)
+        let result = []
+        Object.keys(out).forEach(key => {
+          result.push({"name": key, "data": out[key], "localizacao": d.name})
+        })
+        return result
+      })
+
+      aux = [].concat.apply([], aux)
+
+      aux = aux.map(d => {
+        let result = {}
+        result['Localização'] = d.localizacao
+        result['Cruzamento'] = d.name
+
+        return {
+          data: d.data.map((d) => {
+            let ano = d.ano
+            result[ano] = d[this.metricaSelecionada]
+            return result
+          })[0],
+        }
+      }).map(d => d.data)
+    }
+
 
     this.dataTable.data = aux
   }
@@ -203,6 +253,8 @@ export class OutputComponent implements OnChanges {
       this.drawMap()
     } else if (this.currentTab == 1) {
       this.drawMap()
+    } else if (this.currentTab == 2){
+      this.updateTable(this.metricaSelecionada)
     }
   }
 
@@ -378,3 +430,8 @@ function transformArr(orig, key, value) {
   return newArr;
 }
 
+function unique(a) {
+  return a.sort().filter(function(value, index, array) {
+      return (index === 0) || (value !== array[index-1]);
+  });
+}
