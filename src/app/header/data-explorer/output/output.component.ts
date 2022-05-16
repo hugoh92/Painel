@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { HighchartsService } from 'src/app/services/highcharts.service';
+import {MatSort, Sort} from '@angular/material/sort';
 
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatTableDataSource, MatTable } from '@angular/material/table';
@@ -68,6 +69,22 @@ export class OutputComponent implements OnChanges {
     this.drawMap()
   }
 
+  @ViewChild(MatSort) sort: MatSort;
+
+
+  /** Announce the change in sort state for assistive technology. */
+  announceSortChange(sortState: Sort) {
+    // This example uses English messages. If your application supports
+    // multiple language, you would internationalize these strings.
+    // Furthermore, you can customize the message to add additional
+    // details about the values being sorted.
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnouncer.announce('Sorting cleared');
+    }
+  }
+  
   ngOnChanges(changes: SimpleChanges): void {
 
     if (changes['metricaSelecionada'] && changes['metricaSelecionada'].previousValue != changes['metricaSelecionada'].currentValue) {

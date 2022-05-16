@@ -28,6 +28,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { DataExplorerComponent, SearchPipe } from './header/data-explorer/data-explorer.component';
 import { OutputComponent } from './header/data-explorer/output/output.component';
+import { ShareButtonsModule } from 'ngx-sharebuttons';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { OutputComponent } from './header/data-explorer/output/output.component'
     Ng5SliderModule,
     MatNativeDateModule,
     MatSortModule,
+    ShareButtonsModule.forRoot(),
   ],
   providers: [
     SearchPipe,
