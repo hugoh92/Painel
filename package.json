@@ -30,7 +30,7 @@
     "docker": "^1.0.0",
     "font-awesome": "^4.7.0",
     "framer-motion": "^6.2.3",
-    "highcharts": "^8.2.2",
+    "highcharts": "^9.0.0",
     "highcharts-angular": "^2.8.0",
     "jquery": "^3.5.1",
     "material-design-icons": "^3.0.1",
