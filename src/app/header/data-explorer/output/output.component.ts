@@ -40,7 +40,7 @@ HC_map(Highcharts);
   styleUrls: ['./output.component.scss']
 })
 export class OutputComponent implements OnChanges {
-  columns$: string[] = ['name', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'];
+  columns$: string[] = ['name', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'];
 
   @Input() metricaSelecionada = 'qt_vagas_autorizadas';
   @Input() cruzamentoSelecionado = null;
@@ -54,10 +54,10 @@ export class OutputComponent implements OnChanges {
   plotOptions: Highcharts.Options;
   updateMap = false
   currentTab = 0;
-  value: number = 2019
+  value: number = 2020
   options = {
     floor: 2010,
-    ceil: 2019
+    ceil: 2020
   };
   dataTable = new MatTableDataSource();
   @ViewChild("table", { static: false }) table: MatTable<any>;

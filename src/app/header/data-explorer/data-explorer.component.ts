@@ -27,10 +27,10 @@ export class DataExplorerComponent implements OnInit {
   metricaSelecionada = "qt_vagas_autorizadas";
   cruzamentoSelecionado = null;
   value: number = 2010;
-  highValue: number = 2019;
+  highValue: number = 2020;
   options = {
     floor: 2010,
-    ceil: 2019,
+    ceil: 2020,
     showTicks: true
   };
   anosSelecionados = [this.value, this.highValue]

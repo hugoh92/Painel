@@ -98,7 +98,7 @@
             <div class="indicadores align-items-start">
                 <div class="col">
                     <span class="taxac">Taxa de Concorrência</span>
-                    <span href="#" class="numero4 num-tx" name="">{{(+data.qt_inscrito_total/data.qt_vagas_autorizadas).toFixed(2)}}</span>
+                    <span href="#" class="numero4 num-tx" name="">{{(+data.tx_concorrencia).toFixed(2)}}</span>
                     <span class="num-tx">Candidato/Vaga</span>
 
 
@@ -106,7 +106,7 @@
 
                 <div class="col">
                     <span class="taxao">Taxa de Ocupação</span>
-                    <span href="#" class="numero4" name="">{{(+data.qt_ingresso_total/data.qt_vagas_autorizadas*100).toFixed(2)}}%</span>
+                    <span href="#" class="numero4" name="">{{(+data.tx_ocupacao).toFixed(2)}}%</span>
                 </div>
             </div>
         </li>
@@ -116,12 +116,12 @@
 
                 <div class="col txs">
                     <span class="taxas">Taxa de Sucesso</span>
-                    <span href="#" class="numero4" id="sucess" name="">{{(+data.qt_concluinte_total/data.qt_ingresso_total*100).toFixed(2)}}%</span>
+                    <span href="#" class="numero4" id="sucess" name="">{{(+data.tx_sucesso).toFixed(2)}}%</span>
                 </div>
 
                 <div class="col txs">
                     <span class="relda">Relação Aluno/Docente</span>
-                    <span href="#" class="numero4" id="sucess" name="">{{(+data.qt_matricula_total/data.total_docentes).toFixed(2)}}</span>
+                    <span href="#" class="numero4" id="sucess" name="">{{(+data.aluno_docente).toFixed(2)}}</span>
                     <!-- <span href="#" class="numero4" id="sucess" name="">--</span> -->
                 </div>
 
