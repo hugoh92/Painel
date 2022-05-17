@@ -42,20 +42,19 @@
     </ng-template>
     <ng-template matTabContent>
       <br>
-
+  
       <div class="container-table">
-        <table #table mat-table [dataSource]="dataTable" class="mat-elevation-z8">
-
+        <table #table mat-table [dataSource]="dataTable" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
 
           <ng-container *ngFor="let disCol of (columns$); let colIndex = index" matColumnDef="{{disCol}}">
-            <th mat-header-cell *matHeaderCellDef>{{disCol}}</th>
+            <th class="header_table" mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">{{disCol}}</th>
             <td mat-cell *matCellDef="let element">{{element[disCol]}}</td>
           </ng-container>
-
 
           <tr mat-header-row *matHeaderRowDef="(columns$)"></tr>
           <tr mat-row *matRowDef="let row; columns: (columns$)"></tr>
         </table>
+        
       </div>
     </ng-template>
 

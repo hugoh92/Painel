@@ -162,6 +162,44 @@ table {
     }
   }
 
+  .mat-row:nth-child(even){
+    background-color: #e4f0ec;
+  }
+  .mat-row:not(:nth-child(odd)){
+    background-color:#ffffff;
+  }
+
+  .highlight{
+    color: white;
+    background: #673AB7;
+  }
+
+  .mat-header-cell{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Roboto;
+    background-color: white;
+    //color: black;
+  }
+  .mat-cell{
+    font-size: 14px;
+    font-weight: 100;
+    font-family: Roboto;
+    font-weight: bold;
+  }
+  .mat-column-Localiza--o{
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Roboto;
+    
+  }
+/* td{
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+ */
+
+
 @media screen and (max-width:400px) {
     .bt-tabs{
         width: 350px;
