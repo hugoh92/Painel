@@ -37,13 +37,18 @@ export class HighchartsService {
     }
 
     get_quantiles(arr: any) {
-        var min = this.quantile(arr, 0)
-        var q1 = this.quantile(arr, 0.25)
-        var median = this.quantile(arr, 0.5)
-        var q3 = this.quantile(arr, 0.75)
-        var max = this.quantile(arr, 1)
+        var min = this.quantile(arr, 0),
+            p125 = this.quantile(arr, 0.125),
+            q1 = this.quantile(arr, 0.30),
+            p375 = this.quantile(arr, 0.4),
+            median = this.quantile(arr, 0.55),
+            p625 = this.quantile(arr, 0.70),
+            q3 = this.quantile(arr, 0.79),
+            p875 = this.quantile(arr, 0.88),
+            p95 = this.quantile(arr, 0.99),
+            max = this.quantile(arr, 1)
 
-        var values = [min, q1, median, q3, max]
+        var values = [min, p125, q1,p375, median, p625, q3, p875,p95, max]
         var uniqueValues = [...new Set(values)]
 
         if (uniqueValues.length == 2) {
@@ -191,7 +196,8 @@ export class HighchartsService {
     draMap(idHtml, data, geojson = usaMap) {
         var series;
        
-        var dataLabels = this.get_data_labels(this.getIntervalls(data.map(d => d[d.length - 1])));
+        var dataLabels = this.get_data_labels(this.get_quantiles(data.map(d => d[d.length - 1])));
+        //var dataLabels = this.get_data_labels(this.getIntervalls(data.map(d => d[d.length - 1])));
 
         if (data.length == 27) {
             series = [{
