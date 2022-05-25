@@ -7,9 +7,11 @@ import Export from 'highcharts/modules/exporting';
 import Histogram from 'highcharts/modules/histogram-bellcurve';
 
 
+
 Histogram(Highcharts);
 Sunburst(Highcharts)
 Export(Highcharts)
+Export(HighchartsMap)
 declare var require: any;
 const usaMap = require("../../assets/data/br.json");
 
@@ -57,7 +59,7 @@ export class HighchartsService {
         return uniqueValues
     }
 
-    getIntervalls(arr, nbIntervalls = 5) {
+    getIntervalls(arr, nbIntervalls = 8) {
         var max = Math.max.apply(null, arr)
         var min = Math.min.apply(null, arr)
         var size = Math.round((max - min) / nbIntervalls);
@@ -76,7 +78,8 @@ export class HighchartsService {
 
     get_data_labels(arr: any) {
         var dataLabels = [];
-        var colors = ["#fff3d1", "#ffe6a1", "#ffca34", "#f9a71f", "#c97f04", "#a16502"];
+        var colors = ["#fff3d1", "#ffe6a1","#FFE872", "#ffca34", "#f9a71f", "#c97f04", "#a16502","#8E3600", "#652600"];
+        /* var colors = ["#FFFFFF","#E8E8e8","#D9D9D9","#FEFAA6","#FFE872", "#FFC227", "#FFA000", "#FF6100", "#8E3600", "#652600"]; */
         var current;
 
         for (var i = 0; i < arr.length - 1; i++) {
@@ -102,7 +105,7 @@ export class HighchartsService {
         
         series = [{
             data: data,
-            name: 'Dados 2019',
+            name: 'Dados 2020',
             borderColor: '#0d542a',
             borderWidth: 1,
             states: {
@@ -121,6 +124,19 @@ export class HighchartsService {
                 map: geojson,
                 backgroundColor: undefined
             },
+            exporting: {
+                buttons: {
+                  customButton: {
+                    // symbol: 'url(https://dots.dataontouchdev.com/images/weather/yr_weather_symbols/svg/01d.svg)',
+                    symbol: 'url(~/assets/images/arrow.svg)', // not working
+                  },
+                  contextButton: {
+                    menuItems: ['downloadJPEG', 'downloadPNG', 'downloadSVG', 'downloadPDF', 'label'],
+                    className: 'download-button',
+                    symbol: 'download',
+                  },
+                },
+              },
 
             title: {
                 text: ''
@@ -129,7 +145,7 @@ export class HighchartsService {
             subtitle: {
                 text: ''
             },
-
+            
             legend: {
                 title: {
                     text: `<span style = "color: #fff"> ${metadata.title} </span>`,
@@ -174,13 +190,13 @@ export class HighchartsService {
     }
     draMap(idHtml, data, geojson = usaMap) {
         var series;
-
+       
         var dataLabels = this.get_data_labels(this.getIntervalls(data.map(d => d[d.length - 1])));
 
         if (data.length == 27) {
             series = [{
                 data: data,
-                name: 'Dados 2019',
+                name: 'Dados 2020',
                 borderColor: '#0d542a',
                 borderWidth: 1,
                 states: {
@@ -216,7 +232,23 @@ export class HighchartsService {
                 }
             }]
         }
-
+        HighchartsMap.SVGRenderer.prototype.symbols.download = function (x, y, w, h) {
+            var path = [
+                // Arrow stem
+                'M', x + w * 0.5, y,
+                'L', x + w * 0.5, y + h * 0.7,
+                // Arrow head
+                'M', x + w * 0.3, y + h * 0.5,
+                'L', x + w * 0.5, y + h * 0.7,
+                'L', x + w * 0.7, y + h * 0.5,
+                // Box
+                'M', x, y + h * 0.9,
+                'L', x, y + h,
+                'L', x + w, y + h,
+                'L', x + w, y + h * 0.9
+            ];
+            return path;
+        };
         var options: any = {
             chart: {
                 map: geojson,
@@ -260,7 +292,30 @@ export class HighchartsService {
                     verticalAlign: 'bottom'
                 }
             },
+            navigation: {
+                buttonOptions: {
+                    theme: {
+                        // Good old text links
+                        fill: '#c3081c',
+                        color: 'white',
+                        r: 15,
 
+                    }
+                }
+            },
+
+            exporting: {
+                buttons: {
+                    contextButton: {
+                        symbol: 'download',
+                        symbolStroke: '#fff',
+                        symbolSize: 10,
+                        height: 25,
+                        width: 25,
+                        enabled: true
+                    },
+                }
+            },
             plotOptions: {
                 series: {
                     point: {
@@ -349,6 +404,8 @@ export class HighchartsService {
                     }
                 }
             },
+         
+
             colorAxis: {
                 dataClasses: dataLabels,
                 labels: {

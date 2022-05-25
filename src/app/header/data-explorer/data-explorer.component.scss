@@ -389,7 +389,6 @@ mat-date-range-input{
     font-size: 12px;
     letter-spacing: 1px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
-
 }
 
 ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
@@ -916,15 +915,58 @@ body{
       margin-left: 95px;
     }
   }
-  @media screen and (max-width:1300px) {
+  @media screen and (max-width:1320px) {
     .col-9{
       display: none;
     }
-    
+    .ml-{
+      margin: 5px;
+    }
+    .wrapper-left {
+      //wrapper do painel esquerdo
+      //grid-template-rows: repeat(2, 1fr);
+      //width: 270px;
+      //height: 600px;
+      margin-left: 5px;
+      margin-right: 5px;
+      padding-left: 0px;
+      width: 400px;
+      margin-top: 30px;
+      position: relative;
+      align-items: flex-start;
+      align-self:flex-start!important;
+      align-content: flex-start!important;
+      justify-content:flex-start;
+      text-align:start;
+      
+      }
+
+    .div-estados{
+      width: 400px;
+      margin-left: 0px;
+    }
+
+    .deselect{
+      width: 390px;
+      margin-left: 0px;
+      
+    }
+    .div-year{
+      background-color: #336925;
+      width: 400px;
+      height: 110px;
+      border-radius: 5px;
+      margin-left: 0px;
+      }
     .grid-bts{
       display: none;
     }
-    
+    .wp-desk{
+      display: none;
+    }
+    .wp-tablet{
+      display: block;
+    }
     .radio-mobile{
       display:none;
     }
@@ -935,52 +977,124 @@ body{
       display: none;
     }
     
-  }
-  .grid-bts2{
-   display: none;
-    width: 70%;
-    grid-template-columns: repeat(4, (1fr));
-    grid-column-gap: 10px;
-    display: flex;
-    //flex: 1;
-    position: relative;
-    align-self:flex-start;
-    text-align:start; 
-    
-    //z-index: 10000
-  }
+    .radio-tablet{
+      display: block;
+      //height: 235px!important;
+      top: 50px !important;
+      
+    }
+    .radio-bts{
+      max-width: 300px;
+      min-width: 200px;
+      width: 100%;
+      height: 150px;
+      margin-top: 20px;
 
-  .wrapper-inputs{
-    width: 70%;
-    grid-template-columns: repeat(3, minmax(100px 1fr));
+      align-items: center !important;
+      align-self: center!important;
+      align-content: center!important;
+      justify-content: center!important;
+      text-align: center !important;
+    }
+
+    .example-margin{
+      //background-color: #dd4b39;
+      align-items: center !important;
+      align-self: center!important;
+      align-content: center!important;
+      justify-content: center!important;
+      text-align: center !important;
+      width: 125px;
+      grid-template-columns: repeat(1, (1fr));
+      grid-column-gap: 10px;
+      display: flex;
+      position: relative;
+      left: 40px !important;
+    }
+
+    .title-check{
+      padding-left: 0px;
+    }
+    .grid-bts2{
+      display: block;
+      width: 70%;
+      grid-template-columns: repeat(4, (1fr));
+      grid-column-gap: 10px;
+      display: flex;
+      position: relative;
+      align-items: center !important;
+      align-self: center!important;
+      align-content: center!important;
+      justify-content: center!important;
+      text-align: center !important;
+      bottom: 100px !important;
+   }
+
+    .wrapper-inputs{
+      width: 70%;
+      grid-template-columns: repeat(3, minmax(100px 1fr));
+      height: auto;
+      grid-column-gap: 10px;
+      display: grid;
+      //flex: 1;
+      position: relative;
+      align-self:flex-start;
+      text-align:start;
+    
+    }
+    .back-color{
+      margin-left: 55px;
+      margin-right: 55px;
+      background-color: #336925;
+      height: 260px;
+      align-items: center !important;
+      align-self: center!important;
+      align-content: center!important;
+      justify-content: center!important;
+      line-height: 1 !important;
+      text-align: center !important;
+      width: 800px !important;
+      max-width: 800px;
+    
+    
+    /* grid-template-columns: repeat(3, minmax(100px 1fr));
     height: auto;
     grid-column-gap: 10px;
     display: grid;
-    //flex: 1;
     position: relative;
     align-self:flex-start;
-    text-align:start;
+    text-align:start; */ 
+
+    }
     
+
+.linha-cim3{
+  padding-right: 8px !important;
+  grid-area: linha-cima3;
+}
+.linha-cima4{
+padding-right: 8px !important;
+grid-area: linha-cima4;
+}
+  .grid-template-areas-1 {
+  	grid-template-areas:
+		  "input-cursos linha-cima "
+		  "input-cursos linha-cima2"
+      "input-cursos linha-cima3"
+      "input-cursos linha-cima4"
+		  ;
   }
-  .back-color{
-    /* background-color: #336925;
-    height: 120px;
-    align-items: center !important;
-    align-self: center!important;
-    align-content: center!important;
-    justify-content: center!important;
-    line-height: 1 !important;
-    text-align: center !important;
-    width: 100% !important;
-    
-    grid-template-columns: repeat(3, minmax(100px 1fr));
-    height: auto;
-    grid-column-gap: 10px;
-    display: grid;
-    position: relative;
-    align-self:flex-start;
-    text-align:start; */
-   
+.bt-cursos{
+  width: 200px; 
+  height: 230px !important;
+  margin-right: 20px !important;
+  margin-top: 5px;
+ }
+
+ .wrapper-geral {
+  //padding-bottom: 3000px !important;
+}
+  
 }
   @media screen and (max-width:400px) {
     .wrapper-left {
@@ -990,12 +1104,31 @@ body{
       height:600px !important;
       //padding-left: 50px;
       //width: 30%;
-      margin-left: 25px;
-      padding-left: 25px;
+      margin-left: 20px;
+      padding-left: 0px;
       margin-bottom: 5px !important;
       padding-top: 30px;
       //background-color: #dd4b39;
+     
       }
+
+      .div-estados{
+        width: 330px;
+        margin-left: 0px;
+      }
+  
+      .deselect{
+        width: 320px;
+        margin-left: 0px;
+        
+      }
+      .div-year{
+        background-color: #336925;
+        width: 330px;
+        height: 110px;
+        border-radius: 5px;
+        margin-left: 0px;
+        }
   
       .wrapper-geral {
         //float: left;
@@ -1003,10 +1136,10 @@ body{
         flex: 1;
         grid-template-rows:1fr 3fr;
         padding-left: 0px;
-        //width: 30%;
-        //padding-right: 20px;
-        //height: 600px;
+        margin-right: 10px;
         width: 300px !important;
+        height: 100%;
+        
       }
       .geral-map{
         background-color: white;
@@ -1038,30 +1171,35 @@ body{
       .wrapper-tela {
         grid-template-rows: repeat(2, 1fr);
         //width: 50px !important;
-        
         max-width: 414px !important;
         width: 200px;
       }
       .radio-bts{
-        width: 233px !important;
+        width: 240px !important;
         height: 130px;
-        left:0px !important;
-        margin-left: 10px;
+      
+        padding-right: 140px !important;
+        margin-left: 0px;
+        
+        
+       
         //columns: 100px !important;
         //margin-bottom: 300px;
       }
-      /* .radio-bts{
-        background-color: #336925;
-        //padding-right: 140px !important;
-        //padding-left: 5px;
-        border-radius: 5px;
-        width: 500px !important;
-        left:0px !important;
-        margin-left: 10px;
-        //justify-self: end !important;
-        //position: sticky;
-        margin-top: 10px !important;
-      } */
+      .example-margin{
+        //background-color: #dd4b39;
+        align-items: center !important;
+        align-self: center!important;
+        align-content: center!important;
+        justify-content: center!important;
+        text-align: center !important;
+        width: 125px;
+        grid-template-columns: repeat(1, (1fr));
+        grid-column-gap: 10px;
+        display: flex;
+        position: relative;
+        left: 10px !important;
+      }
       
       .bt-mobile{
         width: 250px;
@@ -1076,44 +1214,41 @@ body{
         //height: 500px;
         //margin-left: 80px;
       }
+      .grid-bts2{
+        display: none;
+      }
       .col-9{
         display: none;
       }
-      .wrapper-header{
-        //display:none;
-        //margin-top: 50px;
+      .wp-tablet{
+        display: none;
       }
-       /* .div-estados {
-        background-color: #3b5999;
-        width: 100%;
-
-        width: 233px;
-        height: 380px;
-        border-radius: 5px;
-        border-bottom-right-radius: 0px;
-        border-bottom-left-radius: 0px;
-        margin-top: 10px !important;
-        margin-left: 5px;
-        //max-width: 380px;
-      } */
+      .radio-tablet{
+        display: none;
+        
+      }
+      .wp-desk{
+        display: block;
+      }
+     
       .grid-bts{
         display: block;
       }
       .radio-mobile{
         display:block;
+       margin-right: 50px !important;
       }
       .radio-desktop{
         display:none;
       }
       .back-color{
-        background-color: none;
         height: 370px;
-        align-items: center !important;
-        align-self: center!important;
-        align-content: center!important;
-        justify-content: center!important;
+        align-items:flex-start start !important;
+        align-self: flex-start!important;
+        align-content: flex-start!important;
+        justify-content: flex-start !important;
         line-height: 0 !important;
-        text-align: center !important;
+        text-align:start !important;
         width: 330px !important;
         margin-left: 20px;
        
@@ -1133,39 +1268,10 @@ body{
       //padding-left: 5px !important;
       //padding-right: 5px !important;
     }
-  }
-/* @media screen and (max-width:1400px) {
-  .geral-map{
-    background-color: white;
-    width: 60%;
-    padding-bottom: 40px !important;
-    bottom: 33px !important;
-    grid-template-columns: repeat(1, 1fr);
-    display: grid;
-    position: relative;
-    border-radius: 5px;
-    height: auto;
-  }
 
-  .wrapper-icons {
-    //wrapper do painel esquerdo
-    grid-template-rows: repeat(2, 1fr);
-    height: 150px;
-    justify-self: end !important;
-    width: 90%;
-  }
-  .wrapper-tela {
-    grid-template-rows: repeat(2, 1fr);
-    width: 60%;
-  }
+    .bottomRight{
+      top:550px !important;
+      right:20px !important;
+    }
 
-  .wrapper-left {
-    //wrapper do painel esquerdo
-    grid-template-rows: repeat(2, 1fr);
-    //width: 270px;
-    //height: 600px;
-    padding-left: 80px;
-    width: 60%;
-}
-
-} */
+  }
