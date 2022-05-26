@@ -294,7 +294,6 @@ export class OutputComponent implements OnChanges {
         return { "type": "line", "data": result }
       } else {
         var vals = []
-
         if (num_anos == 1) {
           var year = data[0].data[0].ano
           data.forEach(d => {
