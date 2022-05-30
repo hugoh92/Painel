@@ -34,12 +34,12 @@ export class DataService {
   }
 
   getPlot1Data(filter = null){
-    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}grafico_1?`:  `${this.apiUrl2}grafico_1/${filter}`;
+    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}grafico_1?`:  `${this.apiUrl2}grafico_1/${filter}?`;
     return this.http.get(url + this.complementUrl);
   }
 
   getPlot2Data(filter = null){
-    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}grafico_2?`:  `${this.apiUrl2}grafico_2/${filter}`;
+    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}grafico_2?`:  `${this.apiUrl2}grafico_2/${filter}?`;
     return this.http.get(url + this.complementUrl);
   }
 
@@ -51,13 +51,13 @@ export class DataService {
   }
 
   getMapData(filter = null, filterYear = true){
-    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}mapa?`:  `${this.apiUrl2}mapa/${filter}`;
+    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}mapa?`:  `${this.apiUrl2}mapa/${filter}?`;
     url = filterYear ? url + this.complementUrl: url
     return this.http.get(url);
   }
 
   getLocalizacaoData(filter = null){
-    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}localizacao?`:  `${this.apiUrl2}localizacao/${filter}`;
+    let url = filter === null || filter == 'el' ||  filter == '/' ? `${this.apiUrl2}localizacao?`:  `${this.apiUrl2}localizacao/${filter}?`;
     return this.http.get(url + this.complementUrl);
   }
 
