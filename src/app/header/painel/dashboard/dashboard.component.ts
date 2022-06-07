@@ -6,11 +6,12 @@ import { HighchartsService } from 'src/app/services/highcharts.service'
 
 var dataKeys = [
   {key: 'qt_cursos', value: 'Cursos'},
-  {key: 'qt_vaga_total_2018', value: 'Vagas oferecidas'},
+  {key: 'qt_vagas_autorizadas', value: 'Vagas oferecidas'},
   {key: 'qt_inscrito_total', value: 'Inscritos'},
   {key: 'qt_ingresso_total', value: 'Ingressos'},
   {key: 'qt_matricula_total', value: 'Matriculados'},
   {key: 'qt_concluinte_total', value: 'Concluintes'},
+  {key: 'total_docentes', value: 'Docentes'},
 ]
 
 @Component({

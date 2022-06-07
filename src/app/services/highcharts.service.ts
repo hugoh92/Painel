@@ -117,7 +117,7 @@ export class HighchartsService {
         
         series = [{
             data: data,
-            name: 'Dados 2020',
+            name: 'Dados 2020_',
             borderColor: '#0d542a',
             borderWidth: 1,
             states: {
@@ -136,20 +136,7 @@ export class HighchartsService {
                 map: geojson,
                 backgroundColor: undefined
             },
-            exporting: {
-                buttons: {
-                  customButton: {
-                    // symbol: 'url(https://dots.dataontouchdev.com/images/weather/yr_weather_symbols/svg/01d.svg)',
-                    symbol: 'url(~/assets/images/arrow.svg)', // not working
-                  },
-                  contextButton: {
-                    menuItems: ['downloadJPEG', 'downloadPNG', 'downloadSVG', 'downloadPDF', 'label'],
-                    className: 'download-button',
-                    symbol: 'download',
-                  },
-                },
-              },
-
+           
             title: {
                 text: ''
             },
@@ -276,7 +263,7 @@ export class HighchartsService {
             subtitle: {
                 text: ''
             },
-
+            
             legend: {
                 title: {
                     text: '<span style = "color: #fff"> Legenda </span>',

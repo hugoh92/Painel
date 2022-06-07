@@ -90,23 +90,7 @@
             </div>
 
             <!-- Mobile -->
-            <div class="radio-bts radio-mobile">
-               <span class="title-bt title-check"> Agregação</span>
-
-               <!-- TODO: TROCAR BOTÃO POR RADIO BUTTON -->
-               <section class="example-section">
-                  <mat-radio-group aria-label="Select an option" [(ngModel)]="cruzamentoSelecionado"
-                     name="cruzamentoSelecionado2">
-                     <mat-radio-button #button3 class="example-margin" (click)="checkState(button3)" value="localizacao">
-                        Capital/Interior</mat-radio-button>
-                     <mat-radio-button #button4 class="example-margin" (click)="checkState(button4)"
-                        value="codigo_ies__cat_admin">
-                        Público/Privado</mat-radio-button>
-                     <mat-radio-button #button5 class="example-margin" (click)="checkState(button5)"
-                        value="codigo_ies__org_academica">Organização Acadêmica</mat-radio-button>
-                  </mat-radio-group>
-               </section>
-            </div>
+          
             <!-- Mobile -->
          </div>
       </div>
@@ -115,7 +99,7 @@
 
    <div class="row grid-bts2">
 
-      <mat-button-toggle-group id="buttonExplorer" name="buttonExplorer" aria-label="Font Style" class="back-color"
+      <mat-button-toggle-group id="buttonExplorer" name="buttonExplorer" aria-label="Font Style" class="back-color bts-tablet"
          [(ngModel)]="metricaSelecionada" ngDefaultControl>
 
          <!-- <div class="wrapper-inputs"> -->
@@ -195,7 +179,7 @@
 
             </section>
          </div>
-  
+
 
       </mat-button-toggle-group>
       <div class="row"></div>
@@ -251,6 +235,25 @@
    </div>
 
    <div class="box wrapper-left wp-desk">
+      <div class="radio-bts radio-mobile">
+         <span class="title-bt title-check"> Agregação</span>
+
+         <!-- TODO: TROCAR BOTÃO POR RADIO BUTTON -->
+         <section class="example-section">
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="cruzamentoSelecionado"
+               name="cruzamentoSelecionado2">
+               <mat-radio-button #button3 class="example-margin" (click)="checkState(button3)"
+                  value="localizacao">
+                  Capital/Interior</mat-radio-button>
+               <mat-radio-button #button4 class="example-margin" (click)="checkState(button4)"
+                  value="codigo_ies__cat_admin">
+                  Público/Privado</mat-radio-button>
+               <mat-radio-button #button5 class="example-margin" (click)="checkState(button5)"
+                  value="codigo_ies__org_academica">Organização Acadêmica</mat-radio-button>
+            </mat-radio-group>
+         </section>
+      </div>
+      
       <div class="div-year">
          <span class="title-bt"> Período</span>
          <div class="range-date">
@@ -284,20 +287,28 @@
 
    <!-- Mobile -->
    <div class="grid-bts">
+     
       <mat-button-toggle-group id="buttonExplorer" name="buttonExplorer" aria-label="Font Style" class=" back-color"
          [(ngModel)]="metricaSelecionada" ngDefaultControl>
 
          <!--  <div class="wrapper-inputs"> -->
          <section class="grid grid-template-areas-1">
-            <!-- <div class="input-cursos">
+            <!--  <div class="input-cursos">
             <mat-button-toggle value="qt_cursos" class="bt-cursos">
                <img src="/assets/icons/NEW_CURSOS.png" class="icones-ind icon-cursos">
                <span class="row nome-cursos">Cursos</span>
             </mat-button-toggle>
          </div> -->
-
+            <div class="row linha-cima3">
+              
+               <mat-button-toggle value="qt_cursos" class="ml-4 bt-cursos2">
+                  <img src="/assets/icons/NEW_CURSOS.png" class="icones-ind">
+                  <span class="nome-ind oneword ">Cursos</span>
+               </mat-button-toggle>
+          
+         </div>
+         
             <div class="row linha-cima">
-
                <mat-button-toggle value="qt_vagas_autorizadas" class="abc ml-4 bt-infos">
                   <div class="bt-taxa2 nome-ind ab">
                      <img src="/assets/icons/NEW_VAGAS.png" class="icones-ind">
@@ -326,7 +337,7 @@
                </mat-button-toggle>
             </div>
 
-            <div class="row">
+            <div class="row linha-cima2">
                <mat-button-toggle value="tx_concorrencia" class="ml-4 bt-infos">
                   <p class="nome-ind doc-icon ">Taxa de<br>Concorrência</p>
                </mat-button-toggle>
@@ -360,8 +371,9 @@
          </div>
          <!-- HEADER ICONS -->
          <div class="p-2">
-            <app-output [metricaSelecionada]="metricaSelecionada" [estadosSelecionados]="myForm.get('estados').value"
-               [cruzamentoSelecionado]="cruzamentoSelecionado" [anosSelecionados]="anosSelecionados">
+            <app-output class="mp-size" [metricaSelecionada]="metricaSelecionada"
+               [estadosSelecionados]="myForm.get('estados').value" [cruzamentoSelecionado]="cruzamentoSelecionado"
+               [anosSelecionados]="anosSelecionados">
             </app-output>
          </div>
 
