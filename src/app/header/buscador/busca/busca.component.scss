@@ -7,13 +7,19 @@
 }
 
 .btn {
-    color: white;
-    background: #023a1d;
+    color: #023a1d;
+    background-color: white;
+    border-radius: 20px;
 }
 .d-md-block{
     font-weight: bold;
 }
 
+
+app-autocomplete{
+    border-radius: 20px;
+   
+}
 .img {
     position: absolute;
     background: url('/assets/icons/buscador.svg');
@@ -75,12 +81,13 @@
 
 input:focus,
 input:hover {
-    border: 1px solid #e1e31d;
+    border: 4px solid #e1e31d;
     box-shadow: none;
     background: #023a1d;
     // font-size: 18px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
+    
 }
 
 .background {
@@ -93,4 +100,5 @@ input:hover {
 .btn:hover,
 .btn:focus {
     border: 1px solid #e1e31d;
+    border-radius: 20px;
 }

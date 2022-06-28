@@ -1,7 +1,7 @@
 [
   {
     "sigla": "Brasil",
-    "num_cursos": 369
+    "num_cursos": 387
   },
   {
     "sigla": "AC",
@@ -13,7 +13,7 @@
   },
   {
     "sigla": "AM",
-    "num_cursos": 5
+    "num_cursos": 7
   },
   {
     "sigla": "AP",
@@ -21,11 +21,11 @@
   },
   {
     "sigla": "BA",
-    "num_cursos": 28
+    "num_cursos": 29
   },
   {
     "sigla": "CE",
-    "num_cursos": 9
+    "num_cursos": 12
   },
   {
     "sigla": "DF",
@@ -41,7 +41,7 @@
   },
   {
     "sigla": "MA",
-    "num_cursos": 9
+    "num_cursos": 12
   },
   {
     "sigla": "MG",
@@ -57,15 +57,15 @@
   },
   {
     "sigla": "PA",
-    "num_cursos": 10
+    "num_cursos": 12
   },
   {
     "sigla": "PB",
     "num_cursos": 9
   },
   {
-    "sigla": "PR",
-    "num_cursos": 15
+    "sigla": "PE",
+    "num_cursos": 16
   },
   {
     "sigla": "PI",
@@ -85,7 +85,7 @@
   },
   {
     "sigla": "RO",
-    "num_cursos": 6
+    "num_cursos": 10
   },
   {
     "sigla": "RR",
@@ -105,10 +105,10 @@
   },
   {
     "sigla": "SP",
-    "num_cursos": 74
+    "num_cursos": 75
   },
   {
     "sigla": "TO",
-    "num_cursos": 7
+    "num_cursos": 8
   }
 ]
