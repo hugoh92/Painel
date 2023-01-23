@@ -131,7 +131,7 @@
                     <span class="nome-ind">Inicio das atividades</span>
                     <br>
                     <span href="#" class="numero-ind"
-                        name="">{{treatNull((options.periodo_funcionamento).split("-").reverse().join("/"))}}</span>
+                        name="">{{treatNull((options.ini_funcionamento))}}</span>
                 </div>
                 <div class="func-dados">
                     <br>
@@ -200,8 +200,8 @@
 
                         <span class="nome-ind">Taxa de Sucesso</span>
                         <br>
-                        <span href="#" class="numero-ind" id="sucess"
-                            name="">{{treatNull((+options.indicadores[0].tx_sucesso).toFixed(2)+ '%', true)}}</span>
+                        <span href="#" class="numero-ind" id="sucess" step=".01"
+                            name="">{{treatNull((+options.indicadores[0].tx_sucesso).toFixed(2).substring(0, 2) + '%', true)}}</span>
                     </div>
                 </div>
                 <div class="div-info">

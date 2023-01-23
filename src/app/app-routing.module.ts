@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DataExplorerComponent } from './header/data-explorer/data-explorer.component';
+import { NewDashboardComponent } from './header/painel/new-dashboard/new-dashboard.component';
 
 const routes: Routes = [
   {
@@ -9,6 +10,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {path: 'data-explorer', component: DataExplorerComponent},
+  {path: 'new-dashboard', component: NewDashboardComponent},
   {
     path: '',
     loadChildren: 'src/app/modules/buscador/buscador.module#BuscadorModule',

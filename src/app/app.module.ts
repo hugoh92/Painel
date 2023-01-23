@@ -30,6 +30,8 @@ import { DataExplorerComponent, SearchPipe } from './header/data-explorer/data-e
 import { OutputComponent } from './header/data-explorer/output/output.component';
 import { ShareButtonsModule } from 'ngx-sharebuttons';
 
+import { NewDashboardComponent } from './header/painel/new-dashboard/new-dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { ShareButtonsModule } from 'ngx-sharebuttons';
     LoaderComponent,
     DataExplorerComponent,
     OutputComponent,
-    SearchPipe
+    SearchPipe,
+    NewDashboardComponent
   ],
   imports: [
     BrowserModule,
