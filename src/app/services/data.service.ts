@@ -11,7 +11,7 @@ import { SidebarService } from './sidebar.service';
 export class DataService {
   autoCompleteOpts = [];
   apiUrl2 = 'https://warm-everglades-94375.herokuapp.com/';
-  year = '2020';
+  year = '2021';
   complementUrl = `&year=${this.year}`
 
   constructor(private http: HttpClient) { }

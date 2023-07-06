@@ -3,14 +3,15 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 var json_estados = require('src/assets/data/cursos_uf.json');
-import { SidebarService } from '../../../services/sidebar.service';
+import { SidebarService } from 'src/app/services/sidebar.service';
+import { NewDashboardComponent } from '../new-dashboard.component';
 
 @Component({
-  selector: 'app-sidenav-icons',
-  templateUrl: './sidenav-icons.component.html',
-  styleUrls: ['./sidenav-icons.component.scss']
+  selector: 'app-icons-dashboard',
+  templateUrl: './icons-dashboard.component.html',
+  styleUrls: ['./icons-dashboard.component.scss']
 })
-export class SidenavIconsComponent implements OnInit {
+export class IconsDashboardComponent implements OnInit {
   data: any = {};
   populacao: number;
   nameUF = "BRASIL";
@@ -61,32 +62,22 @@ export class SidenavIconsComponent implements OnInit {
     this._dataService.getMapData(filter).subscribe((json: any) => {
       if (filter === null || filter == 'el') {
         this.nameUF = "BRASIL";
-        this._dataService.getData(`https://servicodados.ibge.gov.br/api/v3/agregados/7358/periodos/2018/variaveis/606?localidades=N1[all]&classificacao=2[6794]|287[100362]|1933[49031]`).subscribe((data: any) => {
-          this.populacao =  data[0].resultados[0].series[0].serie['2018'];
-          //data[0]?.id
-          console.log('testando', this.populacao)
-          console.log('testando2', data.id)
-          
-
-        })
+      /*   this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/projecoes/populacao/`).subscribe((data: any) => {
+          this.populacao = data.projecao.populacao;
+        }) */
         
       } else {
         let cod_uf = json[0].codigo_do_municipio.substr(0, 2);
 
-        this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/projecoes/populacao/${cod_uf}`).subscribe((data: any) => {
+     /*    this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/projecoes/populacao/${cod_uf}`).subscribe((data: any) => {
           this.populacao = data.projecao.populacao;
         })
 
         this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${cod_uf}`).subscribe((data: any) => {
           this.nameUF = data.nome;
-          
-        })
-        
+        }) */
       }
 
     })
   }
-
-
-
 }

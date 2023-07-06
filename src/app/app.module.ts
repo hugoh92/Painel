@@ -1,6 +1,7 @@
+//import { NewDashboardModule } from './modules/new-dashboard/new-dashboard.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { DashboardModule } from './modules/dashboard/dashboard.module';
@@ -31,6 +32,11 @@ import { OutputComponent } from './header/data-explorer/output/output.component'
 import { ShareButtonsModule } from 'ngx-sharebuttons';
 
 import { NewDashboardComponent } from './header/painel/new-dashboard/new-dashboard.component';
+import {IconsDashboardComponent} from './header/painel/new-dashboard/icons-dashboard/icons-dashboard.component';
+import { DashCapitalComponent } from './header/painel/new-dashboard/dash-capital/dash-capital.component';
+import { DashRegioesComponent } from './header/painel/new-dashboard/dash-regioes/dash-regioes.component';
+import { DashOrgAcademicaComponent } from './header/painel/new-dashboard/dash-org-academica/dash-org-academica.component';
+
 
 
 @NgModule({
@@ -43,7 +49,11 @@ import { NewDashboardComponent } from './header/painel/new-dashboard/new-dashboa
     DataExplorerComponent,
     OutputComponent,
     SearchPipe,
-    NewDashboardComponent
+    NewDashboardComponent,
+    IconsDashboardComponent,
+    DashCapitalComponent,
+    DashRegioesComponent,
+    DashOrgAcademicaComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +71,7 @@ import { NewDashboardComponent } from './header/painel/new-dashboard/new-dashboa
     BuscadorModule,
     Ng5SliderModule,
     MatNativeDateModule,
+    //NewDashboardModule,
     MatSortModule,
     ShareButtonsModule.forRoot(),
   ],

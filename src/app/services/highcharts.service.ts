@@ -117,7 +117,7 @@ export class HighchartsService {
         
         series = [{
             data: data,
-            name: 'Dados 2020_',
+            name: 'Dados 2021_',
             borderColor: '#0d542a',
             borderWidth: 1,
             states: {
@@ -196,7 +196,7 @@ export class HighchartsService {
         if (data.length == 27) {
             series = [{
                 data: data,
-                name: 'Dados 2020',
+                name: 'Dados 2021',
                 borderColor: '#0d542a',
                 borderWidth: 1,
                 states: {
@@ -907,8 +907,6 @@ export class HighchartsService {
 
         }
         Highcharts.chart(idHtml, options);
-
-
     }
 
     drawDonutRegime(idHtml, data) {
@@ -1208,7 +1206,6 @@ export class HighchartsService {
         }
         Highcharts.chart(idHtml, options);
     }
-
 
     drawDonutAlunPiram(idHtml) {
 
@@ -1716,6 +1713,385 @@ export class HighchartsService {
         Highcharts.chart(idHtml, options);
 
         return options
-
     }
+
+    draNewMap(idHtml, data, geojson = usaMap) {
+        var series;
+       
+        //var dataLabels = this.get_data_labels(this.get_quantiles(data.map(d => d[d.length - 1])));
+        var dataLabels = this.get_data_labels(this.getIntervalls(data.map(d => d[d.length - 1])));
+        if (data.length == 27) {
+            series = [{
+                data: data,
+                name: 'Dados 2021',
+                borderColor: '#0d542a',
+                borderWidth: 1,
+                states: {
+                    hover: {
+                        color: '#BADA55'
+                    }
+                },
+                dataLabels: {
+                    enabled: false,
+                    format: '{point.name}'
+                }
+            }]
+        } else {
+            series = [{
+                data: data,
+                //"name": "North",
+                "value": "26",
+                "path": "produtos.direm.org/painel/BA",
+                url: "produtos.direm.org/painel/BA",
+
+                keys: ['codarea', 'name', 'value'],
+                joinBy: 'codarea',
+                borderColor: '#0d542a',
+                borderWidth: 1,
+                states: {
+                    hover: {
+                        color: '#BADA55'
+                    }
+                },
+                dataLabels: {
+                    enabled: false,
+                    format: '{point.name}'
+                }
+            }]
+        }
+        HighchartsMap.SVGRenderer.prototype.symbols.download = function (x, y, w, h) {
+            var path = [
+                // Arrow stem
+                'M', x + w * 0.5, y,
+                'L', x + w * 0.5, y + h * 0.7,
+                // Arrow head
+                'M', x + w * 0.3, y + h * 0.5,
+                'L', x + w * 0.5, y + h * 0.7,
+                'L', x + w * 0.7, y + h * 0.5,
+                // Box
+                'M', x, y + h * 0.9,
+                'L', x, y + h,
+                'L', x + w, y + h,
+                'L', x + w, y + h * 0.9
+            ];
+            return path;
+        };
+        var options: any = {
+            chart: {
+                map: geojson,
+                backgroundColor: undefined,
+                height: (3 / 4 * 100) + '%' // 16:9 ratio
+            },
+            title: {
+                text: ''
+            },
+            subtitle: {
+                text: ''
+            },
+            legend: {
+                title: {
+                    text: '<span style = "color: #fff"> Legenda </span>',
+                    style: {
+                        color: 'white'
+                    }
+                },
+                itemStyle: {
+                    color: "white"
+                },
+                floating: false,
+                align: 'left',
+                x: 10,
+                y: -40,
+                layout: 'vertical',
+                verticalAlign: 'bottom',
+            },
+            credits: {
+                enabled: false
+            },
+            mapNavigation: {
+                enabled: false,
+                buttonOptions: {
+                    verticalAlign: 'bottom'
+                }
+            },
+            navigation: {
+                buttonOptions: {
+                    theme: {
+                        // Good old text links
+                        fill: '#c3081c',
+                        color: 'white',
+                        r: 15,
+
+                    }
+                }
+            },
+            exporting: {
+                buttons: {
+                    contextButton: {
+                        symbol: 'download',
+                        symbolStroke: '#fff',
+                        symbolSize: 10,
+                        height: 25,
+                        width: 25,
+                        enabled: true
+                    },
+                }
+            },
+            plotOptions: {
+                series: {
+                    point: {
+                        events: {
+                            click: function () {
+                                if (this.name == "Maranhão") {
+                                    return document.location.href = ("http://localhost:4200/new-dashboard/MA");
+                                }
+                                if (this.name == "Tocantins") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/TO");
+                                }
+                                if (this.name == "Rondônia") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/RO");
+                                }
+                                if (this.name == "Acre") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/AC");
+                                }
+                                if (this.name == "Amazonas") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/AM");
+                                }
+                                if (this.name == "Roraima") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/RR");
+                                }
+                                if (this.name == "Pará") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/PA");
+                                }
+                                if (this.name == "Amapá") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/AP");
+                                }
+                                if (this.name == "Sergipe") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/SE");
+                                }
+                                if (this.name == "Pernambuco") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/PE");
+                                }
+                                if (this.name == "Ceará") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/CE");
+                                }
+                                if (this.name == "Piauí") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/PI");
+                                }
+                                if (this.name == "Rio Grande do Norte") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/RN");
+                                }
+                                if (this.name == "São Paulo") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/SP");
+                                }
+                                if (this.name == "Bahia") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/BA");
+                                }
+                                if (this.name == "Paraíba") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/PB");
+                                }
+                                if (this.name == "Minas Gerais") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/MG");
+                                }
+                                if (this.name == "Espírito Santo") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/ES");
+                                }
+                                if (this.name == "Rio de Janeiro") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/RJ");
+                                }
+                                if (this.name == "Paraná") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/PR");
+                                }
+                                if (this.name == "Santa Catarina") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/SC");
+                                }
+                                if (this.name == "Rio Grande do Sul") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/RS");
+                                }
+                                if (this.name == "Mato Grosso do Sul") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/MS");
+                                }
+                                if (this.name == "Mato Grosso") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/MT");
+                                }
+                                if (this.name == "Goiás") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/GO");
+                                }
+                                if (this.name == "Distrito Federal") {
+                                    return document.location.href = ("https://produtos.direm.org/painel/DF");
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            colorAxis: {
+                dataClasses: dataLabels,
+                labels: {
+                    format: '{value}'
+                }
+            },
+            series: series
+        }
+        // Instantiate the map
+        if (this.mapChart) {
+            this.mapChart.destroy;
+        }
+        this.mapChart = HighchartsMap.mapChart(idHtml, options);
+        return this.mapChart
+    }
+
+    plotCap(idHtml) {
+        
+        var options: any = {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Historic World Population by Region',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Source: <a ' +
+                    'href="https://en.wikipedia.org/wiki/List_of_continents_and_continental_subregions_by_population"' +
+                    'target="_blank">Wikipedia.org</a>',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['Africa', 'America', 'Asia', 'Europe'],
+                title: {
+                    text: null
+                },
+                gridLineWidth: 1,
+                lineWidth: 0
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Population (millions)',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                },
+                gridLineWidth: 0
+            },
+            tooltip: {
+                valueSuffix: ' millions'
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: '50%',
+                    dataLabels: {
+                        enabled: true
+                    },
+                    groupPadding: 0.1
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -40,
+                y: 80,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor:
+                    Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'Year 1990',
+                data: [631, 727, 3202, 721]
+            }, {
+                name: 'Year 2000',
+                data: [814, 841, 3714, 726]
+            }, {
+                name: 'Year 2018',
+                data: [1276, 1007, 4561, 746]
+            }]
+        }
+        
+    Highcharts.chart(idHtml, options);
+    }
+
+    getChartOptions(idHtml,chartOptions): Highcharts.Options {
+        return {
+            chart: {
+                type: 'bar',
+                backgroundColor: 'transparent',
+                spacing: [0, 10, 10, 10],
+              },
+              title: {
+                text: ''
+              },
+              xAxis: {
+                lineWidth: 0,
+                minorGridLineWidth: 0,
+                minorTickLength: 0,
+                tickLength: 0,
+                categories: ['Centro-Oeste', 'Nordeste', 'Norte', 'Sudeste', 'Sul'],
+                gridLineWidth: 0,
+                labels: {
+                  style: {
+                    color: 'white', // Mudar a cor das categorias
+                    fontSize: '14px' // Mudar o tamanho das categorias
+                  }
+                }
+              },
+              yAxis: {
+                labels: {
+                  enabled: false
+                },
+                title: {
+                  text: ''
+                },
+                gridLineWidth: 0
+              },
+              plotOptions: {
+                series: {
+                  marker: {
+                    enabled: false
+                  },
+                  showInLegend: false,
+                  borderWidth: 0,
+                  dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.2f}%', // Formato para exibir a porcentagem
+                    align: 'right',
+                    inside: true,
+                    //crop: false,
+                    //overflow: 'allow'
+                  }
+                },
+               
+                /* column: {
+                  colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'] // Defina as cores das barras aqui
+                } */
+              },
+              navigation: {
+                buttonOptions: {
+                    enabled: false
+                }
+              },
+              credits: {
+                enabled: false
+              },
+              series: [{
+                type: 'column',
+                name: '',
+                data: [
+                  { y: 1, color: '#9EB01D' },
+                  { y: 2, color: '#61ABEC' },
+                  { y: 3, color: '#F1C730' },
+                  { y: 4, color: '#D5672B' },
+                  { y: 5, color: '#C20082' }]
+              }]
+        };
+        Highcharts.chart( idHtml, chartOptions);
+    } 
+         
 }

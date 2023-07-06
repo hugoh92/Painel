@@ -158,6 +158,7 @@ export class OutputComponent implements OnChanges {
     })
 
     this.formatTableData(data)
+    
   }
 
 

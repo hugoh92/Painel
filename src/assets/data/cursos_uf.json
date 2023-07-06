@@ -1,7 +1,7 @@
 [
   {
     "sigla": "Brasil",
-    "num_cursos": 387
+    "num_cursos": 388
   },
   {
     "sigla": "AC",
@@ -45,11 +45,11 @@
   },
   {
     "sigla": "MG",
-    "num_cursos": 47
+    "num_cursos": 48
   },
   {
     "sigla": "MT",
-    "num_cursos": 7
+    "num_cursos": 8
   },
   {
     "sigla": "MS",
@@ -105,7 +105,7 @@
   },
   {
     "sigla": "SP",
-    "num_cursos": 75
+    "num_cursos": 74
   },
   {
     "sigla": "TO",

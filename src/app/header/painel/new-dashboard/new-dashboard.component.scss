@@ -1,3 +1,4 @@
+
 .wrapper-geral{
     margin-left: 10px;
     margin-right: 10px;
@@ -11,11 +12,34 @@
     display: flex;
     text-align: center !important;
     align-items: center !important;
-    
 }
 .container-estado{
     width: 25%;
     height: 100%;
+    display: grid;
+    justify-content: baseline;
+    align-items: center;
+    
+}
+.header-titulo{
+    text-align: start !important;
+    height: 50%;
+}
+.header-indicadores{
+    text-align: start !important;
+    align-items: start !important;
+    align-self: flex-end;
+    height: 25px;
+    
+}
+.indicadores-font{
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-right: 20px;
+    color: white;
+    width: 100%;
+    text-align: end;
+    font-weight: 200;
 }
 .container-header{
     background-color: #e1e31d;
@@ -28,8 +52,8 @@
     gap: 3px;
 }
 .text-dados{
-    font-size: 25px;
-    font-weight: 300;
+    font-size: 28px;
+    font-weight:300;
     color: #023A1D;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
 }
@@ -44,7 +68,12 @@
     width: 100%;
     height: 100%;
     //background-color: #023A1D;
-    margin:2px 0px 2px 2px;
+    //margin:2px 0px 2px 2px;
+    display:flex;
+    margin: 0 auto;
+    justify-content: center !important;
+    //text-align: center !important;
+    align-items: center !important;
 }
 .info-dados{
     width: 60% !important;
@@ -53,20 +82,43 @@
     text-align: center !important;
     align-items: center !important;
 }
-.title_head{
-    background-color: aqua;
+.title-head{
+    display: grid;
+    margin-left: 5px;
 }
-//head
-.mapa{
-    background-color: bisque;
-    width: 50%;
-    grid-area: mapa;
+.number-header{
+    color: #023A1D;
+    font-size: 17px;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
+    text-align: start !important;
+}
+.subtitle{
+    color: #023A1D;
+    font-size: 9px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
+    //width: 50px;
+    text-align: start !important;
 }
 
+.text {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 45px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #e1e31d;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+//head
+
+//indicadores
 .indicadores{
-    background-color: blue;
+    //background-color: blue;
     width: 25%;
     grid-area: ind1;
+    
 }
 .container{
     width: 100%;
@@ -85,28 +137,25 @@
 .info-indicadores{
     background-color: #023A1D;
     border-radius: 5px;
-    width: 100%;
     min-width: 220px;
-    max-width: 400px;
+    max-width: 450px;
     height: 52px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding-left: -30px !important;
     display: flex;
     justify-content: center !important;
     text-align: center !important;
     align-items: center !important;
+    margin: 12px 1px auto;
 }
 
 .indicadores2{
     background-color: #023A1D;
     border-radius: 5px;
-    height: 100%;
+    height: 692px;
     width: 25%;
     margin: 5px;
-    margin-top: 10px;
-    height: auto;
-    grid-area: ind2;
+    margin-top: 12px;
+    //display: grid;
+    grid-area: ind1;
 }
 .nome1 {
     position: relative;
@@ -121,6 +170,7 @@
     justify-content:baseline !important;
     text-align:start!important;
     align-items:initial !important;
+    
 }
 .icone4 {
     //position: absolute;
@@ -129,9 +179,10 @@
     //top: 10px;
     //right: 25px;
     color: white;
-    margin-right: 40px;
-    margin-left: auto;
-    margin-right: auto;
+    //margin-left: auto;
+    //margin-right: auto;
+    //background-color: red;
+    
     
 }
 
@@ -143,9 +194,138 @@
 }
 
 .icon-container{
-    width: 50px;
+    width: 45px;
     justify-content: center !important;
     text-align: center !important;
     align-items: center !important;
+    //background-color: aqua;
+    margin-right: 10px;
+    
+}
+
+.title-read-espace{
+    margin-left: 30px;
+}
+
+.titulo-cursos{
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dash-capital{
+    height: 230px;
+}
+.dash-regioes{
+    height: 100px;
+}
+.dash-org{
+    height: 200px;
+}
+.cursos-reg{
+    margin-left: 20px;
+    width: 100%;
+    
+}
+.inep{
+    margin-right: 20px;
+    color: darkgrey;
+    width: 100%;
+    text-align: end;
+}
+
+.titulo-academica{
+    display: flex;
+    
+}
+
+.linedown{
+    border-bottom: 1px solid #e1e31d;
+}
+//mapa
+.mapa{
+    
+    width: 50%;
+    grid-area: mapa;
+    justify-content: center !important;
+    text-align: center !important;
+    align-items: center !important;
+    display: flex;
+}
+.grid-map{
+    
+    width: auto;
+    height: auto;
+    margin: 12px 1px auto;
+    width: 95%;
 
 }
+.filter-button{
+    width: 90px;
+    height: 600px;
+    margin: 0 0 0 auto;
+    display:grid !important;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    //background-color: #e1e31d;
+}
+
+.mat-button-toggle-group,
+.mat-button-toggle,
+.mat-button-toggle-button {
+    box-shadow: none !important;
+    border: none !important;
+    background: #0d542a !important;
+  
+}
+.mat-button-toggle{
+    height: 60px;
+    width: auto;
+    
+}
+.btn-icone0 {
+    cursor: pointer;
+    margin: 0 auto;
+    width: auto;
+    
+}
+
+.btn-icone0.active {
+    border: none;
+    filter: invert(22%) sepia(100%) saturate(7.8) !important;
+}
+
+.icones {
+    height: 60px;
+    //color: white;
+    filter: invert(100%) sepia(100%) saturate(7.8) opacity(0.2);
+    //filter: invert(22%) sepia(100%) saturate(7.8);
+    //background-color: red;
+}
+
+.filtro {
+    font-size: 13px;
+    color: white;
+    top: 0px;
+    position: relative;
+    font-weight: bold;
+}
+.bt-group {
+    border: none;
+    display:grid !important;
+    height: 480px;
+}
+.icones-grid:hover {
+    filter: invert(22%) sepia(100%) saturate(7.8)!important;
+}
+
+.icones-grid:focus {
+    filter: invert(22%) sepia(100%) saturate(7.8)!important;
+}
+
+.icones-grid:active {
+    filter: invert(22%) sepia(100%) saturate(7.8) !important;
+}
+
