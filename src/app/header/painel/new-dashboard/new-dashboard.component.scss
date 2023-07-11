@@ -29,8 +29,7 @@
     text-align: start !important;
     align-items: start !important;
     align-self: flex-end;
-    height: 25px;
-    
+    height: 25px; 
 }
 .indicadores-font{
     font-size: 18px;
@@ -130,22 +129,22 @@
 }
 
 .container-geral{
-    grid-template-columns: 1fr 1fr 1fr;
+    //grid-template-columns: 1fr 1fr 1fr;
    
 }                        
 
-.info-indicadores{
+/* .info-indicadores{
     background-color: #023A1D;
     border-radius: 5px;
     min-width: 220px;
-    max-width: 450px;
+    max-width: 300px;
     height: 52px;
     display: flex;
     justify-content: center !important;
     text-align: center !important;
     align-items: center !important;
     margin: 12px 1px auto;
-}
+} */
 
 .indicadores2{
     background-color: #023A1D;
@@ -215,9 +214,11 @@
 }
 .dash-capital{
     height: 230px;
+    
 }
 .dash-regioes{
     height: 100px;
+    width: 100% !important;
 }
 .dash-org{
     height: 200px;
@@ -253,12 +254,10 @@
     display: flex;
 }
 .grid-map{
-    
     width: auto;
     height: auto;
     margin: 12px 1px auto;
     width: 95%;
-
 }
 .filter-button{
     width: 90px;
@@ -314,7 +313,7 @@
 }
 .bt-group {
     border: none;
-    display:grid !important;
+    display:grid;
     height: 480px;
 }
 .icones-grid:hover {
@@ -329,3 +328,146 @@
     filter: invert(22%) sepia(100%) saturate(7.8) !important;
 }
 
+
+@media screen and (max-width:1200px) {
+
+/*     .filter-button{
+        width: 400px;
+        height: 90px;
+        margin: 0 0 0 auto;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-row-gap: 0px;
+        grid-column-gap: 0px;
+        top: 40px;
+        position: relative;
+        display: flex;
+        background-color: #e1e31d;
+    }
+    .mapa{
+        width: 50%;
+        grid-area: mapa;
+        justify-content: center !important;
+        text-align: center !important;
+        align-items: center !important;
+        display: grid;
+    }
+
+    .bt-group {
+        border: none;
+        display:flex !important;
+        width: 280px;
+        background-color: aqua;
+    }
+
+    .grid-map{
+        width: auto;
+        height: auto;
+        margin: 0px 1px auto;
+        width: 95%;
+    }
+    .mat-button-toggle-group,
+    .mat-button-toggle,
+    .mat-button-toggle-button {
+    height: 90px;
+} */
+
+}
+
+@media screen and (max-width:1200px) {
+    .container-geral{
+        //grid-template-columns: 1fr 8fr 1fr;
+        grid-template-areas: "mapa mapa" 
+						 "indicadores indicaroes2";
+        display: grid;
+        grid-auto-flow:column;
+        position: relative;
+        grid-row-gap: 30px;
+        width: auto;
+    }     
+    .geral{
+        display: grid;
+    }
+    .indicadores2{
+        background-color: #023A1D;
+        border-radius: 5px;
+        height: 692px;
+        width: 100%;
+        margin: 5px;
+        margin-top: 12px;
+        //display: grid;
+        grid-area: auto;
+    }
+    .indicadores{
+        width: 100%;
+        grid-area: auto;
+    }
+    .info-indicadores{
+        
+        min-width: 220px;
+        max-width: 600px !important;
+      
+    }
+    .mapa{
+        width: auto;
+        height: auto;
+        justify-content: center !important;
+        text-align: center !important;
+        align-items: center !important;
+        
+    }
+    .grid-map{
+        //width: auto;
+        //height: auto;
+        margin: 0 auto;
+        width: 85% !important;
+        max-width: 1000px;
+    }
+    .header{
+        height: 200px;
+        min-height: 200px;
+    }
+    .container-header{
+        height: 180px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        position: relative;
+    }
+    .dash-capital{
+        height: 230px;
+        margin: 0 auto;
+        width: 95% !important;
+    }
+    .dash-regioes{
+        width: 95% !important;
+    }
+    .dash-org{
+        width: 95% !important;
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    .container-geral{
+        grid-template-areas: "mapa" "indicadores" "indicaroes2";
+        display: grid;
+        grid-auto-flow:column;
+        position: relative;
+        width: auto;
+    }  
+    .dash-regioes{
+        width: 85% !important;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .dash-regioes{
+        width: 75% !important;
+    }
+
+    .grid-map{   
+        width: 75% !important;
+        background-color: #e1e31d;
+    }
+}

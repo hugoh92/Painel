@@ -24,8 +24,8 @@ export class DashRegioesComponent implements OnInit {
       chart: {
         type: 'bar',
         backgroundColor: 'transparent',
-        spacing: [2, 10, 10, 0],
-        width:530
+        spacing: [0, 10, 10, 15],
+        //width: 500
       },
       title: {
         text: ''
