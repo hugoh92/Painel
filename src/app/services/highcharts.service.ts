@@ -1842,83 +1842,83 @@ export class HighchartsService {
                     point: {
                         events: {
                             click: function () {
-                                if (this.name == "Maranhão") {
-                                    return document.location.href = ("http://localhost:4200/new-dashboard/MA");
+                                if (this.name == "Maranhão") { 
+                                    return document.location.href = document.location.href.concat('', '/MA'); //replicar
                                 }
                                 if (this.name == "Tocantins") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/TO");
+                                    return document.location.href = document.location.href.concat('', '/TO');
                                 }
                                 if (this.name == "Rondônia") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/RO");
+                                    return document.location.href = document.location.href.concat('', '/RO');
                                 }
                                 if (this.name == "Acre") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/AC");
+                                    return document.location.href = document.location.href.concat('', '/AC');
                                 }
                                 if (this.name == "Amazonas") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/AM");
+                                    return document.location.href = document.location.href.concat('', '/AM');
                                 }
                                 if (this.name == "Roraima") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/RR");
+                                    return document.location.href = document.location.href.concat('', '/RR');
                                 }
                                 if (this.name == "Pará") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/PA");
+                                    return document.location.href = document.location.href.concat('', '/PA');
                                 }
                                 if (this.name == "Amapá") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/AP");
+                                    return document.location.href = document.location.href.concat('', '/AP');
                                 }
                                 if (this.name == "Sergipe") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/SE");
+                                    return document.location.href = document.location.href.concat('', '/SE');
                                 }
                                 if (this.name == "Pernambuco") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/PE");
+                                    return document.location.href = document.location.href.concat('', '/PE');
                                 }
                                 if (this.name == "Ceará") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/CE");
+                                    return document.location.href = document.location.href.concat('', '/CE');
                                 }
                                 if (this.name == "Piauí") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/PI");
+                                    return document.location.href = document.location.href.concat('', '/PI');
                                 }
                                 if (this.name == "Rio Grande do Norte") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/RN");
+                                    return document.location.href = document.location.href.concat('', '/RN');
                                 }
                                 if (this.name == "São Paulo") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/SP");
+                                    return document.location.href = document.location.href.concat('', '/SP');
                                 }
                                 if (this.name == "Bahia") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/BA");
+                                    return document.location.href = document.location.href.concat('', '/BA');
                                 }
                                 if (this.name == "Paraíba") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/PB");
+                                    return document.location.href = document.location.href.concat('', '/PB');
                                 }
                                 if (this.name == "Minas Gerais") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/MG");
+                                    return document.location.href = document.location.href.concat('', '/MG');
                                 }
                                 if (this.name == "Espírito Santo") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/ES");
+                                    return document.location.href = document.location.href.concat('', '/ES');
                                 }
                                 if (this.name == "Rio de Janeiro") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/RJ");
+                                    return document.location.href = document.location.href.concat('', '/RJ');
                                 }
                                 if (this.name == "Paraná") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/PR");
+                                    return document.location.href = document.location.href.concat('', '/PR');
                                 }
                                 if (this.name == "Santa Catarina") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/SC");
+                                    return document.location.href = document.location.href.concat('', '/SC');
                                 }
                                 if (this.name == "Rio Grande do Sul") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/RS");
+                                    return document.location.href = document.location.href.concat('', '/RS');
                                 }
                                 if (this.name == "Mato Grosso do Sul") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/MS");
+                                    return document.location.href = document.location.href.concat('', '/MS');
                                 }
                                 if (this.name == "Mato Grosso") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/MT");
+                                    return document.location.href = document.location.href.concat('', '/MT');
                                 }
                                 if (this.name == "Goiás") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/GO");
+                                    return document.location.href = document.location.href.concat('', '/GO');
                                 }
                                 if (this.name == "Distrito Federal") {
-                                    return document.location.href = ("https://produtos.direm.org/painel/DF");
+                                    return document.location.href = document.location.href.concat('', '/DF');
                                 }
                             }
                         }
@@ -2093,5 +2093,156 @@ export class HighchartsService {
         };
         Highcharts.chart( idHtml, chartOptions);
     } 
+
+
+    getChartOrg(idHtml,chartOptions,data): Highcharts.Options {
+   
+        return {
+        chart: {
+          type: 'bar',
+          backgroundColor: 'transparent',
+          spacing: [5, 10, 10, 10],
+        },
+        title: {
+          text: ''
+        },
+        xAxis: {
+          lineWidth: 0,
+          minorGridLineWidth: 0,
+          minorTickLength: 0,
+          tickLength: 0,
+          categories: ['Centro Universitário', 'Faculdade', 'Universidade'],
+          gridLineWidth: 0,
+          labels: {
+            style: {
+              color: 'white', // Mudar a cor das categorias
+              fontSize: '14px' // Mudar o tamanho das categorias
+            }
+          }
+        },
+        yAxis: {
+          labels: {
+            enabled: false
+          },
+          title: {
+            text: ''
+          },
+          gridLineWidth: 0
+        },
+        plotOptions: {
+          series: {
+            marker: {
+              enabled: false
+            },
+            showInLegend: false,
+            borderWidth: 0,
+            dataLabels: {
+              enabled: true,
+              format: '{point.y}', // Formato para exibir a porcentagem
+              align: 'right',
+              inside: true,
+              //crop: false,
+              //overflow: 'allow'
+            }
+          },
+        },
+        navigation: {
+          buttonOptions: {
+              enabled: false
+          }
+        },
+        credits: {
+          enabled: false
+        },
+        series: [{
+          type: 'column',
+          name: '',
+          data: [
+            { y: data.filter(d => d.codigo_ies__org_academica=="Centro Universitário" ).map(d => d.n)[0], color: '#F1C730'},
+            { y: data.filter(d => d.codigo_ies__org_academica=="Faculdade" ).map(d => d.n)[0], color: '#D5672B' },
+            { y: data.filter(d => d.codigo_ies__org_academica=="Universidade" ).map(d => d.n)[0], color: '#C20082' }]
+        }]
+      };
+  
+      Highcharts.chart('chart-container-org', chartOptions);
+    }
+
+    getChartReg(idHtml,chartOptions,data): Highcharts.Options { 
+        //let data=[{"localizacao": "Capital", "n": 102}, {"localizacao": "Interior", "n": 263}]
+       
+        return {
+        chart: {
+          type: 'bar',
+          backgroundColor: 'transparent',
+          spacing: [0, 10, 10, 15],
+          //width: 500
+        },
+        title: {
+          text: ''
+        },
+        xAxis: {
+          lineWidth: 0,
+          minorGridLineWidth: 0,
+          lineColor: 'transparent',
+          labels: {
+            enabled: false
+          },
+          minorTickLength: 0,
+          tickLength: 0,
+          gridLineWidth: 0
+        },
+        yAxis: {
+          labels: {
+            enabled: false
+          },
+          title: {
+            text: ''
+          },
+          gridLineWidth: 0
+        },
+        legend: {
+          reversed: true
+        },
+        plotOptions: {
+          column: {
+            pointWidth: 100 ,
+            colorByPoint: true // Ajuste a largura dos pontos das barras
+          },
+          series: {
+            stacking: 'normal',
+              marker: {
+                enabled: false
+              },
+              showInLegend: false,
+              borderWidth: 0,
+              dataLabels: {
+              enabled: true,
+              format: '{y}'
+            }
+          }
+        },
+        navigation: {
+          buttonOptions: {
+              enabled: false
+          }
+        },
+        credits: {
+          enabled: false
+        },
+        series: [{
+          type: 'column',
+          name: 'Capital', //alterar %
+          data: data.filter(d => d.localizacao=="Capital" ).map(d => d.n),
+          colors: ['#61ABEC']
+        }, {
+          type: 'column',
+          name: 'Interior',
+          data: data.filter(d => d.localizacao=="Interior" ).map(d => d.n),
+          colors: ['#C20082']
+        }]
+      };
+  
+      Highcharts.chart('chart-container-bar', chartOptions);
+    }
          
 }

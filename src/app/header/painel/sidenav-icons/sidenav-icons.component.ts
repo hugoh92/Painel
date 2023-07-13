@@ -63,10 +63,6 @@ export class SidenavIconsComponent implements OnInit {
         this.nameUF = "BRASIL";
         this._dataService.getData(`https://servicodados.ibge.gov.br/api/v3/agregados/7358/periodos/2018/variaveis/606?localidades=N1[all]&classificacao=2[6794]|287[100362]|1933[49031]`).subscribe((data: any) => {
           this.populacao =  data[0].resultados[0].series[0].serie['2018'];
-          //data[0]?.id
-          console.log('testando', this.populacao)
-          console.log('testando2', data.id)
-          
 
         })
         

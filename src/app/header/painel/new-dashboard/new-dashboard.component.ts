@@ -2,6 +2,8 @@ import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angu
 import { NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { HighchartsService } from 'src/app/services/highcharts.service'
+declare var require: any;
+var json_estados = require('src/assets/data/cursos_uf.json');
 
 var dataKeys = [
   {key: 'qt_cursos', value: 'Cursos'},
@@ -20,12 +22,14 @@ var dataKeys = [
 
 export class NewDashboardComponent implements OnInit {
   data: any = {};
+  nameUF = "BRASIL";
   localizacao: any = {};
   flagBrasilRoute = true;
   matButton = "qt_cursos";
   nameDiv = dataKeys.filter(d => d.key == this.matButton).map(d => d.value);
   textCursos = 'Cursos por Região';
   mobileFilter = true;
+  num_curso = json_estados.filter(d => d.sigla == "Brasil")[0]
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -45,7 +49,7 @@ export class NewDashboardComponent implements OnInit {
         // Show loading indicator
       }
 
-     /*  if (event instanceof NavigationEnd) {
+      /* if (event instanceof NavigationEnd) {
         setTimeout(() => this.drawPlot(event.url.slice(-2)), 500)
       } */
 
@@ -60,8 +64,8 @@ export class NewDashboardComponent implements OnInit {
   onValChange(val: string){
     this.matButton = val;
     this.nameDiv = dataKeys.filter(d => d.key == this.matButton).map(d => d.value);
-    //this.drawMap(this.router.url.slice(-2), this.matButton);
-    this.drawMap('el', this.matButton);
+    this.drawMap(this.router.url.slice(-2), this.matButton);
+    //this.drawMap('el', this.matButton);
 
   }
 
@@ -73,26 +77,33 @@ export class NewDashboardComponent implements OnInit {
       this.mobileFilter = true;
     };
 
-    //this.drawMap(this.router.url.slice(-2), this.matButton)
-    this.drawMap('el', this.matButton);
+    this.drawMap(this.router.url.slice(-2), this.matButton)
+    //this.drawMap('el', this.matButton);
 
   }
 
   
   drawMap(filter, metric = 'qt_cursos'){
-    
+    filter = filter == 'rd' ? 'el' : filter
+    if (filter != 'el'){
+      this.nameUF = filter
+    }else{
+      this.nameUF = 'Brasil'
+    }       
     this._dataService.getMapData(filter).subscribe((json: any) => {
+      
       if (filter === null || filter == 'el') {
         let dataEstados = json.map(d => { return { municipio: d.uf, qt_cursos: d[metric] } }).sort((a, b) => b[metric] - a[metric]);
         let data = json.map(d => { return ['br-' + d.uf.toLowerCase(), d[metric]] })
        
         this._highchartsService.draNewMap("mapPlot", data)
 
-       
+        console.log(json)
         this._dataService.getData('https://servicodados.ibge.gov.br/api/v1/localidades/regioes/1%7C2%7C3%7C4%7C5/estados').subscribe((regiao: any) => {
           let dataRegiao = regiao.map(d => { return { sigla: d.sigla, regiao: d.regiao.nome } })
           let merged = [];
 
+          
           for (let i = 0; i < dataRegiao.length; i++) {
             merged.push({
               ...dataRegiao[i],

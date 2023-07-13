@@ -245,30 +245,31 @@
 }
 //mapa
 .mapa{
-    
     width: 50%;
     grid-area: mapa;
     justify-content: center !important;
     text-align: center !important;
     align-items: center !important;
     display: flex;
+    align-items: flex-end;
+    text-align: end;
 }
 .grid-map{
     width: auto;
     height: auto;
     margin: 12px 1px auto;
-    width: 95%;
+    width: 87%;
 }
 .filter-button{
-    width: 90px;
+    max-width: 90px;
     height: 600px;
-    margin: 0 0 0 auto;
+    margin: 0 auto;
     display:grid !important;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 1px;
     grid-row-gap: 1px;
-    //background-color: #e1e31d;
+    position: relative;
 }
 
 .mat-button-toggle-group,
@@ -277,6 +278,7 @@
     box-shadow: none !important;
     border: none !important;
     background: #0d542a !important;
+    width: 90px;
   
 }
 .mat-button-toggle{
@@ -424,14 +426,14 @@
         max-width: 1000px;
     }
     .header{
-        height: 200px;
+        height: 300px;
         min-height: 200px;
     }
     .container-header{
-        height: 180px;
+        height: 280px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         position: relative;
     }
     .dash-capital{
@@ -458,6 +460,9 @@
     }  
     .dash-regioes{
         width: 85% !important;
+    }
+    .indicadores2{
+        margin-left: 0px;
     }
 }
 

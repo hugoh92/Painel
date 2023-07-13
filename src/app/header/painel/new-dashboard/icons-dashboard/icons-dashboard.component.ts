@@ -46,6 +46,7 @@ export class IconsDashboardComponent implements OnInit {
   }
 
   getData(filter = null) {
+    filter = filter == 'rd' ? 'el' : filter
     this._dataService.getCardData(filter).subscribe((json: any) => {
       this.data = json[0]
     })
@@ -59,23 +60,24 @@ export class IconsDashboardComponent implements OnInit {
   }
 
   getPop(filter = null) {
+    filter = filter == 'rd' ? 'el' : filter
     this._dataService.getMapData(filter).subscribe((json: any) => {
       if (filter === null || filter == 'el') {
         this.nameUF = "BRASIL";
-      /*   this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/projecoes/populacao/`).subscribe((data: any) => {
+        this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/projecoes/populacao/`).subscribe((data: any) => {
           this.populacao = data.projecao.populacao;
-        }) */
+        })
         
       } else {
         let cod_uf = json[0].codigo_do_municipio.substr(0, 2);
 
-     /*    this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/projecoes/populacao/${cod_uf}`).subscribe((data: any) => {
+        this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/projecoes/populacao/${cod_uf}`).subscribe((data: any) => {
           this.populacao = data.projecao.populacao;
         })
 
         this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${cod_uf}`).subscribe((data: any) => {
           this.nameUF = data.nome;
-        }) */
+        })
       }
 
     })

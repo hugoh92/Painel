@@ -1,11 +1,9 @@
 import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
-import { Location } from '@angular/common';
-import { DataService } from 'src/app/services/data.service';
-import { HighchartsService } from 'src/app/services/highcharts.service'
-import { HighchartsChartModule } from 'highcharts-angular';
-import { NewDashboardComponent } from '../new-dashboard.component';
 import * as Highcharts from 'highcharts';
+import { data } from 'jquery';
+import { HighchartsService } from 'src/app/services/highcharts.service'
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -16,11 +14,31 @@ import * as Highcharts from 'highcharts';
 })
 export class DashRegioesComponent implements OnInit {
   chartId = 'chart-container-bar';
+  localizacao: any = {};
+
   chartOptions: Highcharts.Options = {}; // Define o tipo de dados como Highcharts.Options
+  constructor(private highchartsService: HighchartsService, private _dataService: DataService, private router: Router) {
+    let filter =(this.router.url).slice(-2) 
+    filter = filter == 'rd' ? 'el' : filter
+    this._dataService.getLocalizacaoData(filter).subscribe((json: any) => {
+      this.localizacao = json;
+      const idHtml = 'chart-container-bar';
+      console.log(json)
+      console.log(filter)
+      const chartOptions = this.highchartsService.getChartReg(idHtml, {},json);
+
+      Highcharts.chart(idHtml, chartOptions);
+    })
+    
+   }
+
+  
 
   ngOnInit() {
+
     
-    const chartOptions: Highcharts.Options = {
+    
+    /* const chartOptions: Highcharts.Options = {
       chart: {
         type: 'bar',
         backgroundColor: 'transparent',
@@ -93,7 +111,7 @@ export class DashRegioesComponent implements OnInit {
       }]
     };
 
-    Highcharts.chart('chart-container-bar', chartOptions);
-  }
+    Highcharts.chart('chart-container-bar', chartOptions);*/
+  } 
 
 }

@@ -10,7 +10,14 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {path: 'data-explorer', component: DataExplorerComponent},
-  {path: 'new-dashboard', component: NewDashboardComponent},
+  {path: 'new-dashboard',
+    component: NewDashboardComponent,
+    children: [
+      {
+        path: ':uf', //:uf is dynamic here
+        component: NewDashboardComponent
+      }
+    ]},
   {
     path: '',
     loadChildren: 'src/app/modules/buscador/buscador.module#BuscadorModule',
