@@ -3,7 +3,7 @@
         <img src="/assets/icons/NEW_CURSOS.png" class="icone4">
     </div>
     <!-- <span href="#" class="numero2" name="">6575</span> -->
-    <span href="#" class="numero2" name="">{{numberWithSpaces(num_curso.num_cursos)}}</span>
+    <span href="#" class="numero2" name="">{{numberWithSpaces(data.qt_cursos)}}</span>
     <span class="nome1">Cursos</span>
 </div>
 <div class="info-indicadores">
@@ -59,18 +59,18 @@
 </div>
 <div class="info-indicadores">
     <span class="nome2">Taxa de Concorrência</span>
-    <span href="#" class="numero2" name="">6575</span>
-    <span class="nome3">Candidatos/Vaga</span>
+    <span href="#" class="numero2" name="">{{(+data.qt_inscrito_total/data.qt_vagas_autorizadas).toFixed(2)}}</span>
+    <span class="nome3">Candidatos/Vaga</span> 
 </div>
 <div class="info-indicadores">
     <span class="nome2">Taxa de Ocupação</span>
-    <span href="#" class="numero2" name="">6575</span>
+    <span href="#" class="numero2" name="">{{(+data.qt_ingresso_total/data.qt_vagas_autorizadas*100).toFixed(2)}}%</span>
 </div>
 <div class="info-indicadores">
     <span class="nome2">Taxa de Sucesso</span>
-    <span href="#" class="numero2" name="">6575</span>
+    <span href="#" class="numero2" id="sucess" name="">{{(+data.tx_sucesso).toFixed(2)}}%</span>
 </div>
 <div class="info-indicadores">
     <span class="nome2">Relação Aluno/Docente</span>
-    <span href="#" class="numero2" name="">6575</span>
+    <span href="#" class="numero2" id="sucess" name="">{{(+data.aluno_docente).toFixed(2)}}</span>
 </div>

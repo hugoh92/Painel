@@ -30,6 +30,8 @@ export class NewDashboardComponent implements OnInit {
   textCursos = 'Cursos por Região';
   mobileFilter = true;
   num_curso = json_estados.filter(d => d.sigla == "Brasil")[0]
+  populacao: number;
+
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -48,19 +50,21 @@ export class NewDashboardComponent implements OnInit {
       if (event instanceof NavigationStart) {
         // Show loading indicator
       }
-
       /* if (event instanceof NavigationEnd) {
         setTimeout(() => this.drawPlot(event.url.slice(-2)), 500)
       } */
-
       if (event instanceof NavigationError) {
+      }
+
+      if (event instanceof NavigationEnd) {
+        this.getData(event.url.slice(-2));
+        this.getPop(this.router.url.slice(-2));
       }
 
     })
 
   }
   
-
   onValChange(val: string){
     this.matButton = val;
     this.nameDiv = dataKeys.filter(d => d.key == this.matButton).map(d => d.value);
@@ -137,7 +141,42 @@ export class NewDashboardComponent implements OnInit {
         })
         
       }
+    })
+  }
 
+  getData(filter = null) {
+    filter = filter == 'rd' ? 'el' : filter
+    this._dataService.getCardData(filter).subscribe((json: any) => {
+      this.data = json[0]
+    })
+    if (filter === null || filter == 'el') {
+      this.num_curso = json_estados.filter(d => d.sigla == "Brasil")[0]
+     
+    }else{
+      this.num_curso = json_estados.filter(d => d.sigla == filter)[0]
+    }
+  }
+
+  getPop(filter = null) {
+    filter = filter == 'rd' ? 'el' : filter
+    this._dataService.getMapData(filter).subscribe((json: any) => {
+      if (filter === null || filter == 'el') {
+        this.nameUF = "BRASIL";
+        this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/projecoes/populacao/`).subscribe((data: any) => {
+          this.populacao = data.projecao.populacao;
+        })
+        
+      } else {
+        let cod_uf = json[0].codigo_do_municipio.substr(0, 2);
+
+        this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/projecoes/populacao/${cod_uf}`).subscribe((data: any) => {
+          this.populacao = data.projecao.populacao;
+        })
+
+        this._dataService.getData(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${cod_uf}`).subscribe((data: any) => {
+          this.nameUF = data.nome;
+        })
+      }
 
     })
   }
@@ -146,8 +185,15 @@ export class NewDashboardComponent implements OnInit {
     event
   }
 
+ 
+  numberWithSpaces(x) {
+    let data = x ? x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") : '---';
+    return data;
+  }
+
   ngOnInit(): void {
-    
+    this.getData(this.router.url.slice(-2));
+    this.getPop(this.router.url.slice(-2));
   }
 
 }

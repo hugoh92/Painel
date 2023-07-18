@@ -2038,7 +2038,7 @@ export class HighchartsService {
                 labels: {
                   style: {
                     color: 'white', // Mudar a cor das categorias
-                    fontSize: '14px' // Mudar o tamanho das categorias
+                    fontSize: '16px' // Mudar o tamanho das categorias
                   }
                 }
               },
@@ -2063,8 +2063,10 @@ export class HighchartsService {
                     format: '{point.y:.2f}%', // Formato para exibir a porcentagem
                     align: 'right',
                     inside: true,
-                    //crop: false,
-                    //overflow: 'allow'
+                    style: {
+                        color: 'white', // Mudar a cor das categorias
+                        fontSize: '16px' // Mudar o tamanho das categorias
+                    }
                   }
                 },
                
@@ -2116,7 +2118,7 @@ export class HighchartsService {
           labels: {
             style: {
               color: 'white', // Mudar a cor das categorias
-              fontSize: '14px' // Mudar o tamanho das categorias
+              fontSize: '16px' // Mudar o tamanho das categorias
             }
           }
         },
@@ -2143,6 +2145,10 @@ export class HighchartsService {
               inside: true,
               //crop: false,
               //overflow: 'allow'
+                style: {
+                  color: 'white', // Mudar a cor das categorias
+                  fontSize: '16px' // Mudar o tamanho das categorias
+                }
             }
           },
         },
@@ -2217,7 +2223,11 @@ export class HighchartsService {
               borderWidth: 0,
               dataLabels: {
               enabled: true,
-              format: '{y}'
+              format: '{y}',
+              style: {
+                color: 'white', // Mudar a cor das categorias
+                fontSize: '25px' // Mudar o tamanho das categorias
+              }
             }
           }
         },
